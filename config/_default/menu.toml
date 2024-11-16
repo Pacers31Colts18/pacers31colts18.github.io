@@ -23,3 +23,10 @@ url = "https://pacers31colts18.bsky.social"
 [social.params]
 icon = "brand-bluesky"
 
+[[social]]
+identifier = "linkedin"
+name = "linkedin"
+url = "https://www.linkedin.com/in/joe-loveless/"
+
+[social.params]
+icon = "brand-linkedin"
