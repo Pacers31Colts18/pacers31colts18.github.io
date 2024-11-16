@@ -18,7 +18,7 @@ icon = "brand-github"
 [[social]]
 identifier = "bluesky"
 name = "BlueSky"
-url = "https://pacers31colts18.bsky.social"
+url = "https://bsky.app/profile/joeloveless.com"
 
 [social.params]
 icon = "brand-bluesky"
