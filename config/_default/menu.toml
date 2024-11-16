@@ -30,3 +30,11 @@ url = "https://www.linkedin.com/in/joe-loveless/"
 
 [social.params]
 icon = "brand-linkedin"
+
+[[social]]
+identifier = "email"
+name = "email"
+url = "joe@joeloveless.com"
+
+[social.params]
+icon = "mail"
