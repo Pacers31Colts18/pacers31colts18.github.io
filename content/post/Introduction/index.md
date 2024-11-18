@@ -1,8 +1,9 @@
 ---
 title: Introduction
 description: Introductory blog post
-slug: introduction
+slug: introduction-post
 date: 2024-11-16 00:00:00+0000
+image: cover.jpg
 categories: 
     - Other
 
