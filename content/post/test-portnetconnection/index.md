@@ -1,6 +1,6 @@
 ---
 title: Testing network connections with a PowerShell function.
-description: Article for testing network connections with PowerShell.
+description: A quick function for testing network connections with PowerShell.
 slug: test-portnetconnections-post
 date: 2025-02-25 00:00:00+0000
 categories:
