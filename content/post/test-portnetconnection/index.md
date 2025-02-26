@@ -17,7 +17,7 @@ The gist of this function is to parse through Ports, which are defined in an Par
 
 The beauty of this is being able to run against one domain, or multiple domains, or all the domains in your environment. I like to utilize CSV files as the source files, and pipe that to Out-GridView for further customization. Rather than having an "All" switch, or a parameter for a single domain, this allows me to pick and choose which domains I want to scan against.
 
-I'm going to break down the code here, so you can get an idea of what this function does. The full function can be found on my Github page, which is linked to the left.
+I'm going to break down the code here, so you can get an idea of what this function does. The full function can be found on my GitHub page (on the left) or directly [here](https://github.com/Pacers31Colts18/ActiveDirectory/blob/main/Test-PortNetConnection.ps1).
 
 ```powershell
 [CmdletBinding()]
