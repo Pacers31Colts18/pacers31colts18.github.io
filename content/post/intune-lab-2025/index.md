@@ -1,5 +1,5 @@
 ---
-title: "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025."
+title: "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025"
 description: Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.
 slug: intunelab-2025
 date: 2025-03-30 00:00:00+0000
@@ -10,7 +10,7 @@ categories:
 
 ---
 
-# Setting up an Active Directory, ConfigMgr, Intune Lab in 2025.
+# Setting up an Active Directory, ConfigMgr, Intune Lab in 2025
 
 For the first time in what seems like forever, I've gone through the process of setting up a lab environment to test and write about features in Intune. Along with my Intune lab environment, I also configured Active Directory and a ConfigMgr lab server. I thought it would be a good idea to write this down, as I want to be able to rebuild this lab when needed. I'll go into more details below, but I plan on utilizing Enterprise Evaluation licenses, which expire every 180 days. My goal is to rebuild the lab every 6 months for a few reasons:
 
@@ -21,13 +21,13 @@ For the first time in what seems like forever, I've gone through the process of 
 [Deployment Research Hydration Kit](https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/)
 [Recast Software - Building a ConfigMgr Lab from Scratch](https://www.recastsoftware.com/resources/building-a-cm-lab-configuration-settings-ad-gpo/)
 
-# Intial Details
+## Intial Details
 
-## Hardware
+### Hardware
 
 I have a Dell Optiplex 7070 SFF that I will be using, almost soley to run this lab environment. I believe these came out in 2020, and can be found fairly cheap on eBay as of this writing. These are business grade desktops, that were probably all quickly replaced due to Covid-19. My desktop is running 32gb ram (can go up to 64gb) and a 2Tb M.2 drive. This will give me plenty of horsepower to run multiple VM's simultaneously. The host operating system is running Windows 11 Pro.
 
-## Software
+### Software
 
 - [Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?pivots=windows)
     - I'm using Hyper-V for this lab. My main reasoning being it's free, I don't want to rely on Broadcom/VMWare or any other 3rd party vendor for this and possibly have to buy a license. It's an easy feature to turn on, making it simpler for me and less to worry about.
@@ -42,11 +42,11 @@ I have a Dell Optiplex 7070 SFF that I will be using, almost soley to run this l
     - Other Details
         - As I've explained, this lab is a combination of Active Directory, ConfigMgr, and Intune (Co-Management). I'll provide my notes and thoughts for all, but if looking to only run an Intune lab, this is doable also and parts can be skipped.
 
-## Networking
+### Networking
 
 I'm not running anything crazy in my homelab that anyone else can't run. When I look on Reddit (r/homelab), it can be very overwhelming to see the networking configurations people are running. I live in rural Minnesota with Starlink as my internet provider (until this summer when fiber comes!), with an Eero router and a couple of mesh access points. If I can run a lab with this simple setup, anyone can. I'll go into more details with the networking configuration below.
 
-# Hydration Kit (Active Directory/ConfigMgr Setup)
+## Hydration Kit (Active Directory/ConfigMgr Setup)
 
 For the most part, I stuck with the basics from [Deployment Research](https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/). For time and resources, my lab looks like this for the setup.
 
@@ -63,7 +63,7 @@ What I am not configuring from the Hydration Kit:
         - PC0001-PC0004
             - I intially built PC0004, but then found that this does not install the ConfigMgr agent. Rather than fiddle around with installing the agent, I decided to shift this to build a VM through OSD (ConfigMgr).
 
-## Customization
+### Customization
 
 As I explained earlier, I want to be able to tear down this lab and rebuild to my liking every six months. I also want this to be using my domain name, so I have done tweaks to the cusomtization files to do that. I have published all this on my [GitHub repository](https://github.com/Pacers31Colts18/HydrationKitCustomization2025)
 
@@ -94,7 +94,7 @@ Once your customization files are setup properly, go through the guide for the H
 
 Once all is configured, we're now to the process of building the virtual machines. The most time consuming part of all this for myself was downloading the software (Starlink download speeds) and then customizing everything. If you don't have crappy internet, it should be a faster process for you. If you're not customizing anything, even smoother. But what fun is that?
 
-# DC01 Build
+### DC01 Build
 
 The domain controller is the first VM to build. Make sure you boot from the .iso file, and then go through the MDT build process for DC01. The build process will look like this, and shouldn't take all that long to build.
 
@@ -104,13 +104,13 @@ The domain controller is the first VM to build. Make sure you boot from the .iso
 
 ![](DC01_Setup3.png "DC01 Setup Screen 3")
 
-# DC01 Configuration
+### DC01 Configuration
 
 I used the [Recast Software documentation](https://www.recastsoftware.com/resources/building-a-cm-lab-configuration-settings-ad-gpo/) to help configure this portion, with some items taken out.
 
 After setup, open dsa.msc from Search and look to ensure your groups, users, and organizational units were created properly. If they were not, you can create them manually to match what your Custom Settings call for with the OU structure.
 
-## User Accounts
+#### User Accounts
 
 - CM_Admin (Both Admin in ConfigMgr & on ConfigMgr Servers)
     - Admin account
@@ -122,14 +122,14 @@ After setup, open dsa.msc from Search and look to ensure your groups, users, and
 - ~~CM_SSRS (add to SQL_Admins, used for the Reporting Services Role)~~
     - I'm not planning on doing much with Reporting Services.
 
-## AD Groups
+#### AD Groups
 
 These should already be created for you based on the customization file. If not, here are the groups I created. In a real world scenario the Workstation Admins and Server Admins would be different groups (maybe? hopefully?)
 
 - JoeLoveless - ServerAdministrators
 - JoeLoveless - WorkstationAdministrators
 
-## Group Policies
+#### Group Policies
 
 From the article, I found many of these to be optional. I created the following:
 
@@ -144,7 +144,7 @@ For the Restricted Groups, I setup my group policy to look like this (adding the
 
 The rest of the policies outlined, I found to be optional. Because I am running this all from a Hyper-V host, I'm not necessarily remoting into the VMs so I did not need RDP firewall rules opened up. I did need to add to the Remote Desktop Users group though to be able to login properly.
 
-# CM01 Build
+### CM01 Build
 
 After everything is setup properly, go through the same MDT build process for CM01, only difference being to choose CM01 for the build.
 
@@ -152,9 +152,9 @@ After everything is setup properly, go through the same MDT build process for CM
 
 ![](CM01_Setup2.png "CM01 Setup Screen 2")
 
-# CM01 Configuration
+### CM01 Configuration
 
-## Source Folder
+#### Source Folder
 
 Using [Recast Software documentation](https://www.recastsoftware.com/resources/building-a-cm-lab-configmgr-source-share/) as a guide, I then configured a Source shared folder. This will be used to house any files needed for deployments, boot media, etc. Because of the work Deployment Research already did for us, it's a fairly simple process.
 
@@ -167,20 +167,20 @@ Using [Recast Software documentation](https://www.recastsoftware.com/resources/b
 
 ![](CM01_SourceFolder_SubFolders "CM01 Source Structure")
 
-## Basic Setup
+#### Basic Setup
 
 Continuing on with [Recasts setup](https://www.recastsoftware.com/resources/building-a-cm-lab-configmgr-settings-setup/), I followed this almost exactly, the only difference being on the Boundary setup, I plugged in my network configuration rather than what they have:
 
 - Network: 192.168.25.0
 - Subnet: 255.255.255.0
 
-## Client Settings
+#### Client Settings
 
 This part is optional, but I want to have a good experience on this when possible. I modified the PowerShell Script Execution Policy to be **Bypass** and then modified the customization in Software Center. Now when opening Software Center, you're presented with this beautiful branding:
 
 ![](SoftwareCenter.png "Software Center")
 
-## Collections
+#### Collections
 
 I didn't bother too much with configuring a bunch of collections. I only created a few collections to start for my OSD deployment in the next section:
 
@@ -200,7 +200,7 @@ This collection is an Include collection of All Unknown Computers with a limitin
 - Collection Name: OSD Bare Metal
 ![](osdbaremetal.png "OSD Bare Metal Collection")
 
-## Operating System Deployment
+#### Operating System Deployment
 
 The last and final step I've done in my ConfigMgr portion of the lab is configuring and OSD Task Sequence, in my case, Windows 11 22H2 Enterprise Evaluation Edition. I followed [Recast's Guide](https://www.recastsoftware.com/resources/building-a-cm-lab-operating-system-deployment/) step by step, and then built a Windows 11 virtual machine, making sure I booted from the .iso file I created in this process. To boot from the .iso, you will need to copy the file down to your host and then boot from that.
 
@@ -212,11 +212,11 @@ The deployment process will look like this:
 
 ![](PC004_CM_TaskSequence3.png "CM Task Sequence Step 3")
 
-# Azure/Intune/Co-Management/Entra ID Configuration
+## Azure/Intune/Co-Management/Entra ID Configuration
 
 Alright, now we have an Active Directory domain controller, a ConfigMgr site, and a Windows 11 virtual machine. Now how the hell do we tie that all together with Azure, Intune, and Entra ID? Follow along!
 
-## Azure
+### Azure
 
 First thing we need to do is create an Azure tenant if we do not already have one. Thankfully (and sometimes) Microsoft has good up to date documentation (not always).
 
@@ -265,7 +265,7 @@ Once your tenant is up and running, depending on what all you want to configure,
 
     ![](intuneAdministrator.png "Intune Administrator")
 
-## Intune
+### Intune
 
 Now that we have our licensing squared away, we can go to the [Intune Portal](https://intune.microsoft.com). From the initial configuration, I did not change a ton, more I am sure will be changed later. A few things I did change:
 
@@ -274,11 +274,11 @@ Now that we have our licensing squared away, we can go to the [Intune Portal](ht
         - Turn on the option to allow All unlicensed admins to have access to Microsoft Intune.
         - This ensures you don't need two licenses necessarily, but can run with a single user license.
 
-## Microsoft Entra ID
+### Microsoft Entra ID
 
 So, we have Azure configured, we have Intune configured. Now we need to tie together Active Directory, Configuration Manager, Intune, and Azure all together.
 
-### Microsoft Entra ID Connect
+#### Microsoft Entra ID Connect
 
 We are going to go back to the DC01 domain controller, and we will want to download and install [Microsoft Entra ID Connect](https://www.microsoft.com/en-ie/download/detail). Microsoft Entra ID Connect will allow us to synchronize what from Active Directory to Microsoft Entra ID. This is [Hybrid Join](https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join). Note: *These are my notes after the fact, so I hope everything lines up properly.*
 
@@ -315,7 +315,7 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass
 
     ![](EntraConnect_EA.png "Enterprise Administrator")
 
-## Verifying Hybrid Join (from the device)
+**Verifying Hybrid Join (from the device)**
 
 Hybrid Join is now configured. Let's open up our new Windows 11 virtual machine and see what happens?
 
@@ -328,7 +328,7 @@ Hybrid Join is now configured. Let's open up our new Windows 11 virtual machine 
 
 - AzureADJoined: YES
 
-## Verifying Hybrid Join (from the portal)
+**Verifying Hybrid Join (from the portal)**
 
 1. Go to the Azure portal (portal.azure.com) and search for Microsoft Entra ID
 2. Click on Devices
@@ -336,7 +336,7 @@ Hybrid Join is now configured. Let's open up our new Windows 11 virtual machine 
 
 ![](EntraPortal_hybridjoin.png "Hybrid Join from Entra portal")
 
-## ConfigMgr Co-Management
+### ConfigMgr Co-Management
 
 Ok, now we have devices syncing to Entra ID through Hybrid Join. But how do we manage them in Intune? That is where [Co-Management](https://learn.microsoft.com/en-us/intune/configmgr/comanage/overview) comes into play. Co-Management will allow us to upload our devices from ConfigMgr into Intune, and then once the sliders are configured properly, allow us to manage the configuration through Intune.
 
@@ -358,7 +358,7 @@ From our Windows 11 VM, we should see this configuration come down through Confi
 
 ![](CM01_CoManagement.png "CoManagement Configuration")
 
-## Verifying Co-Management in Intune
+#### Verifying Co-Management in Intune
 
 Now we have everything configured, let's go into Intune and take a look at the configuration on the device.
 
@@ -368,7 +368,7 @@ Now we have everything configured, let's go into Intune and take a look at the c
 
 ![](Intune_CoManaged.png "Intune Co-Management")
 
-# Wrapping Up
+## Wrapping Up
 
 So now we have a nice, new shiny lab thanks to Deployment Research, Recast, and others that allows us to manage Active Directory, Azure, Entra ID, Configuration Manager, and Intune. I am hopeful that this is a helpful blog post, as I've seen questions out there on the best way to setup a lab in 2025. If you have any questions, please feel free to reach out to me.
 
