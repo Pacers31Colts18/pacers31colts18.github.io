@@ -12,10 +12,11 @@ categories:
 
 # Setting up an Active Directory, ConfigMgr, Intune Lab in 2025.
 
-For the first time in what seems like forever, I've gone through the process of setting up a lab environment to test and write about features in Intune. Along with my Intune lab environment, I also configured Active Directory and a ConfigMgr lab server. I thought it would be a good idea to write this down, as I want to be able to rebuild this lab when needed. I'll go into more details below, but I plan on utilizing Enterprise Evaluation licenses, which expire every 180 days. My goal is to rebuild the lab every 6 months for a few reasons.
-    - Cost: I don't want to purchase licenses if I do not need to. Once the license expires, certain features will be shut off at the OS level. To avoid that, I'll just rebuild.
-    - Process: I want the process to be repeatable. I don't want to question what I did every 6 months. If I do that, either I just won't rebuild, or I'll sit there scratching my head trying to figure out what I previously did.
-    - Tech Debt: We all have tech debt at our work environment. I don't want tech debt in my lab, so 6 months of testing features will give me a chance to start fresh.
+For the first time in what seems like forever, I've gone through the process of setting up a lab environment to test and write about features in Intune. Along with my Intune lab environment, I also configured Active Directory and a ConfigMgr lab server. I thought it would be a good idea to write this down, as I want to be able to rebuild this lab when needed. I'll go into more details below, but I plan on utilizing Enterprise Evaluation licenses, which expire every 180 days. My goal is to rebuild the lab every 6 months for a few reasons:
+
+- Cost: I don't want to purchase licenses if I do not need to. Once the license expires, certain features will be shut off at the OS level. To avoid that, I'll just rebuild.
+- Process: I want the process to be repeatable. I don't want to question what I did every 6 months. If I do that, either I just won't rebuild, or I'll sit there scratching my head trying to figure out what I previously did.
+- Tech Debt: We all have tech debt at our work environment. I don't want tech debt in my lab, so 6 months of testing features will give me a chance to start fresh.
 
 [Deployment Research Hydration Kit](https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/)
 [Recast Software - Building a ConfigMgr Lab from Scratch](https://www.recastsoftware.com/resources/building-a-cm-lab-configuration-settings-ad-gpo/)
@@ -29,14 +30,14 @@ I have a Dell Optiplex 7070 SFF that I will be using, almost soley to run this l
 ## Software
 
 - [Hyper-V](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?pivots=windows)
-    -I'm using Hyper-V for this lab. My main reasoning being it's free, I don't want to rely on Broadcom/VMWare or any other 3rd party vendor for this and possibly have to buy a license. It's an easy feature to turn on, making it simpler for me and less to worry about.
+    - I'm using Hyper-V for this lab. My main reasoning being it's free, I don't want to rely on Broadcom/VMWare or any other 3rd party vendor for this and possibly have to buy a license. It's an easy feature to turn on, making it simpler for me and less to worry about.
 
 - [Hydration Kit](https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/)
-    -There are really three options to configure the lab. 
+    - There are really three options to configure the lab. 
         1. I chose the Hydration Kit from [Deployment Reasearch](https://www.deploymentresearch.com) because it's well known in the ConfigMgr/Intune community, and it allows me to have some customization to configure the lab.
-        -Other Options
-            2. [Windows 11 and Office 365 Lab Kit](https://learn.microsoft.com/en-us/microsoft-365/enterprise/modern-desktop-deployment-and-management-lab?view=o365-worldwide). I did not choose this one, mainly because it did not give me the customization I was looking for, as I view this as a long term lab that I will want setup a certain way. If I was quickly spinning up a lab for a month or two, this would be a great option to use, as it's very simple to setup.
-            3. Manual Setup. While this is a great option, and will teach you a lot about your lab, it's also time consuming.
+    - Other Options
+        2. [Windows 11 and Office 365 Lab Kit](https://learn.microsoft.com/en-us/microsoft-365/enterprise/modern-desktop-deployment-and-management-lab?view=o365-worldwide). I did not choose this one, mainly because it did not give me the customization I was looking for, as I view this as a long term lab that I will want setup a certain way. If I was quickly spinning up a lab for a month or two, this would be a great option to use, as it's very simple to setup.
+        3. Manual Setup. While this is a great option, and will teach you a lot about your lab, it's also time consuming.
 
     - Other Details
         - As I've explained, this lab is a combination of Active Directory, ConfigMgr, and Intune (Co-Management). I'll provide my notes and thoughts for all, but if looking to only run an Intune lab, this is doable also and parts can be skipped.
