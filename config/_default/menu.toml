@@ -34,7 +34,7 @@ icon = "brand-linkedin"
 [[social]]
 identifier = "email"
 name = "email"
-url = "joe@joeloveless.com"
+url = "mailto:joe@joeloveless.com"
 
 [social.params]
 icon = "mail"
