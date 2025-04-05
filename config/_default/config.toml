@@ -41,3 +41,7 @@ pagerSize = 5
 [params.footer]
     copyright = "Joe Loveless 2025-"
 
+[imaging]
+  quality = 100
+  resampleFilter = "CatmullRom"
+
