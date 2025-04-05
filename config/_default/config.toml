@@ -2,6 +2,7 @@
 baseurl = "https://joeloveless.com"
 languageCode = "en-us"
 title = "JoeLoveless.com"
+description = "A technology blog about endpoint systems management surrounding Microsoft Intune, Microsoft Configuration Manager, Azure, and Entra ID."
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar
