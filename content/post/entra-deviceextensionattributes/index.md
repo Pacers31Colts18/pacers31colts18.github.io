@@ -8,6 +8,8 @@ categories:
     - Intune
     - Entra
     - Azure
+keywords: [Intune, Entra, Azure, extensionAttributes, runbooks, App Registration]
+
 
 ---
 # Automating Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation
