@@ -2,7 +2,6 @@
 baseurl = "https://joeloveless.com"
 languageCode = "en-us"
 title = "JoeLoveless.com"
-description = "A technology blog about endpoint systems management surrounding Microsoft Intune, Microsoft Configuration Manager, Azure, and Entra ID."
 
 # Theme i18n support
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar
@@ -17,3 +16,28 @@ disqusShortname = "hugo-theme-stack"
 
 [pagination]
 pagerSize = 5
+
+[author]
+  name = "Joe Loveless"
+  bio = "Sr. Endpoint Engineer. Microsoft Intune, ConfigMgr, PowerShell, other stuff."
+  job = "Sr. Endpoint Engineer"
+  location = "Minnesota"
+  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+  # gravatarEmail = "yixuan.qiu@cos.name"
+  # Your profile picture
+  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
+  picture = "/images/pi.png"
+  # Your Twitter username without the @. E.g : thibaudlepretre
+  # twitter = ""
+  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
+  # googlePlus = ""
+
+[params]
+ description = "A technology blog about endpoint systems management surrounding Microsoft Intune, Microsoft Configuration Manager, Azure, and Entra ID."
+ thumbnailImage = true
+ thumbnailImagePosition = "left"
+ autoThumbnailImage = true
+
+[params.footer]
+    copyright = "Joe Loveless 2025-"
+
