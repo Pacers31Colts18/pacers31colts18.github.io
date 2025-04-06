@@ -44,8 +44,3 @@ pagerSize = 5
 [imaging]
   quality = 100
   resampleFilter = "CatmullRom"
-
-[services]
-[services.googleAnalytics]
-ID = 'G-6ZTWY00NFY'
-
