@@ -3,9 +3,11 @@ title: Testing network connections with a PowerShell function.
 description: A quick function for testing network connections with PowerShell.
 slug: test-portnetconnections-post
 date: 2025-02-25 00:00:00+0000
+image: cover.png
 categories:
     - PowerShell
     - Active Directory
+keywords: [Powershell, Active Directory]
 
 ---
 
