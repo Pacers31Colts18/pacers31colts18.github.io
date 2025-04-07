@@ -3,10 +3,12 @@ title: "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025"
 description: Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.
 slug: intunelab-2025
 date: 2025-03-30 00:00:00+0000
+image: cover.png
 categories:
     - Intune
     - ConfigMgr
     - Active Directory
+keywords: [Intune, Configuration Manager, SCCM, MECM, Active Directory]
 
 ---
 
