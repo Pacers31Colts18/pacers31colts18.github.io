@@ -36,9 +36,9 @@ Anything that's not script based using Powershell/VBScript/etc, but configurable
 
 I've added all the files needed for this on my GitHub page.
 
-- [Intune Detection Template](https://github.com/Pacers31Colts18/Intune/blob/main/Intune-Registry-Detect)
-- [Intune Remediation Template](https://github.com/Pacers31Colts18/Intune/blob/main/Intune-Registry-Detect)
-- [Convert Configuration Items to Remediation Script](https://github.com/Pacers31Colts18/Intune/blob/main/Convert-CMConfigurationItemtoIntuneRemediationScript)
+- [Intune Detection Template](https://github.com/Pacers31Colts18/Intune/blob/main/Intune-Registry-Detect.ps1)
+- [Intune Remediation Template](https://github.com/Pacers31Colts18/Intune/blob/main/Intune-Registry-Detect.ps1)
+- [Convert Configuration Items to Remediation Script](https://github.com/Pacers31Colts18/Intune/blob/main/Convert-CMConfigurationItemtoIntuneRemediationScript.ps1)
 
 # Walkthrough
 
