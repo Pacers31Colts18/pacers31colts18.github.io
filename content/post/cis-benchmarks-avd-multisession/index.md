@@ -26,7 +26,7 @@ Once we figured out there was a limitation in the settings, I got thinking, how 
 
 When the Graph API first came out, I was confused on how this worked. Granted, I'm still confused, but just not as confused. In ITIL terms, that is considered progressing iteratively. We looked at the Graph SDK, and I quickly got frustrated by the length of some of the cmdlets, and the inconsistencies. So rather than fumbling with the cmdlets, I've really dove into the Graph API, and found it so much more repeatable and enjoyable. There are still gotchas, and I'm still trying to really figure out the syntax on searching, but I'm getting better.
 
-I wrote a quick function, called [Export-IntuneConfigurationSettings](https://github.com/Pacers31Colts18/Intune/blob/main/Export-IntuneConfigurationSettings). What this allows me to do is search the Graph URI "https://graph.microsoft.com/beta/deviceManagement/configurationSettings", for settings and return the data from that. (Settings Catalog backed only)
+I wrote a quick function, called [Export-IntuneConfigurationSettings](https://github.com/Pacers31Colts18/Intune/blob/main/Export-IntuneConfigurationSettings.ps1). What this allows me to do is search the Graph URI "https://graph.microsoft.com/beta/deviceManagement/configurationSettings", for settings and return the data from that. (Settings Catalog backed only)
 
 ## Walking through the script
 
