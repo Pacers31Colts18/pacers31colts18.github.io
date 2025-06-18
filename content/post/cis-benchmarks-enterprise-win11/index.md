@@ -13,7 +13,7 @@ keywords: [Intune, CIS, Windows 11, Hybrid]
 
 ---
 
-# CIS L1 Benchmarks in Intune with AVD Multi-Session Hosts
+# Examing CIS Microsoft Windows 11 Enterprise Benchmark in a Hybrid Environment
 
 ## Intro
 
