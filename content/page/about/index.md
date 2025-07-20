@@ -1,10 +1,25 @@
+---
+title: About
+description: About page for Joe Loveless
+date: '2019-06-20'
+aliases:
+  - about-joe
+menu:
+    main: 
+        weight: 2
+        params:
+            icon: user
+---
+
+# About Me
+
 My name is Joe Loveless.  I've been working in the endpoint management space for the last ten years with a focus on endpoint configuration tools including Microsoft Intune, Microsoft Configuration Manager, Group Policy, PowerShell, and probably some other tools I am forgetting. I currently live in Wells, MN a tiny town near the border of Iowa and Minnesota. Originally I am from Mooresville, IN but moved up to the Minnesota area around 2018. I currently work for MNIT Services for the State of Minnesota. **All opinions and thoughts on this website are strictly my own.**
 
 I started this blog in 2025, previous to that I believe I attempted one around 2018. Before that, I always had an interest in websites. I used to run an Indiana Pacers blog around 2014ish (PacersCenter.com), and in high school would run websites for either our high school or my pro wrestling fandom.
 
 I would love if you subscribed to my [blog's RSS feed](htts://joeloveless.com/index.xml). I'm also on various social media channels (links on the left) and you can find me on the [WinAdmins.io Discord channel](https://winadmins.io/)
 
-**Work Background**
+## Work Background
 
 Growing up, it seemed we always had a computer around. I don't remember the model, but I remember the first house we lived in having one when I was around 4 years old (born in 1985). I remember the Jeopardy and Wheel of Fortune games. From there and moving to Mooresville, I was big into DOOM, MadDog McCree, SimCity, and NBA Live games along with what was offered in school (Oregon Trail and some fishing game).
 
@@ -24,6 +39,14 @@ I learned a lot in my time at IU, but was growing stagnant and bored. I then too
 
 In 2019, I moved to MNIT Services as a Group Policy Administrator. I've been here going on six years, and am now the Sr. Endpoint Configuration and Automation Engineer working with a group of 7 insanely talented configuration, automation, and provisioning engineers.
 
-**Personal Background**
+## Personal Background
 
-I'm a father of two kids (age 14 and 12), married to a beautiful wife since 2010, and have three dogs, six chickens, and five acres of land. We previously had two pigs (1 died, 1 slaughtered), 2 goats (eventually sold), 15 chickens (random deaths, hawks). The Indiana Pacers are my favorite sports team, but I also like the Indianapolis Colts, Minnesota Twins and Minnesota Wild. I play video games when there is free time, and read some books, but not enough. 
+I'm a dad of two kids (age 14 and 12), married to a beautiful wife since 2010, and have three dogs, six chickens, and five acres of land. We previously had two pigs (1 died, 1 slaughtered), 2 goats (eventually sold), 15 chickens (random deaths, hawks). The Indiana Pacers are my favorite sports team, but I also like the Indianapolis Colts, Minnesota Twins and Minnesota Wild. I play video games when there is free time, and read some books, but not enough. I like to garden, ride my bike when I'm motivated to do so, tinker with Home Assistant, go on hikes, and visit National Parks.
+
+So far I've visited the following National Parks with my family:
+
+- Yellowstone National Park
+- Rocky Mountain National Park
+- Joshua Tree National Park
+- Arches National Park
+- Grand Canyon National Park
