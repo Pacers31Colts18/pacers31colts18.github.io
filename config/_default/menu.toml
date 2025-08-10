@@ -24,6 +24,14 @@ url = "https://bsky.app/profile/joeloveless.com"
 icon = "brand-bluesky"
 
 [[social]]
+identifier = "mastodon"
+name = "Mastodon"
+url = "https://infosec.exchange/@Pacers31Colts18"
+
+[social.params]
+icon = "brand-mastodon"
+
+[[social]]
 identifier = "linkedin"
 name = "linkedin"
 url = "https://www.linkedin.com/in/joe-loveless/"
