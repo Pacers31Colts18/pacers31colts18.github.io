@@ -4,6 +4,7 @@ description: A guide to finding how many users are enrolled in Windows Hello for
 slug: finding-enrollment-count-windows-hello
 date: 2025-08-31 00:00:00+0000
 image: cover.png
+bsky: https://bsky.app/profile/joeloveless.com/post/3lxp4qsyycc2o
 categories:
     - Windows Hello
     - Remediation Scripts
