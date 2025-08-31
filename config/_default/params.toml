@@ -76,7 +76,7 @@ enabled = false
 
 ## Comments
 [comments]
-enabled = true
+enabled = false
 provider = "cusdis"
 
 [comments.disqusjs]
@@ -146,5 +146,5 @@ clientID = ""
 clientSecret = ""
 
 [comments.cusdis]
-host = "https://cusdis.com"
-id = "cb7e0eca-6a00-41f5-8441-137cecfa6576"
+host = ""
+id = ""
