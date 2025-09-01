@@ -76,8 +76,8 @@ enabled = false
 
 ## Comments
 [comments]
-enabled = false
-provider = "cusdis"
+enabled = true
+provider = "giscus"
 
 [comments.disqusjs]
 shortname = ""
@@ -128,13 +128,13 @@ serverName = "cactus.chat"
 siteName = ""
 
 [comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
-lightTheme = ""
-darkTheme = ""
+repo = "Pacers31Colts18/pacers31colts18.github.io"
+repoID = "R_kgDONP9Srw"
+category = "General"
+categoryID = "DIC_kwDONP9Sr84Cu2Yz"
+mapping = "pathname"
+lightTheme = "light"
+darkTheme = "dark_dimmed"
 reactionsEnabled = 1
 emitMetadata = 0
 
