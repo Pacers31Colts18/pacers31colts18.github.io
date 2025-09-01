@@ -38,11 +38,16 @@ pagerSize = 5
  thumbnailImagePosition = "left"
  autoThumbnailImage = true
 
+  [params.shareButtons]
+    size = "small"
+    icon = "solid"
+    buttonMargin = "0.2em"
+    networks = ["facebook", "twitter", "bluesky", "mastodon", "email", "linkedin", "reddit", "hackernews"]
+
 [params.footer]
     copyright = "Joe Loveless 2025-"
 
 [imaging]
   quality = 100
   resampleFilter = "CatmullRom"
-
 
