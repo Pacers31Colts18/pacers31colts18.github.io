@@ -1,6 +1,5 @@
 <footer class="article-footer">
-    <p><b>Share with your network!</b></p>
-    {{ partial "share-buttons" . }}
+    <p><b style="color: white;">Share with your network!</b></p>    {{ partial "share-buttons" . }}
     {{ partial "article/components/tags" . }}
 
     {{ if and (.Site.Params.article.license.enabled) (not (eq .Params.license false)) }}
