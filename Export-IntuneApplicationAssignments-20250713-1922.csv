@@ -1,8 +1,0 @@
-"Platform","ID","DisplayName","InformationURL","DateCreated","VPPTokenOrganizationName","TotalLicenseCount","UsedLicenseCount","GroupId","GroupName","FilterType","FilterId","FilterName","AssignmentIntent"
-"winGetApp","d7eb4eec-c109-4c6e-bd6d-25dfb5f4a31b","Microsoft Defender",,"7/13/2025 1:26:56 PM",,,,,"All Devices","none",,,"available"
-"winGetApp","f69bedde-0c57-4cf7-aab7-e0077be40ec1","Microsoft Designer",,"7/13/2025 1:22:57 PM",,,,,"All Devices","include","105e63c7-fe72-4d07-8860-1b3841ad7382",,"available"
-"iosStoreApp","3af72b84-491d-4364-8720-4881ad6f718c","Microsoft Edge: AI Browser",,"7/13/2025 1:20:55 PM",,,,,"All Devices","none",,,"required"
-"winGetApp","912948d9-f349-41ed-81bc-c4bc0db7c891","Microsoft PC Manager",,"7/13/2025 1:22:06 PM",,,,"","","","","","Not Assigned"
-"winGetApp","34848ac1-f0da-481f-bc3c-853f3094c806","Microsoft PowerToys",,"7/13/2025 1:23:19 PM",,,,,"All Devices","none",,,"available"
-"winGetApp","e635f9f5-1863-4ebf-8c1a-9585fa07f050","Microsoft Teams",,"7/13/2025 1:22:30 PM",,,,,"All Devices","none",,,"required"
-"winGetApp","8939c64c-9a6a-4a0f-8f24-d7b91143ee25","Microsoft Whiteboard",,"7/13/2025 1:21:42 PM",,,,,"All Devices","none",,,"required"
