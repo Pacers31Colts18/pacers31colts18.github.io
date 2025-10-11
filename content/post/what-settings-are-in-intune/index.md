@@ -8,6 +8,7 @@ categories:
     - Group Policy
     - Intune
     - PowerShell
+    - Graph API
 ---
 
 # What Group Policy Settings Aren't in Microsoft Intune?
