@@ -5,14 +5,14 @@ slug: expanding-my-homelab-with-cloudflare-tailscale-and-more
 date: 2025-12-26 00:00:00+0000
 image: cover.png
 categories:
-- Home Lab
-- Networking
-- Technitium
-- Cloudflare
-- Caddy
-- Tailscale
-- Docker
-- Proxmox
+  - Home Lab
+  - Networking
+  - Technitium
+  - Cloudflare
+  - Caddy
+  - Tailscale
+  - Docker
+  - Proxmox
 keywords: [Technitium, Cloudflare, Caddy, Tailscale, Docker, Proxmox]
 
 ---
