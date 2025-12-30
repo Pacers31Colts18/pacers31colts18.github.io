@@ -210,3 +210,12 @@ html[data-theme='dark'] .blogPostDescription,
 html[data-theme='dark'] .blog-post-description {
   color: #ffffffcc;
 }
+/* Homepage blog grid: collapse to 1 column on mobile */
+@media (max-width: 600px) {
+  .container [class*="grid"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+}
+
