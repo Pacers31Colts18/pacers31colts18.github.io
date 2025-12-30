@@ -56,8 +56,8 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/social-card.png',
-    colorMode: {
+    image: 'https://joeloveless.com/img/social-card.png',
+      colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
       respectPrefersColorScheme: true,
