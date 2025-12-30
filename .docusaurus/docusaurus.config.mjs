@@ -42,15 +42,6 @@ export default {
     "path": "i18n",
     "localeConfigs": {}
   },
-  "plugins": [
-    [
-      "@dipakparmar/docusaurus-plugin-umami",
-      {
-        "websiteID": "50771638-05b4-4125-a8fd-c8e7e72e57e5",
-        "analyticsDomain": "cloud.umami.is"
-      }
-    ]
-  ],
   "presets": [
     [
       "classic",
@@ -86,6 +77,16 @@ export default {
       "disableSwitch": false,
       "respectPrefersColorScheme": true
     },
+    "headTags": [
+      {
+        "tagName": "script",
+        "attributes": {
+          "defer": true,
+          "src": "https://cloud.umami.is/script.js",
+          "data-website-id": "50771638-05b4-4125-a8fd-c8e7e72e57e5"
+        }
+      }
+    ],
     "navbar": {
       "items": [
         {
@@ -291,6 +292,7 @@ export default {
     "static"
   ],
   "customFields": {},
+  "plugins": [],
   "themes": [],
   "scripts": [],
   "headTags": [],
