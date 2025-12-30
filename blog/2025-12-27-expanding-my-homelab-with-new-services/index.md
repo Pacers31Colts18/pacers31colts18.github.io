@@ -4,6 +4,7 @@ description: How I use Cloudflare, Technitium, Caddy, and Tailscale to expand my
 slug: expanding-my-homelab-with-cloudflare-tailscale-and-more
 date: 2025-12-26
 thumbnail: /img/blog/cover1.png
+#image: /img/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more.png
 tags: 
   - home-lab
   - networking
