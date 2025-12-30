@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-blog" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Making Dexcom better with Home Assistant Voice | Joe Loveless</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://joeloveless.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://joeloveless.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://joeloveless.com/blog/making-dexcom-better-wtih-homeassistant"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Making Dexcom better with Home Assistant Voice | Joe Loveless"><meta data-rh="true" name="description" content="Integrating Dexcom with Home Assistant Voice."><meta data-rh="true" property="og:description" content="Integrating Dexcom with Home Assistant Voice."><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2025-09-03T00:00:00.000Z"><meta data-rh="true" property="article:tag" content="Home Assistant"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://joeloveless.com/blog/making-dexcom-better-wtih-homeassistant"><link data-rh="true" rel="alternate" href="https://joeloveless.com/blog/making-dexcom-better-wtih-homeassistant" hreflang="en"><link data-rh="true" rel="alternate" href="https://joeloveless.com/blog/making-dexcom-better-wtih-homeassistant" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://joeloveless.com/blog/making-dexcom-better-wtih-homeassistant","mainEntityOfPage":"https://joeloveless.com/blog/making-dexcom-better-wtih-homeassistant","url":"https://joeloveless.com/blog/making-dexcom-better-wtih-homeassistant","headline":"Making Dexcom better with Home Assistant Voice","name":"Making Dexcom better with Home Assistant Voice","description":"Integrating Dexcom with Home Assistant Voice.","datePublished":"2025-09-03T00:00:00.000Z","author":[],"keywords":[],"isPartOf":{"@type":"Blog","@id":"https://joeloveless.com/blog","name":"Blog"}}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Joe Loveless RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Joe Loveless Atom Feed">
+
+
+
+
+<link rel="preconnect" href="https://joeloveless.com/">
+<script defer="defer" src="https://joeloveless.com/script.js" data-website-id="50771638-05b4-4125-a8fd-c8e7e72e57e5"></script><link rel="stylesheet" href="/assets/css/styles.2d79c47a.css">
+<script src="/assets/js/runtime~main.4288b5d8.js" defer="defer"></script>
+<script src="/assets/js/main.07c0fc75.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/">Home</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/blog">Blog</a><a class="navbar__item navbar__link" href="/blog/tags">Tags</a><a class="navbar__item navbar__link" href="/about">About</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class="row"><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label="Blog recent posts navigation"><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role="group"><h3 class="yearGroupHeading_rMGB">2025</h3><ul class="sidebarItemList_Yudw clean-list"><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more">Expanding my Home Lab with Cloudflare, Tailscale, and more</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/tracking-chores-with-home-assistant">Tracking Chores with Home Assistant</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/what-settings-are-in-intune">What Group Policy Settings aren&#x27;t in Microsoft Intune?</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/exploring-microsoft-intune-filters">Exploring Microsoft Intune Filters</a></li><li class="sidebarItem__DBe"><a aria-current="page" class="sidebarItemLink_mo7H sidebarItemLinkActive_I1ZP" href="/blog/making-dexcom-better-wtih-homeassistant">Making Dexcom better with Home Assistant Voice</a></li></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class="title_f1Hy">Making Dexcom better with Home Assistant Voice</h1><div class="container_mt6G margin-vert--md"><time datetime="2025-09-03T00:00:00.000Z">September 3, 2025</time> · <!-- -->7 min read</div></header><div id="__blog-post-container" class="markdown"><p>Integrating Dexcom data with Home Assistant Voice.</p>
+<p>Hi everyone. I recently ordered a couple of the somewhat recently released <a href="https://www.home-assistant.io/voice-pe/" target="_blank" rel="noopener noreferrer" class="">Home Assistant Voice Preview Edition&#x27;s</a>, for a very specific need for my Type 1 Diabetic wife. She currently uses Dexcom G6, and while helpful, does have a laundry list of complaints with the product.</p>
+<ul>
+<li class="">Sensors disconnecting randomly. She does not know of the disconnect until she pulls her phone out to look at the app to check her glucose level. This can be quite problematic for a diabetic, and pretty dangerous.</li>
+<li class="">Having to constantly pull her phone out to check. While quite an improvement over the technology of yesteryear, can be a distraction for people, especially if they have ADHD.</li>
+</ul>
+<p>Like any technologist, I got thinking of how I could help solve this. Selfishly, like any technologist, when you get the chance to play with new devices, you have to take advantage of that opportunity.</p>
+<p>I&#x27;m a big fan of Home Assistant. Unfortunately, getting the Wife Approval Factor in place has been a challenge. Mainly because she doesn&#x27;t care for technology all that much, and finds my tinkering to be a waste of money. I&#x27;ll show her I said!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="researching-options">Researching Options<a href="#researching-options" class="hash-link" aria-label="Direct link to Researching Options" title="Direct link to Researching Options" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="digging-for-the-solution">Digging for the Solution<a href="#digging-for-the-solution" class="hash-link" aria-label="Direct link to Digging for the Solution" title="Direct link to Digging for the Solution" translate="no">​</a></h3>
+<p>Before I started ordering these, I had to brainstorm a little bit, and think how I could accomplish what I <strong>think</strong> she wanted. I had possible ideas in mind.</p>
+<p>At MMS 2025, <a href="https://mattzaske.com/blog/2025-07/configuringusing-awtrix-3-ulanzi-tc001-through-home-assistant" target="_blank" rel="noopener noreferrer" class="">Matt Zaske</a> had a demo on the Awtrix 3. This was the inital rabbit hole I started to go down, an always on display showing what was needed.</p>
+<ul>
+<li class="">Diabetic Specific Solutions<!-- -->
+<ul>
+<li class=""><a href="https://customtypeone.com/products/sugarpixel" target="_blank" rel="noopener noreferrer" class="">Sugar Pixels</a></li>
+<li class=""><a href="https://glowcose.com/" target="_blank" rel="noopener noreferrer" class="">Glowcose</a></li>
+</ul>
+</li>
+<li class="">DIY Solutions<!-- -->
+<ul>
+<li class="">Awtrix 3<!-- -->
+<ul>
+<li class="">Not a fan of the pixelated interface in my living room.</li>
+</ul>
+</li>
+<li class="">ESP32 Displays<!-- -->
+<ul>
+<li class="">Doable, but do I want to and will I do the tinkering? My fear is this would be a Raspberry Pi that I order and then never look at.</li>
+</ul>
+</li>
+<li class="">Tablets<!-- -->
+<ul>
+<li class="">Not sure I want to buy a tablet just for this purpose.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>I liked the idea of the Glowcose, but I didn&#x27;t like that it was limited to a single use case. I could have gone the more DIY route, but factoring in time and cost, I&#x27;m not sure how much I&#x27;d be on board. There is also the wife acceptance factor, I didn&#x27;t want a frankenstein of wires throughout the house.</p>
+<p>While in the <a href="https://winadmins.io" target="_blank" rel="noopener noreferrer" class="">WinAdmins</a> discord, someone was talking about the Home Assistant Voice that they recently ordered. From there, my curiosity (or ADHD) sparked my interest and I got going down the rabbit hole.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-i-chose-home-assistant-voice">Why I chose Home Assistant Voice<a href="#why-i-chose-home-assistant-voice" class="hash-link" aria-label="Direct link to Why I chose Home Assistant Voice" title="Direct link to Why I chose Home Assistant Voice" translate="no">​</a></h3>
+<p>Home Assistant Voice gave me multiple options. I didn&#x27;t want to have a device that only solved one use case, I wanted to solve (or tinker) multiple solutions.</p>
+<ul>
+<li class="">✅️Multiple use cases<!-- -->
+<ul>
+<li class="">This can be used for other automations, not just Dexcom. Win for me!</li>
+</ul>
+</li>
+<li class="">✅️Ability to ask questions<!-- -->
+<ul>
+<li class="">&quot;Hey Jarvis, what&#x27;s my wife&#x27;s glucose level?</li>
+</ul>
+</li>
+<li class="">✅️Ability to glance over and get a sense of the status<!-- -->
+<ul>
+<li class="">Home Assistant Voice has a ring LED light you can program.</li>
+</ul>
+</li>
+<li class="">✅️Local and not cloud based.<!-- -->
+<ul>
+<li class="">I&#x27;ve had enough issues with Google Home getting worse and worse over the years, I didn&#x27;t want to invest in a cloud based product.</li>
+</ul>
+</li>
+<li class="">✅️ BONUS: A programmable button that you can automate<!-- -->
+<ul>
+<li class="">4 button combos are available:<!-- -->
+<ul>
+<li class="">Long Press</li>
+<li class="">Double Press</li>
+<li class="">Triple Press</li>
+<li class="">Easter Egg Press</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="unboxing-and-setup">Unboxing and Setup<a href="#unboxing-and-setup" class="hash-link" aria-label="Direct link to Unboxing and Setup" title="Direct link to Unboxing and Setup" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="unboxing-the-device">Unboxing the Device<a href="#unboxing-the-device" class="hash-link" aria-label="Direct link to Unboxing the Device" title="Direct link to Unboxing the Device" translate="no">​</a></h3>
+<p>My only complaint so far, the device did not come with something to power the device. I&#x27;m not a fan of manufacturers doing this. For some reason</p>
+<ul>
+<li class="">I found 8 extra USB-C cables in 8 different locations in either my office, garage, or bedroom. Why are they in the garage? Not sure. Surprisingly, none were in my junk drawer in the kitchen.<!-- -->
+<ul>
+<li class="">For those curious:<!-- -->
+<ul>
+<li class="">5 USB-C to USB-C.</li>
+<li class="">3 USB-A to USB-C.</li>
+<li class="">A gazillion Micro USB cables.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>For some reason, I do not have 8 extra USB-C power bricks. For the time being, I took a brick off my Pixel dock to use.</p>
+<p><img decoding="async" loading="lazy" alt="Unboxing" src="/assets/images/unboxing-2cec5c4bdad2af7d5f3684e92a544777.png" width="650" height="488" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setting-up-the-device">Setting up the Device<a href="#setting-up-the-device" class="hash-link" aria-label="Direct link to Setting up the Device" title="Direct link to Setting up the Device" translate="no">​</a></h3>
+<p>There are some requirements before setting up the device for this use case.</p>
+<ul>
+<li class="">Must already be running Home Assistant</li>
+<li class="">Must have the Dexcom Integration added</li>
+</ul>
+<p>Once those parts are done, device setup was pretty straight forward. I followed the instructions given in the box, and in less than 5 minutes, I had my device setup. I found the process to be much smoother and straight forward than Google Home or Amazon Alexa. I didn&#x27;t have a ton of screens to opt in and out of &quot;features&quot; that I don&#x27;t want.</p>
+<p>One last step to note, you then will need to expose the Dexcom entities to your Voice Assistants.</p>
+<p><img decoding="async" loading="lazy" alt="Expose" src="/assets/images/expose-e0c8731ce8e09cdb73967e601391bf77.png" width="500" height="432" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="automations">Automations<a href="#automations" class="hash-link" aria-label="Direct link to Automations" title="Direct link to Automations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="where-do-i-begin">Where do I begin?<a href="#where-do-i-begin" class="hash-link" aria-label="Direct link to Where do I begin?" title="Direct link to Where do I begin?" translate="no">​</a></h3>
+<p>Back to the original use cases, I wanted to do the following:</p>
+<ul>
+<li class="">Give her the ability to glance over, get a sense of what her glucose level is.<!-- -->
+<ul>
+<li class="">LED Ring</li>
+</ul>
+</li>
+<li class="">Be able to know if her glucose level is rapidly rising or falling.<!-- -->
+<ul>
+<li class="">LED Ring</li>
+</ul>
+</li>
+<li class="">Be able to check her glucose level without pulling her phone out.<!-- -->
+<ul>
+<li class="">Button press</li>
+<li class="">Talking to the device and getting a response</li>
+</ul>
+</li>
+</ul>
+<p><em>Before going further, you can find my automations on my <a href="https://github.com/Pacers31Colts18/HomeAssistant/tree/main/Automations" target="_blank" rel="noopener noreferrer" class="">GitHub</a>. I&#x27;ve omitted the username, replace the USERNAME with your username. You will also need to tweak to match the entity ID of your voice assistant.</em></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="led-ring-automation">LED Ring Automation<a href="#led-ring-automation" class="hash-link" aria-label="Direct link to LED Ring Automation" title="Direct link to LED Ring Automation" translate="no">​</a></h3>
+<p>Thinking further through the use cases, I came up with the following:</p>
+<ul>
+<li class="">LED Light: Red<!-- -->
+<ul>
+<li class="">glucose level is below 80</li>
+<li class="">glucose level is above 150</li>
+</ul>
+</li>
+<li class="">LED Light: Blue<!-- -->
+<ul>
+<li class="">Status is Unavailable or Unknown. Dexcom, for whatever reason in the past 6 months or so has been awful about the sensor not communicating properly with the transmitter. There are plenty of Reddit threads on the issue, but Dexcom doesn&#x27;t seem to be addressing the issue. I wanted to provide a light that would make her aware when the sensor was not communicating.</li>
+</ul>
+</li>
+<li class="">LED Light: Green<!-- -->
+<ul>
+<li class="">I had trouble getting the light automation to go from the off state back to the on state. I didn&#x27;t necessarily want a bright green light all the time. Instead what I did for this one was to set it to Green, but turn the brightness down to 0 percent. That way, if she does decide that she would like the light on, we can just increase the percentage.</li>
+</ul>
+</li>
+<li class="">LED Light: Yellow<!-- -->
+<ul>
+<li class="">Dexcom provides trend statuses to tell the user how quickly their glucose level is either increasing or decreasing. With the light being yellow, means the trend is either:<!-- -->
+<ul>
+<li class="">Rising Quickly</li>
+<li class="">Falling Quickly</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This gives me 7 total branches in my automation.</p>
+<ul>
+<li class="">Option 1: glucose level is either above 150 AND below 80</li>
+<li class="">Option 2: glucose level is below 80</li>
+<li class="">Option 3: glucose level is above 150</li>
+<li class="">Option 4: glucose level is rising quickly</li>
+<li class="">Option 5: glucose level is falling quickly</li>
+<li class="">Option 6: glucose level is unknown</li>
+<li class="">Option 7: glucose level is unavailable</li>
+</ul>
+<p><em>Note: I do not know what the difference is between Unknown and Unavailable, Home Assistant gave me both of those options. My theory is Unavailable is when it stops communicating completely, Unknown is when it just can&#x27;t read the value yet</em></p>
+<p><img decoding="async" loading="lazy" alt="Blue" src="/assets/images/blue-945619acc94656802c2f8804c7be56d6.png" width="500" height="667" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="button-press-automation">Button Press Automation<a href="#button-press-automation" class="hash-link" aria-label="Direct link to Button Press Automation" title="Direct link to Button Press Automation" translate="no">​</a></h3>
+<p>The next automation to do was to configure the button press. This one was much simpler, as I&#x27;m just wanting the glucose level announced when doubling pressing the button.</p>
+<p>I love how there are multiple button combinations you can do. My yaml file is just stripped down to the basics of this automation for simplicity.</p>
+<p><em>Future enhancement idea: Let me Morse code to the other Home Assistant Voice through taps and have it translate to speech</em></p>
+<!--$?--><template id="B:0"></template><!--/$-->
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="voice-announcement">Voice Announcement<a href="#voice-announcement" class="hash-link" aria-label="Direct link to Voice Announcement" title="Direct link to Voice Announcement" translate="no">​</a></h3>
+<p>Of course, you can also talk to the device to get the current glucose level. I love the different options that are available on this thing!</p>
+<!--$?--><template id="B:1"></template><!--/$-->
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="conclusion">Conclusion<a href="#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion" translate="no">​</a></h2>
+<p>A little bit different of a post, but hopefully helpful to others out there! Let me know if you have any questions or comments, I&#x27;ve added a shiny new GitHub commenting system.</p></div><footer class="docusaurus-mt-lg"><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" title="Home Assistant related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/home-assistant">Home Assistant</a></li></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-09-03-making-dexcom-better-homeassistant/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/blog/exploring-microsoft-intune-filters"><div class="pagination-nav__sublabel">Newer post</div><div class="pagination-nav__label">Exploring Microsoft Intune Filters</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/blog/finding-enrollment-count-windows-hello"><div class="pagination-nav__sublabel">Older post</div><div class="pagination-nav__label">Finding users that are enrolled in Windows Hello For Business</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#researching-options" class="table-of-contents__link toc-highlight">Researching Options</a><ul><li><a href="#digging-for-the-solution" class="table-of-contents__link toc-highlight">Digging for the Solution</a></li><li><a href="#why-i-chose-home-assistant-voice" class="table-of-contents__link toc-highlight">Why I chose Home Assistant Voice</a></li></ul></li><li><a href="#unboxing-and-setup" class="table-of-contents__link toc-highlight">Unboxing and Setup</a><ul><li><a href="#unboxing-the-device" class="table-of-contents__link toc-highlight">Unboxing the Device</a></li><li><a href="#setting-up-the-device" class="table-of-contents__link toc-highlight">Setting up the Device</a></li></ul></li><li><a href="#automations" class="table-of-contents__link toc-highlight">Automations</a><ul><li><a href="#where-do-i-begin" class="table-of-contents__link toc-highlight">Where do I begin?</a></li><li><a href="#led-ring-automation" class="table-of-contents__link toc-highlight">LED Ring Automation</a></li><li><a href="#button-press-automation" class="table-of-contents__link toc-highlight">Button Press Automation</a></li><li><a href="#voice-announcement" class="table-of-contents__link toc-highlight">Voice Announcement</a></li></ul></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title"></div><ul class="footer__items clean-list"><li class="footer__item">
+                <div class="footer-icons">
+                  <a href="https://github.com/pacers31colts18" class="footer-icon footer-icon-github" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="https://linkedin.com/in/joe-loveless" class="footer-icon footer-icon-linkedin" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="https://bsky.app/profile/joeloveless.com" class="footer-icon footer-icon-bluesky" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="https://infosec.exchange/@Pacers31Colts18" class="footer-icon footer-icon-mastodon" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="mailto:joe@joeloveless.com" class="footer-icon footer-icon-email"></a>
+                  <a href="https://joeloveless.com/index.xml" class="footer-icon footer-icon-rss" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+              </li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 Joe Loveless</div></div></div></footer><script>requestAnimationFrame(function(){$RT=performance.now()})</script><div hidden id="S:0"><youtube-video style="display:block;width:320px;height:180px" src="https://www.youtube.com/watch?v=uwgj1jshMsY"><template shadowrootmode="open">
+    <style>
+      :host {
+        display: inline-block;
+        line-height: 0;
+        position: relative;
+        min-width: 300px;
+        min-height: 150px;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <iframe src="https://www.youtube.com/embed/uwgj1jshMsY?controls=0&amp;preload=metadata&amp;enablejsapi=1&amp;cc_load_policy=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1" frameborder="0" width="100%" height="100%" allow="accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </template></youtube-video></div><script>$RB=[],$RV=function(e){$RT=performance.now();for(var n=0;n<e.length;n+=2){var r=e[n],t=e[n+1];null!==t.parentNode&&t.parentNode.removeChild(t);var i=r.parentNode;if(i){var o=r.previousSibling,a=0;do{if(r&&8===r.nodeType){var l=r.data;if("/$"===l||"/&"===l){if(0===a)break;a--}else"$"!==l&&"$?"!==l&&"$~"!==l&&"$!"!==l&&"&"!==l||a++}l=r.nextSibling,i.removeChild(r),r=l}while(r);for(;t.firstChild;)i.insertBefore(t.firstChild,r);o.data="$",o._reactRetry&&requestAnimationFrame(o._reactRetry)}}e.length=0},$RC=function(e,n){(n=document.getElementById(n))&&((e=document.getElementById(e))?(e.previousSibling.data="$~",$RB.push(e,n),2===$RB.length&&("number"!=typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(e=performance.now(),setTimeout($RV.bind(null,$RB),2300>e&&2e3<e?2300-e:$RT+300-e)))):n.parentNode.removeChild(n))},$RC("B:0","S:0")</script><div hidden id="S:1"><youtube-video style="display:block;width:320px;height:180px" src="https://www.youtube.com/watch?v=gGs5SkUV9n0"><template shadowrootmode="open">
+    <style>
+      :host {
+        display: inline-block;
+        line-height: 0;
+        position: relative;
+        min-width: 300px;
+        min-height: 150px;
+      }
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <iframe src="https://www.youtube.com/embed/gGs5SkUV9n0?controls=0&amp;preload=metadata&amp;enablejsapi=1&amp;cc_load_policy=1&amp;showinfo=0&amp;rel=0&amp;iv_load_policy=3&amp;modestbranding=1" frameborder="0" width="100%" height="100%" allow="accelerometer; fullscreen; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </template></youtube-video></div><script>$RC("B:1","S:1")</script></div>
+</body>
+</html>

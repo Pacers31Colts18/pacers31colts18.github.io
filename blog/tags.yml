@@ -1,0 +1,92 @@
+active-directory:
+  label: Active Directory
+  permalink: /active-directory
+  description: Active Directory related posts.
+
+powershell:
+  label: PowerShell
+  permalink: /powershell
+  description: PowerShell related posts.
+
+other:
+  label: Other
+  permalink: /other
+  description: Other related posts.
+
+intune:
+  label: Intune
+  permalink: /intune
+  description: Intune related posts.
+
+entra: 
+  label: Entra
+  permalink: /entra
+  description: Entra related posts.
+
+azure:
+  label: Azure
+  permalink: /azure
+  description: Azure related posts.
+
+graph-api:
+  label: Graph API
+  permalink: /graph-api
+  description: Microsoft Graph API related posts.
+
+cis:
+  label: CIS
+  permalink: /cis
+  description: Center for Internet Security related posts.
+
+avd:
+  label: AVD
+  permalink: /avd
+  description: Azure Virtual Desktop related posts.
+
+windows-11:
+  label: Windows 11
+  permalink: /windows-11
+  description: Windows 11 related posts.
+
+hybrid:
+  label: Hybrid
+  permalink: /hybrid
+  description: Hybrid related posts.
+
+group-policy:
+  label: Group Policy
+  permalink: /group-policy
+  description: Group Policy related posts.
+
+windows-hello:
+  label: Windows Hello
+  permalink: /windows-hello
+  description: Windows Hello related posts.
+
+remediation-scripts:
+  label: Remediation Scripts
+  permalink: /remediation-scripts
+  description: Remediation Scripts related posts.
+
+home-assistant:
+  label: Home Assistant
+  permalink: /home-assistant
+  description: Home Assistant related posts.
+
+home-lab:
+  label: Home Lab
+  permalink: /home-lab
+  description: Home Lab related posts.
+
+networking:
+  label: Networking
+  permalink: /networking
+  description: Networking related posts.
+
+sccm:
+  label: SCCM
+  permalink: /sccm
+  description: System Center Configuration Manager related posts.
+
+
+

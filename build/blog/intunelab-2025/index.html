@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="blog-wrapper blog-post-page plugin-blog plugin-id-blog" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Setting up an Active Directory, ConfigMgr, Intune Lab in 2025 | Joe Loveless</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://joeloveless.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://joeloveless.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://joeloveless.com/blog/intunelab-2025"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Setting up an Active Directory, ConfigMgr, Intune Lab in 2025 | Joe Loveless"><meta data-rh="true" name="description" content="Details on my home lab configuration for Active Directory, ConfigMgr, and Intune."><meta data-rh="true" property="og:description" content="Details on my home lab configuration for Active Directory, ConfigMgr, and Intune."><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2025-03-30T00:00:00.000Z"><meta data-rh="true" property="article:tag" content="Intune,SCCM,Active Directory"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://joeloveless.com/blog/intunelab-2025"><link data-rh="true" rel="alternate" href="https://joeloveless.com/blog/intunelab-2025" hreflang="en"><link data-rh="true" rel="alternate" href="https://joeloveless.com/blog/intunelab-2025" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://joeloveless.com/blog/intunelab-2025","mainEntityOfPage":"https://joeloveless.com/blog/intunelab-2025","url":"https://joeloveless.com/blog/intunelab-2025","headline":"Setting up an Active Directory, ConfigMgr, Intune Lab in 2025","name":"Setting up an Active Directory, ConfigMgr, Intune Lab in 2025","description":"Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.","datePublished":"2025-03-30T00:00:00.000Z","author":[],"keywords":[],"isPartOf":{"@type":"Blog","@id":"https://joeloveless.com/blog","name":"Blog"}}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Joe Loveless RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Joe Loveless Atom Feed">
+
+
+
+
+<link rel="preconnect" href="https://joeloveless.com/">
+<script defer="defer" src="https://joeloveless.com/script.js" data-website-id="50771638-05b4-4125-a8fd-c8e7e72e57e5"></script><link rel="stylesheet" href="/assets/css/styles.2d79c47a.css">
+<script src="/assets/js/runtime~main.4288b5d8.js" defer="defer"></script>
+<script src="/assets/js/main.07c0fc75.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/">Home</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/blog">Blog</a><a class="navbar__item navbar__link" href="/blog/tags">Tags</a><a class="navbar__item navbar__link" href="/about">About</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class="row"><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label="Blog recent posts navigation"><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role="group"><h3 class="yearGroupHeading_rMGB">2025</h3><ul class="sidebarItemList_Yudw clean-list"><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more">Expanding my Home Lab with Cloudflare, Tailscale, and more</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/tracking-chores-with-home-assistant">Tracking Chores with Home Assistant</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/what-settings-are-in-intune">What Group Policy Settings aren&#x27;t in Microsoft Intune?</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/exploring-microsoft-intune-filters">Exploring Microsoft Intune Filters</a></li><li class="sidebarItem__DBe"><a class="sidebarItemLink_mo7H" href="/blog/making-dexcom-better-wtih-homeassistant">Making Dexcom better with Home Assistant Voice</a></li></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class="title_f1Hy">Setting up an Active Directory, ConfigMgr, Intune Lab in 2025</h1><div class="container_mt6G margin-vert--md"><time datetime="2025-03-30T00:00:00.000Z">March 30, 2025</time> · <!-- -->19 min read</div></header><div id="__blog-post-container" class="markdown"><p>Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.</p>
+<p>For the first time in what seems like forever, I&#x27;ve gone through the process of setting up a lab environment to test and write about features in Intune. Along with my Intune lab environment, I also configured Active Directory and a ConfigMgr lab server. I thought it would be a good idea to write this down, as I want to be able to rebuild this lab when needed. I&#x27;ll go into more details below, but I plan on utilizing Enterprise Evaluation licenses, which expire every 180 days. My goal is to rebuild the lab every 6 months for a few reasons:</p>
+<ul>
+<li class="">Cost: I don&#x27;t want to purchase licenses if I do not need to. Once the license expires, certain features will be shut off at the OS level. To avoid that, I&#x27;ll just rebuild.</li>
+<li class="">Process: I want the process to be repeatable. I don&#x27;t want to question what I did every 6 months. If I do that, either I just won&#x27;t rebuild, or I&#x27;ll sit there scratching my head trying to figure out what I previously did.</li>
+<li class="">Tech Debt: We all have tech debt at our work environment. I don&#x27;t want tech debt in my lab, so 6 months of testing features will give me a chance to start fresh.</li>
+</ul>
+<p><a href="https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/" target="_blank" rel="noopener noreferrer" class="">Deployment Research Hydration Kit</a>
+<a href="https://www.recastsoftware.com/resources/building-a-cm-lab-configuration-settings-ad-gpo/" target="_blank" rel="noopener noreferrer" class="">Recast Software - Building a ConfigMgr Lab from Scratch</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="initial-details">Initial Details<a href="#initial-details" class="hash-link" aria-label="Direct link to Initial Details" title="Direct link to Initial Details" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware">Hardware<a href="#hardware" class="hash-link" aria-label="Direct link to Hardware" title="Direct link to Hardware" translate="no">​</a></h3>
+<p>I have a Dell Optiplex 7070 SFF that I will be using, almost soley to run this lab environment. I believe these came out in 2020, and can be found fairly cheap on eBay as of this writing. These are business grade desktops, that were probably all quickly replaced due to Covid-19. My desktop is running 32gb ram (can go up to 64gb) and a 2Tb M.2 drive. This will give me plenty of horsepower to run multiple VM&#x27;s simultaneously. The host operating system is running Windows 11 Pro.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="software">Software<a href="#software" class="hash-link" aria-label="Direct link to Software" title="Direct link to Software" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><a href="https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v?pivots=windows" target="_blank" rel="noopener noreferrer" class="">Hyper-V</a></p>
+<ul>
+<li class="">I&#x27;m using Hyper-V for this lab. My main reasoning being it&#x27;s free, I don&#x27;t want to rely on Broadcom/VMWare or any other 3rd party vendor for this and possibly have to buy a license. It&#x27;s an easy feature to turn on, making it simpler for me and less to worry about.</li>
+</ul>
+</li>
+<li class="">
+<p><a href="https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/" target="_blank" rel="noopener noreferrer" class="">Hydration Kit</a></p>
+<ul>
+<li class="">
+<p>There are really three options to configure the lab.</p>
+<ol>
+<li class="">I chose the Hydration Kit from <a href="https://www.deploymentresearch.com" target="_blank" rel="noopener noreferrer" class="">Deployment Research</a> because it&#x27;s well known in the ConfigMgr/Intune community, and it allows me to have some customization to configure the lab.</li>
+</ol>
+</li>
+<li class="">
+<p>Other Options
+2. <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/modern-desktop-deployment-and-management-lab?view=o365-worldwide" target="_blank" rel="noopener noreferrer" class="">Windows 11 and Office 365 Lab Kit</a>. I did not choose this one, mainly because it did not give me the customization I was looking for, as I view this as a long term lab that I will want setup a certain way. If I was quickly spinning up a lab for a month or two, this would be a great option to use, as it&#x27;s very simple to setup.
+3. Manual Setup. While this is a great option, and will teach you a lot about your lab, it&#x27;s also time consuming.</p>
+</li>
+<li class="">
+<p>Other Details</p>
+<ul>
+<li class="">As I&#x27;ve explained, this lab is a combination of Active Directory, ConfigMgr, and Intune (Co-Management). I&#x27;ll provide my notes and thoughts for all, but if looking to only run an Intune lab, this is doable also and parts can be skipped.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="networking">Networking<a href="#networking" class="hash-link" aria-label="Direct link to Networking" title="Direct link to Networking" translate="no">​</a></h3>
+<p>I&#x27;m not running anything crazy in my home lab that anyone else can&#x27;t run. When I look on Reddit (r/homelab), it can be very overwhelming to see the networking configurations people are running. I live in rural Minnesota with Starlink as my internet provider (until this summer when fiber comes!), with an Eero router and a couple of mesh access points. If I can run a lab with this simple setup, anyone can. I&#x27;ll go into more details with the networking configuration below.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hydration-kit-active-directoryconfigmgr-setup">Hydration Kit (Active Directory/ConfigMgr Setup)<a href="#hydration-kit-active-directoryconfigmgr-setup" class="hash-link" aria-label="Direct link to Hydration Kit (Active Directory/ConfigMgr Setup)" title="Direct link to Hydration Kit (Active Directory/ConfigMgr Setup)" translate="no">​</a></h2>
+<p>For the most part, I stuck with the basics from <a href="https://www.deploymentresearch.com/hydration-kit-for-windows-server-2022-sql-server-2019-and-configmgr-current-branch/" target="_blank" rel="noopener noreferrer" class="">Deployment Research</a>. For time and resources, my lab looks like this for the setup.</p>
+<ul>
+<li class="">Active Directory Domain Controller (DC01)</li>
+<li class="">Configuration Manager Site Server (CM01)</li>
+<li class="">File Server (FS01)<!-- -->
+<ul>
+<li class="">This to me is optional, and I&#x27;m debating how much I will actually use this.</li>
+</ul>
+</li>
+</ul>
+<p>What I am not configuring from the Hydration Kit:</p>
+<ul>
+<li class="">DP01<!-- -->
+<ul>
+<li class="">I am planning on labbing the most with Intune, so I am skipping this server. I&#x27;ll just use CM01 as the primary distribution point if need be.</li>
+</ul>
+</li>
+<li class="">MDT01<!-- -->
+<ul>
+<li class="">MDT is now end of life, so I am skipping this also. I will be building the VMs either with a CM Task Sequence or through AutoPilot.<!-- -->
+<ul>
+<li class="">PC0001-PC0004<!-- -->
+<ul>
+<li class="">I initially built PC0004, but then found that this does not install the ConfigMgr agent. Rather than fiddle around with installing the agent, I decided to shift this to build a VM through OSD (ConfigMgr).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="customization">Customization<a href="#customization" class="hash-link" aria-label="Direct link to Customization" title="Direct link to Customization" translate="no">​</a></h3>
+<p>As I explained earlier, I want to be able to tear down this lab and rebuild to my liking every six months. I also want this to be using my domain name, so I have done tweaks to the cusomtization files to do that. I have published all this on my <a href="https://github.com/Pacers31Colts18/HydrationKitCustomization2025" target="_blank" rel="noopener noreferrer" class="">GitHub repository</a></p>
+<ul>
+<li class=""><a href="https://github.com/Pacers31Colts18/HydrationKitCustomization2025/blob/master/HyperV_CreateNetwork.ps1" target="_blank" rel="noopener noreferrer" class="">HyperV_CreateNetwork.ps1</a>
+<ul>
+<li class="">I followed this <a href="https://www.deploymentresearch.com/setting-up-new-networking-features-in-server-2016/" target="_blank" rel="noopener noreferrer" class="">post</a> for setting up the networking, and have just tweaked this to be the network name that I saw fit.</li>
+</ul>
+</li>
+<li class=""><a href="https://github.com/Pacers31Colts18/HydrationKitCustomization2025/tree/master/DS/Applications/Configure%20-%20Create%20AD%20Structure" target="_blank" rel="noopener noreferrer" class="">Configure - Create AD Structure</a>
+<ul>
+<li class="">Minor tweaks to this include:<!-- -->
+<ul>
+<li class="">Adding ADGroupList.csv and adding a section to Create-ADStructure to create the Active Directory Groups that I want initially configured.</li>
+<li class="">Modifying the users and OUs to be created. This will configure the lab how I want, along with all the admin accounts, regular user accounts, and groups.
+-<a href="https://github.com/Pacers31Colts18/HydrationKitCustomization2025/tree/master/ISO/Content/Deploy/Control" target="_blank" rel="noopener noreferrer" class="">Custom Settings</a></li>
+</ul>
+</li>
+<li class="">I tweaked the .ini files for the custom settings to target my lab environment, targeting specific OUs for the servers to join to, and what domain to join to are the main differences.</li>
+<li class="">If adding other servers or workstation VMs, make sure you modify those for your environment.</li>
+</ul>
+</li>
+<li class=""><a href="https://github.com/Pacers31Colts18/HydrationKitCustomization2025/tree/master/DS/Applications/Install%20-%20ConfigMgr" target="_blank" rel="noopener noreferrer" class="">Install - ConfigMgr</a>
+<ul>
+<li class="">This is just changing the following lines to be what I want in my lab environment, the rest of the .ini file is left as is:</li>
+</ul>
+</li>
+</ul>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">SiteCode=JL1</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">SiteName=JoeLoveless</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">SDKServer=CM01.joeloveless.com</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">ManagementPoint=CM01.joeloveless.com</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">DistributionPoint=CM01.joeloveless.com</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">SQLServerName=CM01.joeloveless.com</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">DatabaseName=CM_JL1</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">CloudConnectorServer=CM01.joeloveless.com</span><br></span></code></pre></div></div>
+<p>Once your customization files are setup properly, go through the guide for the Hydration Kit. Make sure you copy your customization files into the proper structure. In my case I have a C:\CMLab_2025 folder structure. If cloning my GitHub customizations, make sure they are moved into the proper folders where you are housing the files. Do all of this before <strong>Step 4 – Create the bootable Hydration Kit ISO (MDT offline media item)</strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="building-the-virtual-machines">Building the Virtual Machines<a href="#building-the-virtual-machines" class="hash-link" aria-label="Direct link to Building the Virtual Machines" title="Direct link to Building the Virtual Machines" translate="no">​</a></h2>
+<p>Once all is configured, we&#x27;re now to the process of building the virtual machines. The most time consuming part of all this for myself was downloading the software (Starlink download speeds) and then customizing everything. If you don&#x27;t have crappy internet, it should be a faster process for you. If you&#x27;re not customizing anything, even smoother. But what fun is that?</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dc01-build">DC01 Build<a href="#dc01-build" class="hash-link" aria-label="Direct link to DC01 Build" title="Direct link to DC01 Build" translate="no">​</a></h3>
+<p>The domain controller is the first VM to build. Make sure you boot from the .iso file, and then go through the MDT build process for DC01. The build process will look like this, and shouldn&#x27;t take all that long to build.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/DC01_Setup-73e818094bf854d21a49ffa50b61de17.png" title="DC01 Setup Screen 1" width="988" height="503" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/DC01_Setup2-09144e6bca36574e82ca717c532014c5.png" title="DC01 Setup Screen 2" width="1361" height="869" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/DC01_Setup3-dad73fad23b23c291b830291b5a4973c.png" title="DC01 Setup Screen 3" width="1362" height="871" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dc01-configuration">DC01 Configuration<a href="#dc01-configuration" class="hash-link" aria-label="Direct link to DC01 Configuration" title="Direct link to DC01 Configuration" translate="no">​</a></h3>
+<p>I used the <a href="https://www.recastsoftware.com/resources/building-a-cm-lab-configuration-settings-ad-gpo/" target="_blank" rel="noopener noreferrer" class="">Recast Software documentation</a> to help configure this portion, with some items taken out.</p>
+<p>After setup, open dsa.msc from Search and look to ensure your groups, users, and organizational units were created properly. If they were not, you can create them manually to match what your Custom Settings call for with the OU structure.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="user-accounts">User Accounts<a href="#user-accounts" class="hash-link" aria-label="Direct link to User Accounts" title="Direct link to User Accounts" translate="no">​</a></h4>
+<ul>
+<li class="">CM_Admin (Both Admin in ConfigMgr &amp; on ConfigMgr Servers)<!-- -->
+<ul>
+<li class="">Admin account</li>
+</ul>
+</li>
+<li class="">CM_JD (Domain Join Account, I followed these instructions to create it.<!-- -->
+<ul>
+<li class="">It drove me crazy that this was named CM_JD rather than CM_DJ (Domain Join), so I modified this :)</li>
+</ul>
+</li>
+<li class=""><del>CM_NA (Network Access Account, depending on your setup, you might not need this. I’m hoping to leverage Enhanced HTTP)</del></li>
+<li class=""><del>CM_CP_Workstations &amp; CM_CP_Servers (Client Push Accounts, added to the groups below to be local admins on respective devices)</del>
+<ul>
+<li class="">I don&#x27;t think I&#x27;ll need this, but can configure later.</li>
+</ul>
+</li>
+<li class=""><del>CM_SSRS (add to SQL_Admins, used for the Reporting Services Role)</del>
+<ul>
+<li class="">I&#x27;m not planning on doing much with Reporting Services.</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ad-groups">AD Groups<a href="#ad-groups" class="hash-link" aria-label="Direct link to AD Groups" title="Direct link to AD Groups" translate="no">​</a></h4>
+<p>These should already be created for you based on the customization file. If not, here are the groups I created. In a real world scenario the Workstation Admins and Server Admins would be different groups (maybe? hopefully?)</p>
+<ul>
+<li class="">JoeLoveless - ServerAdministrators</li>
+<li class="">JoeLoveless - WorkstationAdministrators</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="group-policies">Group Policies<a href="#group-policies" class="hash-link" aria-label="Direct link to Group Policies" title="Direct link to Group Policies" translate="no">​</a></h4>
+<p>From the article, I found many of these to be optional. I created the following:</p>
+<ul>
+<li class="">Default Domain Policy<!-- -->
+<ul>
+<li class="">Left this blank for now.</li>
+</ul>
+</li>
+<li class="">JoeLoveless - WIN - Workstation - Restricted Groups</li>
+<li class="">JoeLoveless - WIN - Server - Restricted Groups</li>
+</ul>
+<p>For the Restricted Groups, I setup my group policy to look like this (adding the Server group to the Server GPO)</p>
+<p><img decoding="async" loading="lazy" src="data:image/png;base64,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" title="Restricted Groups" width="942" height="225" class="img_ev3q"></p>
+<p>The rest of the policies outlined, I found to be optional. Because I am running this all from a Hyper-V host, I&#x27;m not necessarily remoting into the VMs so I did not need RDP firewall rules opened up. I did need to add to the Remote Desktop Users group though to be able to login properly.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cm01-build">CM01 Build<a href="#cm01-build" class="hash-link" aria-label="Direct link to CM01 Build" title="Direct link to CM01 Build" translate="no">​</a></h3>
+<p>After everything is setup properly, go through the same MDT build process for CM01, only difference being to choose CM01 for the build.</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/CM01_Setup-38d0c5bda74a474c588b78ab82f1c93e.png" title="CM01 Setup Screen 1" width="1360" height="869" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/CM01_Setup2-d733cbd633fa02c53bff100ea412ee5a.png" title="CM01 Setup Screen 2" width="1360" height="871" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cm01-configuration">CM01 Configuration<a href="#cm01-configuration" class="hash-link" aria-label="Direct link to CM01 Configuration" title="Direct link to CM01 Configuration" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="source-folder">Source Folder<a href="#source-folder" class="hash-link" aria-label="Direct link to Source Folder" title="Direct link to Source Folder" translate="no">​</a></h4>
+<p>Using <a href="https://www.recastsoftware.com/resources/building-a-cm-lab-configmgr-source-share/" target="_blank" rel="noopener noreferrer" class="">Recast Software documentation</a> as a guide, I then configured a Source shared folder. This will be used to house any files needed for deployments, boot media, etc. Because of the work Deployment Research already did for us, it&#x27;s a fairly simple process.</p>
+<ol>
+<li class="">
+<p>From CM01, go to the E drive and create a folder named &quot;Source&quot;</p>
+</li>
+<li class="">
+<p>Right click Properties &gt; Sharing &gt; Share</p>
+</li>
+<li class="">
+<p>Give <strong>Domain Users</strong> read permissions.</p>
+<ul>
+<li class="">Normally you would probably give this a different group rather than all of Domain Users, but since this is a lab, it doesn&#x27;t matter all that much as I&#x27;ll be using all the accounts myself.</li>
+</ul>
+</li>
+<li class="">
+<p>From there, create the folder structure you want. Mine looks like this:</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/CM01_SourceFolder_SubFolders-c258f8f3001b78595405edeb74b7e90c.png" title="CM01 Source Structure" width="258" height="177" class="img_ev3q"></p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="basic-setup">Basic Setup<a href="#basic-setup" class="hash-link" aria-label="Direct link to Basic Setup" title="Direct link to Basic Setup" translate="no">​</a></h4>
+<p>Continuing on with <a href="https://www.recastsoftware.com/resources/building-a-cm-lab-configmgr-settings-setup/" target="_blank" rel="noopener noreferrer" class="">Recasts setup</a>, I followed this almost exactly, the only difference being on the Boundary setup, I plugged in my network configuration rather than what they have:</p>
+<ul>
+<li class="">Network: 192.168.25.0</li>
+<li class="">Subnet: 255.255.255.0</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="client-settings">Client Settings<a href="#client-settings" class="hash-link" aria-label="Direct link to Client Settings" title="Direct link to Client Settings" translate="no">​</a></h4>
+<p>This part is optional, but I want to have a good experience on this when possible. I modified the PowerShell Script Execution Policy to be <strong>Bypass</strong> and then modified the customization in Software Center. Now when opening Software Center, you&#x27;re presented with this beautiful branding:</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/SoftwareCenter-fda9c28d7fcb34e4b45981faad8b6c64.png" title="Software Center" width="985" height="614" class="img_ev3q"></p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="collections">Collections<a href="#collections" class="hash-link" aria-label="Direct link to Collections" title="Direct link to Collections" translate="no">​</a></h4>
+<p>I didn&#x27;t bother too much with configuring a bunch of collections. I only created a few collections to start for my OSD deployment in the next section:</p>
+<p>The two All Workstations/All Servers have a Limiting Collection of <strong>All Systems</strong> and are query based collections:</p>
+<ul>
+<li class="">Collection Name: All Workstations</li>
+</ul>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.OperatingSystemNameandVersion like &quot;Microsoft Windows NT Workstation%&quot;</span><br></span></code></pre></div></div>
+<ul>
+<li class="">Collection Name: All Servers</li>
+</ul>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,SMS_R_SYSTEM.SMSUniqueIdentifier,SMS_R_SYSTEM.ResourceDomainORWorkgroup,SMS_R_SYSTEM.Client from SMS_R_System where SMS_R_System.OperatingSystemNameandVersion like &quot;Microsoft Windows NT Server%&quot;  OR SMS_R_System.OperatingSystemNameandVersion like &quot;Microsoft Windows NT Advanced Server%&quot;</span><br></span></code></pre></div></div>
+<p>This collection is an Include collection of All Unknown Computers with a limiting collection of <strong>All Workstations</strong>:</p>
+<ul>
+<li class="">Collection Name: OSD Bare Metal
+<img decoding="async" loading="lazy" src="/assets/images/osdbaremetal-5ddeae743dc6b25e0218d7a75d98c1ef.png" title="OSD Bare Metal Collection" width="507" height="508" class="img_ev3q"></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="operating-system-deployment">Operating System Deployment<a href="#operating-system-deployment" class="hash-link" aria-label="Direct link to Operating System Deployment" title="Direct link to Operating System Deployment" translate="no">​</a></h4>
+<p>The last and final step I&#x27;ve done in my ConfigMgr portion of the lab is configuring and OSD Task Sequence, in my case, Windows 11 22H2 Enterprise Evaluation Edition. I followed <a href="https://www.recastsoftware.com/resources/building-a-cm-lab-operating-system-deployment/" target="_blank" rel="noopener noreferrer" class="">Recast&#x27;s Guide</a> step by step, and then built a Windows 11 virtual machine, making sure I booted from the .iso file I created in this process. To boot from the .iso, you will need to copy the file down to your host and then boot from that.</p>
+<p>The deployment process will look like this:</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/PC004_CM_TaskSequence-bcae3900e4629a4a46b8f5f26af52fa0.png" title="CM Task Sequence" width="986" height="668" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/PC004_CM_TaskSequence2-f04d2e1a51723f64659d53b327789cfa.png" title="CM Task Sequence Step 2" width="872" height="595" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" src="/assets/images/PC004_CM_TaskSequence3-4e5740f3d8e6bdfb4504e23ec06ae295.png" title="CM Task Sequence Step 3" width="958" height="572" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="azureintuneco-managemententra-id-configuration">Azure/Intune/Co-Management/Entra ID Configuration<a href="#azureintuneco-managemententra-id-configuration" class="hash-link" aria-label="Direct link to Azure/Intune/Co-Management/Entra ID Configuration" title="Direct link to Azure/Intune/Co-Management/Entra ID Configuration" translate="no">​</a></h2>
+<p>Alright, now we have an Active Directory domain controller, a ConfigMgr site, and a Windows 11 virtual machine. Now how the hell do we tie that all together with Azure, Intune, and Entra ID? Follow along!</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="azure">Azure<a href="#azure" class="hash-link" aria-label="Direct link to Azure" title="Direct link to Azure" translate="no">​</a></h3>
+<p>First thing we need to do is create an Azure tenant if we do not already have one. Thankfully (and sometimes) Microsoft has good up to date documentation (not always).</p>
+<ul>
+<li class=""><a href="https://learn.microsoft.com/en-us/entra/fundamentals/create-new-tenant" target="_blank" rel="noopener noreferrer" class="">Create New Tenant</a></li>
+</ul>
+<p>Once your tenant is up and running, depending on what all you want to configure, we have some options.</p>
+<ul>
+<li class="">Custom Domain Names:</li>
+</ul>
+<ol>
+<li class="">From the Azure Portal, search for Domain Names, here you can add a custom domain name. You will then need to setup the proper TXT or MX record with your hosting provider. Details are probably available from them.</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/Azure_DomainName-ef97b0a8cdec8b10d7bfd902a2abfff1.png" title="Azure Domain Name" width="1009" height="458" class="img_ev3q"></p>
+<ul>
+<li class="">
+<p>Domain names can take up to 48 hours to process once the records are added.</p>
+</li>
+<li class="">
+<p>Tenant ID/Tenant Name:</p>
+<ul>
+<li class="">Now that we have the domain name configured, it&#x27;s probably best to make note of our Tenant ID and Tenant Name.<!-- -->
+<ol>
+<li class="">From the Azure Portal, click <strong>Microsoft Entra ID</strong></li>
+<li class="">Under Basic Information, copy the <strong>Tenant Name</strong> and <strong>Tenant ID</strong>.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Licensing:</p>
+<p>This is the bad part. I don&#x27;t like bad parts. Microsoft used to have a license that allowed for home lab use. Unfortunately, that was abused and taken away. So now we have very little options.</p>
+<ul>
+<li class="">Option 1: <a href="https://learn.microsoft.com/en-us/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-" target="_blank" rel="noopener noreferrer" class="">Microsoft 365 Developer Program</a>
+<ul>
+<li class="">Note: I don&#x27;t qualify for this, or haven&#x27;t asked my work about a Visual Studio license yet. I don&#x27;t really have a need in my day to day for a Visual Studio license, so I haven&#x27;t brought up the topic.</li>
+</ul>
+</li>
+<li class="">Option 2: <a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-365-trials?msockid=11ab0ae17f91669f2c121f517e176760#tabs-pill-bar-oc0336_tab1" target="_blank" rel="noopener noreferrer" class="">License</a>
+<ul>
+<li class="">
+<p>Note: I&#x27;m not a licensing expert.</p>
+</li>
+<li class="">
+<p>The best option I found is to sign up for a trial run of Microsoft 365 Business Premium, and extend it out as much as possible. The trial gives you 25 licenses.</p>
+</li>
+<li class="">
+<p>Once that runs out, go down to as little licenses as you want to pay for. In my case, I&#x27;m using a single license for a single user. This costs $22.00 a month. This is the worst part of the lab. I&#x27;m sorry.</p>
+</li>
+<li class="">
+<p>Option 2 Setup:</p>
+<ol>
+<li class="">Go through the link above for Option 2, select Business and then Microsoft 365 Business Premium.</li>
+<li class="">Follow the steps to run the trial (I don&#x27;t think you need a credit card, but I can&#x27;t remember)</li>
+<li class="">Congrats, you now have trial licenses for 25 users, or however many licenses you actually purchased.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Permissions:</p>
+<p>The account you are logged in with that you have configured everything with so far is a Global Administrator. It&#x27;s not the greatest practice in the world to use that account for all the configuration. My recommendation would be to create a second user account, and then assign that user the Intune Administrator Role. Since this is a lab environment, and it&#x27;s only myself, I am just going to assign the permissions directly. In a real world scenario, you would probably have a Security Group to assign permissions to.</p>
+<ol>
+<li class="">Go to Microsoft Entra ID &gt; Users &gt; Select the user you want to assign the role to</li>
+<li class="">Click Assigned Roles</li>
+<li class="">Click Add Assignments</li>
+<li class="">Add Intune Administrator</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/intuneAdministrator-b95c0fadf7e623503dd1c7e07ac3bc0f.png" title="Intune Administrator" width="1166" height="320" class="img_ev3q"></p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intune">Intune<a href="#intune" class="hash-link" aria-label="Direct link to Intune" title="Direct link to Intune" translate="no">​</a></h3>
+<p>Now that we have our licensing squared away, we can go to the <a href="https://intune.microsoft.com" target="_blank" rel="noopener noreferrer" class="">Intune Portal</a>. From the initial configuration, I did not change a ton, more I am sure will be changed later. A few things I did change:</p>
+<ul>
+<li class="">Administrator Licensing<!-- -->
+<ol>
+<li class="">Go to Tenant Administration &gt; Roles &gt; Administrator Licensing<!-- -->
+<ul>
+<li class="">Turn on the option to allow All unlicensed admins to have access to Microsoft Intune.</li>
+<li class="">This ensures you don&#x27;t need two licenses necessarily, but can run with a single user license.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="microsoft-entra-id">Microsoft Entra ID<a href="#microsoft-entra-id" class="hash-link" aria-label="Direct link to Microsoft Entra ID" title="Direct link to Microsoft Entra ID" translate="no">​</a></h3>
+<p>So, we have Azure configured, we have Intune configured. Now we need to tie together Active Directory, Configuration Manager, Intune, and Azure all together.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="microsoft-entra-id-connect">Microsoft Entra ID Connect<a href="#microsoft-entra-id-connect" class="hash-link" aria-label="Direct link to Microsoft Entra ID Connect" title="Direct link to Microsoft Entra ID Connect" translate="no">​</a></h4>
+<p>We are going to go back to the DC01 domain controller, and we will want to download and install <a href="https://www.microsoft.com/en-ie/download/detail" target="_blank" rel="noopener noreferrer" class="">Microsoft Entra ID Connect</a>. Microsoft Entra ID Connect will allow us to synchronize what from Active Directory to Microsoft Entra ID. This is <a href="https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join" target="_blank" rel="noopener noreferrer" class="">Hybrid Join</a>. Note: <em>These are my notes after the fact, so I hope everything lines up properly.</em></p>
+<ul>
+<li class="">Once installed, let&#x27;s open <strong>Azure AD Connect</strong> from the Start Menu. Yes, Microsoft refers to this as Azure AD Connect in the start menu, EntraID Connect in the application itself, and Entra ID Connect on the download page, not confusing one bit.</li>
+</ul>
+<ol>
+<li class="">Click through the options, when trying to connect to Entra ID, I was presented with the following error:
+<img decoding="async" loading="lazy" src="/assets/images/EntraConnect_Setup3_Error-59567d1f421915518bbe6be2d5835e28.png" title="Powershell Error" width="874" height="561" class="img_ev3q"></li>
+</ol>
+<ul>
+<li class="">To fix this, run the following in an elevated Powershell session:</li>
+</ul>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">Set-ExecutionPolicy -ExecutionPolicy Bypass</span><br></span></code></pre></div></div>
+<ol start="2">
+<li class="">Make sure we choose the following when presented:<!-- -->
+<ul>
+<li class="">Password hash synchronization</li>
+<li class="">Enable single sign on</li>
+</ul>
+</li>
+<li class="">When presented with the option of whether to sync the entire directory, or to sync certain OUs I decided to sync certain OUs rather than everything. In my case, I only want to sync Users and Workstations</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/EntraConnect_Setup2-af50d23871de17dae9c9183de173d017.png" title="Entra Connect OU Filtering" width="886" height="549" class="img_ev3q"></p>
+<ol start="3">
+<li class="">
+<p>Continue on through the setup, and finishing.</p>
+</li>
+<li class="">
+<p>Once finished, re-open Azure AD Connect and click Configure.</p>
+</li>
+<li class="">
+<p>Go to Configure Device Options</p>
+<ul>
+<li class="">We are going to select Hybrid Join</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/assets/images/EntraConnect_HybridJoin-30b84f7326208df414512956e60f3fe5.png" title="Hybrid Join" width="880" height="614" class="img_ev3q"></p>
+<ul>
+<li class="">Select Windows 10 or later</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/assets/images/EntraConnect_Windows10-f93cc59dd113ad67d41764901f598024.png" title="Windows10" width="875" height="615" class="img_ev3q"></p>
+<ul>
+<li class="">Finally, you will need to login with an <strong>Enterprise Administrator</strong> account to finish this.</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="/assets/images/EntraConnect_EA-290220a45beb907af8a8850d5f9d381e.png" title="Enterprise Administrator" width="874" height="610" class="img_ev3q"></p>
+</li>
+</ol>
+<p><strong>Verifying Hybrid Join (from the device)</strong></p>
+<p>Hybrid Join is now configured. Let&#x27;s open up our new Windows 11 virtual machine and see what happens?</p>
+<ol>
+<li class="">Wait 5-10 minutes, and then login to the VM with a user account that we think is syncd.</li>
+<li class="">Open a command prompt.</li>
+<li class="">Type <strong>dsregcmd /status</strong></li>
+<li class="">We should see something that looks similar to this in the output:</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/dsregcmd-55ff16c4a1f1ebaced724c80a7f0af6c.png" title="DSREGCMD" width="968" height="625" class="img_ev3q"></p>
+<ul>
+<li class="">AzureADJoined: YES</li>
+</ul>
+<p><strong>Verifying Hybrid Join (from the portal)</strong></p>
+<ol>
+<li class="">Go to the Azure portal (portal.azure.com) and search for Microsoft Entra ID</li>
+<li class="">Click on Devices</li>
+<li class="">You should see your device listed.</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/EntraPortal_HybridJoin-d9af382417fa009f7f5bf22bed9c9b93.png" title="Hybrid Join from Entra portal" width="862" height="280" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="configmgr-co-management">ConfigMgr Co-Management<a href="#configmgr-co-management" class="hash-link" aria-label="Direct link to ConfigMgr Co-Management" title="Direct link to ConfigMgr Co-Management" translate="no">​</a></h3>
+<p>Ok, now we have devices syncing to Entra ID through Hybrid Join. But how do we manage them in Intune? That is where <a href="https://learn.microsoft.com/en-us/intune/configmgr/comanage/overview" target="_blank" rel="noopener noreferrer" class="">Co-Management</a> comes into play. Co-Management will allow us to upload our devices from ConfigMgr into Intune, and then once the sliders are configured properly, allow us to manage the configuration through Intune.</p>
+<p>Note: <em>You cannot do Co-Management without Hybrid Join. You can do Hybrid Join without Co-Management, you&#x27;re just limited on what you can manage without Intune.</em></p>
+<p>We are now going to open the console on CM01 and configure Co-Management.</p>
+<p>From Windows:</p>
+<ol>
+<li class="">Click Start &gt; Configuration Manager Console</li>
+<li class="">Go to Administration &gt; Cloud Attach</li>
+<li class="">Right click CoMgmtSettingsProd and go to Properties</li>
+<li class="">Ensure Automatic Enrollment in Intune is set to All (this is a lab environment, who needs piloting?)</li>
+<li class="">Under the Workloads tab, move everything to Intune.</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/CoManagement-ad7449023398c4c0fa1a05ffba2c22ec.png" title="CoManagement" width="509" height="533" class="img_ev3q"></p>
+<p>From our Windows 11 VM, we should see this configuration come down through Configuration Manager in the Control Panel:</p>
+<p><img decoding="async" loading="lazy" src="/assets/images/CM01_CoManagement-d822a7db2b7209373163a055464e05b0.png" title="CoManagement Configuration" width="392" height="480" class="img_ev3q"></p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="verifying-co-management-in-intune">Verifying Co-Management in Intune<a href="#verifying-co-management-in-intune" class="hash-link" aria-label="Direct link to Verifying Co-Management in Intune" title="Direct link to Verifying Co-Management in Intune" translate="no">​</a></h4>
+<p>Now we have everything configured, let&#x27;s go into Intune and take a look at the configuration on the device.</p>
+<ol>
+<li class="">From a browser, go to <a href="https://intune.microsoft.com" target="_blank" rel="noopener noreferrer" class="">Intune</a></li>
+<li class="">Go to Devices &gt; All Devices, and look for the name of your VM.</li>
+<li class="">Click on the VM, and we should see an output similar to this:</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/assets/images/Intune_CoManaged-2aba459e7c708a8ed5e2e76c9e9683f1.png" title="Intune Co-Management" width="1428" height="660" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="wrapping-up">Wrapping Up<a href="#wrapping-up" class="hash-link" aria-label="Direct link to Wrapping Up" title="Direct link to Wrapping Up" translate="no">​</a></h2>
+<p>So now we have a nice, new shiny lab thanks to Deployment Research, Recast, and others that allows us to manage Active Directory, Azure, Entra ID, Configuration Manager, and Intune. I am hopeful that this is a helpful blog post, as I&#x27;ve seen questions out there on the best way to setup a lab in 2025. If you have any questions, please feel free to reach out to me.</p>
+<ul>
+<li class="">Joe Loveless</li>
+</ul></div><footer class="docusaurus-mt-lg"><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" title="Intune related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/intune">Intune</a></li><li class="tag_QGVx"><a rel="tag" title="System Center Configuration Manager related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/sccm">SCCM</a></li><li class="tag_QGVx"><a rel="tag" title="Active Directory related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/active-directory">Active Directory</a></li></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-03-30-intune-lab-2025/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/blog/entra-deviceextensionattributes-automation"><div class="pagination-nav__sublabel">Newer post</div><div class="pagination-nav__label">Automating Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/blog/test-portnetconnections-post"><div class="pagination-nav__sublabel">Older post</div><div class="pagination-nav__label">Testing network connections with a PowerShell function.</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#initial-details" class="table-of-contents__link toc-highlight">Initial Details</a><ul><li><a href="#hardware" class="table-of-contents__link toc-highlight">Hardware</a></li><li><a href="#software" class="table-of-contents__link toc-highlight">Software</a></li><li><a href="#networking" class="table-of-contents__link toc-highlight">Networking</a></li></ul></li><li><a href="#hydration-kit-active-directoryconfigmgr-setup" class="table-of-contents__link toc-highlight">Hydration Kit (Active Directory/ConfigMgr Setup)</a><ul><li><a href="#customization" class="table-of-contents__link toc-highlight">Customization</a></li></ul></li><li><a href="#building-the-virtual-machines" class="table-of-contents__link toc-highlight">Building the Virtual Machines</a><ul><li><a href="#dc01-build" class="table-of-contents__link toc-highlight">DC01 Build</a></li><li><a href="#dc01-configuration" class="table-of-contents__link toc-highlight">DC01 Configuration</a></li><li><a href="#cm01-build" class="table-of-contents__link toc-highlight">CM01 Build</a></li><li><a href="#cm01-configuration" class="table-of-contents__link toc-highlight">CM01 Configuration</a></li></ul></li><li><a href="#azureintuneco-managemententra-id-configuration" class="table-of-contents__link toc-highlight">Azure/Intune/Co-Management/Entra ID Configuration</a><ul><li><a href="#azure" class="table-of-contents__link toc-highlight">Azure</a></li><li><a href="#intune" class="table-of-contents__link toc-highlight">Intune</a></li><li><a href="#microsoft-entra-id" class="table-of-contents__link toc-highlight">Microsoft Entra ID</a></li><li><a href="#configmgr-co-management" class="table-of-contents__link toc-highlight">ConfigMgr Co-Management</a></li></ul></li><li><a href="#wrapping-up" class="table-of-contents__link toc-highlight">Wrapping Up</a></li></ul></div></div></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title"></div><ul class="footer__items clean-list"><li class="footer__item">
+                <div class="footer-icons">
+                  <a href="https://github.com/pacers31colts18" class="footer-icon footer-icon-github" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="https://linkedin.com/in/joe-loveless" class="footer-icon footer-icon-linkedin" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="https://bsky.app/profile/joeloveless.com" class="footer-icon footer-icon-bluesky" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="https://infosec.exchange/@Pacers31Colts18" class="footer-icon footer-icon-mastodon" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="mailto:joe@joeloveless.com" class="footer-icon footer-icon-email"></a>
+                  <a href="https://joeloveless.com/index.xml" class="footer-icon footer-icon-rss" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+              </li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 Joe Loveless</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkpacers_31_colts_18_github_io=globalThis.webpackChunkpacers_31_colts_18_github_io||[]).push([[912],{2028(s){s.exports=JSON.parse('{"blogBasePath":"/blog","blogTitle":"Blog","authorsListPath":"/blog/authors"}')}}]);

@@ -1,0 +1,13 @@
+joe:
+  name: Joe Loveless
+  title: Sr. Endpoint Configuration and Automation Engineer
+  url: https://joeloveless.com
+  image_url: https://avatars.githubusercontent.com/u/25325923?v=4
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/all-joe-loveless-articles'
+  socials:
+    linkedin: joe-loveless
+    github: pacers31colts18
+    bluesky: joeloveless.com
+    mail: mailto:joe@joeloveless.com
