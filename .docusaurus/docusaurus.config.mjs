@@ -74,7 +74,7 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/docusaurus-social-card.jpg",
+    "image": "img/social-card.jpg",
     "colorMode": {
       "defaultMode": "dark",
       "disableSwitch": false,
