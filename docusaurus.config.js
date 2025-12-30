@@ -24,6 +24,11 @@ const config = {
     locales: ['en'],
   },
 
+  // ⭐ Register the Umami injection plugin
+  plugins: [
+    './plugins/umami-plugin',
+  ],
+
   presets: [
     [
       'classic',
@@ -58,18 +63,6 @@ const config = {
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
-
-    // Umami Analytics Script
-    headTags: [
-      {
-        tagName: 'script',
-        attributes: {
-          defer: true,
-          src: 'https://cloud.umami.is/script.js',
-          'data-website-id': '50771638-05b4-4125-a8fd-c8e7e72e57e5',
-        },
-      },
-    ],
 
     navbar: {
       items: [
