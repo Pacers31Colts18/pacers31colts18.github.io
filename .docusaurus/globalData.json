@@ -1,14 +1,1 @@
-{
-  "docusaurus-plugin-umami": {
-    "default": {
-      "websiteID": "50771638-05b4-4125-a8fd-c8e7e72e57e5",
-      "analyticsDomain": "cloud.umami.is",
-      "dataAutoTrack": true,
-      "dataDoNotTrack": false,
-      "dataCache": false,
-      "dataExcludeSearch": false,
-      "dataExcludeHash": false,
-      "id": "default"
-    }
-  }
-}
+{}
