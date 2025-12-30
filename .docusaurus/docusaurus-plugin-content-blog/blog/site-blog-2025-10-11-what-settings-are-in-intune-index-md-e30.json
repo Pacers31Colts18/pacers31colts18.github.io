@@ -1,0 +1,58 @@
+{
+  "permalink": "/blog/what-settings-are-in-intune",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-10-11-what-settings-are-in-intune/index.md",
+  "source": "@site/blog/2025-10-11-what-settings-are-in-intune/index.md",
+  "title": "What Group Policy Settings aren't in Microsoft Intune?",
+  "description": "Finding settings that are in Group Policy, but aren't in Intune.",
+  "date": "2025-10-11T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Group Policy",
+      "permalink": "/blog/tags/group-policy",
+      "description": "Group Policy related posts."
+    },
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    },
+    {
+      "inline": false,
+      "label": "PowerShell",
+      "permalink": "/blog/tags/powershell",
+      "description": "PowerShell related posts."
+    },
+    {
+      "inline": false,
+      "label": "Graph API",
+      "permalink": "/blog/tags/graph-api",
+      "description": "Microsoft Graph API related posts."
+    }
+  ],
+  "readingTime": 7.71,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "What Group Policy Settings aren't in Microsoft Intune?",
+    "description": "Finding settings that are in Group Policy, but aren't in Intune.",
+    "slug": "what-settings-are-in-intune",
+    "date": "2025-10-11 00:00:00+0000",
+    "tags": [
+      "group-policy",
+      "intune",
+      "powershell",
+      "graph-api"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Tracking Chores with Home Assistant",
+    "permalink": "/blog/tracking-chores-with-home-assistant"
+  },
+  "nextItem": {
+    "title": "Exploring Microsoft Intune Filters",
+    "permalink": "/blog/exploring-microsoft-intune-filters"
+  }
+}

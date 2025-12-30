@@ -1,0 +1,24 @@
+{
+  "type": "mdx",
+  "permalink": "/about",
+  "source": "@site/src/pages/about.md",
+  "title": "About",
+  "description": "About page for Joe Loveless",
+  "frontMatter": {
+    "title": "About",
+    "description": "About page for Joe Loveless",
+    "date": "2019-06-20",
+    "aliases": [
+      "about-joe"
+    ],
+    "menu": {
+      "main": {
+        "weight": 2,
+        "params": {
+          "icon": "user"
+        }
+      }
+    }
+  },
+  "unlisted": false
+}

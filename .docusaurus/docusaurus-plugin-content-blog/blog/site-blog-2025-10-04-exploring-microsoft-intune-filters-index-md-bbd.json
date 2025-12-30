@@ -1,0 +1,37 @@
+{
+  "permalink": "/blog/exploring-microsoft-intune-filters",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-10-04-exploring-microsoft-intune-filters/index.md",
+  "source": "@site/blog/2025-10-04-exploring-microsoft-intune-filters/index.md",
+  "title": "Exploring Microsoft Intune Filters",
+  "description": "Details on filtering with Microsoft Intune.",
+  "date": "2025-10-04T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    }
+  ],
+  "readingTime": 5.27,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Exploring Microsoft Intune Filters",
+    "description": "Details on filtering with Microsoft Intune.",
+    "slug": "exploring-microsoft-intune-filters",
+    "date": "2025-10-04 00:00:00+0000",
+    "tags": [
+      "intune"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "What Group Policy Settings aren't in Microsoft Intune?",
+    "permalink": "/blog/what-settings-are-in-intune"
+  },
+  "nextItem": {
+    "title": "Making Dexcom better with Home Assistant Voice",
+    "permalink": "/blog/making-dexcom-better-wtih-homeassistant"
+  }
+}

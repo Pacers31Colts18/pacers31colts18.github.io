@@ -1,0 +1,51 @@
+{
+  "permalink": "/blog/intunelab-2025",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-03-30-intune-lab-2025/index.md",
+  "source": "@site/blog/2025-03-30-intune-lab-2025/index.md",
+  "title": "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025",
+  "description": "Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.",
+  "date": "2025-03-30T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    },
+    {
+      "inline": false,
+      "label": "SCCM",
+      "permalink": "/blog/tags/sccm",
+      "description": "System Center Configuration Manager related posts."
+    },
+    {
+      "inline": false,
+      "label": "Active Directory",
+      "permalink": "/blog/tags/active-directory",
+      "description": "Active Directory related posts."
+    }
+  ],
+  "readingTime": 18.18,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025",
+    "description": "Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.",
+    "slug": "intunelab-2025",
+    "date": "2025-03-30T00:00:00.000Z",
+    "tags": [
+      "intune",
+      "sccm",
+      "active-directory"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Automating Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
+    "permalink": "/blog/entra-deviceextensionattributes-automation"
+  },
+  "nextItem": {
+    "title": "Testing network connections with a PowerShell function.",
+    "permalink": "/blog/test-portnetconnections-post"
+  }
+}

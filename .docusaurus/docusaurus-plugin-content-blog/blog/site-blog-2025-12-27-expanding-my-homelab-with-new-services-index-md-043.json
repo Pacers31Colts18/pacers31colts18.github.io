@@ -1,0 +1,41 @@
+{
+  "permalink": "/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-12-27-expanding-my-homelab-with-new-services/index.md",
+  "source": "@site/blog/2025-12-27-expanding-my-homelab-with-new-services/index.md",
+  "title": "Expanding my Home Lab with Cloudflare, Tailscale, and more",
+  "description": "How I use Cloudflare, Technitium, Caddy, and Tailscale to expand my home lab.",
+  "date": "2025-12-26T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Home Lab",
+      "permalink": "/blog/tags/home-lab",
+      "description": "Home Lab related posts."
+    },
+    {
+      "inline": false,
+      "label": "Networking",
+      "permalink": "/blog/tags/networking",
+      "description": "Networking related posts."
+    }
+  ],
+  "readingTime": 17.41,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Expanding my Home Lab with Cloudflare, Tailscale, and more",
+    "description": "How I use Cloudflare, Technitium, Caddy, and Tailscale to expand my home lab.",
+    "slug": "expanding-my-homelab-with-cloudflare-tailscale-and-more",
+    "date": "2025-12-26T00:00:00.000Z",
+    "thumbnail": "/img/blog/cover1.png",
+    "tags": [
+      "home-lab",
+      "networking"
+    ]
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Tracking Chores with Home Assistant",
+    "permalink": "/blog/tracking-chores-with-home-assistant"
+  }
+}

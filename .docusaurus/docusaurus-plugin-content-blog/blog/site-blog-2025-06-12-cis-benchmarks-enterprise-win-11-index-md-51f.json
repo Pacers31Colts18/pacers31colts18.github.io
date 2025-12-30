@@ -1,0 +1,58 @@
+{
+  "permalink": "/blog/cis-benchmarks-enterprise-win11",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-06-12-cis-benchmarks-enterprise-win11/index.md",
+  "source": "@site/blog/2025-06-12-cis-benchmarks-enterprise-win11/index.md",
+  "title": "Examining CIS Microsoft Windows 11 Enterprise Benchmark in a Hybrid Environment",
+  "description": "Review of CIS Microsoft Windows 11 Enterprise Benchmark in a hybrid environment",
+  "date": "2025-06-12T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    },
+    {
+      "inline": false,
+      "label": "CIS",
+      "permalink": "/blog/tags/cis",
+      "description": "Center for Internet Security related posts."
+    },
+    {
+      "inline": false,
+      "label": "Windows 11",
+      "permalink": "/blog/tags/windows-11",
+      "description": "Windows 11 related posts."
+    },
+    {
+      "inline": false,
+      "label": "Hybrid",
+      "permalink": "/blog/tags/hybrid",
+      "description": "Hybrid related posts."
+    }
+  ],
+  "readingTime": 19.93,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Examining CIS Microsoft Windows 11 Enterprise Benchmark in a Hybrid Environment",
+    "description": "Review of CIS Microsoft Windows 11 Enterprise Benchmark in a hybrid environment",
+    "slug": "cis-benchmarks-enterprise-win11",
+    "date": "2025-06-12T00:00:00.000Z",
+    "tags": [
+      "intune",
+      "cis",
+      "windows-11",
+      "hybrid"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Tech tools I use at home and at work",
+    "permalink": "/blog/tech-tools-I-use"
+  },
+  "nextItem": {
+    "title": "Converting Registry Based SCCM Configuration Items to Intune Remediation Scripts",
+    "permalink": "/blog/configurationitems-to-remediationscripts"
+  }
+}

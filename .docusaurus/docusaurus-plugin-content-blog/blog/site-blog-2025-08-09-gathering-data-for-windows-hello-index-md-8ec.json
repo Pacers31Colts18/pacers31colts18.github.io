@@ -1,0 +1,51 @@
+{
+  "permalink": "/blog/gathering-data-for-windows-hello",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-08-09-gathering-data-for-windows-hello/index.md",
+  "source": "@site/blog/2025-08-09-gathering-data-for-windows-hello/index.md",
+  "title": "Gathering Data for a Windows Hello for Business Rollout",
+  "description": "A guide to gathering data for a successful Windows Hello For Business rollout using Microsoft Intune detection scripts.",
+  "date": "2025-08-09T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Windows Hello",
+      "permalink": "/blog/tags/windows-hello",
+      "description": "Windows Hello related posts."
+    },
+    {
+      "inline": false,
+      "label": "Remediation Scripts",
+      "permalink": "/blog/tags/remediation-scripts",
+      "description": "Remediation Scripts related posts."
+    },
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    }
+  ],
+  "readingTime": 3.83,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Gathering Data for a Windows Hello for Business Rollout",
+    "description": "A guide to gathering data for a successful Windows Hello For Business rollout using Microsoft Intune detection scripts.",
+    "slug": "gathering-data-for-windows-hello",
+    "date": "2025-08-09T00:00:00.000Z",
+    "tags": [
+      "windows-hello",
+      "remediation-scripts",
+      "intune"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Finding users that are enrolled in Windows Hello For Business",
+    "permalink": "/blog/finding-enrollment-count-windows-hello"
+  },
+  "nextItem": {
+    "title": "Finding Group Policy settings by category",
+    "permalink": "/blog/search-gpocategory"
+  }
+}
