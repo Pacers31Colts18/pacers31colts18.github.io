@@ -24,7 +24,6 @@ const config = {
     locales: ['en'],
   },
 
-  // ⭐ Register the Umami injection plugin
   plugins: [
     './plugins/umami-plugin',
   ],
@@ -57,7 +56,7 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.jpg',
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: false,
