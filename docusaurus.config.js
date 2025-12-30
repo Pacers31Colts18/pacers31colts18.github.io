@@ -25,8 +25,15 @@ const config = {
   },
 
 plugins: [
-  "./src/plugins/Docusaurus-plugin-umami",
-],
+    [
+      "@dipakparmar/docusaurus-plugin-umami",
+      /** @type {import('@dipakparmar/docusaurus-plugin-umami').Options} */
+      ({
+        websiteID: "50771638-05b4-4125-a8fd-c8e7e72e57e5", // Required
+        analyticsDomain: "cloud.umami.is", // Required
+      }),
+    ],
+  ],
 
 
   presets: [

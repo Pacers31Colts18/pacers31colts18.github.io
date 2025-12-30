@@ -43,7 +43,13 @@ export default {
     "localeConfigs": {}
   },
   "plugins": [
-    "./src/plugins/Docusaurus-plugin-umami"
+    [
+      "@dipakparmar/docusaurus-plugin-umami",
+      {
+        "websiteID": "50771638-05b4-4125-a8fd-c8e7e72e57e5",
+        "analyticsDomain": "cloud.umami.is"
+      }
+    ]
   ],
   "presets": [
     [
