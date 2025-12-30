@@ -1,0 +1,17 @@
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 2px solid var(--ifm-color-primary);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #13181b; /* or whatever background you want */
+  color: #f5edd8; /* text color */
+}

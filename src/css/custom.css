@@ -1,0 +1,212 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #213a56;
+  --ifm-color-primary-dark: #1e344d;
+  --ifm-color-primary-darker: #1c3149;
+  --ifm-color-primary-darkest: #17293c;
+  --ifm-color-primary-light: #24405f;
+  --ifm-color-primary-lighter: #264363;
+  --ifm-color-primary-lightest: #2b4b70;
+}
+
+html[data-theme='light'] {
+  --ifm-background-color: #F2F0EF;
+  --ifm-background-surface-color: #ffffff;
+}
+
+/* Dark mode palette */
+[data-theme='dark'] {
+  --ifm-color-primary: #f75c54;
+  --ifm-color-primary-dark: #f63e34;
+  --ifm-color-primary-darker: #f52f25;
+  --ifm-color-primary-darkest: #dd150a;
+  --ifm-color-primary-light: #f87a74;
+  --ifm-color-primary-lighter: #f98983;
+  --ifm-color-primary-lightest: #fbb6b3;
+}
+
+/* Header + Footer border colors */
+:root {
+  --header-border-color: #FF0000;
+  --footer-border-color: #00FFFF;
+}
+
+[data-theme='dark'] {
+  --header-border-color: #00FFFF;
+  --footer-border-color: #FF0000;
+}
+
+/* Header separator line */
+.navbar {
+  border-bottom: 2px solid var(--header-border-color);
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom: 2px solid var(--header-border-color);
+}
+
+.navbar__link:hover, .navbar__link--active  {
+color: #FF0000;
+}
+
+/* Footer matches header and has top line */
+.footer {
+  border-top: 2px solid var(--footer-border-color);
+}
+
+/* Footer icon row */
+.footer-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Base icon styles */
+.footer-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+/* Light mode icon color */
+html[data-theme='light'] .footer-icon {
+  background-color: #FF0000;
+}
+
+/* Light mode hover */
+html[data-theme='light'] .footer-icon:hover {
+  background-color: #00FFFF;
+}
+
+/* Dark mode icon color */
+html[data-theme='dark'] .footer-icon {
+  background-color: #00FFFF;
+}
+
+/* Dark mode hover */
+html[data-theme='dark'] .footer-icon:hover {
+  background-color: #FF0000;
+}
+
+/* Icon mappings */
+.footer-icon-github {
+  mask-image: url('/img/icons/brand-github.svg');
+  -webkit-mask-image: url('/img/icons/brand-github.svg');
+}
+
+.footer-icon-linkedin {
+  mask-image: url('/img/icons/brand-linkedin.svg');
+  -webkit-mask-image: url('/img/icons/brand-linkedin.svg');
+}
+
+.footer-icon-bluesky {
+  mask-image: url('/img/icons/brand-bluesky.svg');
+  -webkit-mask-image: url('/img/icons/brand-bluesky.svg');
+}
+
+.footer-icon-mastodon {
+  mask-image: url('/img/icons/brand-mastodon.svg');
+  -webkit-mask-image: url('/img/icons/brand-mastodon.svg');
+}
+
+.footer-icon-email {
+  mask-image: url('/img/icons/mail.svg');
+  -webkit-mask-image: url('/img/icons/mail.svg');
+}
+
+.footer-icon-rss {
+  mask-image: url('/img/icons/rss.svg');
+  -webkit-mask-image: url('/img/icons/rss.svg');
+}
+
+/* Footer spacing adjustments */
+.footer {
+  padding: 2px 0 !important;
+}
+
+.footer__bottom {
+  padding: 2px 0 !important;
+}
+
+.footer__links {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.footer__item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-icons {
+  margin: 0 !important;
+}
+
+.footer__bottom {
+  padding-top: 2px !important;
+  padding-bottom: 4px !important;
+}
+
+/* Hide "Read more" links */
+.read-more {
+  display: none;
+}
+
+/* -------------------------------------------------- */
+/* BLOG TITLES + DESCRIPTIONS (Unified Everywhere)    */
+/* -------------------------------------------------- */
+
+/* Title used on featured card, grid cards, and /blog list */
+.blogPostTitle,
+.blog-post-title {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+  text-align: center;
+}
+
+/* Title links inherit color */
+.blogPostTitle a,
+.blog-post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Dark mode title override */
+html[data-theme='dark'] .blogPostTitle,
+html[data-theme='dark'] .blogPostTitle a,
+html[data-theme='dark'] .blog-post-title,
+html[data-theme='dark'] .blog-post-title a {
+  color: #FFFFFF;
+}
+
+/* Description under titles */
+.blogPostDescription,
+.blog-post-description {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Dark mode description */
+html[data-theme='dark'] .blogPostDescription,
+html[data-theme='dark'] .blog-post-description {
+  color: #ffffffcc;
+}
