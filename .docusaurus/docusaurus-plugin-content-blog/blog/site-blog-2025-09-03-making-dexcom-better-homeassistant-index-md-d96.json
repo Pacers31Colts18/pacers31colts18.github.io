@@ -1,0 +1,37 @@
+{
+  "permalink": "/blog/making-dexcom-better-wtih-homeassistant",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-09-03-making-dexcom-better-homeassistant/index.md",
+  "source": "@site/blog/2025-09-03-making-dexcom-better-homeassistant/index.md",
+  "title": "Making Dexcom better with Home Assistant Voice",
+  "description": "Integrating Dexcom with Home Assistant Voice.",
+  "date": "2025-09-03T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Home Assistant",
+      "permalink": "/blog/tags/home-assistant",
+      "description": "Home Assistant related posts."
+    }
+  ],
+  "readingTime": 6.99,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Making Dexcom better with Home Assistant Voice",
+    "description": "Integrating Dexcom with Home Assistant Voice.",
+    "slug": "making-dexcom-better-wtih-homeassistant",
+    "date": "2025-09-03 00:00:00+0000",
+    "tags": [
+      "home-assistant"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Exploring Microsoft Intune Filters",
+    "permalink": "/blog/exploring-microsoft-intune-filters"
+  },
+  "nextItem": {
+    "title": "Finding users that are enrolled in Windows Hello For Business",
+    "permalink": "/blog/finding-enrollment-count-windows-hello"
+  }
+}

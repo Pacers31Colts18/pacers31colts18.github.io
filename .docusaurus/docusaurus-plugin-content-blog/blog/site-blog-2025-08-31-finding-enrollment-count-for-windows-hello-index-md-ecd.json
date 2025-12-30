@@ -1,0 +1,51 @@
+{
+  "permalink": "/blog/finding-enrollment-count-windows-hello",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-08-31-finding-enrollment-count-for-windows-hello/index.md",
+  "source": "@site/blog/2025-08-31-finding-enrollment-count-for-windows-hello/index.md",
+  "title": "Finding users that are enrolled in Windows Hello For Business",
+  "description": "A guide to finding how many users are enrolled in Windows Hello for Business on a device.",
+  "date": "2025-08-31T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Windows Hello",
+      "permalink": "/blog/tags/windows-hello",
+      "description": "Windows Hello related posts."
+    },
+    {
+      "inline": false,
+      "label": "Remediation Scripts",
+      "permalink": "/blog/tags/remediation-scripts",
+      "description": "Remediation Scripts related posts."
+    },
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    }
+  ],
+  "readingTime": 3.19,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Finding users that are enrolled in Windows Hello For Business",
+    "description": "A guide to finding how many users are enrolled in Windows Hello for Business on a device.",
+    "slug": "finding-enrollment-count-windows-hello",
+    "date": "2025-08-31T00:00:00.000Z",
+    "tags": [
+      "windows-hello",
+      "remediation-scripts",
+      "intune"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Making Dexcom better with Home Assistant Voice",
+    "permalink": "/blog/making-dexcom-better-wtih-homeassistant"
+  },
+  "nextItem": {
+    "title": "Gathering Data for a Windows Hello for Business Rollout",
+    "permalink": "/blog/gathering-data-for-windows-hello"
+  }
+}

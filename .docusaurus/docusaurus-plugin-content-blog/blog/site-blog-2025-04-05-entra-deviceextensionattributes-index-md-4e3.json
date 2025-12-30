@@ -1,0 +1,51 @@
+{
+  "permalink": "/blog/entra-deviceextensionattributes-automation",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-04-05-entra-deviceextensionattributes/index.md",
+  "source": "@site/blog/2025-04-05-entra-deviceextensionattributes/index.md",
+  "title": "Automating Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
+  "description": "Process for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation Runbooks.",
+  "date": "2025-04-05T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    },
+    {
+      "inline": false,
+      "label": "Entra",
+      "permalink": "/blog/tags/entra",
+      "description": "Entra related posts."
+    },
+    {
+      "inline": false,
+      "label": "Azure",
+      "permalink": "/blog/tags/azure",
+      "description": "Azure related posts."
+    }
+  ],
+  "readingTime": 4.84,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Automating Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
+    "description": "Process for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation Runbooks.",
+    "slug": "entra-deviceextensionattributes-automation",
+    "date": "2025-04-05T00:00:00.000Z",
+    "tags": [
+      "intune",
+      "entra",
+      "azure"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "An even better way to automate Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
+    "permalink": "/blog/entra-deviceextensionattributes-automation-better"
+  },
+  "nextItem": {
+    "title": "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025",
+    "permalink": "/blog/intunelab-2025"
+  }
+}

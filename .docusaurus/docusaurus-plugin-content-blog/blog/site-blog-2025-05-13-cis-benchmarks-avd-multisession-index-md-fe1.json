@@ -1,0 +1,51 @@
+{
+  "permalink": "/blog/cis-benchmarks-avd-multisession",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-05-13-cis-benchmarks-avd-multisession/index.md",
+  "source": "@site/blog/2025-05-13-cis-benchmarks-avd-multisession/index.md",
+  "title": "CIS L1 Benchmarks in Intune with AVD Multi-Session Hosts",
+  "description": "Details on what settings aren't in scope with AVD Multi-Session hosts.",
+  "date": "2025-05-13T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    },
+    {
+      "inline": false,
+      "label": "CIS",
+      "permalink": "/blog/tags/cis",
+      "description": "Center for Internet Security related posts."
+    },
+    {
+      "inline": false,
+      "label": "AVD",
+      "permalink": "/blog/tags/avd",
+      "description": "Azure Virtual Desktop related posts."
+    }
+  ],
+  "readingTime": 9,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "CIS L1 Benchmarks in Intune with AVD Multi-Session Hosts",
+    "description": "Details on what settings aren't in scope with AVD Multi-Session hosts.",
+    "slug": "cis-benchmarks-avd-multisession",
+    "date": "2025-05-13T00:00:00.000Z",
+    "tags": [
+      "intune",
+      "cis",
+      "avd"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Converting Registry Based SCCM Configuration Items to Intune Remediation Scripts",
+    "permalink": "/blog/configurationitems-to-remediationscripts"
+  },
+  "nextItem": {
+    "title": "Creating Intune Randomized Rollouts with Entra Group Membership",
+    "permalink": "/blog/entra-grouprandomization"
+  }
+}

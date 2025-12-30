@@ -1,0 +1,44 @@
+{
+  "permalink": "/blog/test-portnetconnections-post",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-02-25-test-portnetconnection/index.md",
+  "source": "@site/blog/2025-02-25-test-portnetconnection/index.md",
+  "title": "Testing network connections with a PowerShell function.",
+  "description": "A quick function for testing network connections with PowerShell.",
+  "date": "2025-02-25T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "PowerShell",
+      "permalink": "/blog/tags/powershell",
+      "description": "PowerShell related posts."
+    },
+    {
+      "inline": false,
+      "label": "Active Directory",
+      "permalink": "/blog/tags/active-directory",
+      "description": "Active Directory related posts."
+    }
+  ],
+  "readingTime": 4.6,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Testing network connections with a PowerShell function.",
+    "description": "A quick function for testing network connections with PowerShell.",
+    "slug": "test-portnetconnections-post",
+    "date": "2025-02-25T00:00:00.000Z",
+    "tags": [
+      "powershell",
+      "active-directory"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025",
+    "permalink": "/blog/intunelab-2025"
+  },
+  "nextItem": {
+    "title": "Introduction",
+    "permalink": "/blog/introduction-post"
+  }
+}

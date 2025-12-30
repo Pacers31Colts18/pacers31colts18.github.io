@@ -1,0 +1,51 @@
+{
+  "permalink": "/blog/configurationitems-to-remediationscripts",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-05-24-converting-configurationitems-to-remediationscripts/index.md",
+  "source": "@site/blog/2025-05-24-converting-configurationitems-to-remediationscripts/index.md",
+  "title": "Converting Registry Based SCCM Configuration Items to Intune Remediation Scripts",
+  "description": "Script walkthrough on converting SCCM Configuration Items to Intune Remediation Scripts.",
+  "date": "2025-05-24T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    },
+    {
+      "inline": false,
+      "label": "SCCM",
+      "permalink": "/blog/tags/sccm",
+      "description": "System Center Configuration Manager related posts."
+    },
+    {
+      "inline": false,
+      "label": "PowerShell",
+      "permalink": "/blog/tags/powershell",
+      "description": "PowerShell related posts."
+    }
+  ],
+  "readingTime": 9.91,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Converting Registry Based SCCM Configuration Items to Intune Remediation Scripts",
+    "description": "Script walkthrough on converting SCCM Configuration Items to Intune Remediation Scripts.",
+    "slug": "configurationitems-to-remediationscripts",
+    "date": "2025-05-24T00:00:00.000Z",
+    "tags": [
+      "intune",
+      "sccm",
+      "powershell"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Examining CIS Microsoft Windows 11 Enterprise Benchmark in a Hybrid Environment",
+    "permalink": "/blog/cis-benchmarks-enterprise-win11"
+  },
+  "nextItem": {
+    "title": "CIS L1 Benchmarks in Intune with AVD Multi-Session Hosts",
+    "permalink": "/blog/cis-benchmarks-avd-multisession"
+  }
+}

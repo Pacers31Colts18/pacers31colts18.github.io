@@ -1,0 +1,51 @@
+{
+  "permalink": "/blog/entra-deviceextensionattributes-automation-better",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-04-12-entra-deviceextensionattributes-betterway/index.md",
+  "source": "@site/blog/2025-04-12-entra-deviceextensionattributes-betterway/index.md",
+  "title": "An even better way to automate Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
+  "description": "A better process for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation Runbooks.",
+  "date": "2025-04-12T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
+    },
+    {
+      "inline": false,
+      "label": "Entra",
+      "permalink": "/blog/tags/entra",
+      "description": "Entra related posts."
+    },
+    {
+      "inline": false,
+      "label": "Azure",
+      "permalink": "/blog/tags/azure",
+      "description": "Azure related posts."
+    }
+  ],
+  "readingTime": 8.13,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "An even better way to automate Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
+    "description": "A better process for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation Runbooks.",
+    "slug": "entra-deviceextensionattributes-automation-better",
+    "date": "2025-04-12T00:00:00.000Z",
+    "tags": [
+      "intune",
+      "entra",
+      "azure"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Creating Intune Randomized Rollouts with Entra Group Membership",
+    "permalink": "/blog/entra-grouprandomization"
+  },
+  "nextItem": {
+    "title": "Automating Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
+    "permalink": "/blog/entra-deviceextensionattributes-automation"
+  }
+}

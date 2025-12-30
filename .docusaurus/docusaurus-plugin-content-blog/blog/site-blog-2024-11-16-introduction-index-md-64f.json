@@ -1,0 +1,33 @@
+{
+  "permalink": "/blog/introduction-post",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2024-11-16-Introduction/index.md",
+  "source": "@site/blog/2024-11-16-Introduction/index.md",
+  "title": "Introduction",
+  "description": "Introductory blog post",
+  "date": "2024-11-16T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Other",
+      "permalink": "/blog/tags/other",
+      "description": "Other related posts."
+    }
+  ],
+  "readingTime": 0.55,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Introduction",
+    "description": "Introductory blog post",
+    "slug": "introduction-post",
+    "date": "2024-11-16T00:00:00.000Z",
+    "tags": [
+      "other"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Testing network connections with a PowerShell function.",
+    "permalink": "/blog/test-portnetconnections-post"
+  }
+}
