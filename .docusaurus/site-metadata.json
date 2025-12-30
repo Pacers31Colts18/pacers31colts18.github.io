@@ -33,7 +33,9 @@
       "version": "3.9.2"
     },
     "docusaurus-plugin-umami": {
-      "type": "project"
+      "type": "package",
+      "name": "@dipakparmar/docusaurus-plugin-umami",
+      "version": "2.4.0"
     }
   }
 }
