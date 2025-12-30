@@ -74,7 +74,7 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/social-card.png",
+    "image": "https://joeloveless.com/img/social-card.png",
     "colorMode": {
       "defaultMode": "dark",
       "disableSwitch": false,
