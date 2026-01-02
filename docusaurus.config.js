@@ -85,7 +85,7 @@ const config = {
                   <a href="https://bsky.app/profile/joeloveless.com" class="footer-icon footer-icon-bluesky" target="_blank" rel="noopener noreferrer"></a>
                   <a href="https://infosec.exchange/@Pacers31Colts18" class="footer-icon footer-icon-mastodon" target="_blank" rel="noopener noreferrer"></a>
                   <a href="mailto:joe@joeloveless.com" class="footer-icon footer-icon-email"></a>
-                  <a href="https://joeloveless.com/index.xml" class="footer-icon footer-icon-rss" target="_blank" rel="noopener noreferrer"></a>
+                  <a href="https://joeloveless.com/blog/rss.xml" class="footer-icon footer-icon-rss" target="_blank" rel="noopener noreferrer"></a>
                 </div>
               `,
             },

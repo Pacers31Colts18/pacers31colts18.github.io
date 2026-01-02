@@ -62,7 +62,7 @@ export default function Home() {
               rel="noopener noreferrer"
             />
                         <a
-              href="https://joeloveless.com/index.xml"
+              href="https://joeloveless.com/blog/rss.xml"
               className="footer-icon footer-icon-rss"
               target="_blank"
               rel="noopener noreferrer"
