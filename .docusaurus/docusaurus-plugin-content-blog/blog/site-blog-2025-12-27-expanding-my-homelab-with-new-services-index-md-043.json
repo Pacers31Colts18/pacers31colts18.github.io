@@ -29,6 +29,7 @@
     "date": "2025-12-26T00:00:00.000Z",
     "thumbnail": "/img/blog/cover1.png",
     "image": "https://joeloveless.com/img/social-card.png",
+    "comments": true,
     "tags": [
       "home-lab",
       "networking"

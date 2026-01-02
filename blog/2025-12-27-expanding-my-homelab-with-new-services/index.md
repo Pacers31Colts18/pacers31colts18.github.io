@@ -5,6 +5,7 @@ slug: expanding-my-homelab-with-cloudflare-tailscale-and-more
 date: 2025-12-26
 thumbnail: /img/blog/cover1.png
 image: https://joeloveless.com/img/social-card.png
+comments: true
 tags: 
   - home-lab
   - networking
