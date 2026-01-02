@@ -117,7 +117,7 @@ export default {
           "title": null
         }
       ],
-      "copyright": "© 2025 Joe Loveless"
+      "copyright": "© 2026 Joe Loveless"
     },
     "docs": {
       "versionPersistence": "localStorage",
