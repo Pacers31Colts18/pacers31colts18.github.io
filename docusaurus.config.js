@@ -73,27 +73,39 @@ const config = {
     },
 
     footer: {
-      style: 'dark',
-      links: [
+  style: 'dark',
+  links: [
+    {
+      items: [
         {
-          items: [
-            {
-              html: `
-                <div class="footer-icons">
-                  <a href="https://github.com/pacers31colts18" class="footer-icon footer-icon-github" target="_blank" rel="noopener noreferrer"></a>
-                  <a href="https://linkedin.com/in/joe-loveless" class="footer-icon footer-icon-linkedin" target="_blank" rel="noopener noreferrer"></a>
-                  <a href="https://bsky.app/profile/joeloveless.com" class="footer-icon footer-icon-bluesky" target="_blank" rel="noopener noreferrer"></a>
-                  <a href="https://infosec.exchange/@Pacers31Colts18" class="footer-icon footer-icon-mastodon" target="_blank" rel="noopener noreferrer"></a>
-                  <a href="mailto:joe@joeloveless.com" class="footer-icon footer-icon-email"></a>
-                  <a href="https://joeloveless.com/blog/rss.xml" class="footer-icon footer-icon-rss" target="_blank" rel="noopener noreferrer"></a>
-                </div>
-              `,
-            },
-          ],
+          html: `
+            <div class="footer-icons">
+              <a href="https://github.com/pacers31colts18" class="footer-icon footer-icon-github" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/joe-loveless" class="footer-icon footer-icon-linkedin" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">LinkedIn</span>
+              </a>
+              <a href="https://bsky.app/profile/joeloveless.com" class="footer-icon footer-icon-bluesky" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">Bluesky</span>
+              </a>
+              <a href="https://infosec.exchange/@Pacers31Colts18" class="footer-icon footer-icon-mastodon" target="_blank" rel="me noopener noreferrer">
+                <span class="sr-only">Mastodon</span>
+              </a>
+              <a href="mailto:joe@joeloveless.com" class="footer-icon footer-icon-email">
+                <span class="sr-only">Email</span>
+              </a>
+              <a href="https://joeloveless.com/blog/rss.xml" class="footer-icon footer-icon-rss" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">RSS</span>
+              </a>
+            </div>
+          `,
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Joe Loveless`,
     },
+  ],
+  copyright: `© ${new Date().getFullYear()} Joe Loveless`,
+},
   },
 };
 
