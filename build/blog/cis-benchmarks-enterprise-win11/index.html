@@ -9,9 +9,9 @@
 
 
 
-<script defer="defer" src="https://cloud.umami.is/script.js" data-website-id="50771638-05b4-4125-a8fd-c8e7e72e57e5"></script><link rel="stylesheet" href="/assets/css/styles.6017bd90.css">
+<script defer="defer" src="https://cloud.umami.is/script.js" data-website-id="50771638-05b4-4125-a8fd-c8e7e72e57e5"></script><link rel="stylesheet" href="/assets/css/styles.4654d707.css">
 <script src="/assets/js/runtime~main.a35aa437.js" defer="defer"></script>
-<script src="/assets/js/main.e4018f04.js" defer="defer"></script>
+<script src="/assets/js/main.f41dd80b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -435,22 +435,22 @@ in Intune admin center as outlined in the benchmark.</li>
 <p>Please reach out if you have any questions about this article, always happy to help out when I can.</p></div><footer class="docusaurus-mt-lg"><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" title="Intune related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/intune">Intune</a></li><li class="tag_QGVx"><a rel="tag" title="Center for Internet Security related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/cis">CIS</a></li><li class="tag_QGVx"><a rel="tag" title="Windows 11 related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/windows-11">Windows 11</a></li><li class="tag_QGVx"><a rel="tag" title="Hybrid related posts." class="tag_zVej tagRegular_sFm0" href="/blog/tags/hybrid">Hybrid</a></li></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-06-12-cis-benchmarks-enterprise-win11/index.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Blog post page navigation"><a class="pagination-nav__link pagination-nav__link--prev" href="/blog/tech-tools-I-use"><div class="pagination-nav__sublabel">Newer post</div><div class="pagination-nav__label">Tech tools I use at home and at work</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/blog/configurationitems-to-remediationscripts"><div class="pagination-nav__sublabel">Older post</div><div class="pagination-nav__label">Converting Registry Based SCCM Configuration Items to Intune Remediation Scripts</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-is-cis" class="table-of-contents__link toc-highlight">What is CIS?</a></li><li><a href="#whats-the-difference-between-the-enterprise-and-the-intune-benchmark" class="table-of-contents__link toc-highlight">What&#39;s the difference between the Enterprise and the Intune benchmark?</a><ul><li><a href="#but-what-if-our-org-is-hybrid-and-has-regulations-to-adhere-to" class="table-of-contents__link toc-highlight">But what if our org is hybrid and has regulations to adhere to?</a></li></ul></li><li><a href="#downloading-the-benchmark" class="table-of-contents__link toc-highlight">Downloading the Benchmark</a></li><li><a href="#importing-the-benchmark" class="table-of-contents__link toc-highlight">Importing the Benchmark</a></li><li><a href="#importing-and-configuring-the-baseline" class="table-of-contents__link toc-highlight">Importing and Configuring the Baseline</a></li><li><a href="#cis-cat-assessor" class="table-of-contents__link toc-highlight">CIS-CAT Assessor</a></li><li><a href="#fresh-build" class="table-of-contents__link toc-highlight">Fresh Build</a></li><li><a href="#applying-imported-cis-microsoft-intune-for-windows-11-benchmark" class="table-of-contents__link toc-highlight">Applying Imported CIS Microsoft Intune for Windows 11 Benchmark</a><ul><li><a href="#what-didnt-apply-correctly" class="table-of-contents__link toc-highlight">What didn&#39;t apply correctly?</a></li></ul></li><li><a href="#supplementingremediating-failures" class="table-of-contents__link toc-highlight">Supplementing/Remediating Failures</a><ul><li><a href="#intune-supported-not-in-intune-benchmark" class="table-of-contents__link toc-highlight">Intune Supported, not in Intune benchmark</a></li><li><a href="#not-intune-supported-not-in-intune-benchmark" class="table-of-contents__link toc-highlight">Not Intune Supported, not in Intune benchmark</a></li><li><a href="#settings-that-write-to-different-registry-paths" class="table-of-contents__link toc-highlight">Settings that write to different registry paths</a></li></ul></li><li><a href="#re-running-the-scans" class="table-of-contents__link toc-highlight">Re-running the scans</a></li><li><a href="#conclusion" class="table-of-contents__link toc-highlight">Conclusion</a></li></ul></div></div></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title"></div><ul class="footer__items clean-list"><li class="footer__item">
             <div class="footer-icons">
               <a href="https://github.com/pacers31colts18" class="footer-icon footer-icon-github" target="_blank" rel="noopener noreferrer">
-                <span class="sr-only">GitHub</span>
+                <span class="sr-only"></span>
               </a>
               <a href="https://linkedin.com/in/joe-loveless" class="footer-icon footer-icon-linkedin" target="_blank" rel="noopener noreferrer">
-                <span class="sr-only">LinkedIn</span>
+                <span class="sr-only"></span>
               </a>
               <a href="https://bsky.app/profile/joeloveless.com" class="footer-icon footer-icon-bluesky" target="_blank" rel="noopener noreferrer">
-                <span class="sr-only">Bluesky</span>
+                <span class="sr-only"></span>
               </a>
               <a href="https://infosec.exchange/@Pacers31Colts18" class="footer-icon footer-icon-mastodon" target="_blank" rel="me noopener noreferrer">
-                <span class="sr-only">Mastodon</span>
+                <span class="sr-only"></span>
               </a>
               <a href="mailto:joe@joeloveless.com" class="footer-icon footer-icon-email">
-                <span class="sr-only">Email</span>
+                <span class="sr-only"></span>
               </a>
               <a href="https://joeloveless.com/blog/rss.xml" class="footer-icon footer-icon-rss" target="_blank" rel="noopener noreferrer">
-                <span class="sr-only">RSS</span>
+                <span class="sr-only"></span>
               </a>
             </div>
           </li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 Joe Loveless</div></div></div></footer></div>
