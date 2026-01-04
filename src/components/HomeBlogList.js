@@ -20,30 +20,64 @@ function loadPosts() {
     return {
       Content: mod.default,
       frontMatter: { ...fm, tags: fmTags },
-      metadata: mod.metadata,
+      metadata: mod.metadata || {},
     };
   });
 }
 
+/**
+ * ALWAYS return a string.
+ * Priority:
+ * 1) metadata.formattedDate (exact blog-post value)
+ * 2) frontMatter.date (string or Date → normalized)
+ * 3) empty string
+ */
+function getDisplayDate(post) {
+  const { metadata } = post;
+
+  // 1) Exact same string the blog post uses
+  if (typeof metadata.formattedDate === 'string') {
+    return metadata.formattedDate;
+  }
+
+  // 2) Fallback: format metadata.date in UTC (never local)
+  if (metadata.date) {
+    return new Date(metadata.date).toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: 'UTC',
+    });
+  }
+
+  return '';
+}
+
+
 export default function HomeBlogList() {
   const posts = loadPosts()
-    .sort((a, b) => new Date(b.metadata.date) - new Date(a.metadata.date))
+    .sort(
+      (a, b) =>
+        new Date(b.metadata.date) -
+        new Date(a.metadata.date)
+    )
     .slice(0, 7);
+
+  if (posts.length === 0) {
+    return null;
+  }
 
   const [featured, ...rest] = posts;
 
-  // Helper to unify tags for homepage posts
   function getUnifiedTags(post) {
     const mdTags = post.metadata.tags ?? [];
     const fmTags = post.frontMatter.tags ?? [];
-
     const rawTags = mdTags.length > 0 ? mdTags : fmTags;
     return rawTags.map(normalizeTag);
   }
 
   return (
     <div>
-
       {/* FEATURED POST */}
       <article className={styles.featuredCard}>
         {featured.frontMatter.thumbnail && (
@@ -61,7 +95,7 @@ export default function HomeBlogList() {
         </h2>
 
         <div className={styles.featuredMeta}>
-          <span>{new Date(featured.metadata.date).toLocaleDateString()}</span>
+          <span>{getDisplayDate(featured)}</span>
           <span>•</span>
           <span>{featured.metadata.readingTime} min read</span>
         </div>
@@ -72,7 +106,6 @@ export default function HomeBlogList() {
           </p>
         )}
 
-        {/* Unified tags */}
         {getUnifiedTags(featured).length > 0 && (
           <div className={styles.featuredCategories}>
             {getUnifiedTags(featured).map((tag) => (
@@ -91,8 +124,10 @@ export default function HomeBlogList() {
       {/* GRID POSTS */}
       <div className={styles.grid}>
         {rest.map((post) => (
-          <article key={post.metadata.permalink} className={styles.card}>
-
+          <article
+            key={post.metadata.permalink}
+            className={styles.card}
+          >
             <div className={styles.cardBar} />
 
             {post.frontMatter.thumbnail && (
@@ -110,7 +145,7 @@ export default function HomeBlogList() {
             </h2>
 
             <div className={styles.meta}>
-              <span>{new Date(post.metadata.date).toLocaleDateString()}</span>
+              <span>{getDisplayDate(post)}</span>
               <span>•</span>
               <span>{post.metadata.readingTime} min read</span>
             </div>
@@ -121,7 +156,6 @@ export default function HomeBlogList() {
               </p>
             )}
 
-            {/* Unified tags */}
             {getUnifiedTags(post).length > 0 && (
               <div className={styles.categories}>
                 {getUnifiedTags(post).map((tag) => (
@@ -135,7 +169,6 @@ export default function HomeBlogList() {
                 ))}
               </div>
             )}
-
           </article>
         ))}
       </div>
