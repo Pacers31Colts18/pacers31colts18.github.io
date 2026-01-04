@@ -38,7 +38,7 @@
 /* --- CARD SIZING + EQUAL HEIGHT FIX --- */
 .card {
   border: 1px solid #00FFFF;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   background-color: var(--ifm-background-surface-color);
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -51,9 +51,11 @@
 }
 
 .topBar {
-  height: 20px;
-  background-color: #FF0000;
-  border-color: #FF0000;
+  height: 30px;
+  width: 100%;
+  background: var(--header-border-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 html[data-theme='dark'] .topBar {
@@ -62,6 +64,7 @@ html[data-theme='dark'] .topBar {
 }
 
 html[data-theme='light'] .card {
+  background-color: #FF0000;
   border-color: #FF0000;
 }
 
