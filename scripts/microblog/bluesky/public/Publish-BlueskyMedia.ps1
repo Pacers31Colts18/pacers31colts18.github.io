@@ -2,22 +2,21 @@ function Publish-BlueskyMedia {
     param(
         [Parameter(Mandatory)]
         $Session,
+
         [Parameter(Mandatory)]
         [string] $Path
     )
 
     if (-not (Test-Path $Path)) {
-        Write-Warning "Media file not found: $Path"
-        continue
+        throw "Media file not found: $Path"
     }
 
     $bytes = [System.IO.File]::ReadAllBytes($Path)
 
     $response = Invoke-RestMethod -Method Post `
-        -Uri "$($Session.endpoint)/xrpc/com.atproto.repo.uploadBlob"
+        -Uri "$($Session.endpoint)/xrpc/com.atproto.repo.uploadBlob?encoding=image/jpeg" `
         -Headers @{
             Authorization = "Bearer $($Session.accessJwt)"
-            "Content-Type" = "image/jpeg"
         } `
         -Body $bytes
 
