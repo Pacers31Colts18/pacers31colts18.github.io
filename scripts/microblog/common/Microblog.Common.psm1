@@ -1,7 +1,7 @@
-$publicPath  = Join-Path $PSScriptRoot "common/public"
-$privatePath = Join-Path $PSScriptRoot "common/private"
+# Load common functions
+$publicPath  = Join-Path $PSScriptRoot "public"
+$privatePath = Join-Path $PSScriptRoot "private"
 
-# Load all shared public + private functions
 $Public  = @( Get-ChildItem -Path $publicPath  -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
 $Private = @( Get-ChildItem -Path $privatePath -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
 
@@ -10,8 +10,10 @@ foreach ($import in @($Public + $Private)) {
         . $import.FullName
     }
     catch {
-        Write-Error "Failed to import shared function $($import.FullName): $_"
+        Write-Error "Failed to import function $($import.FullName): $_"
+        throw
     }
 }
 
+# Export only public functions
 Export-ModuleMember -Function $Public.BaseName
