@@ -1,5 +1,5 @@
 # Load required modules
-$requiredModules = @("Microblog.Common")
+$requiredModules = @("common")
 
 foreach ($module in $requiredModules) {
     try {
