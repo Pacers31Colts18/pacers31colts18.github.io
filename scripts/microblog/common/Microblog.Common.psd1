@@ -9,7 +9,7 @@
 
     # Export only shared/common functions
     FunctionsToExport = @(
-        'Analyze-Frontmatter',
+        'Convert-Frontmatter',
         'Split-Post',
         'Initialize-Entry',
         'Validate-GitTag'
