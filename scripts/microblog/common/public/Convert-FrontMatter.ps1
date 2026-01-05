@@ -1,4 +1,4 @@
-function Analyze-Frontmatter {
+function Convert-Frontmatter {
     param ([string]$Frontmatter)
 
     $result = [ordered]@{
