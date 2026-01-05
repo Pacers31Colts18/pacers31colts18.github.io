@@ -40,7 +40,7 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          $modulePath = "./scripts/microblog/Microblog.psm1"
+          $modulePath = "./scripts/microblog/mastodon/mastodon.psm1"
 
           if (-not (Test-Path $modulePath)) {
               Write-Error "Module not found: $modulePath"
