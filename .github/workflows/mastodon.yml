@@ -1,0 +1,23 @@
+name: Mastodon Microblog
+
+on:
+  push:
+    paths:
+      - "microblog/**.md"
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Post new microblog entries to Mastodon
+        shell: pwsh
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+        run: |
+          ./scripts/post-mastodon.ps1
