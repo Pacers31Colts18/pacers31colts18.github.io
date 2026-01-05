@@ -7,9 +7,7 @@ images:
 alt:
   - Test2
 ---
-
 This is another test
-
 ---
 id: 2026-01-04-004
 visibility: public
