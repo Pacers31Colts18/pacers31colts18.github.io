@@ -9,8 +9,8 @@ foreach ($module in $requiredModules) {
 }
 
 # Corrected paths
-$Public  = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "mastodon/public")  -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
-$Private = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "mastodon/private") -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
+$Public = @( Get-ChildItem -Path $PSScriptRoot\public\*.ps1 -Recurse -ErrorAction SilentlyContinue )
+$Private = @( Get-ChildItem -Path $PSScriptRoot\private\*.ps1 -Recurse -ErrorAction SilentlyContinue )
 
 #Dot source the files
 foreach ($import in @($Public + $Private)) {
