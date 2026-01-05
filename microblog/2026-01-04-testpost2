@@ -1,0 +1,7 @@
+---
+visibility: public
+thread: true
+mastodon: true
+---
+
+Test post from my Github Action.
