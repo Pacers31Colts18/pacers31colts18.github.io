@@ -12,7 +12,7 @@
         'Convert-Frontmatter',
         'Split-Post',
         'Initialize-Entry',
-        'Validate-GitTag'
+        'Test-GitTag'
     )
 
     PrivateData = @{
