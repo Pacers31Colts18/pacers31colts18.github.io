@@ -13,7 +13,7 @@ function Process-Entry {
         exit
     }
 
-    if (Tag-Exists $meta.id) {
+    if (Check-GitTag $meta.id) {
         Write-Output "Skipping already-posted entry: $($meta.id)"
         return
     }
