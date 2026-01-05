@@ -6,20 +6,20 @@ foreach ($module in $requiredModules) {
      Catch {
         Write-Error "Unable to load $module" 
     }
- }
+}
 
-#Get public and private function definition files.
-$Public = @( Get-ChildItem -Path $PSScriptRoot\public\*.ps1 -Recurse -ErrorAction SilentlyContinue )
-$Private = @( Get-ChildItem -Path $PSScriptRoot\private\*.ps1 -Recurse -ErrorAction SilentlyContinue )
+# Corrected paths
+$Public  = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "mastodon/public")  -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
+$Private = @( Get-ChildItem -Path (Join-Path $PSScriptRoot "mastodon/private") -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
 
 #Dot source the files
-Foreach ($import in @($Public + $Private)) {
-    Try {
-        . $import.fullname
+foreach ($import in @($Public + $Private)) {
+    try {
+        . $import.FullName
     }
-    Catch {
-        Write-Error -Message "Failed to import function $($import.fullname): $_"
+    catch {
+        Write-Error -Message "Failed to import function $($import.FullName): $_"
     }
 }
 
-Export-ModuleMember -Function $Public.Basename
+Export-ModuleMember -Function $Public.BaseName
