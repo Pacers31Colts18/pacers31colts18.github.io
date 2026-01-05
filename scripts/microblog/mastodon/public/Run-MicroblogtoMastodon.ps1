@@ -9,7 +9,8 @@ function Run-MicroblogtoMastodon {
         $body        = if ($i + 1 -lt $blocks.Count) { $blocks[$i + 1].Trim() } else { "" }
 
         if (-not $frontmatter) {
-            throw "Invalid entry format near block $i"
+            Write-Warning "Invalid entry format near block $i"
+            continue
         }
 
         Process-Entry -Config $config -Frontmatter $frontmatter -Body $body
