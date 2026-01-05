@@ -33,17 +33,37 @@ jobs:
               Write-Host "No images directory found"
           }
 
-      - name: Import Microblog Bluesky module and run
+      - name: Import modules and run
         shell: pwsh
         env:
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          $modulePath = "./scripts/microblog/bluesky/bluesky.psm1"
+          $commonPath = "./scripts/microblog/common/Microblog.Common.psm1"
+
+          if (-not (Test-Path $commonPath)) {
+              Write-Error "Common module not found: $commonPath"
+              exit 1
+          }
+
+          Write-Host "Importing Common module..."
+          Import-Module $commonPath -Force -Verbose
+
+          if (-not (Get-Module Microblog.Common)) {
+              Write-Error "Microblog.Common failed to load."
+              exit 1
+          }
+
+          if ($Get-Module Microblog.Common) {
+              Write-Output "Microblog.Common loaded"
+              }
+
+          # Import Bluesky Module
+          $modulePath = "./scripts/microblog/bluesky/Bluesky.psm1"
 
           if (-not (Test-Path $modulePath)) {
-              Write-Error "Module not found: $modulePath"
+              Write-Error "Bluesky module not found: $modulePath"
               exit 1
           }
 
