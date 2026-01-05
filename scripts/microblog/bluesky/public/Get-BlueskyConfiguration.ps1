@@ -12,12 +12,14 @@ function Get-BlueskyConfiguration {
     }
 
     if (-not $config.Handle -or -not $config.AppPassword) {
-        throw "Missing Bluesky configuration"
+        Write-Error "Missing Bluesky configuration"
+        exit
     }
 
     if (-not (Test-Path $config.File)) {
-        throw "Microblog file not found: $($config.File)"
-    }
+        Write-Error "Microblog file not found: $($config.File)"
+        exit
+}
 
     return $config
 }
