@@ -8,7 +8,7 @@ foreach ($module in $requiredModules) {
     }
     catch {
         Write-Error "Unable to load required module: $module"
-        throw
+        exit
     }
 }
 
