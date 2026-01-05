@@ -3,7 +3,7 @@ id: 2026-01-04-001
 visibility: public
 thread: true
 images:
-  - ./images/test.jpg
+  - ./test.jpg
 alt:
   - Screenshot of terminal output
 ---
