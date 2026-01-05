@@ -44,5 +44,5 @@ function Process-Entry {
     # Tag after success
     git tag "microblog/$($meta.id)"
     git push "https://$($Config.Pat)$GitPath" "microblog/$($meta.id)" --force
-    Write-Output "Posted and tagged: $($meta.id)"
+    Write-Output "Posted to Mastodon on $($env:date): $($meta.id)"
 }
