@@ -1,4 +1,4 @@
-name: Post Microblog to Mastodon v2
+name: Post Microblog to Mastodon
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Verify microblog images directory (debug)
+      - name: Debug: List microblog images
         shell: pwsh
         run: |
           if (Test-Path "microblog/images") {
@@ -40,14 +40,30 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          $modulePath = "./scripts/microblog/mastodon/mastodon.psm1"
+          $modulePath = "./scripts/microblog/Microblog.psm1"
 
           if (-not (Test-Path $modulePath)) {
               Write-Error "Module not found: $modulePath"
               exit 1
           }
 
-          Import-Module $modulePath -Force
+          Write-Host "Importing Microblog module..."
+          Import-Module $modulePath -Force -Verbose
+
+          Write-Host "Verifying exported commands..."
+          $cmds = Get-Command -Module Microblog
+          if (-not $cmds) {
+              Write-Error "No commands exported from Microblog module. Check your .psm1 paths."
+              exit 1
+          }
+
+          Write-Host "Exported commands:"
+          $cmds | Format-Table Name, Source
+
+          if (-not (Get-Command Run-MicroblogToMastodon -ErrorAction SilentlyContinue)) {
+              Write-Error "Run-MicroblogToMastodon not found in module. Check your function name and export settings."
+              exit 1
+          }
 
           Write-Host "Running microblog posting process..."
-          Run-MicroblogtoMastodon
+          Run-MicroblogToMastodon
