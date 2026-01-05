@@ -9,11 +9,10 @@
 
     # Export only shared/common functions
     FunctionsToExport = @(
-        'Parse-Frontmatter',
+        'Analyze-Frontmatter',
         'Split-Post',
-        'Process-Entry',
-        'Load-Config',
-        'Check-GitTag'
+        'Initialize-Entry',
+        'Validate-GitTag'
     )
 
     PrivateData = @{
