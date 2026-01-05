@@ -1,4 +1,4 @@
-function Run-MicroblogToBluesky {
+function Invoke-MicroblogToBluesky {
 
     $config = Get-BlueskyConfiguration
 
