@@ -27,6 +27,6 @@ function Run-MicroblogToBluesky {
             Write-Warning "Invalid entry format near block $i"
         }
 
-        Process-Entry -Platform "bluesky" -Session $session -Config $config -Frontmatter $frontmatter -Body $body
+        Initialize-Entry -Platform "bluesky" -Session $session -Config $config -Frontmatter $frontmatter -Body $body
     }
 }
