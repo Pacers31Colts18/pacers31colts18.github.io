@@ -55,7 +55,7 @@ jobs:
               exit 1
           }
 
-          if ($Get-Module Microblog.Common) {
+          if (Get-Module Microblog.Common) {
               Write-Output "Microblog.Common loaded"
               }
 
