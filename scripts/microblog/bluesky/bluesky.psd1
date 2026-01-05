@@ -10,7 +10,7 @@
     FunctionsToExport = @(
         'Invoke-MicroblogToBluesky',
         'Get-BlueskyConfiguration',
-        'Submit-BlueskyMedia',
+        'Publish-BlueskyMedia',
         'New-BlueskyPost',
         'Post-BlueskyThread'
     )
