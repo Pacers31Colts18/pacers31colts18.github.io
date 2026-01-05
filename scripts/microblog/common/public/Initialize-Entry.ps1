@@ -12,8 +12,8 @@ function Initialize-Entry {
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
-    # Parse frontmatter
-    $meta = Parse-Frontmatter $Frontmatter
+    # Analyze frontmatter
+    $meta = Analyze-Frontmatter $Frontmatter
 
     if (-not $meta.id) {
         Write-Error "Post missing id"
@@ -21,7 +21,7 @@ function Initialize-Entry {
     }
 
     # Skip if already posted
-    if (Check-GitTag $meta.id) {
+    if (Validate-GitTag $meta.id) {
         Write-Output "Skipping already-posted entry: $($meta.id)"
         return
     }
