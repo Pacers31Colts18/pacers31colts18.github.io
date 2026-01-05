@@ -1,4 +1,16 @@
 ---
+id: 2026-01-05-003
+visibility: public
+thread: true
+images:
+  - ./microblog/images/test.jpg
+alt:
+  - Test
+---
+
+Test3
+
+---
 id: 2026-01-05-002
 visibility: public
 thread: true
