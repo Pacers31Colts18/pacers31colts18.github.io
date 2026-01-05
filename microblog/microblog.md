@@ -1,4 +1,12 @@
 ---
+id: 2026-01-04-003
+visibility: public
+thread: true
+---
+This is my third microblog post.
+
+
+---
 id: 2026-01-04-002
 visibility: public
 thread: true
