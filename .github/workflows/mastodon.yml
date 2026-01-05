@@ -22,14 +22,19 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: List images (debug)
+      - name: List microblog images (debug)
         run: |
-          ls -R microblog/images || echo "No images directory found"
+          if (Test-Path microblog/images) {
+              ls -R microblog/images
+          } else {
+              echo "No images directory found"
+          }
 
-      - name: Post new microblog entries to Mastodon
+      - name: Post new microblog entries
         shell: pwsh
         env:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           ./scripts/post-mastodon.ps1
