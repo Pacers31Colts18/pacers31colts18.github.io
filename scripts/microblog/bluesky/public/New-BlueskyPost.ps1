@@ -10,27 +10,58 @@ function New-BlueskyPost {
         $Embed
     )
 
+    # Build hashtags
+    $facets = @()
+    $regex = [regex]'#([A-Za-z0-9_]+)'
+
+    foreach ($match in $regex.Matches($Text)) {
+        $tag = $match.Groups[1].Value
+
+        $before = $Text.Substring(0, $match.Index)
+        $start  = [System.Text.Encoding]::UTF8.GetByteCount($before)
+        $length = [System.Text.Encoding]::UTF8.GetByteCount($match.Value)
+        $end    = $start + $length
+
+        $facets += @{
+            index = @{
+                byteStart = $start
+                byteEnd   = $end
+            }
+            features = @(
+                @{
+                    '$type' = 'app.bsky.richtext.facet#tag'
+                    tag     = $tag
+                }
+            )
+        }
+    }
+
+    # Build the post record
     $record = @{
         text      = $Text
         createdAt = (Get-Date).ToString("o")
     }
 
-    # Ensure embed is valid and includes a $type discriminator
-    if ($Embed) {
+    if ($facets.Count -gt 0) {
+        $record.facets = $facets
+    }
 
-        # If this is an image embed, enforce the correct Bluesky structure
+    # Embed handling (images, etc.)
+    if ($Embed) {
         if ($Embed.images) {
+            # Ensure proper Bluesky embed structure
             $record.embed = @{
                 '$type' = 'app.bsky.embed.images'
                 images  = $Embed.images
             }
         }
         else {
-            # Generic embed passthrough (must already contain $type)
+            # Generic embed passthrough
             $record.embed = $Embed
         }
     }
 
+    # Build the createRecord request
     $body = @{
         repo       = $Session.did
         collection = "app.bsky.feed.post"
