@@ -1,4 +1,4 @@
-function Get-MicroblogConfig {
+function Get-MastodonConfiguration {
     $config = [ordered]@{
         Instance = $env:MASTODON_INSTANCE
         Token    = $env:MASTODON_TOKEN
