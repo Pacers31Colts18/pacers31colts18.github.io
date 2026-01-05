@@ -1,4 +1,4 @@
-$publicPath  = Join-Path $PSScriptRoot "common"
+$publicPath  = Join-Path $PSScriptRoot "common/public"
 $privatePath = Join-Path $PSScriptRoot "common/private"
 
 # Load all shared public + private functions
