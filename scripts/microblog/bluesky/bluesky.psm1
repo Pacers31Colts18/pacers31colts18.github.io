@@ -25,7 +25,7 @@ foreach ($import in @($Public + $Private)) {
     }
     catch {
         Write-Error "Failed to import function $($import.FullName): $_"
-        throw
+        exit
     }
 }
 
