@@ -2,7 +2,7 @@ function Process-Entry {
     param (
         $Config,
         [string]$Frontmatter,
-        [string]$Body
+        [string]$Body,
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
