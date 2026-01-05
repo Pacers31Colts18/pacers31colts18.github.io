@@ -1,18 +1,21 @@
-# Load required modules
-$requiredModules = @("common")
+# Load required common module
+$commonPath = Join-Path $PSScriptRoot ".." "common/common.psm1"
 
-foreach ($module in $requiredModules) {
-    try {
-        Import-Module -Name $module -Force -ErrorAction Stop
-        Write-Host "Loaded required module: $module"
-    }
-    catch {
-        Write-Error "Unable to load required module: $module"
-        exit
-    }
+if (-not (Test-Path $commonPath)) {
+    Write-Error "Common module not found at: $commonPath"
+    exit
 }
 
-# Load Bluesky functions
+try {
+    Import-Module $commonPath -Force -Verbose
+    Write-Host "Loaded common module from: $commonPath"
+}
+catch {
+    Write-Error "Failed to load common module: $_"
+    exit
+}
+
+# Load public/private functions
 $publicPath  = Join-Path $PSScriptRoot "public"
 $privatePath = Join-Path $PSScriptRoot "private"
 
