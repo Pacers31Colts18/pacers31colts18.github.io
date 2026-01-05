@@ -1,4 +1,4 @@
-function Submit-BlueskyMedia {
+function Publish-BlueskyMedia {
     param(
         [Parameter(Mandatory)]
         $Session,
