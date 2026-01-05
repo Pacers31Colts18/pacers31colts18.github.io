@@ -1,5 +1,5 @@
 @{
-    RootModule        = 'Microblog.Common.psm1'
+    RootModule        = 'common.psm1'
     ModuleVersion     = '1.0.0'
     GUID              = 'e3b7c4b1-9d2a-4c8f-8f3a-1b2c4d7e9001'
     Author            = 'Joe Loveless'
