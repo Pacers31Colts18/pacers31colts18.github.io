@@ -11,7 +11,7 @@
     FunctionsToExport = @(
         'Convert-Frontmatter',
         'Split-Post',
-        'Initialize-Entry',
+        'New-Entry',
         'Test-GitTag'
     )
 
