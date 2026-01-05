@@ -8,9 +8,9 @@
     PowerShellVersion = '5.1'
 
     FunctionsToExport = @(
-        'Run-MicroblogToBluesky',
+        'Invoke-MicroblogToBluesky',
         'Get-BlueskyConfiguration',
-        'Upload-BlueskyMedia',
+        'Submit-BlueskyMedia',
         'New-BlueskyPost',
         'Post-BlueskyThread'
     )
