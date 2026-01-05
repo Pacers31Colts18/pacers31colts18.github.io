@@ -1,29 +1,32 @@
 $ErrorActionPreference = "Stop"
 
-# region Configuration
+# region Config
 $Instance = $env:MASTODON_INSTANCE
 $Token    = $env:MASTODON_TOKEN
+$File     = "microblog/microblog.md"
 $MaxChars = 500
 $MaxMedia = 4
 
 if (-not $Instance -or -not $Token) {
-  throw "MASTODON_INSTANCE or MASTODON_TOKEN is missing"
+    Write-Error "Missing Mastodon configuration"
+    exit
 }
 
-#endregion
+if (-not (Test-Path $File)) {
+    Write-Error "Microblog file not found: $File"
+    exit
+}
+#endregion 
 
 # region Helper Functions
 function Split-Post {
-  param (
-    [string]$Text,
-    [int]$Limit
-  )
+  param ([string]$Text)
 
   $chunks = @()
   $current = ""
 
   foreach ($para in $Text -split "`n`n") {
-    if (($current.Length + $para.Length + 2) -gt $Limit) {
+    if (($current.Length + $para.Length + 2) -gt $MaxChars) {
       if ($current.Trim()) {
         $chunks += $current.Trim()
         $current = ""
@@ -39,67 +42,56 @@ function Split-Post {
   return $chunks
 }
 
-function Upload-MastodonMedia {
-  param (
-    [string]$FilePath,
-    [string]$AltText
-  )
+function Upload-Media {
+  param ($Path, $Alt)
 
-  if (-not (Test-Path $FilePath)) {
-    throw "Image not found: $FilePath"
-  }
+  $headers = @{ Authorization = "Bearer $Token" }
 
-  $headers = @{
-    Authorization = "Bearer $Token"
-  }
+  $form = @{ file = Get-Item $Path }
+  if ($Alt) { $form.description = $Alt }
 
-  $form = @{
-    file = Get-Item $FilePath
-  }
+  $res = Invoke-RestMethod `
+    -Uri "https://$Instance/api/v1/media" -Method POST -Headers $headers -Form $form
 
-  if ($AltText) {
-    $form.description = $AltText
-  }
-
-  $response = Invoke-RestMethod -Uri "https://$Instance/api/v1/media" -Method POST -Headers $headers -Form $form
-
-  return $response.id
+  return $res.id
 }
+
+function Tag-Exists($Id) {
+  git tag --list "microblog/$Id" | Where-Object { $_ }
+}
+
 #endregion
 
-# Detect newly added microblog files
-$files = git diff --name-status HEAD~1 HEAD |
-  Where-Object { $_ -match '^A\s+microblog/.*\.md$' } |
-  ForEach-Object { $_.Split("`t")[1] }
+# Load & split entries
+$raw = Get-Content $File -Raw
 
-if (-not $files) {
-  Write-Host "No new microblog posts detected"
-  exit 0
-}
+$entries = $raw -split '(?m)^---\s*$' | Where-Object { $_.Trim() }
 
-# Process each new post
-foreach ($file in $files) {
-  Write-Host "Processing $file"
+foreach ($entry in $entries) {
 
-  $raw = Get-Content $file -Raw
-
-if ($raw -notmatch '(?s)^---(.*?)---\s*(.*)$') {
-    throw "Invalid or missing frontmatter in $file"
+  if ($entry -notmatch '(?s)^(.+?)\n\n(.*)$') {
+    Write-Error "Invalid entry format"
+    exit
   }
 
-  $frontmatterText = $matches[1]
-  $body            = $matches[2].Trim()
+  $frontmatter = $matches[1]
+  $body        = $matches[2].Trim()
 
   # Defaults
+  $id = $null
   $visibility = "public"
-  $thread     = $true
-  $images     = @()
-  $altText    = @()
+  $thread = $true
+  $images = @()
+  $alt = @()
+  $section = $null
 
-  $currentSection = $null
-
-  foreach ($line in $frontmatterText -split "`n") {
+  foreach ($line in $frontmatter -split "`n") {
     $line = $line.Trim()
+
+    if ($line -match '^id:\s*(.+)$') {
+      $id = $matches[1].Trim()
+      continue
+    }
 
     if ($line -match '^visibility:\s*(.+)$') {
       $visibility = $matches[1].Trim()
@@ -111,54 +103,46 @@ if ($raw -notmatch '(?s)^---(.*?)---\s*(.*)$') {
       continue
     }
 
-    if ($line -match '^images:\s*$') {
-      $currentSection = "images"
-      continue
-    }
-
-    if ($line -match '^alt:\s*$') {
-      $currentSection = "alt"
-      continue
-    }
+    if ($line -eq "images:") { $section = "images"; continue }
+    if ($line -eq "alt:")    { $section = "alt"; continue }
 
     if ($line -match '^- (.+)$') {
-      if ($currentSection -eq "images") {
-        $images += $matches[1].Trim()
-      }
-      elseif ($currentSection -eq "alt") {
-        $altText += $matches[1].Trim()
-      }
+      if ($section -eq "images") { $images += $matches[1].Trim() }
+      if ($section -eq "alt")    { $alt    += $matches[1].Trim() }
     }
   }
 
+  if (-not $id) {
+    throw "Post missing id"
+  }
+
+  if (Tag-Exists $id) {
+    Write-Output "Skipping already-posted entry: $id"
+    continue
+  }
+
+  Write-Output "Posting entry: $id"
+
   if ($images.Count -gt $MaxMedia) {
-    throw "Mastodon allows max $MaxMedia images per post"
+    Write-Error "Too many images in $id (max $MaxMedia)"
+    exit
   }
 
-  # Upload images (first post only)
+  # Upload images
   $mediaIds = @()
-
   for ($i = 0; $i -lt $images.Count; $i++) {
-    $img = $images[$i]
-    $alt = if ($i -lt $altText.Count) { $altText[$i] } else { $null }
-
-    Write-Host "Uploading image: $img"
-    $mediaIds += Upload-MastodonMedia -FilePath $img -AltText $alt
+    $mediaIds += Upload-Media $images[$i] ($alt[$i])
   }
 
-  # Split post into chunks (for threads)
+  # Split post
   $posts = if ($thread) {
-    Split-Post -Text $body -Limit $MaxChars
-  }
-  else {
+    Split-Post $body
+  } else {
     @($body.Substring(0, [Math]::Min($MaxChars, $body.Length)))
   }
 
-  # Publish posts
-  $headers = @{
-    Authorization = "Bearer $Token"
-  }
-
+  # Publish
+  $headers = @{ Authorization = "Bearer $Token" }
   $replyTo = $null
 
   foreach ($post in $posts) {
@@ -174,10 +158,14 @@ if ($raw -notmatch '(?s)^---(.*?)---\s*(.*)$') {
       $payload.media_ids = $mediaIds
     }
 
-    $response = Invoke-RestMethod -Uri "https://$Instance/api/v1/statuses" -Method POST -Headers $headers -Body ($payload | ConvertTo-Json -Depth 5) -ContentType "application/json"
+    $res = Invoke-RestMethod -Uri "https://$Instance/api/v1/statuses" -Method POST -Headers $headers -Body ($payload | ConvertTo-Json -Depth 5) -ContentType "application/json"
 
-    $replyTo = $response.id
+    $replyTo = $res.id
   }
 
-  Write-Output "Posted $file successfully"
+  # Tag after success
+  git tag "microblog/$id"
+  git push origin "microblog/$id"
+
+  Write-Host "Posted and tagged: $id"
 }
