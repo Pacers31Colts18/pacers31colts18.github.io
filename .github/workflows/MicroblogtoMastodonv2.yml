@@ -50,4 +50,4 @@ jobs:
           Import-Module $modulePath -Force
 
           Write-Host "Running microblog posting process..."
-          Run-Microblog
+          Run-MicroblogtoMastodon
