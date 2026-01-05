@@ -60,7 +60,7 @@ jobs:
               }
 
           # Import Bluesky Module
-          $modulePath = "./scripts/microblog/bluesky/Bluesky.psm1"
+          $modulePath = "./scripts/microblog/bluesky/bluesky.psm1"
 
           if (-not (Test-Path $modulePath)) {
               Write-Error "Bluesky module not found: $modulePath"
