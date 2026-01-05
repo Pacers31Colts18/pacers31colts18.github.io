@@ -40,8 +40,8 @@ function Upload-Media {
     param ($Path, $Alt)
 
     if (-not (Test-Path $Path)) {
-        Write-Error "Image file not found: $Path"
-        exit
+        Write-Warning "Image file not found: $Path"
+        continue
     }
 
     $headers = @{ Authorization = "Bearer $Token" }
