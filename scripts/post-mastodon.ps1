@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-# region Config
+# region Configuration
 $Instance = $env:MASTODON_INSTANCE
 $Token    = $env:MASTODON_TOKEN
 $File     = "microblog/microblog.md"
@@ -8,7 +8,7 @@ $MaxChars = 500
 $MaxMedia = 4
 
 if (-not $Instance -or -not $Token) {
-    Write-Error "Missing Mastodon configuration"
+    Write-Error "Mising Mastodon configuration"
     exit
 }
 
@@ -16,156 +16,133 @@ if (-not (Test-Path $File)) {
     Write-Error "Microblog file not found: $File"
     exit
 }
-#endregion 
+#endregion
 
 # region Helper Functions
 function Split-Post {
-  param ([string]$Text)
+    param ([string]$Text)
 
-  $chunks = @()
-  $current = ""
+    $chunks = @()
+    $current = ""
 
-  foreach ($para in $Text -split "`n`n") {
-    if (($current.Length + $para.Length + 2) -gt $MaxChars) {
-      if ($current.Trim()) {
-        $chunks += $current.Trim()
-        $current = ""
-      }
+    foreach ($para in $Text -split "`n`n") {
+        if (($current.Length + $para.Length + 2) -gt $MaxChars) {
+            if ($current.Trim()) { $chunks += $current.Trim(); $current = "" }
+        }
+        $current += "$para`n`n"
     }
-    $current += "$para`n`n"
-  }
 
-  if ($current.Trim()) {
-    $chunks += $current.Trim()
-  }
-
-  return $chunks
+    if ($current.Trim()) { $chunks += $current.Trim() }
+    return $chunks
 }
 
 function Upload-Media {
-  param ($Path, $Alt)
+    param ($Path, $Alt)
 
-  $headers = @{ Authorization = "Bearer $Token" }
+    if (-not (Test-Path $Path)) {
+        Write-Error "Image file not found: $Path"
+        exit
+    }
 
-  $form = @{ file = Get-Item $Path }
-  if ($Alt) { $form.description = $Alt }
+    $headers = @{ Authorization = "Bearer $Token" }
+    $form = @{ file = Get-Item $Path }
 
-  $res = Invoke-RestMethod `
-    -Uri "https://$Instance/api/v1/media" -Method POST -Headers $headers -Form $form
+    if ($Alt) { $form.description = $Alt }
 
-  return $res.id
+    $res = Invoke-RestMethod -Uri "https://$Instance/api/v1/media" -Method POST -Headers $headers -Form $form
+    return $res.id
 }
 
 function Tag-Exists($Id) {
-  git tag --list "microblog/$Id" | Where-Object { $_ }
+    git tag --list "microblog/$Id" | Where-Object { $_ }
 }
-
 #endregion
 
 # Load & split entries
 $raw = Get-Content $File -Raw
 
-$entries = $raw -split '(?m)^---\s*$' | Where-Object { $_.Trim() }
+$blocks = $raw -split '(?m)^---\s*$'
 
-foreach ($entry in $entries) {
+for ($i = 1; $i -lt $blocks.Count; $i += 2) {
 
-  if ($entry -notmatch '(?s)^(.+?)\n\n(.*)$') {
-    Write-Error "Invalid entry format"
-    exit
-  }
+    $frontmatter = $blocks[$i].Trim()
+    $body        = $blocks[$i + 1].Trim()
 
-  $frontmatter = $matches[1]
-  $body        = $matches[2].Trim()
-
-  # Defaults
-  $id = $null
-  $visibility = "public"
-  $thread = $true
-  $images = @()
-  $alt = @()
-  $section = $null
-
-  foreach ($line in $frontmatter -split "`n") {
-    $line = $line.Trim()
-
-    if ($line -match '^id:\s*(.+)$') {
-      $id = $matches[1].Trim()
-      continue
+    if (-not $frontmatter -or -not $body) {
+        Write-Error "Invalid entry format near block $i"
+        exit
     }
 
-    if ($line -match '^visibility:\s*(.+)$') {
-      $visibility = $matches[1].Trim()
-      continue
+    # Parse frontmatter
+    $id = $null
+    $visibility = "public"
+    $thread = $true
+    $images = @()
+    $alt = @()
+    $section = $null
+
+    foreach ($line in $frontmatter -split "`n") {
+        $line = $line.Trim()
+        if ($line -match '^id:\s*(.+)$') { $id = $matches[1].Trim(); continue }
+        if ($line -match '^visibility:\s*(.+)$') { $visibility = $matches[1].Trim(); continue }
+        if ($line -match '^thread:\s*(.+)$') { $thread = $matches[1].Trim().ToLower() -eq "true"; continue }
+        if ($line -eq "images:") { $section = "images"; continue }
+        if ($line -eq "alt:") { $section = "alt"; continue }
+        if ($line -match '^- (.+)$') {
+            if ($section -eq "images") { $images += $matches[1].Trim() }
+            if ($section -eq "alt") { $alt += $matches[1].Trim() }
+        }
     }
 
-    if ($line -match '^thread:\s*(.+)$') {
-      $thread = $matches[1].Trim().ToLower() -eq "true"
-      continue
+    if (-not $id) { throw "Post missing id" }
+
+    # Skip already posted
+    if (Tag-Exists $id) {
+        Write-Output "Skipping already-posted entry: $id"
+        continue
     }
 
-    if ($line -eq "images:") { $section = "images"; continue }
-    if ($line -eq "alt:")    { $section = "alt"; continue }
+    Write-Host "Posting entry: $id"
 
-    if ($line -match '^- (.+)$') {
-      if ($section -eq "images") { $images += $matches[1].Trim() }
-      if ($section -eq "alt")    { $alt    += $matches[1].Trim() }
-    }
-  }
-
-  if (-not $id) {
-    throw "Post missing id"
-  }
-
-  if (Tag-Exists $id) {
-    Write-Output "Skipping already-posted entry: $id"
-    continue
-  }
-
-  Write-Output "Posting entry: $id"
-
-  if ($images.Count -gt $MaxMedia) {
-    Write-Error "Too many images in $id (max $MaxMedia)"
-    exit
-  }
-
-  # Upload images
-  $mediaIds = @()
-  for ($i = 0; $i -lt $images.Count; $i++) {
-    $mediaIds += Upload-Media $images[$i] ($alt[$i])
-  }
-
-  # Split post
-  $posts = if ($thread) {
-    Split-Post $body
-  } else {
-    @($body.Substring(0, [Math]::Min($MaxChars, $body.Length)))
-  }
-
-  # Publish
-  $headers = @{ Authorization = "Bearer $Token" }
-  $replyTo = $null
-
-  foreach ($post in $posts) {
-    $payload = @{
-      status     = $post
-      visibility = $visibility
+    if ($images.Count -gt $MaxMedia) {
+        Write-Error "Too many images in $id (max $MaxMedia)"
+        exit
     }
 
-    if ($replyTo) {
-      $payload.in_reply_to_id = $replyTo
+    # Upload images (first post only)
+    $mediaIds = @()
+    for ($j = 0; $j -lt $images.Count; $j++) {
+        $mediaIds += Upload-Media $images[$j] ($alt[$j])
     }
-    elseif ($mediaIds.Count -gt 0) {
-      $payload.media_ids = $mediaIds
+
+    # Split post into threads
+    $posts = if ($thread) { Split-Post $body } else { @($body.Substring(0, [Math]::Min($MaxChars, $body.Length))) }
+
+    # Publish posts
+    $headers = @{ Authorization = "Bearer $Token" }
+    $replyTo = $null
+
+    foreach ($post in $posts) {
+        $payload = @{
+            status     = $post
+            visibility = $visibility
+        }
+
+        if ($replyTo) {
+            $payload.in_reply_to_id = $replyTo
+        }
+        elseif ($mediaIds.Count -gt 0) {
+            $payload.media_ids = $mediaIds
+        }
+
+        $res = Invoke-RestMethod -Uri "https://$Instance/api/v1/statuses" -Method POST -Headers $headers -Body ($payload | ConvertTo-Json -Depth 5) -ContentType "application/json"
+
+        $replyTo = $res.id
     }
 
-    $res = Invoke-RestMethod -Uri "https://$Instance/api/v1/statuses" -Method POST -Headers $headers -Body ($payload | ConvertTo-Json -Depth 5) -ContentType "application/json"
+    # Tag after success
+    git tag "microblog/$id"
+    git push origin "microblog/$id"
 
-    $replyTo = $res.id
-  }
-
-  # Tag after success
-  git tag "microblog/$id"
-  git push origin "microblog/$id"
-
-  Write-Host "Posted and tagged: $id"
+    Write-Output "Posted and tagged: $id"
 }
