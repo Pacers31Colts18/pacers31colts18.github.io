@@ -49,7 +49,7 @@ jobs:
           }
 
           Write-Host "Importing Bluesky module..."
-          Import-Module $modulePath -Force -Verbose
+          Import-Module $modulePath -Force
 
           Write-Host "Verifying exported commands..."
           $cmds = Get-Command -Module Bluesky
@@ -61,8 +61,8 @@ jobs:
           Write-Host "Exported commands:"
           $cmds | Format-Table Name, Source
 
-          if (-not (Get-Command Run-MicroblogToBluesky -ErrorAction SilentlyContinue)) {
-              Write-Error "Run-MicroblogToBluesky not found in module. Check your function name and export settings."
+          if (-not (Get-Command Invoke-MicroblogToBluesky -ErrorAction SilentlyContinue)) {
+              Write-Error "Invoke-MicroblogToBluesky not found in module. Check your function name and export settings."
               exit 1
           }
 
