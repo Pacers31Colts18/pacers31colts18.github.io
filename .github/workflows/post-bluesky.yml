@@ -40,10 +40,10 @@ jobs:
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          $commonPath = "./scripts/microblog/common/Microblog.Common.psm1"
+          $commonPath = "./scripts/microblog/common/common.psm1"
 
           if (-not (Test-Path $commonPath)) {
-              Write-Error "Common module not found: $commonPath"
+              Write-Error "Module not found: $commonPath"
               exit 1
           }
 
