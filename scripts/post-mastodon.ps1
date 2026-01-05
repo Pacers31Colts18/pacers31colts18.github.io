@@ -6,6 +6,7 @@ $Token    = $env:MASTODON_TOKEN
 $File     = "microblog/microblog.md"
 $MaxChars = 500
 $MaxMedia = 4
+$Pat      = $env:GH_PAT
 
 if (-not $Instance -or -not $Token) {
     Write-Error "Mising Mastodon configuration"
@@ -66,9 +67,9 @@ $blocks = $raw -split '(?m)^---\s*$'
 for ($i = 1; $i -lt $blocks.Count; $i += 2) {
 
     $frontmatter = $blocks[$i].Trim()
-    $body        = $blocks[$i + 1].Trim()
+    $body        = if ($i + 1 -lt $blocks.Count) { $blocks[$i + 1].Trim() } else { "" }
 
-    if (-not $frontmatter -or -not $body) {
+    if (-not $frontmatter) {
         Write-Error "Invalid entry format near block $i"
         exit
     }
@@ -94,7 +95,7 @@ for ($i = 1; $i -lt $blocks.Count; $i += 2) {
         }
     }
 
-    if (-not $id) { throw "Post missing id" }
+    if (-not $id) { Write-Error "Post missing id"; exit }
 
     # Skip already posted
     if (Tag-Exists $id) {
@@ -140,9 +141,9 @@ for ($i = 1; $i -lt $blocks.Count; $i += 2) {
         $replyTo = $res.id
     }
 
-    # Tag after success
+    # Tag after success using PAT
     git tag "microblog/$id"
-    git push origin "microblog/$id"
+    git push https://$Pat@github.com/Pacers31Colts18/pacers31colts18.github.io.git "microblog/$id"
 
     Write-Output "Posted and tagged: $id"
 }
