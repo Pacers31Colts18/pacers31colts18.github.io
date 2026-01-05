@@ -1,0 +1,53 @@
+name: Post Microblog to Mastodon v2
+
+on:
+  push:
+    paths:
+      - "microblog/**.md"
+
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Optional reason for manual run"
+        required: false
+        default: "Manual dispatch"
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Verify microblog images directory (debug)
+        shell: pwsh
+        run: |
+          if (Test-Path "microblog/images") {
+              Write-Host "Images found:"
+              Get-ChildItem -Recurse "microblog/images"
+          } else {
+              Write-Host "No images directory found"
+          }
+
+      - name: Import Microblog module and run
+        shell: pwsh
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          $modulePath = "./scripts/microblog/Microblog.psm1"
+
+          if (-not (Test-Path $modulePath)) {
+              Write-Error "Module not found: $modulePath"
+              exit 1
+          }
+
+          Import-Module $modulePath -Force
+
+          Write-Host "Running microblog posting process..."
+          Run-Microblog
