@@ -1,9 +1,16 @@
-name: Mastodon Microblog
+name: Post Microblog to Mastodon
 
 on:
   push:
     paths:
       - "microblog/**.md"
+
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Optional reason for manual run"
+        required: false
+        default: "Manual dispatch"
 
 jobs:
   post:
