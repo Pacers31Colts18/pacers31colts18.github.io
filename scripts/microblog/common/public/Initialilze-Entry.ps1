@@ -1,4 +1,4 @@
-function Process-Entry {
+function Initialilze-Entry {
     param (
         $Config,
         $Session,
