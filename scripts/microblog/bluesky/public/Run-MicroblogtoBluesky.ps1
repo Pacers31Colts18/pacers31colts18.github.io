@@ -3,10 +3,11 @@ function Run-MicroblogToBluesky {
     $config = Get-BlueskyConfiguration
 
     # Authenticate Bluesky session
-    $session = Invoke-RestMethod -Method Post -Uri "$($config.Endpoint)/xrpc/com.atproto.server.createSession" -Body @{
-            identifier = $config.Handle
-            password   = $config.AppPassword
-        }
+    $session = Invoke-RestMethod -Method Post -Uri "$($config.Endpoint)/xrpc/com.atproto.server.createSession" -Headers @{ "Content-Type" = "application/json" } -Body (@{
+        identifier = $config.Handle
+        password   = $config.AppPassword
+    } | ConvertTo-Json)
+
 
     $session | Add-Member -NotePropertyName endpoint -NotePropertyValue $config.Endpoint
 
