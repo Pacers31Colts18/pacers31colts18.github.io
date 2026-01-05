@@ -19,7 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: List images (debug)
+        run: |
+          ls -R microblog/images || echo "No images directory found"
 
       - name: Post new microblog entries to Mastodon
         shell: pwsh
