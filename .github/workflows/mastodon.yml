@@ -23,11 +23,12 @@ jobs:
           persist-credentials: true
 
       - name: List microblog images (debug)
+        shell: pwsh
         run: |
-          if (Test-Path microblog/images) {
-              ls -R microblog/images
+          if (Test-Path "microblog/images") {
+              Get-ChildItem -Recurse "microblog/images"
           } else {
-              echo "No images directory found"
+              Write-Host "No images directory found"
           }
 
       - name: Post new microblog entries
