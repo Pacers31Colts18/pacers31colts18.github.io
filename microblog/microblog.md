@@ -4,7 +4,6 @@ visibility: public
 thread: true
 ---
 This is a second test.
-
 ---
 2026-01-05-001
 visibility: public
