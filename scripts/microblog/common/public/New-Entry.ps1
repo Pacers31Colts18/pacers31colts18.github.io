@@ -63,7 +63,7 @@ function New-Entry {
         $alt  = $meta.alt[$i]
 
         if ($Platform -eq "mastodon") {
-            $mediaIds += Upload-MastodonMedia `
+            $mediaIds += Publish-MastodonMedia `
                 -Instance $Config.Instance `
                 -Token $Config.Token `
                 -Path $path `
@@ -71,9 +71,7 @@ function New-Entry {
         }
 
         if ($Platform -eq "bluesky") {
-            $mediaIds += Upload-BlueskyMedia `
-                -Session $Session `
-                -Path $path
+            $mediaIds += Publish-BlueskyMedia -Session $Session -Path $path
         }
     }
 
@@ -95,10 +93,7 @@ function New-Entry {
     }
 
     if ($Platform -eq "bluesky") {
-        Post-BlueskyThread `
-            -Session $Session `
-            -Posts $posts `
-            -Media $mediaIds[0]   # Bluesky only supports 1 image per post currently
+        Post-BlueskyThread -Session $Session -Posts $posts -Media $mediaIds[0]   # Bluesky only supports 1 image per post currently
     }
 
     # Tag after success
