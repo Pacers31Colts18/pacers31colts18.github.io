@@ -1,4 +1,4 @@
-function Initialize-Entry {
+function New-Entry {
     param (
         $Config,
         $Session,
