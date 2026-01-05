@@ -1,11 +1,14 @@
 function Process-Entry {
     param (
         $Config,
+        $Session,
+        [string]$Platform,
         [string]$Frontmatter,
         [string]$Body,
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
+    # Parse frontmatter
     $meta = Parse-Frontmatter $Frontmatter
 
     if (-not $meta.id) {
@@ -13,6 +16,7 @@ function Process-Entry {
         exit
     }
 
+    # Skip if already posted
     if (Check-GitTag $meta.id) {
         Write-Output "Skipping already-posted entry: $($meta.id)"
         return
@@ -20,15 +24,53 @@ function Process-Entry {
 
     Write-Host "Posting entry: $($meta.id)"
 
+    $postToMastodon = $true
+    $postToBluesky  = $true
+
+    if ($meta.ContainsKey("mastodon")) {
+        $postToMastodon = [bool]$meta.mastodon
+    }
+    if ($meta.ContainsKey("bluesky")) {
+        $postToBluesky = [bool]$meta.bluesky
+    }
+
+    if ($Platform -eq "mastodon" -and -not $postToMastodon) {
+        Write-Host "Skipping Mastodon for this entry."
+        return
+    }
+
+    if ($Platform -eq "bluesky" -and -not $postToBluesky) {
+        Write-Host "Skipping Bluesky for this entry."
+        return
+    }
+
+    # Validate image count
     if ($meta.images.Count -gt $Config.MaxMedia) {
         Write-Error "Too many images in $($meta.id) (max $($Config.MaxMedia))"
         exit
     }
 
-    # Upload media
+    # Upload media (platform-specific)
     $mediaIds = @()
+
     for ($i = 0; $i -lt $meta.images.Count; $i++) {
-        $mediaIds += Upload-MastodonMedia -Instance $Config.Instance -Token $Config.Token -Path $meta.images[$i] -Alt $meta.alt[$i]
+
+        $path = $meta.images[$i]
+        $alt  = $meta.alt[$i]
+
+        if ($Platform -eq "mastodon") {
+            $mediaIds += Upload-MastodonMedia `
+                -Instance $Config.Instance `
+                -Token $Config.Token `
+                -Path $path `
+                -Alt $alt
+        }
+
+        if ($Platform -eq "bluesky") {
+            $mediaIds += Upload-BlueskyMedia `
+                -Session $Session `
+                -Path $path
+        }
     }
 
     # Split into threads
@@ -38,11 +80,26 @@ function Process-Entry {
         @($Body.Substring(0, [Math]::Min($Config.MaxChars, $Body.Length)))
     }
 
-    # Publish
-    Post-MastodonThread -Instance $Config.Instance -Token $Config.Token -Posts $posts -Visibility $meta.visibility -MediaIds $mediaIds
+    # Publish (platform-specific)
+    if ($Platform -eq "mastodon") {
+        Post-MastodonThread `
+            -Instance $Config.Instance `
+            -Token $Config.Token `
+            -Posts $posts `
+            -Visibility $meta.visibility `
+            -MediaIds $mediaIds
+    }
+
+    if ($Platform -eq "bluesky") {
+        Post-BlueskyThread `
+            -Session $Session `
+            -Posts $posts `
+            -Media $mediaIds[0]   # Bluesky only supports 1 image per post currently
+    }
 
     # Tag after success
     git tag "microblog/$($meta.id)"
     git push "https://$($Config.Pat)$GitPath" "microblog/$($meta.id)" --force
-    Write-Output "Posted to Mastodon successfully, ID: $($meta.id)"
+
+    Write-Output "Posted to $Platform successfully, ID: $($meta.id)"
 }
