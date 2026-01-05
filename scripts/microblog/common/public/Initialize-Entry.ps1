@@ -31,10 +31,10 @@ function Initialize-Entry {
     $postToMastodon = $true
     $postToBluesky  = $true
 
-    if ($meta.ContainsKey("mastodon")) {
+    if ($meta.Contains("mastodon")) {
         $postToMastodon = [bool]$meta.mastodon
     }
-    if ($meta.ContainsKey("bluesky")) {
+    if ($meta.Contains("bluesky")) {
         $postToBluesky = [bool]$meta.bluesky
     }
 
