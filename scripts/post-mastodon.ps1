@@ -143,7 +143,7 @@ for ($i = 1; $i -lt $blocks.Count; $i += 2) {
 
     # Tag after success using PAT
     git tag "microblog/$id"
-    git push https://$Pat@github.com/Pacers31Colts18/pacers31colts18.github.io.git "microblog/$id"
+    git push https://$Pat@github.com/Pacers31Colts18/pacers31colts18.github.io.git "microblog/$id" --force
 
     Write-Output "Posted and tagged: $id"
 }
