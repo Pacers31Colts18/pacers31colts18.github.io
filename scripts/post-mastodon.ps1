@@ -83,7 +83,7 @@ foreach ($file in $files) {
 
   $raw = Get-Content $file -Raw
 
-  if ($raw -notmatch '---(.*?)---(.*)'s) {
+if ($raw -notmatch '(?s)^---(.*?)---\s*(.*)$') {
     throw "Invalid or missing frontmatter in $file"
   }
 
