@@ -1,0 +1,34 @@
+name: Post Microblog to Mastodon v3
+
+on:
+  push:
+    paths:
+      - "microblog/**.md"
+
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Optional reason for manual run"
+        required: false
+        default: "Manual dispatch"
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Run Mastodon microblog posting
+        shell: pwsh
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          Import-Module "./script/microblog/mastodon/Mastodon.psm1" -Force
+          Run-MicroblogToMastodon
