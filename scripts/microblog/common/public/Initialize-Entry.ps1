@@ -13,7 +13,7 @@ function Initialize-Entry {
     )
 
     # Analyze frontmatter
-    $meta = Analyze-Frontmatter $Frontmatter
+    $meta = Convert-Frontmatter $Frontmatter
 
     if (-not $meta.id) {
         Write-Error "Post missing id"
