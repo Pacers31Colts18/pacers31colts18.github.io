@@ -21,7 +21,7 @@ function Initialize-Entry {
     }
 
     # Skip if already posted
-    if (Validate-GitTag $meta.id) {
+    if (Test-GitTag $meta.id) {
         Write-Output "Skipping already-posted entry: $($meta.id)"
         return
     }
