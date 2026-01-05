@@ -1,5 +1,5 @@
 # Import shared/common module
-$commonModule = Join-Path $PSScriptRoot ".." "Microblog.Common.psm1"
+$commonModule = Join-Path $PSScriptRoot ".." "common/Microblog.Common.psm1"
 Import-Module $commonModule -Force
 
 # Load Bluesky public functions
