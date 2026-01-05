@@ -2,7 +2,11 @@ function Process-Entry {
     param (
         $Config,
         $Session,
+        
+        [Parameter(Mandatory)]
+        [ValidateSet("mastodon", "bluesky")]
         [string]$Platform,
+        
         [string]$Frontmatter,
         [string]$Body,
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
