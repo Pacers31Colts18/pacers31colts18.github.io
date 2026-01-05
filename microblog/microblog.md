@@ -3,7 +3,7 @@ id: 2026-01-04-001
 visibility: public
 thread: true
 images:
-  - /microblog/test.jpg
+  - ./images/test.jpg
 alt:
   - Screenshot of terminal output
 ---
@@ -15,6 +15,6 @@ It supports images, threading, and multiple paragraphs.
 ---
 id: 2026-01-04-002
 visibility: public
----
+thread: true
 
-This is a second post.
+This is my second microblog post.
