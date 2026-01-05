@@ -67,4 +67,4 @@ jobs:
           }
 
           Write-Host "Running microblog posting process..."
-          Run-MicroblogToBluesky
+          Invoke-MicroblogToBluesky
