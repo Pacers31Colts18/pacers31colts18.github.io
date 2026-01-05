@@ -3,7 +3,6 @@
 visibility: public
 thread: true
 ---
-
 This is a second test.
 
 ---
