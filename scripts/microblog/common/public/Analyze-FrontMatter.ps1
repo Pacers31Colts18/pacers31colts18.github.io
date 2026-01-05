@@ -1,4 +1,4 @@
-function Parse-Frontmatter {
+function Analyze-Frontmatter {
     param ([string]$Frontmatter)
 
     $result = [ordered]@{
