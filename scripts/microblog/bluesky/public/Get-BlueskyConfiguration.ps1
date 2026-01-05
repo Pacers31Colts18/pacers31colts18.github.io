@@ -11,7 +11,7 @@ function Get-BlueskyConfiguration {
         Pat      = $env:GH_PAT
     }
 
-    if (-not $config.Instance -or -not $config.Token) {
+    if (-not $config.Handle -or -not $config.AppPassword) {
         throw "Missing Bluesky configuration"
     }
 
