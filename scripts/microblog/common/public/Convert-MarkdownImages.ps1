@@ -6,6 +6,9 @@ function Convert-MarkdownImages {
     # Normalize CRLF → LF
     $Body = $Body.Replace("`r", "")
 
+    # Remove invisible Unicode characters (critical!)
+    $Body = $Body -replace '[\u200B-\u200D\uFEFF\u00A0]', ''
+
     # Trim each line to remove indentation GitHub sometimes adds
     $lines = $Body -split "`n"
     $lines = $lines | ForEach-Object { $_.Trim() }
@@ -41,7 +44,6 @@ function Convert-MarkdownImages {
         $alts   += $alt
         $images += $path
 
-        # Remove the image markdown from the body text
         $cleanBody = $cleanBody.Replace($match.Value, "")
     }
 
