@@ -17,7 +17,7 @@ function Convert-MarkdownImages {
     Write-Output "Normalized Body:"
     Write-Output $Body
 
-    # Flexible Markdown image regex: ![alt](path)
+    # FIXED: single-line regex
     $imgRegex = '!\s*
 
 \[(.*?)\]
