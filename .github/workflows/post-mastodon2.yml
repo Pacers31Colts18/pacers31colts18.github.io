@@ -52,7 +52,7 @@ jobs:
           Import-Module $modulePath -Force -Verbose
 
           Write-Host "Verifying exported commands..."
-          $cmds = Get-Command -Module Mastodon -Verbose
+          $cmds = Get-Command -Module mastodon -Verbose
           if (-not $cmds) {
               Write-Error "No commands exported from Mastodon module. Check your .psm1 paths."
               exit 1
