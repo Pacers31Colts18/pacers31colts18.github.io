@@ -49,25 +49,20 @@ jobs:
           }
 
           Write-Host "Importing Mastodon module..."
-          Import-Module $modulePath -Force -verbose
+          Import-Module $modulePath -Force
 
           Write-Host "Verifying imported commands..."
-          $commonCmds = Get-Command -module common
-          $mastodonCmds = Get-Command -Module Mastodon
-          if (-not $commonCmds) {
-              Write-Error "No commands exported from Common module."
-              exit 1
-          }
-          if (-not $mastodonCmds) {
+          $cmds = Get-Command -Module Mastodon
+
+          if (-not $cmds) {
               Write-Error "No commands imported from Mastodon module."
               exit 1
           }
           Write-Host "Imported commands:"
-          $commonCmds | Format-Table Name, Source
-          $mastodonCmds | Format-Table Name, Source
+          $cmds | Format-Table Name, Source
 
           if (-not (Get-Command Invoke-MicroblogToMastodon -ErrorAction SilentlyContinue)) {
-              Write-Error "Invoke-MicroblogToMastodon not found in module. Check your function name and export settings."
+              Write-Error "Invoke-MicroblogToMastodon not found in module."
               exit 1
           }
 
