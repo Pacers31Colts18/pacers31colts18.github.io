@@ -9,11 +9,13 @@ function Get-MastodonConfiguration {
     }
 
     if (-not $config.Instance -or -not $config.Token) {
-        throw "Missing Mastodon configuration"
+        Write-Error "Missing Mastodon configuration"
+        exit
     }
 
     if (-not (Test-Path $config.File)) {
-        throw "Microblog file not found: $($config.File)"
+        Write-Error "Microblog file not found: $($config.File)"
+        exit
     }
 
     return $config
