@@ -1,4 +1,4 @@
-function Post-BlueskyThread {
+function Publish-BlueskyThread {
     param(
         [Parameter(Mandatory)]
         $Session,
