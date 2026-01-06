@@ -41,7 +41,7 @@ jobs:
         run: |
           # Add repo scripts folder to PSModulePath
           $moduleRoot = Join-Path $PWD "scripts/microblog/mastodon"
-          $env:PSModulePath = "$moduleRoot:$env:PSModulePath"
+          $env:PSModulePath = "$moduleRoot;$env:PSModulePath"
       
           Write-Host "PSModulePath:"
           Write-Host $env:PSModulePath
