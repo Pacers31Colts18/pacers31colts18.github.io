@@ -6,7 +6,6 @@ function Parse-MarkdownImages {
     $Body = ($Body -split "`n" | ForEach-Object { $_.Trim() }) -join "`n"
 
     # Flexible Markdown image regex: ![alt](path)
-    # Allows optional whitespace around brackets/parentheses
     $imgRegex = '!\s*
 
 \[(.*?)\]
@@ -25,7 +24,6 @@ function Parse-MarkdownImages {
         $alts   += $alt
         $images += $path
 
-        # Remove the image markdown from the body text
         $cleanBody = $cleanBody.Replace($match.Value, "")
     }
 
