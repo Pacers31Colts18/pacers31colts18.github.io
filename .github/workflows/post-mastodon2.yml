@@ -60,7 +60,8 @@ jobs:
           }
           if (-not $mastodonCmds) {
               Write-Error "No commands imported from Mastodon module."
-
+              exit 1
+          }
           Write-Host "Imported commands:"
           $commonCmds | Format-Table Name, Source
           $mastodonCmds | Format-Table Name, Source
