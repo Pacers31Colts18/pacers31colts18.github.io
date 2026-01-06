@@ -1,25 +1,36 @@
-#Load based on PS Version
-foreach ($module in $requiredModules) {
-    try {
-        Import-Module -Name $module -Force -ErrorAction SilentlyContinue
-     } 
-     Catch {
-        Write-Error "Unable to load $module" 
-    }
+# Load required common module
+$commonPath = Join-Path $PSScriptRoot ".." "common/common.psm1"
+
+if (-not (Test-Path $commonPath)) {
+    Write-Error "Common module not found at: $commonPath"
+    exit
 }
 
-# Corrected paths
-$Public = @( Get-ChildItem -Path $PSScriptRoot\public\*.ps1 -Recurse -ErrorAction SilentlyContinue )
-$Private = @( Get-ChildItem -Path $PSScriptRoot\private\*.ps1 -Recurse -ErrorAction SilentlyContinue )
+try {
+    Import-Module $commonPath -Force -Verbose
+    Write-Host "Loaded common module from: $commonPath"
+}
+catch {
+    Write-Error "Failed to load common module: $_"
+    exit
+}
 
-#Dot source the files
+# Load public/private functions
+$publicPath  = Join-Path $PSScriptRoot "public"
+$privatePath = Join-Path $PSScriptRoot "private"
+
+$Public  = @( Get-ChildItem -Path $publicPath  -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
+$Private = @( Get-ChildItem -Path $privatePath -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue )
+
 foreach ($import in @($Public + $Private)) {
     try {
         . $import.FullName
     }
     catch {
-        Write-Error -Message "Failed to import function $($import.FullName): $_"
+        Write-Error "Failed to import function $($import.FullName): $_"
+        exit
     }
 }
 
+# Export only public functions
 Export-ModuleMember -Function $Public.BaseName
