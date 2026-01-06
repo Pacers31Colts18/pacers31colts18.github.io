@@ -80,11 +80,17 @@ function New-Entry {
         $alt  = $alts[$i]
 
         if ($Platform -eq "mastodon") {
-            $mediaIds += Publish-MastodonMedia -Instance $Config.Instance -Token $Config.Token -Path $path -Alt $alt
+            $mediaIds += Publish-MastodonMedia `
+                -Instance $Config.Instance `
+                -Token $Config.Token `
+                -Path $path `
+                -Alt $alt
         }
 
         if ($Platform -eq "bluesky") {
-            $mediaIds += Publish-BlueskyMedia -Session $Session -Path $path
+            $mediaIds += Publish-BlueskyMedia `
+                -Session $Session `
+                -Path $path
         }
     }
 
@@ -96,16 +102,24 @@ function New-Entry {
         @($cleanBody.Substring(0, [Math]::Min($Config.MaxChars, $cleanBody.Length)))
     }
     else {
-        @("")
+        @("")  # media-only posts still need a placeholder
     }
 
     # Publish (platform-specific)
     if ($Platform -eq "mastodon") {
-        Publish-MastodonThread -Instance $Config.Instance -Token $Config.Token -Posts $posts -Visibility $meta.visibility -MediaIds $mediaIds
+        Publish-MastodonThread `
+            -Instance $Config.Instance `
+            -Token $Config.Token `
+            -Posts $posts `
+            -Visibility $meta.visibility `
+            -MediaIds $mediaIds
     }
 
     if ($Platform -eq "bluesky") {
-        Publish-BlueskyThread -Session $Session -Posts $posts -Media $mediaIds[0]
+        Publish-BlueskyThread `
+            -Session $Session `
+            -Posts $posts `
+            -Media $mediaIds[0]   # Bluesky supports only 1 image per post
     }
 
     # Tag after success
