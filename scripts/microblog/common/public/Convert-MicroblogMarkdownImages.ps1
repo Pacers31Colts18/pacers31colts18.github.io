@@ -44,7 +44,6 @@ function Convert-MicroblogMarkdownImages {
         $alts   += $alt
         $images += $path
 
-        # Remove the matched Markdown image from the body
         $cleanBody = $cleanBody.Replace($match.Value, "")
     }
 
