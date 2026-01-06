@@ -40,31 +40,15 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Use the actual repo root provided by GitHub Actions
-          $repoRoot = $env:GITHUB_WORKSPACE
+          $modulePath = Join-Path $env:GITHUB_WORKSPACE "scripts/microblog/mastodon/mastodon.psd1"
       
-          # Add the repo root to PSModulePath
-          $env:PSModulePath = "$repoRoot;$env:PSModulePath"
-      
-          Write-Host "Repo root: $repoRoot"
-          Write-Host "PSModulePath entries:"
-          $env:PSModulePath -split ';' | ForEach-Object { " - $_" }
-      
-          Write-Host "Importing Mastodon module..."
-          Import-Module mastodon -Force -Verbose
+          Write-Host "Importing Mastodon module from: $modulePath"
+          Import-Module $modulePath -Force -Verbose
       
           Write-Host "Verifying exported commands..."
           $cmds = Get-Command -Module mastodon
           if (-not $cmds) {
               Write-Error "No commands exported from Mastodon module. Check your manifest and exports."
-              exit 1
-          }
-      
-          Write-Host "Exported commands:"
-          $cmds | Format-Table Name, Source
-      
-          if (-not (Get-Command Invoke-MicroblogToMastodon -ErrorAction SilentlyContinue)) {
-              Write-Error "Invoke-MicroblogToMastodon not found in module. Check your function name and export settings."
               exit 1
           }
       
