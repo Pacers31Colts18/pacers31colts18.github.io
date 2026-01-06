@@ -32,22 +32,23 @@ function New-Entry {
     $postToBluesky  = $true
 
     if ($meta.Keys -contains "mastodon") {
-        $postToMastodon = [bool]$meta["mastodon"]
+        $postToMastodon = [System.Convert]::ToBoolean($meta["mastodon"])
     }
     
     if ($meta.Keys -contains "bluesky") {
-        $postToBluesky = [bool]$meta["bluesky"]
+        $postToBluesky = [System.Convert]::ToBoolean($meta["bluesky"])
     }
     
     if ($Platform -eq "mastodon" -and -not $postToMastodon) {
-        Write-Output "Skipping Mastodon for this entry."
+        Write-Host "Skipping Mastodon for this entry."
         return
     }
     
     if ($Platform -eq "bluesky" -and -not $postToBluesky) {
-        Write-Output "Skipping Bluesky for this entry."
+        Write-Host "Skipping Bluesky for this entry."
         return
     }
+
 
 
     # Validate image count
