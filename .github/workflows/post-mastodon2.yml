@@ -1,4 +1,4 @@
-name: Post Microblog to Mastodon
+name: Post Microblog to Bluesky
 
 on:
   push:
@@ -33,14 +33,14 @@ jobs:
               Write-Host "No images directory found"
           }
 
-      - name: Import Mastodon module and run
+      - name: Import Bluesky module and run
         shell: pwsh
         env:
-          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
-          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          BLUESKY_HANDLE: ${{ secrets.MASTODON_TOKEN }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Import Mastodon Module
+          # Import Bluesky Module
           $modulePath = "./scripts/microblog/mastodon/mastodon.psm1"
 
           if (-not (Test-Path $modulePath)) {
@@ -51,18 +51,18 @@ jobs:
           Write-Host "Importing Mastodon module..."
           Import-Module $modulePath -Force
 
-          Write-Host "Verifying imported commands..."
+          Write-Host "Verifying exported commands..."
           $cmds = Get-Command -Module Mastodon
-
           if (-not $cmds) {
-              Write-Error "No commands imported from Mastodon module."
+              Write-Error "No commands exported from Mastodon module. Check your .psm1 paths."
               exit 1
           }
-          Write-Host "Imported commands:"
+
+          Write-Host "Exported commands:"
           $cmds | Format-Table Name, Source
 
           if (-not (Get-Command Invoke-MicroblogToMastodon -ErrorAction SilentlyContinue)) {
-              Write-Error "Invoke-MicroblogToMastodon not found in module."
+              Write-Error "Invoke-MicroblogToMastodon not found in module. Check your function name and export settings."
               exit 1
           }
 
