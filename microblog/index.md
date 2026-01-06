@@ -1,9 +1,7 @@
 ---
-id: 2026-01-06-005
+id: 2026-01-06-006
 visibility: public
 thread: true
-mastodon: true
-bluesky: false
 images:
   - ./microblog/images/test.jpg
 alt:
