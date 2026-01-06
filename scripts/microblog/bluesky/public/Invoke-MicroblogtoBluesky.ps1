@@ -20,7 +20,7 @@ function Invoke-MicroblogToBluesky {
     }
 
     # Debug: show session before any media upload happens
-    Write-Host "DEBUG SESSION:" (ConvertTo-Json $session -Depth 5)
+    Write-Output "DEBUG SESSION:" (ConvertTo-Json $session -Depth 5)
 
     # Load and split the microblog file
     $raw = Get-Content $config.File -Raw
