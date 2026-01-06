@@ -34,19 +34,21 @@ function New-Entry {
     if ($meta.Keys -contains "mastodon") {
         $postToMastodon = [bool]$meta["mastodon"]
     }
+    
     if ($meta.Keys -contains "bluesky") {
         $postToBluesky = [bool]$meta["bluesky"]
     }
-
+    
     if ($Platform -eq "mastodon" -and -not $postToMastodon) {
-        Write-Output "Skipping Mastodon for this entry."
+        Write-Host "Skipping Mastodon for this entry."
+        return
+    }
+    
+    if ($Platform -eq "bluesky" -and -not $postToBluesky) {
+        Write-Host "Skipping Bluesky for this entry."
         return
     }
 
-    if ($Platform -eq "bluesky" -and -not $postToBluesky) {
-        Write-Output "Skipping Bluesky for this entry."
-        return
-    }
 
     # Validate image count
     if ($meta.images.Count -gt $Config.MaxMedia) {
