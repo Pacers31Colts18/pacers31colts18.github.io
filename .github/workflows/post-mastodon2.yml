@@ -1,4 +1,4 @@
-name: Post Microblog to Bluesky
+name: Post Microblog to Mastodon
 
 on:
   push:
