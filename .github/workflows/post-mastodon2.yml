@@ -39,8 +39,8 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Add repo scripts folder to PSModulePath
-          $moduleRoot = Join-Path $PWD "scripts/microblog/mastodon"
+          # Add parent folder to PSModulePath
+          $moduleRoot = Join-Path $PWD "scripts/microblog"
           $env:PSModulePath = "$moduleRoot;$env:PSModulePath"
       
           Write-Host "PSModulePath:"
