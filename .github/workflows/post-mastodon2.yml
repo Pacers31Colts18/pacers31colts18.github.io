@@ -49,7 +49,7 @@ jobs:
           }
 
           Write-Host "Importing Mastodon module..."
-          Import-Module $modulePath -Force
+          Import-Module $modulePath -Force -verbose
 
           Write-Host "Verifying imported commands..."
           $commonCmds = Get-Command -module common
