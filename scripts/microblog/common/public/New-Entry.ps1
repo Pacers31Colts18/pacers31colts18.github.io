@@ -12,6 +12,11 @@ function New-Entry {
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
+    Write-Output "=== RAW BODY DEBUG START ==="
+    Write-Output $Body
+    Write-Output "=== RAW BODY DEBUG END ==="
+
+
     # Parse frontmatter
     $meta = Convert-Frontmatter $Frontmatter
 
