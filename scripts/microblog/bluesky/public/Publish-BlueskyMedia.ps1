@@ -8,7 +8,8 @@ function Publish-BlueskyMedia {
     )
 
     if (-not (Test-Path $Path)) {
-        throw "Media file not found: $Path"
+        Write-Error "Media file not found: $Path"
+        exit
     }
 
     $bytes = [System.IO.File]::ReadAllBytes($Path)
