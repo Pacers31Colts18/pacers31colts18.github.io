@@ -1,31 +1,52 @@
 function Parse-MarkdownImages {
     param([string]$Body)
 
-    # Normalize line endings and trim each line
+    Write-Output "=== IMAGE PARSER DEBUG START ==="
+
+    # Normalize CRLF → LF
     $Body = $Body.Replace("`r", "")
-    $Body = ($Body -split "`n" | ForEach-Object { $_.Trim() }) -join "`n"
+
+    # Trim each line to remove indentation GitHub sometimes adds
+    $lines = $Body -split "`n"
+    $lines = $lines | ForEach-Object { $_.Trim() }
+    $Body = ($lines -join "`n")
+
+    Write-Output "Normalized Body:"
+    Write-Output $Body
 
     # Flexible Markdown image regex: ![alt](path)
+    # Allows whitespace around brackets/parentheses
     $imgRegex = '!\s*
 
 \[(.*?)\]
 
 \s*\((.*?)\)'
 
+    Write-Output "Using regex: $imgRegex"
+
     $images = @()
     $alts   = @()
 
     $cleanBody = $Body
 
-    foreach ($match in [regex]::Matches($Body, $imgRegex)) {
+    $matches = [regex]::Matches($Body, $imgRegex)
+
+    Write-Output "Matches found: $($matches.Count)"
+
+    foreach ($match in $matches) {
         $alt  = $match.Groups[1].Value.Trim()
         $path = $match.Groups[2].Value.Trim()
+
+        Write-Output " - MATCH: alt='$alt' path='$path'"
 
         $alts   += $alt
         $images += $path
 
+        # Remove the image markdown from the body text
         $cleanBody = $cleanBody.Replace($match.Value, "")
     }
+
+    Write-Output "=== IMAGE PARSER DEBUG END ==="
 
     return [ordered]@{
         Images    = $images
