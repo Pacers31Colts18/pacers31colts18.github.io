@@ -24,7 +24,7 @@ $Private = @( Get-ChildItem -Path $privatePath -Filter *.ps1 -Recurse -ErrorActi
 
 foreach ($import in @($Public + $Private)) {
     try {
-        . $import.FullName
+        $import.FullName
     }
     catch {
         Write-Error "Failed to import function $($import.FullName): $_"
