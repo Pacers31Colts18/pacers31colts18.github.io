@@ -2,14 +2,13 @@
 id: 2026-01-06-017
 visibility: public
 thread: true
-mastodon: false 
-bluesky: true
+platform: mastodon
 images:
   - ./microblog/images/test.jpg
 alt:
   - Test
 ---
-Test5
+Test6
 
 ---
 id: 2026-01-06-012
