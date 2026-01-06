@@ -12,7 +12,7 @@ function New-Entry {
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
-    # Analyze frontmatter
+    # Parse frontmatter
     $meta = Convert-Frontmatter $Frontmatter
 
     if (-not $meta.id) {
@@ -33,16 +33,9 @@ function New-Entry {
     $postToBluesky  = $false
 
     switch ($meta.platform) {
-        "mastodon" {
-            $postToMastodon = $true
-        }
-        "bluesky" {
-            $postToBluesky = $true
-        }
-        "all" {
-            $postToMastodon = $true
-            $postToBluesky  = $true
-        }
+        "mastodon" { $postToMastodon = $true }
+        "bluesky"  { $postToBluesky  = $true }
+        "all"      { $postToMastodon = $true; $postToBluesky = $true }
         default {
             Write-Warning "Unknown platform '$($meta.platform)', defaulting to 'all'"
             $postToMastodon = $true
@@ -61,8 +54,20 @@ function New-Entry {
         return
     }
 
+    # Extract images + alt text from Markdown body
+    $parsed = Parse-MarkdownImages -Body $Body
+    $images = $parsed.Images
+    $alts   = $parsed.Alts
+    $cleanBody = $parsed.CleanBody
+
+    # Auto-detect content type
+    $hasText  = ($cleanBody.Trim().Length -gt 0)
+    $hasMedia = ($images.Count -gt 0)
+
+    Write-Output "Content detection: text=$hasText, media=$hasMedia"
+
     # Validate image count
-    if ($meta.images.Count -gt $Config.MaxMedia) {
+    if ($images.Count -gt $Config.MaxMedia) {
         Write-Error "Too many images in $($meta.id) (max $($Config.MaxMedia))"
         exit
     }
@@ -70,9 +75,9 @@ function New-Entry {
     # Upload media (platform-specific)
     $mediaIds = @()
 
-    for ($i = 0; $i -lt $meta.images.Count; $i++) {
-        $path = $meta.images[$i]
-        $alt  = $meta.alt[$i]
+    for ($i = 0; $i -lt $images.Count; $i++) {
+        $path = $images[$i]
+        $alt  = $alts[$i]
 
         if ($Platform -eq "mastodon") {
             $mediaIds += Publish-MastodonMedia -Instance $Config.Instance -Token $Config.Token -Path $path -Alt $alt
@@ -83,11 +88,15 @@ function New-Entry {
         }
     }
 
-    # Split into threads
-    $posts = if ($meta.thread) {
-        Split-Post -Text $Body -MaxChars $Config.MaxChars
-    } else {
-        @($Body.Substring(0, [Math]::Min($Config.MaxChars, $Body.Length)))
+    # Build posts (threading)
+    $posts = if ($meta.thread -and $hasText) {
+        Split-Post -Text $cleanBody -MaxChars $Config.MaxChars
+    }
+    elseif ($hasText) {
+        @($cleanBody.Substring(0, [Math]::Min($Config.MaxChars, $cleanBody.Length)))
+    }
+    else {
+        @("")
     }
 
     # Publish (platform-specific)
