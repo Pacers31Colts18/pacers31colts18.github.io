@@ -1,4 +1,4 @@
-function Convert-MarkdownImages {
+function Convert-MicroblogMarkdownImages {
     param([string]$Body)
 
     Write-Output "=== IMAGE PARSER DEBUG START ==="
