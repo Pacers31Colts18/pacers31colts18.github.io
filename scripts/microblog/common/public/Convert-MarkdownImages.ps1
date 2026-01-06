@@ -1,4 +1,4 @@
-function Parse-MarkdownImages {
+function Convert-MarkdownImages {
     param([string]$Body)
 
     Write-Output "=== IMAGE PARSER DEBUG START ==="
@@ -15,7 +15,6 @@ function Parse-MarkdownImages {
     Write-Output $Body
 
     # Flexible Markdown image regex: ![alt](path)
-    # Allows whitespace around brackets/parentheses
     $imgRegex = '!\s*
 
 \[(.*?)\]
