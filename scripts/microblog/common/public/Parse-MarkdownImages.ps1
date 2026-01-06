@@ -1,12 +1,17 @@
 function Parse-MarkdownImages {
     param([string]$Body)
 
-    # Regex for Markdown images: ![alt](path)
-    $imgRegex = '!
+    # Normalize line endings and trim each line
+    $Body = $Body.Replace("`r", "")
+    $Body = ($Body -split "`n" | ForEach-Object { $_.Trim() }) -join "`n"
+
+    # Flexible Markdown image regex: ![alt](path)
+    # Allows optional whitespace around brackets/parentheses
+    $imgRegex = '!\s*
 
 \[(.*?)\]
 
-\((.*?)\)'
+\s*\((.*?)\)'
 
     $images = @()
     $alts   = @()
