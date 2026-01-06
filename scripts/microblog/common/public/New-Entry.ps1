@@ -40,12 +40,12 @@ function New-Entry {
     }
     
     if ($Platform -eq "mastodon" -and -not $postToMastodon) {
-        Write-Host "Skipping Mastodon for this entry."
+        Write-Output "Skipping Mastodon for this entry."
         return
     }
     
     if ($Platform -eq "bluesky" -and -not $postToBluesky) {
-        Write-Host "Skipping Bluesky for this entry."
+        Write-Output "Skipping Bluesky for this entry."
         return
     }
 
