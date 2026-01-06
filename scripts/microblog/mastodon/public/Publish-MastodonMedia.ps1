@@ -1,4 +1,4 @@
-function Upload-MastodonMedia {
+function Publish-MastodonMedia {
     param (
         [string]$Instance,
         [string]$Token,
