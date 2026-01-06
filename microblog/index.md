@@ -1,4 +1,18 @@
 ---
+id: 2026-01-06-001
+visibility: public
+thread: true
+images:
+  - ./microblog/images/test.jpg
+alt:
+  - Test
+---
+
+Test post from Github actions
+
+#bluesky #mastodon #github
+
+---
 id: 2026-01-05-006
 visibility: public
 thread: true
