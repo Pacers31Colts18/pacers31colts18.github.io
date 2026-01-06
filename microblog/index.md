@@ -8,9 +8,8 @@ images:
   - ./microblog/images/test.jpg
 alt:
   - Test
-
-Test
 ---
+Test
 
 ---
 id: 2026-01-06-003
