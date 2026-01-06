@@ -60,9 +60,9 @@ function New-Entry {
 
     # Extract images + alt text from Markdown body
     Write-Output "Calling Convert-MarkdownImages..."
-    Write-Output "Parser function reference: $(Get-Command Convert-MarkdownImages | Select-Object -ExpandProperty Source)"
+    Write-Output "Parser function reference: $(Get-Command Convert-MicroblogMarkdownImages | Select-Object -ExpandProperty Source)"
 
-    $parsed = Convert-MarkdownImages -Body $Body
+    $parsed = Convert-MicroblogMarkdownImages -Body $Body
 
     Write-Output "Returned from Convert-MarkdownImages."
 
