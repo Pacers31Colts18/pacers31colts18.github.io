@@ -32,7 +32,6 @@ jobs:
           } else {
               Write-Host "No images directory found"
           }
-
       - name: Import Mastodon module and run
         shell: pwsh
         env:
@@ -40,8 +39,15 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          # Add repo scripts folder to PSModulePath
+          $moduleRoot = Join-Path $PWD "scripts/microblog/mastodon"
+          $env:PSModulePath = "$moduleRoot:$env:PSModulePath"
+      
+          Write-Host "PSModulePath:"
+          Write-Host $env:PSModulePath
+      
           Write-Host "Importing Mastodon module..."
-          Import-Module mastodon -Force
+          Import-Module mastodon -Force -Verbose
       
           Write-Host "Verifying exported commands..."
           $cmds = Get-Command -Module mastodon
@@ -60,4 +66,6 @@ jobs:
       
           Write-Host "Running microblog posting process..."
           Invoke-MicroblogToMastodon
+
+
 
