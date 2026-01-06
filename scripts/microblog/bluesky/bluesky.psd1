@@ -12,7 +12,7 @@
         'Get-BlueskyConfiguration',
         'Publish-BlueskyMedia',
         'New-BlueskyPost',
-        'Post-BlueskyThread'
+        'Publish-BlueskyThread'
     )
 
     PrivateData = @{
