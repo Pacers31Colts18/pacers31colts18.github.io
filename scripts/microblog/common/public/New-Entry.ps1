@@ -55,7 +55,7 @@ function New-Entry {
     }
 
     # Extract images + alt text from Markdown body
-    $parsed = Parse-MarkdownImages -Body $Body
+    $parsed = Convert-MarkdownImages -Body $Body
     $images = $parsed.Images
     $alts   = $parsed.Alts
     $cleanBody = $parsed.CleanBody
