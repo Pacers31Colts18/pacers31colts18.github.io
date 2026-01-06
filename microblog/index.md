@@ -1,4 +1,17 @@
 ---
+id: 2026-01-06-012
+visibility: public
+thread: true
+mastodon: false 
+bluesky: true
+images:
+  - ./microblog/images/test.jpg
+alt:
+  - Test
+---
+Test3
+
+---
 id: 2026-01-06-011
 visibility: public
 thread: true
