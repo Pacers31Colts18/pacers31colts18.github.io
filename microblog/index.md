@@ -1,14 +1,12 @@
 ---
-id: 2026-01-06-018
+id: 2026-01-06-019
 visibility: public
 thread: true
 platform: mastodon
-images:
-  - ./microblog/images/test.jpg
-alt:
-  - Test
 ---
-Test6
+Test7
+
+![Test image](./microblog/images/test.jpg)
 
 ---
 id: 2026-01-06-012
