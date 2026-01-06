@@ -31,12 +31,14 @@ function New-Entry {
     $postToMastodon = $true
     $postToBluesky  = $true
 
-    if ($meta.Contains("mastodon")) {
+    if ($meta.ContainsKey("mastodon")) {
         $postToMastodon = [bool]$meta.mastodon
     }
-    if ($meta.Contains("bluesky")) {
+
+    if ($meta.ContainsKey("bluesky")) {
         $postToBluesky = [bool]$meta.bluesky
     }
+
 
     if ($Platform -eq "mastodon" -and -not $postToMastodon) {
         Write-Output "Skipping Mastodon for this entry."
