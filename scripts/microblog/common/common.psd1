@@ -13,7 +13,7 @@
         'Split-Post',
         'New-Entry',
         'Test-GitTag',
-        'Parse-MarkdownImages'
+        'Convert-MarkdownImages'
     )
 
     PrivateData = @{
