@@ -1,5 +1,5 @@
 ---
-id: 2026-01-06-024
+id: 2026-01-06-025
 visibility: public
 thread: true
 platform: mastodon
