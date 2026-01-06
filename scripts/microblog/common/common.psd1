@@ -12,7 +12,8 @@
         'Convert-Frontmatter',
         'Split-Post',
         'New-Entry',
-        'Test-GitTag'
+        'Test-GitTag',
+        'Parse-MarkdownImages'
     )
 
     PrivateData = @{
