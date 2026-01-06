@@ -84,16 +84,11 @@ function New-Entry {
 
     # Publish (platform-specific)
     if ($Platform -eq "mastodon") {
-        Post-MastodonThread `
-            -Instance $Config.Instance `
-            -Token $Config.Token `
-            -Posts $posts `
-            -Visibility $meta.visibility `
-            -MediaIds $mediaIds
+        Publish-MastodonThread -Instance $Config.Instance -Token $Config.Token -Posts $posts -Visibility $meta.visibility -MediaIds $mediaIds
     }
 
     if ($Platform -eq "bluesky") {
-        Post-BlueskyThread -Session $Session -Posts $posts -Media $mediaIds[0]   # Bluesky only supports 1 image per post currently
+        Publish-BlueskyThread -Session $Session -Posts $posts -Media $mediaIds[0]   # Bluesky only supports 1 image per post currently
     }
 
     # Tag after success
