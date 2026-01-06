@@ -6,7 +6,7 @@ platform: mastodon
 ---
 Test8
 
-![Test image](./microblog/images/test.jpg)
+![Test image](/microblog/images/test.jpg)
 
 ---
 id: 2026-01-06-012
