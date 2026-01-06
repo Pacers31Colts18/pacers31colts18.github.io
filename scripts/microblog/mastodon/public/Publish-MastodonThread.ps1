@@ -1,4 +1,4 @@
-function Post-MastodonThread {
+function Publish-MastodonThread {
     param (
         [string]$Instance,
         [string]$Token,
