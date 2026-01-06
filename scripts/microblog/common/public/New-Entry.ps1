@@ -14,7 +14,25 @@ function New-Entry {
 
     # Analyze frontmatter
     $meta = Convert-Frontmatter $Frontmatter
-    Write-Output "Front matter: $meta"
+    Write-Output "=== FRONTMATTER DEBUG START ==="
+    
+    Write-Output "Raw frontmatter string:"
+    Write-Output $Frontmatter
+    
+    Write-Output "`nParsed meta (GetType):"
+    Write-Output $meta.GetType().FullName
+    
+    Write-Output "`nKeys:"
+    $meta.Keys | ForEach-Object { " - $_" }
+    
+    Write-Output "`nValues:"
+    foreach ($key in $meta.Keys) {
+        $value = $meta[$key]
+        $type  = if ($value -ne $null) { $value.GetType().FullName } else { "<null>" }
+        Write-Output " - $key = '$value' (type: $type)"
+    }
+    
+    Write-Output "=== FRONTMATTER DEBUG END ==="
 
     if (-not $meta.id) {
         Write-Error "Post missing id"
