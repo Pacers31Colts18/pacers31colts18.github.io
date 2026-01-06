@@ -40,7 +40,7 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Import Bluesky Module
+          # Import Mastodon Module
           $modulePath = "./scripts/microblog/mastodon/mastodon.psm1"
 
           if (-not (Test-Path $modulePath)) {
@@ -49,10 +49,10 @@ jobs:
           }
 
           Write-Host "Importing Mastodon module..."
-          Import-Module $modulePath -Force
+          Import-Module $modulePath -Force -Verbose
 
           Write-Host "Verifying exported commands..."
-          $cmds = Get-Command -Module Mastodon
+          $cmds = Get-Command -Module Mastodon -Verbose
           if (-not $cmds) {
               Write-Error "No commands exported from Mastodon module. Check your .psm1 paths."
               exit 1
