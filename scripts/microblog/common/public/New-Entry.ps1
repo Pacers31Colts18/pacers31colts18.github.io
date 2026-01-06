@@ -14,6 +14,7 @@ function New-Entry {
 
     # Analyze frontmatter
     $meta = Convert-Frontmatter $Frontmatter
+    Write-Output "Front matter: $meta"
 
     if (-not $meta.id) {
         Write-Error "Post missing id"
