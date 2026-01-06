@@ -2,7 +2,7 @@ function Get-MastodonConfiguration {
     $config = [ordered]@{
         Instance = $env:MASTODON_INSTANCE
         Token    = $env:MASTODON_TOKEN
-        File     = "microblog/microblog.md"
+        File     = "microblog/index.md"
         MaxChars = 500
         MaxMedia = 4
         Pat      = $env:GH_PAT
