@@ -17,7 +17,7 @@ function Convert-MicroblogMarkdownImages {
     Write-Output "Normalized Body:"
     Write-Output $Body
 
-    # FIXED: single-line regex
+    # FIXED: single-line regex (NO NEWLINES)
     $imgRegex = '!\s*
 
 \[(.*?)\]
@@ -44,6 +44,7 @@ function Convert-MicroblogMarkdownImages {
         $alts   += $alt
         $images += $path
 
+        # Remove the matched Markdown image from the body
         $cleanBody = $cleanBody.Replace($match.Value, "")
     }
 
