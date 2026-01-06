@@ -8,9 +8,9 @@
     PowerShellVersion = '5.1'
 
     FunctionsToExport = @(
-        'Run-MicroblogToMastodon',
+        'Invoke-MicroblogToMastodon',
         'Get-MastodonConfiguration',
-        'Upload-MastodonMedia',
+        'Publish-MastodonMedia',
         'New-MastodonPost',
         'Post-MastodonThread'
     )
