@@ -12,7 +12,7 @@
         'Get-MastodonConfiguration',
         'Publish-MastodonMedia',
         'New-MastodonPost',
-        'Post-MastodonThread'
+        'Publish-MastodonThread'
     )
 
     PrivateData = @{
