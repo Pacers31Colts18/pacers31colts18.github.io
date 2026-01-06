@@ -32,6 +32,7 @@ jobs:
           } else {
               Write-Host "No images directory found"
           }
+          
       - name: Import Mastodon module and run
         shell: pwsh
         env:
@@ -39,12 +40,18 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          # Add parent folder to PSModulePath
-          $moduleRoot = Join-Path $PWD "scripts/microblog"
+          # GitHub Actions repo root is always:
+          # /home/runner/work/<repo>/<repo>
+          $repoRoot = "$env:GITHUB_WORKSPACE"
+      
+          # Add the parent folder containing the module folder
+          $moduleRoot = Join-Path $repoRoot "scripts/microblog"
           $env:PSModulePath = "$moduleRoot;$env:PSModulePath"
       
-          Write-Host "PSModulePath:"
-          Write-Host $env:PSModulePath
+          Write-Host "Using repo root: $repoRoot"
+          Write-Host "Module root added to PSModulePath: $moduleRoot"
+          Write-Host "Final PSModulePath:"
+          $env:PSModulePath -split ';' | ForEach-Object { " - $_" }
       
           Write-Host "Importing Mastodon module..."
           Import-Module mastodon -Force -Verbose
