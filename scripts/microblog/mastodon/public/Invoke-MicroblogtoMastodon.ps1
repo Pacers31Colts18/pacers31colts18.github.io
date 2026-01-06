@@ -1,4 +1,4 @@
-function Run-MicroblogToMastodon {
+function Invoke-MicroblogToMastodon {
 
     $config = Get-MastodonConfiguration
 
