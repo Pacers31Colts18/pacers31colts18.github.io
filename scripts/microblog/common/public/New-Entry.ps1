@@ -16,7 +16,6 @@ function New-Entry {
     Write-Output $Body
     Write-Output "=== RAW BODY DEBUG END ==="
 
-
     # Parse frontmatter
     $meta = Convert-Frontmatter $Frontmatter
 
@@ -60,7 +59,13 @@ function New-Entry {
     }
 
     # Extract images + alt text from Markdown body
+    Write-Output "Calling Convert-MarkdownImages..."
+    Write-Output "Parser function reference: $(Get-Command Convert-MarkdownImages | Select-Object -ExpandProperty Source)"
+
     $parsed = Convert-MarkdownImages -Body $Body
+
+    Write-Output "Returned from Convert-MarkdownImages."
+
     $images = $parsed.Images
     $alts   = $parsed.Alts
     $cleanBody = $parsed.CleanBody
