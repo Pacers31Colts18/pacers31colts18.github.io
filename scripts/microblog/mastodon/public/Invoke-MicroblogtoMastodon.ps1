@@ -19,6 +19,6 @@ function Invoke-MicroblogToMastodon {
             break
         }
 
-        Process-Entry -Platform "mastodon" -Config $config -Frontmatter $frontmatter -Body $body
+        New-Entry -Platform "mastodon" -Config $config -Frontmatter $frontmatter -Body $body
     }
 }
