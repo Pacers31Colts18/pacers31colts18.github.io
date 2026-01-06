@@ -33,11 +33,11 @@ jobs:
               Write-Host "No images directory found"
           }
 
-      - name: Import Bluesky module and run
+      - name: Import Mastodon module and run
         shell: pwsh
         env:
-          BLUESKY_HANDLE: ${{ secrets.MASTODON_TOKEN }}
-          BLUESKY_APP_PASSWORD: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           # Import Bluesky Module
