@@ -14,24 +14,23 @@ function New-Entry {
 
     # Analyze frontmatter
     $meta = Convert-Frontmatter $Frontmatter
+
     Write-Output "=== FRONTMATTER DEBUG START ==="
-    
     Write-Output "Raw frontmatter string:"
     Write-Output $Frontmatter
-    
+
     Write-Output "`nParsed meta (GetType):"
     Write-Output $meta.GetType().FullName
-    
+
     Write-Output "`nKeys:"
     $meta.Keys | ForEach-Object { " - $_" }
-    
+
     Write-Output "`nValues:"
     foreach ($key in $meta.Keys) {
         $value = $meta[$key]
         $type  = if ($value -ne $null) { $value.GetType().FullName } else { "<null>" }
         Write-Output " - $key = '$value' (type: $type)"
     }
-    
     Write-Output "=== FRONTMATTER DEBUG END ==="
 
     if (-not $meta.id) {
@@ -47,28 +46,38 @@ function New-Entry {
 
     Write-Output "Posting entry: $($meta.id)"
 
-    $postToMastodon = $true
-    $postToBluesky  = $true
+    # Determine platform routing based on frontmatter
+    $postToMastodon = $false
+    $postToBluesky  = $false
 
-    if ($meta.Keys -contains "mastodon") {
-        $postToMastodon = [System.Convert]::ToBoolean($meta["mastodon"])
+    switch ($meta.platform) {
+        "mastodon" {
+            $postToMastodon = $true
+        }
+        "bluesky" {
+            $postToBluesky = $true
+        }
+        "all" {
+            $postToMastodon = $true
+            $postToBluesky  = $true
+        }
+        default {
+            Write-Warning "Unknown platform '$($meta.platform)', defaulting to 'all'"
+            $postToMastodon = $true
+            $postToBluesky  = $true
+        }
     }
-    
-    if ($meta.Keys -contains "bluesky") {
-        $postToBluesky = [System.Convert]::ToBoolean($meta["bluesky"])
-    }
-    
+
+    # Respect workflow-level platform selection
     if ($Platform -eq "mastodon" -and -not $postToMastodon) {
-        Write-Host "Skipping Mastodon for this entry."
+        Write-Output "Skipping Mastodon for this entry (frontmatter says platform=$($meta.platform))."
         return
     }
-    
+
     if ($Platform -eq "bluesky" -and -not $postToBluesky) {
-        Write-Host "Skipping Bluesky for this entry."
+        Write-Output "Skipping Bluesky for this entry (frontmatter says platform=$($meta.platform))."
         return
     }
-
-
 
     # Validate image count
     if ($meta.images.Count -gt $Config.MaxMedia) {
@@ -80,7 +89,6 @@ function New-Entry {
     $mediaIds = @()
 
     for ($i = 0; $i -lt $meta.images.Count; $i++) {
-
         $path = $meta.images[$i]
         $alt  = $meta.alt[$i]
 
@@ -106,7 +114,7 @@ function New-Entry {
     }
 
     if ($Platform -eq "bluesky") {
-        Publish-BlueskyThread -Session $Session -Posts $posts -Media $mediaIds[0]   # Bluesky only supports 1 image per post currently
+        Publish-BlueskyThread -Session $Session -Posts $posts -Media $mediaIds[0]
     }
 
     # Tag after success
