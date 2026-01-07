@@ -12,6 +12,9 @@ function New-Entry {
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
+    # ⭐ Normalize platform input to avoid invisible chars / whitespace issues
+    $Platform = $Platform.Trim().ToLower()
+
     Write-Output "=== RAW BODY DEBUG START ==="
     Write-Output $Body
     Write-Output "=== RAW BODY DEBUG END ==="
@@ -90,9 +93,7 @@ function New-Entry {
         $path = $images[$i]
         $alt  = $alts[$i]
 
-        # ⭐ THIS is the correct place for the debug
         Write-Output ">>> NEW-ENTRY DEBUG: Path being passed to uploader = '$path'"
-
         Write-Output "Uploading media: $path (alt='$alt')"
 
         if ($Platform -eq "mastodon") {
