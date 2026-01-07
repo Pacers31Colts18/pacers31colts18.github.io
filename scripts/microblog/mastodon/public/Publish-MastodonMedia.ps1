@@ -1,3 +1,5 @@
+    Write-Output ">>> USING Publish-MastodonMedia FROM: $PSCommandPath"
+
 function Publish-MastodonMedia {
     param (
         [string]$Instance,
@@ -5,6 +7,7 @@ function Publish-MastodonMedia {
         [string]$Path,
         [string]$Alt
     )
+
 
     Write-Output "=== MASTODON MEDIA UPLOAD DEBUG START ==="
     Write-Output "Original Path from parser: $Path"
