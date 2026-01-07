@@ -83,6 +83,8 @@ function New-Entry {
         exit
     }
 
+    Write-Output ">>> NEW-ENTRY DEBUG: Path being passed to uploader = '$path'"
+
     # Upload media (platform-specific)
     $mediaIds = @()
 
