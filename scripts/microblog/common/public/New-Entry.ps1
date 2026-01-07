@@ -66,8 +66,9 @@ function New-Entry {
 
     Write-Output "Returned from Convert-MicroblogMarkdownImages."
 
-    $images = $parsed.Images
-    $alts   = $parsed.Alts
+    # ⭐ FIX: Force arrays so PowerShell doesn't iterate characters
+    $images = @($parsed.Images)
+    $alts   = @($parsed.Alts)
     $cleanBody = $parsed.CleanBody
 
     # Auto-detect content type
@@ -88,6 +89,8 @@ function New-Entry {
     for ($i = 0; $i -lt $images.Count; $i++) {
         $path = $images[$i]
         $alt  = $alts[$i]
+
+        Write-Output "Uploading media: $path (alt='$alt')"
 
         if ($Platform -eq "mastodon") {
             $mediaIds += Publish-MastodonMedia `
