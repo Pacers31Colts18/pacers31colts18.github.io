@@ -94,7 +94,15 @@ function New-Entry {
         $path = $images[$i]
         $alt  = $alts[$i]
 
-        Write-Output ">>> NEW-ENTRY DEBUG: Path being passed to uploader = '$path'"
+        # Normalize invisible characters
+        $path = ($path -replace '[\u200B-\u200D\uFEFF\u00A0]', '').Trim()
+
+        # ⭐ FIX: Prepend microblog/ directory ALWAYS
+        if ($path -match '^[./]*images/') {
+            $path = "microblog/$path"
+        }
+
+        Write-Output ">>> NEW-ENTRY DEBUG: Final normalized path = '$path'"
         Write-Output "Uploading media: $path (alt='$alt')"
 
         if ($Platform -eq "mastodon") {
