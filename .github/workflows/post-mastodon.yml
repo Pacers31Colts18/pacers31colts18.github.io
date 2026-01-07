@@ -57,12 +57,12 @@ jobs:
               exit 1
           }
 
-          Write-Host "`n=== VERIFYING Publish-MastodonMedia SOURCE ==="
-          $mediaCmd = Get-Command Publish-MastodonMedia -Module mastodon -ErrorAction SilentlyContinue
+          Write-Host "`n=== VERIFYING Invoke-MastodonMedia SOURCE ==="
+          $mediaCmd = Get-Command Invoke-MastodonMedia -Module mastodon -ErrorAction SilentlyContinue
           if ($mediaCmd) {
-              Write-Host "Publish-MastodonMedia loaded from: $($mediaCmd.Source)"
+              Write-Host "Invoke-MastodonMedia loaded from: $($mediaCmd.Source)"
           } else {
-              Write-Error "Publish-MastodonMedia is NOT exported or NOT loaded."
+              Write-Error "Invoke-MastodonMedia is NOT exported or NOT loaded."
           }
 
           Write-Host "`n=== RUNNING MICROBLOG PROCESS ==="
