@@ -24,7 +24,6 @@ function Publish-MastodonMedia {
     # ------------------------------------------------------------
 
     $repoRoot = $env:GITHUB_WORKSPACE
-    Write-Output "Repo root: $repoRoot"
 
     if (-not [System.IO.Path]::IsPathRooted($Path)) {
         $Path = Join-Path $repoRoot $Path
