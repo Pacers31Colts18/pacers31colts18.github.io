@@ -18,11 +18,7 @@ function Convert-MicroblogMarkdownImages {
     Write-Output $Body
 
     # Single-line regex
-    $imgRegex = '!\s*
-
-\[(.*?)\]
-
-\s*\((.*?)\)'
+    $imgRegex = '!\s*\[(.*?)\]\s*\((.*?)\)'
     Write-Output "Using regex: $imgRegex"
 
     $images = @()
