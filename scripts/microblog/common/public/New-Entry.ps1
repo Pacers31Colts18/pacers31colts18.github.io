@@ -93,7 +93,7 @@ function New-Entry {
         Write-Output "Uploading media: $path (alt='$alt')"
 
         if ($Platform -eq "mastodon") {
-            $mediaIds += Publish-MastodonMedia `
+            $mediaIds += Invoke-MastodonMedia `
                 -Instance $Config.Instance `
                 -Token $Config.Token `
                 -Path $path `
