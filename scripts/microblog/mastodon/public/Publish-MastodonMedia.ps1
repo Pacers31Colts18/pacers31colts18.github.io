@@ -6,60 +6,81 @@ function Publish-MastodonMedia {
         [string]$Alt
     )
 
-    # If the path is relative and starts with "images/", prepend microblog/
+    Write-Output "=== MASTODON MEDIA UPLOAD DEBUG START ==="
+    Write-Output "Original Path from parser: $Path"
+
+    # ------------------------------------------------------------
+    # 1. Normalize Markdown paths so GitHub preview AND Mastodon work
+    # ------------------------------------------------------------
+
+    # If Markdown uses "images/foo.jpg", prepend "microblog/"
     if ($Path -match '^[./]*images/') {
         $Path = "microblog/$Path"
+        Write-Output "Rewritten Markdown path → $Path"
     }
 
+    # ------------------------------------------------------------
+    # 2. Resolve relative paths against the repo root
+    # ------------------------------------------------------------
 
-    Write-Output "=== MASTODON MEDIA UPLOAD DEBUG START ==="
-    Write-Output "Original Path: $Path"
+    $repoRoot = $env:GITHUB_WORKSPACE
+    Write-Output "Repo root: $repoRoot"
 
-    # If the path is relative, resolve it to the repo root
     if (-not [System.IO.Path]::IsPathRooted($Path)) {
-        # Repo root = three levels up from this script
-        $repoRoot = Resolve-Path (Join-Path $PSScriptRoot "../../..")
-        $resolved = Join-Path $repoRoot $Path
-
-        Write-Output "Resolved relative path to: $resolved"
-        $Path = $resolved
+        $Path = Join-Path $repoRoot $Path
+        Write-Output "Resolved relative path → $Path"
     }
 
-    # Resolve any remaining relative segments
+    # ------------------------------------------------------------
+    # 3. Resolve final absolute path
+    # ------------------------------------------------------------
+
     try {
         $Path = (Resolve-Path $Path).Path
         Write-Output "Final resolved path: $Path"
     }
     catch {
         Write-Warning "Failed to resolve path: $Path"
+        Write-Output "=== MASTODON MEDIA UPLOAD DEBUG END ==="
         return $null
     }
 
-    # Validate the file exists
+    # ------------------------------------------------------------
+    # 4. Validate file exists and is non-empty
+    # ------------------------------------------------------------
+
     if (-not (Test-Path $Path)) {
         Write-Warning "Image file not found after resolution: $Path"
+        Write-Output "=== MASTODON MEDIA UPLOAD DEBUG END ==="
         return $null
     }
 
-    # Validate file size > 0
     $fileInfo = Get-Item $Path
+
     if ($fileInfo.Length -eq 0) {
         Write-Warning "Image file is empty: $Path"
+        Write-Output "=== MASTODON MEDIA UPLOAD DEBUG END ==="
         return $null
     }
 
     Write-Output "Uploading file: $Path (Size: $($fileInfo.Length) bytes)"
 
-    # Prepare upload
+    # ------------------------------------------------------------
+    # 5. Prepare upload
+    # ------------------------------------------------------------
+
     $headers = @{ Authorization = "Bearer $Token" }
     $form = @{ file = $fileInfo }
 
-    if ($Alt) { 
+    if ($Alt) {
         Write-Output "Using alt text: $Alt"
-        $form.description = $Alt 
+        $form.description = $Alt
     }
 
-    # Upload to Mastodon
+    # ------------------------------------------------------------
+    # 6. Upload to Mastodon
+    # ------------------------------------------------------------
+
     try {
         $res = Invoke-RestMethod `
             -Uri "https://$Instance/api/v1/media" `
