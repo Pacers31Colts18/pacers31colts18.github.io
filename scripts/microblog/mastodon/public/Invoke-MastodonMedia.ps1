@@ -8,36 +8,46 @@ function Invoke-MastodonMedia {
         [string]$Alt
     )
 
+    Write-Output "=== MASTODON MEDIA UPLOAD DEBUG START ==="
+    Write-Output "Raw incoming Path: '$Path'"
+
+    # Normalize invisible characters
+    $Path = ($Path -replace '[\u0000-\u001F\u200B-\u200D\uFEFF\u00A0]', '').Trim()
+    Write-Output "Normalized Path: '$Path'"
+
     # Early validation
     if (-not $Path -or $Path.Trim().Length -eq 0) {
         Write-Output ">>> ERROR: Uploader received EMPTY PATH"
-        return $null
-    }
-
-    Write-Output "=== MASTODON MEDIA UPLOAD DEBUG START ==="
-    Write-Output "Original Path from New-Entry: '$Path'"
-
-    # Resolve relative paths
-    $repoRoot = $env:GITHUB_WORKSPACE
-    Write-Output "Repo root: $repoRoot"
-
-    if (-not [System.IO.Path]::IsPathRooted($Path)) {
-        $Path = Join-Path $repoRoot $Path
-        Write-Output "Resolved relative path → $Path"
-    }
-
-    try {
-        $Path = (Resolve-Path $Path).Path
-        Write-Output "Final resolved path: $Path"
-    }
-    catch {
-        Write-Warning "Failed to resolve path: $Path"
         Write-Output "=== MASTODON MEDIA UPLOAD DEBUG END ==="
         return $null
     }
 
+    # Show repo root
+    $repoRoot = $env:GITHUB_WORKSPACE
+    Write-Output "Repo root: $repoRoot"
+
+    # Show expected full path
+    $expected = Join-Path $repoRoot $Path
+    Write-Output "Expected full path: $expected"
+
+    # Try resolving the path
+    try {
+        $resolved = Resolve-Path $expected -ErrorAction Stop
+        $Path = $resolved.Path
+        Write-Output "Resolved path: $Path"
+    }
+    catch {
+        Write-Warning "Resolve-Path failed for: $expected"
+        Write-Output "Directory listing of repo root:"
+        Get-ChildItem -Recurse $repoRoot | Write-Output
+
+        Write-Output "=== MASTODON MEDIA UPLOAD DEBUG END ==="
+        return $null
+    }
+
+    # Validate file exists
     if (-not (Test-Path $Path)) {
-        Write-Warning "Image file not found: $Path"
+        Write-Warning "File does not exist after resolution: $Path"
         Write-Output "=== MASTODON MEDIA UPLOAD DEBUG END ==="
         return $null
     }
@@ -52,6 +62,7 @@ function Invoke-MastodonMedia {
 
     Write-Output "Uploading file: $Path (Size: $($fileInfo.Length) bytes)"
 
+    # Prepare upload
     $headers = @{ Authorization = "Bearer $Token" }
     $form = @{ file = $fileInfo }
 
@@ -60,6 +71,7 @@ function Invoke-MastodonMedia {
         $form.description = $Alt
     }
 
+    # Upload to Mastodon
     try {
         $res = Invoke-RestMethod `
             -Uri "https://$Instance/api/v1/media" `
