@@ -12,9 +12,9 @@ function New-Entry {
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
-    # Normalize platform input (strip zero-width / BOM / NBSP, trim, lowercase)
-    $Platform = ($Platform -replace '[\u200B-\u200D\uFEFF\u00A0]', '').Trim().ToLower()
-    Write-Output ">>> DEBUG: Normalized Platform = '$Platform'"
+    # ⭐ FULL normalization: remove NULL, CR, LF, tabs, control chars, zero-width, BOM, NBSP
+    $Platform = ($Platform -replace '[\u0000-\u001F\u200B-\u200D\uFEFF\u00A0]', '').Trim().ToLower()
+    Write-Output ">>> DEBUG: Fully normalized Platform = '$Platform'"
 
     Write-Output "=== RAW BODY DEBUG START ==="
     Write-Output $Body
@@ -94,10 +94,10 @@ function New-Entry {
         $path = $images[$i]
         $alt  = $alts[$i]
 
-        # Normalize invisible characters
-        $path = ($path -replace '[\u200B-\u200D\uFEFF\u00A0]', '').Trim()
+        # Normalize invisible characters in path
+        $path = ($path -replace '[\u0000-\u001F\u200B-\u200D\uFEFF\u00A0]', '').Trim()
 
-        # ⭐ FIX: Prepend microblog/ directory ALWAYS
+        # Prepend microblog/ directory
         if ($path -match '^[./]*images/') {
             $path = "microblog/$path"
         }
@@ -145,7 +145,7 @@ function New-Entry {
         Publish-BlueskyThread `
             -Session $Session `
             -Posts $posts `
-            -Media $mediaIds[0]   # Bluesky supports only 1 image per post
+            -Media $mediaIds[0]
     }
 
     # Tag after success
