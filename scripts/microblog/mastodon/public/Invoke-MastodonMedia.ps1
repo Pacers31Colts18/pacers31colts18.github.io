@@ -1,6 +1,6 @@
     Write-Output ">>> USING Publish-MastodonMedia FROM: $PSCommandPath"
 
-function Publish-MastodonMedia {
+function Invoke-MastodonMedia {
     param (
         [string]$Instance,
         [string]$Token,
