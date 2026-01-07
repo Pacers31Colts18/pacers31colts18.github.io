@@ -12,8 +12,9 @@ function New-Entry {
         [string]$GitPath = "@github.com/Pacers31Colts18/pacers31colts18.github.io.git"
     )
 
-    # ⭐ Normalize platform input to avoid invisible chars / whitespace issues
-    $Platform = $Platform.Trim().ToLower()
+    # Normalize platform input (strip zero-width / BOM / NBSP, trim, lowercase)
+    $Platform = ($Platform -replace '[\u200B-\u200D\uFEFF\u00A0]', '').Trim().ToLower()
+    Write-Output ">>> DEBUG: Normalized Platform = '$Platform'"
 
     Write-Output "=== RAW BODY DEBUG START ==="
     Write-Output $Body
@@ -70,9 +71,9 @@ function New-Entry {
     Write-Output "Returned from Convert-MicroblogMarkdownImages."
 
     # ⭐ Force arrays so PowerShell doesn't iterate characters
-    $images = @($parsed.Images)
-    $alts   = @($parsed.Alts)
-    $cleanBody = $parsed.CleanBody
+    $images    = @($parsed.Images)
+    $alts      = @($parsed.Alts)
+    $cleanBody =  $parsed.CleanBody
 
     # Auto-detect content type
     $hasText  = ($cleanBody.Trim().Length -gt 0)
