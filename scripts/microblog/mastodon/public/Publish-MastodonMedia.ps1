@@ -6,6 +6,12 @@ function Publish-MastodonMedia {
         [string]$Alt
     )
 
+    # If the path is relative and starts with "images/", prepend microblog/
+    if ($Path -match '^[./]*images/') {
+        $Path = "microblog/$Path"
+    }
+
+
     Write-Output "=== MASTODON MEDIA UPLOAD DEBUG START ==="
     Write-Output "Original Path: $Path"
 
