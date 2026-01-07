@@ -32,7 +32,7 @@ jobs:
           } else {
               Write-Host "No images directory found"
           }
-          
+
       - name: Import Mastodon module and run
         shell: pwsh
         env:
@@ -41,21 +41,29 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           $modulePath = Join-Path $env:GITHUB_WORKSPACE "scripts/microblog/mastodon/mastodon.psd1"
-      
-          Write-Host "Importing Mastodon module from: $modulePath"
+
+          Write-Host "=== IMPORTING MASTODON MODULE ==="
+          Write-Host "Module path: $modulePath"
+
+          # Import with verbose so we see every file it loads
           Import-Module $modulePath -Force -Verbose
-      
-          Write-Host "Verifying exported commands..."
+
+          Write-Host "`n=== EXPORTED COMMANDS ==="
           $cmds = Get-Command -Module mastodon
+          $cmds | Format-Table Name, Source -AutoSize
+
           if (-not $cmds) {
               Write-Error "No commands exported from Mastodon module. Check your manifest and exports."
               exit 1
           }
-      
-          Write-Host "Running microblog posting process..."
+
+          Write-Host "`n=== VERIFYING Publish-MastodonMedia SOURCE ==="
+          $mediaCmd = Get-Command Publish-MastodonMedia -Module mastodon -ErrorAction SilentlyContinue
+          if ($mediaCmd) {
+              Write-Host "Publish-MastodonMedia loaded from: $($mediaCmd.Source)"
+          } else {
+              Write-Error "Publish-MastodonMedia is NOT exported or NOT loaded."
+          }
+
+          Write-Host "`n=== RUNNING MICROBLOG PROCESS ==="
           Invoke-MicroblogToMastodon
-
-
-
-
-
