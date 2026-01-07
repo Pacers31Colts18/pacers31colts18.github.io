@@ -1,4 +1,4 @@
-    Write-Output ">>> USING Publish-MastodonMedia FROM: $PSCommandPath"
+Write-Output ">>> USING Invoke-MastodonMedia FROM: $PSCommandPath"
 
 function Invoke-MastodonMedia {
     param (
@@ -8,25 +8,47 @@ function Invoke-MastodonMedia {
         [string]$Alt
     )
 
+    # ------------------------------------------------------------
+    # 0. Validate incoming path BEFORE anything else
+    # ------------------------------------------------------------
+
+    Write-Output ">>> DEBUG: Raw incoming Path = '$Path'"
+
+    if (-not $Path) {
+        Write-Output ">>> ERROR: Path is NULL"
+        return $null
+    }
+
+    if ($Path.Trim().Length -eq 0) {
+        Write-Output ">>> ERROR: Path is EMPTY or WHITESPACE"
+        return $null
+    }
+
+    $charCodes = ([int[]][char[]]$Path) -join ", "
+    Write-Output ">>> DEBUG: Path character codes = $charCodes"
+
+    # ------------------------------------------------------------
+    # 1. Start uploader debug
+    # ------------------------------------------------------------
 
     Write-Output "=== MASTODON MEDIA UPLOAD DEBUG START ==="
-    Write-Output "Original Path from parser: $Path"
+    Write-Output "Original Path from parser: '$Path'"
 
     # ------------------------------------------------------------
-    # 1. Normalize Markdown paths so GitHub preview AND Mastodon work
+    # 2. Normalize Markdown paths so GitHub preview AND Mastodon work
     # ------------------------------------------------------------
 
-    # If Markdown uses "images/foo.jpg", prepend "microblog/"
     if ($Path -match '^[./]*images/') {
         $Path = "microblog/$Path"
         Write-Output "Rewritten Markdown path → $Path"
     }
 
     # ------------------------------------------------------------
-    # 2. Resolve relative paths against the repo root
+    # 3. Resolve relative paths against the repo root
     # ------------------------------------------------------------
 
     $repoRoot = $env:GITHUB_WORKSPACE
+    Write-Output "Repo root: $repoRoot"
 
     if (-not [System.IO.Path]::IsPathRooted($Path)) {
         $Path = Join-Path $repoRoot $Path
@@ -34,7 +56,7 @@ function Invoke-MastodonMedia {
     }
 
     # ------------------------------------------------------------
-    # 3. Resolve final absolute path
+    # 4. Resolve final absolute path
     # ------------------------------------------------------------
 
     try {
@@ -48,7 +70,7 @@ function Invoke-MastodonMedia {
     }
 
     # ------------------------------------------------------------
-    # 4. Validate file exists and is non-empty
+    # 5. Validate file exists and is non-empty
     # ------------------------------------------------------------
 
     if (-not (Test-Path $Path)) {
@@ -68,7 +90,7 @@ function Invoke-MastodonMedia {
     Write-Output "Uploading file: $Path (Size: $($fileInfo.Length) bytes)"
 
     # ------------------------------------------------------------
-    # 5. Prepare upload
+    # 6. Prepare upload
     # ------------------------------------------------------------
 
     $headers = @{ Authorization = "Bearer $Token" }
@@ -80,7 +102,7 @@ function Invoke-MastodonMedia {
     }
 
     # ------------------------------------------------------------
-    # 6. Upload to Mastodon
+    # 7. Upload to Mastodon
     # ------------------------------------------------------------
 
     try {
