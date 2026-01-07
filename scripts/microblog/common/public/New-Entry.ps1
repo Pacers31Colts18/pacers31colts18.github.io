@@ -66,7 +66,7 @@ function New-Entry {
 
     Write-Output "Returned from Convert-MicroblogMarkdownImages."
 
-    # ⭐ FIX: Force arrays so PowerShell doesn't iterate characters
+    # ⭐ Force arrays so PowerShell doesn't iterate characters
     $images = @($parsed.Images)
     $alts   = @($parsed.Alts)
     $cleanBody = $parsed.CleanBody
@@ -83,14 +83,15 @@ function New-Entry {
         exit
     }
 
-    Write-Output ">>> NEW-ENTRY DEBUG: Path being passed to uploader = '$path'"
-
     # Upload media (platform-specific)
     $mediaIds = @()
 
     for ($i = 0; $i -lt $images.Count; $i++) {
         $path = $images[$i]
         $alt  = $alts[$i]
+
+        # ⭐ THIS is the correct place for the debug
+        Write-Output ">>> NEW-ENTRY DEBUG: Path being passed to uploader = '$path'"
 
         Write-Output "Uploading media: $path (alt='$alt')"
 
