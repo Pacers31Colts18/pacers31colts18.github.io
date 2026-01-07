@@ -57,6 +57,10 @@ jobs:
               exit 1
           }
 
+          Write-Host "=== COMMAND TYPE CHECK ==="
+          Get-Command Invoke-MastodonMedia | Format-List *
+
+
           Write-Host "`n=== VERIFYING Invoke-MastodonMedia SOURCE ==="
           $mediaCmd = Get-Command Invoke-MastodonMedia -Module mastodon -ErrorAction SilentlyContinue
           if ($mediaCmd) {
