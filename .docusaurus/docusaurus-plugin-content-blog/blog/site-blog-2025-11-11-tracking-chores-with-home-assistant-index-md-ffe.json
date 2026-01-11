@@ -13,7 +13,7 @@
       "description": "Home Assistant related posts."
     }
   ],
-  "readingTime": 4.69,
+  "readingTime": 4.74,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -21,6 +21,8 @@
     "description": "How I use Home Assistant to keep track of chores.",
     "slug": "tracking-chores-with-home-assistant",
     "date": "2025-11-11T00:00:00.000Z",
+    "image": "/img/blog/tracking-chores-with-home-assistant.png",
+    "comments": true,
     "tags": [
       "home-assistant"
     ]

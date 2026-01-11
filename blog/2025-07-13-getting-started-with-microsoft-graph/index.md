@@ -2,18 +2,18 @@
 title: "Getting Started with Microsoft Graph"
 description: A guide to Microsoft Graph
 slug: getting-started-with-microsoft-graph
-date: 2025-07-13 00:00:00+0000
-thumbnail: /img/blog/cover-red.png
+date: 2025-07-13
+image: /img/blog/getting-started-with-microsoft-graph.png
+comments: true
 tags: 
     - powershell
     - graph-api
 ---
 
-# Getting Started with Microsoft Graph
-
-A guide to show the different options for working with Microsoft Graph.
-
 <!-- truncate -->
+
+![Post Title](/img/blog/getting-started-with-microsoft-graph.png)
+
 
 
 Good morning everyone! I've been struggling lately with things to write, and also struggling with making time to write. I feel like this summer we've been slammed at work with different projects, I've been slammed at home with different projects, and have generally just been a little tired. I'm attempting to launch a consulting company, so I've been working through trying to get that off the ground (design a website first), so that has been eating into my time. While weed eating our wooded trail yesterday, I was thinking of different posts to make. One that I've been wanting to write about is my thoughts on Microsoft Graph and all the pain points I've experienced myself as a general noobie to Graph. I've been using Microsoft Graph the last three years in different capacities. This would be either through the SDK, native API calls, or using Invoke-MgGraphRequest.

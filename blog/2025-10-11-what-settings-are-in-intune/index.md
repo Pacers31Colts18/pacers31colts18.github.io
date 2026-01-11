@@ -2,7 +2,9 @@
 title: "What Group Policy Settings aren't in Microsoft Intune?"
 description: Finding settings that are in Group Policy, but aren't in Intune.
 slug: what-settings-are-in-intune
-date: 2025-10-11 00:00:00+0000
+image: what-group-policy-settings-arent-in-microsoft-intune.png
+date: 2025-10-11
+comments: true
 tags: 
   - group-policy
   - intune
@@ -10,10 +12,9 @@ tags:
   - graph-api
 ---
 
-# What Group Policy Settings Aren't in Microsoft Intune?
-
-Finding settings that are in Group Policy, but aren't in Intune.
 <!-- truncate -->
+![Post Title](/img/blog/what-group-policy-settings-arent-in-microsoft-intune.png)
+
 
 One of the challenges that we've found using Intune, is that there are policies that are in Group Policy (new settings even!), that then are not natively supported through the Settings Catalog in Microsoft Intune. Some of this seems to be random, and no clear reason to why this is the case. What is even more frustrating, is either the lack of clear documentation on what settings are actually available, and when they become available, or categories that have gone away from the ADMX backed method all together and write settings to different locations. In this post, I've written a couple of scripts to help admins with finding the settings that either exist or don't exist by exporting ADMX file data from a folder path, and then parsing that data through the Graph API.
 

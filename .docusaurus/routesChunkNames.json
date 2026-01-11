@@ -6,13 +6,16 @@
     },
     "content": "356a0ac6"
   },
-  "/blog-67e": {
+  "/blog-8cf": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "613d38a3"
+      },
       {
         "content": "a5fbc649"
       },
@@ -39,9 +42,6 @@
       },
       {
         "content": "fe117152"
-      },
-      {
-        "content": "e4f51c4c"
       }
     ],
     "__props": "97787cbd"
@@ -230,13 +230,16 @@
     "sidebar": "95b96bb9",
     "content": "d969f1a6"
   },
-  "/blog/page/2-4ed": {
+  "/blog/page/2-2f5": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "e4f51c4c"
+      },
       {
         "content": "6df0dfb9"
       },
@@ -277,6 +280,17 @@
     },
     "sidebar": "95b96bb9",
     "content": "3d53ff31"
+  },
+  "/blog/setting-my-goals-for-2026-c38": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "49f06b57"
+      },
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "content": "000fbac9"
   },
   "/blog/tags-efb": {
     "__comp": "01a85c17",
@@ -515,13 +529,16 @@
     ],
     "__props": "91e20dd9"
   },
-  "/blog/tags/other-bdd": {
+  "/blog/tags/other-7f5": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "613d38a3"
+      },
       {
         "content": "e4f51c4c"
       },

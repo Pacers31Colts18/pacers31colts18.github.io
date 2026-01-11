@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '67e'),
+    component: ComponentCreator('/blog', '8cf'),
     exact: true
   },
   {
@@ -99,12 +99,17 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '4ed'),
+    component: ComponentCreator('/blog/page/2', '2f5'),
     exact: true
   },
   {
     path: '/blog/search-gpocategory',
     component: ComponentCreator('/blog/search-gpocategory', 'd1f'),
+    exact: true
+  },
+  {
+    path: '/blog/setting-my-goals-for-2026',
+    component: ComponentCreator('/blog/setting-my-goals-for-2026', 'c38'),
     exact: true
   },
   {
@@ -179,7 +184,7 @@ export default [
   },
   {
     path: '/blog/tags/other',
-    component: ComponentCreator('/blog/tags/other', 'bdd'),
+    component: ComponentCreator('/blog/tags/other', '7f5'),
     exact: true
   },
   {

@@ -19,7 +19,7 @@
       "description": "Active Directory related posts."
     }
   ],
-  "readingTime": 4.6,
+  "readingTime": 4.61,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -27,6 +27,8 @@
     "description": "A quick function for testing network connections with PowerShell.",
     "slug": "test-portnetconnections-post",
     "date": "2025-02-25T00:00:00.000Z",
+    "image": "/img/blog/testing-network-connections-with-a-powershell-function.png",
+    "comments": true,
     "tags": [
       "powershell",
       "active-directory"

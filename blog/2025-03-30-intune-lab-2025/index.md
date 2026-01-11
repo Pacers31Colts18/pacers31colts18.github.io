@@ -3,16 +3,16 @@ title: "Setting up an Active Directory, ConfigMgr, Intune Lab in 2025"
 description: Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.
 slug: intunelab-2025
 date: 2025-03-30
+image: /img/blog/setting-up-an-active-directory-configMgr-intune-lab-in-2025.png
+comments: true
 tags: 
     - intune
     - sccm
     - active-directory
 ---
 
-# Setting up an Active Directory, ConfigMgr, Intune Lab in 2025
-
-Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.
 <!-- truncate -->
+![Post Title](/img/blog/setting-up-an-active-directory-configMgr-intune-lab-in-2025.png)
 
 
 For the first time in what seems like forever, I've gone through the process of setting up a lab environment to test and write about features in Intune. Along with my Intune lab environment, I also configured Active Directory and a ConfigMgr lab server. I thought it would be a good idea to write this down, as I want to be able to rebuild this lab when needed. I'll go into more details below, but I plan on utilizing Enterprise Evaluation licenses, which expire every 180 days. My goal is to rebuild the lab every 6 months for a few reasons:

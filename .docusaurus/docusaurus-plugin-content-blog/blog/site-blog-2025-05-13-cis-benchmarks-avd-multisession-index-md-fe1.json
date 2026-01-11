@@ -25,7 +25,7 @@
       "description": "Azure Virtual Desktop related posts."
     }
   ],
-  "readingTime": 9,
+  "readingTime": 8.98,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -33,6 +33,8 @@
     "description": "Details on what settings aren't in scope with AVD Multi-Session hosts.",
     "slug": "cis-benchmarks-avd-multisession",
     "date": "2025-05-13T00:00:00.000Z",
+    "image": "/img/blog/cisl1-benchmarks-in-intune-with-avd-multi-session-hosts.png",
+    "comments": true,
     "tags": [
       "intune",
       "cis",

@@ -2,17 +2,17 @@
 title: An even better way to automate Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation
 description: A better process for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation Runbooks.
 slug: entra-deviceextensionattributes-automation-better
+image: /img/blog/an-even-better-way-to-automate-entra-device-extension-attributes-with-intune-remediation-scripts-and-azure-automation.png
 date: 2025-04-12
+comments: true
 tags: 
     - intune
     - entra
     - azure
 ---
-# An even better way to automate Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation
-
-A better process for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure
 
 <!-- truncate -->
+![Post Title](/img/blog/an-even-better-way-to-automate-entra-device-extension-attributes-with-intune-remediation-scripts-and-azure-automation.png)
 
 
 In my last post, I wrote about how we can use Intune Remediation Scripts, Azure Automation, and Enterprise App Registrations to automate the tagging of device extension attributes on an Entra ID device. From here we can create Entra groups that are dynamic, and constantly updated based on data that we are looking for on the device. I gave the example of adding the domain name to extensionAttribute1, and creating groups based off that for targeting. While what I showed worked, [Nathan McNulty](https://nathanmcnulty.com/), provided some feedback:

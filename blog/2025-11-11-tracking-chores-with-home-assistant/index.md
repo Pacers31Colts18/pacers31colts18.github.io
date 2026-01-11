@@ -3,13 +3,16 @@ title: "Tracking Chores with Home Assistant"
 description: How I use Home Assistant to keep track of chores.
 slug: tracking-chores-with-home-assistant
 date: 2025-11-11
+image: /img/blog/tracking-chores-with-home-assistant.png
+comments: true
 tags: 
   - home-assistant
 ---
 
-# Tracking Chores with Home Assistant
-
 <!-- truncate -->
+
+![Post Title](/img/blog/tracking-chores-with-home-assistant.png)
+
 
 I've been slammed. I keep trying to set a schedule and stay organized, but with everything at work and home life, I've just not had the time or motivation to really write all that much. The kids are back in school, and that has been eating up most of my time. Work has been really busy the past few months, and hopefully with the holiday season upon us, things will start to slow down a little bit.
 
