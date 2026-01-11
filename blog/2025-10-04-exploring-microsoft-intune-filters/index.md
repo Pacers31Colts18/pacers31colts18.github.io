@@ -1,17 +1,19 @@
 ---
 title: "Exploring Microsoft Intune Filters"
-description: Details on filtering with Microsoft Intune.
+description: A walk through on the options and setup of filters in Microsoft Intune.
 slug: exploring-microsoft-intune-filters
-date: 2025-10-04 00:00:00+0000
+date: 2025-10-04
+image: exploring-microsoft-intune-filters.png
+comments: true
 tags:
   - intune
 ---
 
-# Exploring Microsoft Intune Filters
-
-A walk through on the options and setup of filters in Microsoft Intune.
 
 <!-- truncate -->
+
+![Post Title](/img/blog/exploring-microsoft-intune-filters.png)
+
 
 ## Intro
 

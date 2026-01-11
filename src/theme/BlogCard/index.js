@@ -21,13 +21,16 @@ export default function BlogCard({ fm = {}, md = {} }) {
   const tags = rawTags.map(normalizeTag);
 
   function formatDate(dateString) {
-    const d = new Date(dateString);
+    const [year, month, day] = dateString.split('-');
+    const d = new Date(Number(year), Number(month) - 1, Number(day)); // local date, no UTC shift
+  
     return d.toLocaleDateString('en-US', {
       month: '2-digit',
       day: '2-digit',
       year: 'numeric',
     });
   }
+  
 
   return (
     <article className={styles.card}>

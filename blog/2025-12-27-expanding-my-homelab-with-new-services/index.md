@@ -3,8 +3,7 @@ title: "Expanding my Home Lab with Cloudflare, Tailscale, and more"
 description: How I use Cloudflare, Technitium, Caddy, and Tailscale to expand my home lab.
 slug: expanding-my-homelab-with-cloudflare-tailscale-and-more
 date: 2025-12-26
-thumbnail: /img/blog/cover1.png
-image: https://joeloveless.com/img/social-card.png
+image: /img/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more.png
 comments: true
 tags: 
   - home-lab
@@ -12,6 +11,8 @@ tags:
 ---
 
 <!-- truncate -->
+
+![Post Title](/img/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more.png)
 
 2025 is almost to a close. We recently went back to Indiana to visit our family and had a good time. The weather was unseasonably warm, especially compared to Minnesota standards. We visited the Indianapolis Zoo, as the kids have been wanting to see the chimps since we last lived there and they did a summer camp at the zoo. We saw some super active orangutans, and other animals that are normally not active. I love visiting zoos on winter days. No crowds, some animals being more active than they normally are. Christmas was nice, my cousin came up to visit who I don't see all that often and I was able to catch up a bit with my dad and brother. Family gatherings are usually a little awkward for me, I'm more laid back and reserved while my family when all together are pretty loud and talk over each other (even if there is only 11 of us).
 

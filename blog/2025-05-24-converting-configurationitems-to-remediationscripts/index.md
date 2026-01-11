@@ -3,17 +3,17 @@ title: "Converting Registry Based SCCM Configuration Items to Intune Remediation
 description: Script walkthrough on converting SCCM Configuration Items to Intune Remediation Scripts.
 slug: configurationitems-to-remediationscripts
 date: 2025-05-24
+image: /img/blog/converting-registry-based-sccm-configuration-items-to-intune-remediation-scripts.png
+comments: true
 tags: 
     - intune
     - sccm
     - powershell
 ---
 
-# Converting Registry Based SCCM Configuration Items to Intune Remediation Scripts
-
-A PowerShell script walkthrough on converting SCCM Configuration Items to Intune Remediation Scripts.
-
 <!-- truncate -->
+![Post Title](/img/blog/converting-registry-based-sccm-configuration-items-to-intune-remediation-scripts.png)
+
 
 It's Memorial Day Weekend here in the States, which means it's Indy 500 Weekend. It also means my Indiana Pacers are up 2-0 on the New York Knicks. If you know me, I'm a huge Pacers fan. With that comes a hatred for the Knicks, so right now I am giddy. Game 3 is tomorrow in Indianapolis, and the same day as the Indy 500. Back in Indy, we call that Racers and Pacers Weekend. I don't miss Indiana much for anything at all, but events like this, I do miss. Indianapolis knows how to do sporting weekends right. Without being back in Indy, my family and I will most likely be cooking some hot dogs, eating some s'mores, and burning all the downed sticks and brush from the recent storms. My daughter is also looking into getting into mountain biking, so I have been going down the internet rabbit hole looking for a decently priced mountain bike.
 

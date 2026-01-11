@@ -31,7 +31,7 @@
       "description": "Microsoft Graph API related posts."
     }
   ],
-  "readingTime": 7.51,
+  "readingTime": 7.48,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -39,6 +39,8 @@
     "description": "Creating Intune Randomized Rollouts with Entra Group Membership",
     "slug": "entra-grouprandomization",
     "date": "2025-04-26T00:00:00.000Z",
+    "image": "/img/blog/creating-intune-randomized-rollouts-with-entra-group-membership.png",
+    "comments": true,
     "tags": [
       "intune",
       "entra",

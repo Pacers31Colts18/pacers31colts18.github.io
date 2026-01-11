@@ -3,17 +3,18 @@ title: "CIS L1 Benchmarks in Intune with AVD Multi-Session Hosts"
 description: Details on what settings aren't in scope with AVD Multi-Session hosts.
 slug: cis-benchmarks-avd-multisession
 date: 2025-05-13
+image: /img/blog/cisl1-benchmarks-in-intune-with-avd-multi-session-hosts.png
+comments: true
 tags:
     - intune
     - cis
     - avd
 ---
 
-# CIS L1 Benchmarks in Intune with AVD Multi-Session Hosts
-
-Details on what settings aren't in scope for the Windows 11 Benchmark with AVD Multi-Session hosts.
-
 <!-- truncate -->
+
+![Post Title](/img/blog/cisl1-benchmarks-in-intune-with-avd-multi-session-hosts.png)
+
 
 What a week! Last week was MMS MOA 2025, and I still have this odd hangover from the week that I'm trying to recover from. The past couple nights I've been in bed by 8-9 p.m., which for my 40 year old self, isn't that far off. The haze in general is starting to wear off, and I'm starting to get back into the swings of every day life and every day work. I always come out of MMS with such excitement, but then typically there are the work challenges that get in the way. Never the fault of the actual team I'm on mind you, just work in general. I thought about making a post about all the sessions, all the fun, and everything else that makes MMS great, but my brain is foggy, and I don't know that I could do the week proper justice.
 

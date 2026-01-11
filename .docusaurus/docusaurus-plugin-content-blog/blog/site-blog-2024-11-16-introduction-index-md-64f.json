@@ -3,7 +3,7 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2024-11-16-Introduction/index.md",
   "source": "@site/blog/2024-11-16-Introduction/index.md",
   "title": "Introduction",
-  "description": "Introductory blog post",
+  "description": "Welcome to my new blog!",
   "date": "2024-11-16T00:00:00.000Z",
   "tags": [
     {
@@ -18,9 +18,11 @@
   "authors": [],
   "frontMatter": {
     "title": "Introduction",
-    "description": "Introductory blog post",
+    "description": "Welcome to my new blog!",
     "slug": "introduction-post",
     "date": "2024-11-16T00:00:00.000Z",
+    "image": "/img/blog/introduction.png",
+    "comments": true,
     "tags": [
       "other"
     ]

@@ -25,7 +25,7 @@
       "description": "Intune related posts."
     }
   ],
-  "readingTime": 3.83,
+  "readingTime": 3.9,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -33,6 +33,8 @@
     "description": "A guide to gathering data for a successful Windows Hello For Business rollout using Microsoft Intune detection scripts.",
     "slug": "gathering-data-for-windows-hello",
     "date": "2025-08-09T00:00:00.000Z",
+    "image": "/img/blog/gathering-data-for-a-windows-hello-for-business-rollout.png",
+    "comments": true,
     "tags": [
       "windows-hello",
       "remediation-scripts",

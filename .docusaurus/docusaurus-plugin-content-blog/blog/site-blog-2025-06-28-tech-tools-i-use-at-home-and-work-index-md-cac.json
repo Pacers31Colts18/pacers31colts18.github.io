@@ -13,14 +13,16 @@
       "description": "Other related posts."
     }
   ],
-  "readingTime": 6.43,
+  "readingTime": 6.42,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
     "title": "Tech tools I use at home and at work",
     "description": "An overview of the random tech I use at home and at work.",
     "slug": "tech-tools-I-use",
-    "date": "2025-06-28 00:00:00+0000",
+    "date": "2025-06-28T00:00:00.000Z",
+    "image": "/img/blog/tech-tools-i-use-at-home-and-work.png",
+    "comments": true,
     "tags": [
       "other"
     ]

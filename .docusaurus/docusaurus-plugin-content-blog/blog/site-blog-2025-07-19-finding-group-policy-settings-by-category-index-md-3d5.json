@@ -31,15 +31,16 @@
       "description": "Intune related posts."
     }
   ],
-  "readingTime": 5.95,
+  "readingTime": 5.94,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
     "title": "Finding Group Policy settings by category",
     "description": "A PowerShell script to search for GPO settings by category.",
     "slug": "search-gpocategory",
-    "date": "2025-07-19 00:00:00+0000",
-    "thumbnail": "/img/blog/cover-yellow.png",
+    "date": "2025-07-19T00:00:00.000Z",
+    "thumbnail": "/img/blog/finding-group-policy-settings-by-category.png",
+    "comments": true,
     "tags": [
       "group-policy",
       "powershell",

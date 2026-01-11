@@ -3,6 +3,8 @@ title: "Finding users that are enrolled in Windows Hello For Business"
 description: A guide to finding how many users are enrolled in Windows Hello for Business on a device.
 slug: finding-enrollment-count-windows-hello
 date: 2025-08-31
+image: /img/blog/finding-users-that-are-enrolled-in-windows-hello-for-business.png
+comments: true
 tags: 
     - windows-hello
     - remediation-scripts
@@ -10,6 +12,9 @@ tags:
 ---
 
 <!-- truncate -->
+
+![Post Title](/img/blog/finding-users-that-are-enrolled-in-windows-hello-for-business.png)
+
 
 It's been a minute since my last post. Since then, we've still been rolling out Windows Hello for Business at work as a project, along with many other tasks, projects, etc. Employee review season is upon us, so I need to start figuring out what all I did in the last year, and what I want to achieve in the upcoming year. It's one of those exercises I'm not the biggest fan of, mainly because I feel that I have to talk about myself more than I ever want to.
 

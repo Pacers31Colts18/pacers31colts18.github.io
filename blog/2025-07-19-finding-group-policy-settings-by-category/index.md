@@ -2,8 +2,9 @@
 title: "Finding Group Policy settings by category"
 description: A PowerShell script to search for GPO settings by category.
 slug: search-gpocategory
-date: 2025-07-19 00:00:00+0000
-thumbnail: /img/blog/cover-yellow.png
+date: 2025-07-19
+thumbnail: /img/blog/finding-group-policy-settings-by-category.png
+comments: true
 tags: 
   - group-policy
   - powershell
@@ -11,11 +12,10 @@ tags:
   - intune
 ---
 
-# Finding Group Policy settings by category
-
-A helpful PowerShell script to search for group policy settings by category.
-
 <!-- truncate -->
+
+![Post Title](/img/blog/finding-group-policy-settings-by-category.png)
+
 
 Greetings everyone. I wanted to share some of our functions that we've been using on our migration path from Group Policy to Microsoft Intune. This is a new one I just wrote this week, and think it will be very helpful. In our environment, we have multiple forests (27+). We've been migrating our standard workstation policies, but with 27 forests, we're discovering we still have a lot of cleanup to do. 
 

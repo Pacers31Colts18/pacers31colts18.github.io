@@ -25,14 +25,16 @@
       "description": "Azure related posts."
     }
   ],
-  "readingTime": 8.13,
+  "readingTime": 8.15,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
     "title": "An even better way to automate Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation",
     "description": "A better process for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation Runbooks.",
     "slug": "entra-deviceextensionattributes-automation-better",
+    "image": "/img/blog/an-even-better-way-to-automate-entra-device-extension-attributes-with-intune-remediation-scripts-and-azure-automation.png",
     "date": "2025-04-12T00:00:00.000Z",
+    "comments": true,
     "tags": [
       "intune",
       "entra",

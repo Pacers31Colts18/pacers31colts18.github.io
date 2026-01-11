@@ -3,12 +3,17 @@ title: "Gathering Data for a Windows Hello for Business Rollout"
 description: A guide to gathering data for a successful Windows Hello For Business rollout using Microsoft Intune detection scripts.
 slug: gathering-data-for-windows-hello
 date: 2025-08-09
+image: /img/blog/gathering-data-for-a-windows-hello-for-business-rollout.png
+comments: true
 tags: 
   - windows-hello
   - remediation-scripts
   - intune
 ---
 <!-- truncate -->
+
+![Post Title](/img/blog/gathering-data-for-a-windows-hello-for-business-rollout.png)
+
 
 Hello there! It's been a couple weeks since my last post. I've been slammed at work with various projects (Azure Virtual Desktop, Windows Hello for Business, etc, etc), studying for the AZ-104 certification (trying to meet my employee goal before the end of the year), various things around the house (still working on flooring, painting, gardening), and the usual business of summer. My son got his first stripe in jiujitsu. He's been doing this since about February/March, trying to improve his mental health and getting more active. While he certainly has his days where he doesn't want to go, he's been pretty great about going two times a week. When he leaves class, he's always smiling and happy. Seeing his improvement both with his overall attitude and how he's improving with jiujitsu has been awesome to see. I'm pretty proud of him for sticking with it, and getting his first stripe!
 
