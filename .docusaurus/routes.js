@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '8cf'),
+    component: ComponentCreator('/blog', '12a'),
     exact: true
   },
   {
@@ -40,6 +40,11 @@ export default [
   {
     path: '/blog/configurationitems-to-remediationscripts',
     component: ComponentCreator('/blog/configurationitems-to-remediationscripts', '9d7'),
+    exact: true
+  },
+  {
+    path: '/blog/configuring-windows-autopilot-in-a-hyperv-lab',
+    component: ComponentCreator('/blog/configuring-windows-autopilot-in-a-hyperv-lab', '360'),
     exact: true
   },
   {
@@ -99,7 +104,12 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '2f5'),
+    component: ComponentCreator('/blog/page/2', '075'),
+    exact: true
+  },
+  {
+    path: '/blog/page/3',
+    component: ComponentCreator('/blog/page/3', 'f24'),
     exact: true
   },
   {
@@ -120,6 +130,11 @@ export default [
   {
     path: '/blog/tags/active-directory',
     component: ComponentCreator('/blog/tags/active-directory', '333'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/autopilot',
+    component: ComponentCreator('/blog/tags/autopilot', '415'),
     exact: true
   },
   {
@@ -169,12 +184,12 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', 'a10'),
+    component: ComponentCreator('/blog/tags/intune', 'c2e'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', 'b04'),
+    component: ComponentCreator('/blog/tags/intune/page/2', 'b82'),
     exact: true
   },
   {

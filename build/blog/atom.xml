@@ -2,11 +2,118 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://joeloveless.com/blog</id>
     <title>Joe Loveless Blog</title>
-    <updated>2026-01-11T00:00:00.000Z</updated>
+    <updated>2026-01-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://joeloveless.com/blog"/>
     <subtitle>Joe Loveless Blog</subtitle>
     <icon>https://joeloveless.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Configuring Windows Autopilot in a Hyper-V Lab]]></title>
+        <id>https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab</id>
+        <link href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab"/>
+        <updated>2026-01-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A guide to configuring Windows Autopilot and setting up a VM in Hyper-V for Autopilot testing.]]></summary>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Configuring Windows Autopilot in a Hyper-V Lab" src="https://joeloveless.com/assets/images/configuring-windows-autopilot-in-a-hyperv-lab-b21817cbd66f1b87dcae4614850231eb.png" width="1200" height="630" class="img_ev3q"></p>
+<p>Happy weekend everyone, I'm back with another post for the month. I'd like to say I've been busy and productive, but that's not really the case. I am trying to lay low and stay sane at the moment. To distract myself, I recently picked up a <a href="https://www.amazon.com/Handheld-3-2-inch-Trimui-Brick-Opensource-Protector/dp/B0DNQ5345P?th=1" target="_blank" rel="noopener noreferrer" class="">TrimUI Brick</a>....actually my mom got it for me for my birthday (yes my mom bought me a birthday present in my 40s). I've been burnt out recently on PS5 gaming, annoyed by the fact that there is not an end in sight to games anymore. There is always some expansion pack, open world, or micro transaction. As you can tell, I f'n love the 90's and early 2000's nostalgia from my childhood. It probably wasn't as great as I remember (hence my someone fragile mental state at times), but dammit, we had the best of both worlds. Life without the internet + life with the internet. Since I got the retro handheld, I've been playing a lot of Donkey Kong Country and NHL 94 to keep me distracted.</p>
+<p><img decoding="async" loading="lazy" alt="Donkey Kong" src="https://joeloveless.com/assets/images/donkeykong-79a23cc852fb880083a9299bcc687d52.png" width="575" height="455" class="img_ev3q"></p>
+<p>But enough about my personal updates, this blog post is more about getting back into what the original theme about this site was going to be, writing about endpoint management and capturing my thoughts on it. Last year, I setup a Hyper-V lab for ConfigMgr, Intune, and Active Directory. This post deviates a little bit from the ConfigMgr and AD side of things, and focuses more on the Intune side. I have a test tenant that has been sitting dormant for a while. I figured, why not start with the basics a little bit and configure Windows Autopilot in a Hyper-V scenario?</p>
+<p>This post is not going to walk through setting up Hyper-V or Microsoft Intune, if you need help with that, <a href="https://joeloveless.com/blog/intunelab-2025" target="_blank" rel="noopener noreferrer" class="">check out my post from last year</a> on setting up an Intune lab.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="preparation-downloading-a-windows-11-iso">Preparation, downloading a Windows 11 ISO<a href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab#preparation-downloading-a-windows-11-iso" class="hash-link" aria-label="Direct link to Preparation, downloading a Windows 11 ISO" title="Direct link to Preparation, downloading a Windows 11 ISO" translate="no">​</a></h2>
+<p>The first thing we need to do is download a Windows 11 ISO. There are plenty of ways to do this, if you have access to <a href="https://my.visualstudio.com/downloads" target="_blank" rel="noopener noreferrer" class="">Visual Studio subscriptions</a>, you can get it there. For me, I am just going to download the ISO from Microsoft directly. The link is below:</p>
+<p><a href="https://www.microsoft.com/en-us/software-download/windows11" target="_blank" rel="noopener noreferrer" class="">https://www.microsoft.com/en-us/software-download/windows11</a></p>
+<p><img decoding="async" loading="lazy" alt="Download page" src="https://joeloveless.com/assets/images/download-71a8379aed1ca703cab5747ed04b5683.png" width="1116" height="346" class="img_ev3q"></p>
+<p>Once downloaded, open the file and you'll want to choose ISO file during the setup assistant.</p>
+<p><img decoding="async" loading="lazy" alt="Progress" src="https://joeloveless.com/assets/images/download2-8ed292f49cff897520ac8a57b325439a.png" width="694" height="547" class="img_ev3q"></p>
+<p>This might take a minute....</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="autopilot-configuration">Autopilot Configuration<a href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab#autopilot-configuration" class="hash-link" aria-label="Direct link to Autopilot Configuration" title="Direct link to Autopilot Configuration" translate="no">​</a></h2>
+<p>To configure Autopilot, we basically have 3 things we need to do:</p>
+<ol>
+<li class="">Import the hardware hash (will do this later during the VM creation)</li>
+<li class="">Create and assign an Autopilot profile.</li>
+<li class="">Create a device group for the Autopilot devices</li>
+</ol>
+<p>Let's work backwards on this, makes total sense.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-the-device-group-for-autopilot-devices">Creating the device group for Autopilot devices<a href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab#creating-the-device-group-for-autopilot-devices" class="hash-link" aria-label="Direct link to Creating the device group for Autopilot devices" title="Direct link to Creating the device group for Autopilot devices" translate="no">​</a></h3>
+<p>Let's go over to the <a href="https://entra.microsoft.com/" target="_blank" rel="noopener noreferrer" class="">Entra portal</a>, and go to Groups.</p>
+<p>We're going to create a new group:</p>
+<p><img decoding="async" loading="lazy" alt="Entra ID Group" src="https://joeloveless.com/assets/images/entra_group-cdb067fe4bea99bd8c75ddba20830fda.png" width="738" height="561" class="img_ev3q"></p>
+<p>We want the group to be a Dynamic Device group.</p>
+<p><img decoding="async" loading="lazy" alt="Dynamic" src="https://joeloveless.com/assets/images/entra_dynamic-e44787792bc9247986537cb14241b64f.png" width="1653" height="587" class="img_ev3q"></p>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">(device.devicePhysicalIDs -any (_ -contains "[ZTDId]"))</span><br></span></code></pre></div></div>
+<p>This query retrieves any device that is <strong>registered</strong> with Windows Autopilot.</p>
+<p><a href="https://learn.microsoft.com/en-us/autopilot/enrollment-autopilot" target="_blank" rel="noopener noreferrer" class="">Create device groups for Windows Autopilot</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="create-and-assign-an-autopilot-profile">Create and assign an Autopilot profile<a href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab#create-and-assign-an-autopilot-profile" class="hash-link" aria-label="Direct link to Create and assign an Autopilot profile" title="Direct link to Create and assign an Autopilot profile" translate="no">​</a></h3>
+<p>Now we're going to head over to <a href="https://intune.microsoft.com/" target="_blank" rel="noopener noreferrer" class="">Microsoft Intune</a>, and create the Autopilot profile.</p>
+<p>From the Intune portal:</p>
+<p>Devices &gt; Enrollment &gt; Deployment Profiles</p>
+<p>Create a new profile and give it a proper name:</p>
+<p><img decoding="async" loading="lazy" alt="Autopilot creation" src="https://joeloveless.com/assets/images/autopilot1-e1caeb92d95f9855d735f0ec2f08f2d8.png" width="800" height="443" class="img_ev3q"></p>
+<p>In this case, we're going to choose a User-Driven profile and give it a naming convention.</p>
+<p><img decoding="async" loading="lazy" alt="Autopilot User-Driven" src="https://joeloveless.com/assets/images/autopilot2-b0ddfff83c236bfa59d70e85d4f1aedc.png" width="807" height="773" class="img_ev3q"></p>
+<p>Final step, we're going to assign the profile to the Entra group we just created.</p>
+<p>Once finished, your profile should look like this:</p>
+<p><img decoding="async" loading="lazy" alt="Autopilot completed" src="https://joeloveless.com/assets/images/autopilot3-78de4b992d1dc0616e2bc12997fb3670.png" width="814" height="893" class="img_ev3q"></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="importing-the-hardware-hash">Importing the hardware hash<a href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab#importing-the-hardware-hash" class="hash-link" aria-label="Direct link to Importing the hardware hash" title="Direct link to Importing the hardware hash" translate="no">​</a></h3>
+<p>Now that we have those steps done, we're at the point where we need to import the hardware hash. We can't do that step without creating a VM first, so let's open Hyper-V and get started on that.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="creating-the-vm">Creating the VM<a href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab#creating-the-vm" class="hash-link" aria-label="Direct link to Creating the VM" title="Direct link to Creating the VM" translate="no">​</a></h4>
+<p>We can either do this through the GUI, or do it with PowerShell. I'm going to create it with PowerShell, and then I'll show you the configuration in Hyper-V</p>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">New-VM -Name "W11_25H2_Autopilot" -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath "C:\VMs\W11_25H2_Autopilot\W11_25H2_Autopilot.vhdx" -Path "C:\VMs\W11_25H2_Autopilot\VMData" -NewVHDSizeBytes 80GB -Generation 2 -Switch "JoeLoveless.com" -</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">Add-VMDvdDrive -Path "C:\VMs\W11.iso" -VMName "W11_25H2_AutoPilot"</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">Enable-VMTPM -VMName "W11_25H2_AutoPilot"</span><br></span></code></pre></div></div>
+<p><img decoding="async" loading="lazy" alt="Hyper-V VM" src="https://joeloveless.com/assets/images/hyperv-07c139508ea22f158fc0438f959105b2.png" width="712" height="676" class="img_ev3q"></p>
+<ul>
+<li class="">Before we power it up, remove the network adapter and the hard disk. We'll come back to these later, first we want to capture a checkpoint.</li>
+<li class="">Go into settings for the VM and remove those, also add a 2nd processor and enable TPM.</li>
+<li class="">Now we're ready to power up the VM.</li>
+<li class="">At the first OOBE screen, create a checkpoint</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Checkpoint" src="https://joeloveless.com/assets/images/hyperv_checkpoint-078f014edd8cf0c14c384e08232fcc5f.png" width="1022" height="766" class="img_ev3q"></p>
+<ul>
+<li class="">Now, with the VM still up, add the network adapter back.</li>
+<li class="">Continue on through the setup process, allowing the computer to restart when necessary.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Installation Process" src="https://joeloveless.com/assets/images/hyperv_install-c3e6897d74e5b89775c07d6c460e751e.png" width="1013" height="759" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Installation Process Continued" src="https://joeloveless.com/assets/images/hyperv_install2-c8331603c948537912dbc7b25f1771fa.png" width="1016" height="765" class="img_ev3q"></p>
+<ul>
+<li class="">Once at this screen, hit <strong>Shift+F10</strong> and open a command prompt.</li>
+<li class="">Type powershell.exe</li>
+</ul>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">Set-ExecutionPolicy bypass</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">Install-Script get-windowsautopilotinfo</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span></code></pre></div></div>
+<ul>
+<li class="">Accept all the prompts, allowing the script to install.</li>
+</ul>
+<div class="language-powershell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-powershell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">Get-WindowsAutoPilotInfo.ps1 -online</span><br></span></code></pre></div></div>
+<ul>
+<li class="">Some Microsoft Graph modules will install.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Sign-in" src="https://joeloveless.com/assets/images/hyperv_signin-6578be0fe84cf1f17e0565cdbc4c6e5a.png" width="946" height="512" class="img_ev3q"></p>
+<ul>
+<li class="">Sign in with your Microsoft account (choose work or school)</li>
+<li class="">Accept all the prompts</li>
+<li class="">After the window closes, you should see the device being imported through the powershell window.</li>
+<li class="">Once finished, you should now see the serial number in the Entra group.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Autopilot Registration" src="https://joeloveless.com/assets/images/autopilot4-47c87266b19e8c0670e2d01a144addc0.png" width="1759" height="819" class="img_ev3q"></p>
+<ul>
+<li class="">Now that we are finished, let's revert to our checkpoint, and go through the full setup process.<!-- -->
+<ul>
+<li class="">Make sure you add the network adapter back!</li>
+</ul>
+</li>
+<li class="">After a few minutes and clicking through, you should be at a sign-in screen.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Sign-in" src="https://joeloveless.com/assets/images/signin-ab2d545d116086f5f9db755ff2061c47.png" width="1022" height="766" class="img_ev3q"></p>
+<p><strong>Make sure you sign in with an account licensed for Intune</strong></p>
+<ul>
+<li class="">Depending on your tenant setup, you might see some different options from here on out (MFA, WHFB, etc)</li>
+<li class="">Eventually, you will find your way to the Windows logon screen</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Windows Sign-In" src="https://joeloveless.com/assets/images/windows-a5220005a90bc555281ee4a6333ae2ba.png" width="1306" height="509" class="img_ev3q"></p>
+<p>Checking Microsoft Intune, we now have the VM loaded in properly.</p>
+<p><img decoding="async" loading="lazy" alt="Microsoft Intune" src="https://joeloveless.com/assets/images/intune-f32c209c621f56871ba4f6afefe0d533.png" width="973" height="199" class="img_ev3q"></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-thoughts">Final Thoughts<a href="https://joeloveless.com/blog/configuring-windows-autopilot-in-a-hyperv-lab#final-thoughts" class="hash-link" aria-label="Direct link to Final Thoughts" title="Direct link to Final Thoughts" translate="no">​</a></h2>
+<p>I'd like to know how others are testing Autopilot and Intune in their lab environments. Is anyone still using AD/ConfigMgr for testing, or going solely to Intune/Entra joined devices? Is there a better way to provision VMs?</p>]]></content>
+        <category label="Intune" term="Intune"/>
+        <category label="Autopilot" term="Autopilot"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Setting my goals for 2026]]></title>
         <id>https://joeloveless.com/blog/setting-my-goals-for-2026</id>
@@ -3239,26 +3346,5 @@ in Intune admin center as outlined in the benchmark.</li>
 <p>-Joe Loveless 2/25/25</p>]]></content>
         <category label="PowerShell" term="PowerShell"/>
         <category label="Active Directory" term="Active Directory"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Introduction]]></title>
-        <id>https://joeloveless.com/blog/introduction-post</id>
-        <link href="https://joeloveless.com/blog/introduction-post"/>
-        <updated>2024-11-16T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Welcome to my new blog!]]></summary>
-        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Post Title" src="https://joeloveless.com/assets/images/introduction-087695957cd2f91e741b614a3a6d23cf.png" width="1200" height="630" class="img_ev3q"></p>
-<p>Welcome to my new blog! My name is Joe Loveless, and I've been working in the Endpoint space for over 12 years now. I currently live in Minnesota, attend TCSMUG user group sessions when time allows, try to go to MMSMOA yearly and love working and playing with technology. I'm a dad of two kids, own some chickens, and 3 dogs. My goal of this blog is to just provide content like others have done for me and to give back!</p>
-<p>I plan on writing about the following:</p>
-<ul>
-<li class="">Microsoft Intune</li>
-<li class="">Microsoft ConfigMgr</li>
-<li class="">Active Directory</li>
-<li class="">Group Policy</li>
-<li class="">PowerShell</li>
-<li class="">Technology in general</li>
-<li class="">Other ramblings</li>
-</ul>
-<p>-Joe Loveless</p>]]></content>
-        <category label="Other" term="Other"/>
     </entry>
 </feed>

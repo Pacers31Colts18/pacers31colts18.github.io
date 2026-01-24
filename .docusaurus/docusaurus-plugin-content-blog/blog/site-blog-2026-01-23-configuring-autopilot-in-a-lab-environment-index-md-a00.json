@@ -1,0 +1,41 @@
+{
+  "permalink": "/blog/configuring-windows-autopilot-in-a-hyperv-lab",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2026-01-23-configuring-autopilot-in-a-lab-environment/index.md",
+  "source": "@site/blog/2026-01-23-configuring-autopilot-in-a-lab-environment/index.md",
+  "title": "Configuring Windows Autopilot in a Hyper-V Lab",
+  "description": "A guide to configuring Windows Autopilot and setting up a VM in Hyper-V for Autopilot testing.",
+  "date": "2026-01-23T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune"
+    },
+    {
+      "inline": true,
+      "label": "Autopilot",
+      "permalink": "/blog/tags/autopilot"
+    }
+  ],
+  "readingTime": 5.54,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Configuring Windows Autopilot in a Hyper-V Lab",
+    "description": "A guide to configuring Windows Autopilot and setting up a VM in Hyper-V for Autopilot testing.",
+    "slug": "configuring-windows-autopilot-in-a-hyperv-lab",
+    "date": "2026-01-23T00:00:00.000Z",
+    "thumbnail": "/img/blog/cover1.png",
+    "image": "/img/blog/configuring-windows-autopilot-in-a-hyperv-lab.png",
+    "comments": true,
+    "tags": [
+      "Intune",
+      "Autopilot"
+    ]
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Setting my goals for 2026",
+    "permalink": "/blog/setting-my-goals-for-2026"
+  }
+}
