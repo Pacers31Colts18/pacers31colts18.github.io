@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "Configuring Windows Autopilot in a Hyper-V Lab",
+      "permalink": "/blog/configuring-windows-autopilot-in-a-hyperv-lab",
+      "unlisted": false,
+      "date": "2026-01-23T00:00:00.000Z"
+    },
+    {
       "title": "Setting my goals for 2026",
       "permalink": "/blog/setting-my-goals-for-2026",
       "unlisted": false,
@@ -24,12 +30,6 @@
       "permalink": "/blog/what-settings-are-in-intune",
       "unlisted": false,
       "date": "2025-10-11T00:00:00.000Z"
-    },
-    {
-      "title": "Exploring Microsoft Intune Filters",
-      "permalink": "/blog/exploring-microsoft-intune-filters",
-      "unlisted": false,
-      "date": "2025-10-04T00:00:00.000Z"
     }
   ]
 }

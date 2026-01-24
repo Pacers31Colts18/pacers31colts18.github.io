@@ -6,13 +6,16 @@
     },
     "content": "356a0ac6"
   },
-  "/blog-8cf": {
+  "/blog-12a": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "44d2b4e6"
+      },
       {
         "content": "613d38a3"
       },
@@ -39,9 +42,6 @@
       },
       {
         "content": "6ab81c4a"
-      },
-      {
-        "content": "fe117152"
       }
     ],
     "__props": "97787cbd"
@@ -108,6 +108,17 @@
     },
     "sidebar": "95b96bb9",
     "content": "92bf200c"
+  },
+  "/blog/configuring-windows-autopilot-in-a-hyperv-lab-360": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "49f06b57"
+      },
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "content": "a00cef60"
   },
   "/blog/entra-deviceextensionattributes-automation-8bd": {
     "__comp": "ccc49370",
@@ -230,13 +241,16 @@
     "sidebar": "95b96bb9",
     "content": "d969f1a6"
   },
-  "/blog/page/2-2f5": {
+  "/blog/page/2-075": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "fe117152"
+      },
       {
         "content": "e4f51c4c"
       },
@@ -263,12 +277,22 @@
       },
       {
         "content": "4e30a134"
-      },
+      }
+    ],
+    "__props": "9c0d2c7f"
+  },
+  "/blog/page/3-f24": {
+    "__comp": "a6aa9e1f",
+    "__context": {
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "items": [
       {
         "content": "aa78b775"
       }
     ],
-    "__props": "9c0d2c7f"
+    "__props": "979ca6d1"
   },
   "/blog/search-gpocategory-d1f": {
     "__comp": "ccc49370",
@@ -315,6 +339,19 @@
       }
     ],
     "__props": "42e16739"
+  },
+  "/blog/tags/autopilot-415": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "items": [
+      {
+        "content": "44d2b4e6"
+      }
+    ],
+    "__props": "242012ef"
   },
   "/blog/tags/avd-d72": {
     "__comp": "6875c492",
@@ -460,13 +497,16 @@
     ],
     "__props": "5411bade"
   },
-  "/blog/tags/intune-a10": {
+  "/blog/tags/intune-c2e": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "44d2b4e6"
+      },
       {
         "content": "178245e5"
       },
@@ -493,20 +533,20 @@
       },
       {
         "content": "e557a048"
-      },
-      {
-        "content": "4e8f9346"
       }
     ],
     "__props": "914c5a81"
   },
-  "/blog/tags/intune/page/2-b04": {
+  "/blog/tags/intune/page/2-b82": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "4e8f9346"
+      },
       {
         "content": "289268a0"
       },

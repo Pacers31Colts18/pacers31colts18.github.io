@@ -3,7 +3,6 @@ title: "Setting my goals for 2026"
 description: What are my goals for the year? How will I accomplish them?
 slug: setting-my-goals-for-2026
 date: 2026-01-11
-thumbnail: /img/blog/cover1.png
 image: /img/blog/setting-my-goals-for-2026.png
 comments: true
 tags: 

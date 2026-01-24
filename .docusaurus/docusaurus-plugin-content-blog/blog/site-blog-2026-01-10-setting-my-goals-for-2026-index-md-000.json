@@ -21,7 +21,6 @@
     "description": "What are my goals for the year? How will I accomplish them?",
     "slug": "setting-my-goals-for-2026",
     "date": "2026-01-11T00:00:00.000Z",
-    "thumbnail": "/img/blog/cover1.png",
     "image": "/img/blog/setting-my-goals-for-2026.png",
     "comments": true,
     "tags": [
@@ -29,6 +28,10 @@
     ]
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "Configuring Windows Autopilot in a Hyper-V Lab",
+    "permalink": "/blog/configuring-windows-autopilot-in-a-hyperv-lab"
+  },
   "nextItem": {
     "title": "Expanding my Home Lab with Cloudflare, Tailscale, and more",
     "permalink": "/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more"
