@@ -121,7 +121,7 @@ html[data-theme='dark'] .categoryBadge {
 
 /* TOP BAR — MATCHES BORDER COLOR */
 .cardBar {
-  height: 30px;
+  height: 25px;
   width: 100%;
   background: var(--header-border-color);
   border-top-left-radius: 10px;
