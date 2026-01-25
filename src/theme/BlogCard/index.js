@@ -20,17 +20,25 @@ export default function BlogCard({ fm = {}, md = {} }) {
   // Normalize everything so labels match everywhere
   const tags = rawTags.map(normalizeTag);
 
-  function formatDate(dateString) {
-    const [year, month, day] = dateString.split('-');
-    const d = new Date(Number(year), Number(month) - 1, Number(day)); // local date, no UTC shift
-  
-    return d.toLocaleDateString('en-US', {
-      month: '2-digit',
-      day: '2-digit',
+  function formatDate(dateInput) {
+    if (!dateInput) return '';
+
+    const d = new Date(dateInput);
+    if (isNaN(d)) return '';
+
+    // Force local date to avoid UTC day shifting
+    const local = new Date(
+      d.getFullYear(),
+      d.getMonth(),
+      d.getDate()
+    );
+
+    return local.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
       year: 'numeric',
     });
   }
-  
 
   return (
     <article className={styles.card}>
@@ -38,7 +46,11 @@ export default function BlogCard({ fm = {}, md = {} }) {
 
       {image && (
         <Link to={permalink}>
-          <img src={image} alt={title} className={styles.thumbnail} />
+          <img
+            src={image}
+            alt={title}
+            className={styles.thumbnail}
+          />
         </Link>
       )}
 
@@ -48,11 +60,17 @@ export default function BlogCard({ fm = {}, md = {} }) {
         </h2>
 
         {description && (
-          <p className={styles.cardDescription}>{description}</p>
+          <p className={styles.cardDescription}>
+            {description}
+          </p>
         )}
 
         <div className={styles.meta}>
-          {date && <time>{formatDate(date)}</time>}
+          {date && (
+            <time dateTime={new Date(date).toISOString()}>
+              {formatDate(date)}
+            </time>
+          )}
           {readingTime && (
             <span> · {Math.ceil(readingTime)} min read</span>
           )}
