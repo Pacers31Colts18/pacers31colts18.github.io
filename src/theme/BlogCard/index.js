@@ -26,14 +26,14 @@ export default function BlogCard({ fm = {}, md = {} }) {
     const d = new Date(dateInput);
     if (isNaN(d)) return '';
 
-    // Force local date to avoid UTC day shifting
-    const local = new Date(
-      d.getFullYear(),
-      d.getMonth(),
-      d.getDate()
+    // 🔑 Use UTC parts, then rebuild as local date
+    const localDate = new Date(
+      d.getUTCFullYear(),
+      d.getUTCMonth(),
+      d.getUTCDate()
     );
 
-    return local.toLocaleDateString('en-US', {
+    return localDate.toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
       year: 'numeric',
@@ -67,7 +67,7 @@ export default function BlogCard({ fm = {}, md = {} }) {
 
         <div className={styles.meta}>
           {date && (
-            <time dateTime={new Date(date).toISOString()}>
+            <time dateTime={date}>
               {formatDate(date)}
             </time>
           )}
