@@ -3,7 +3,6 @@ title: "Configuring Windows Autopilot in a Hyper-V Lab"
 description: A guide to configuring Windows Autopilot and setting up a VM in Hyper-V for Autopilot testing.
 slug: configuring-windows-autopilot-in-a-hyperv-lab
 date: 2026-01-23
-thumbnail: /img/blog/cover1.png
 image: /img/blog/configuring-windows-autopilot-in-a-hyperv-lab.png
 comments: true
 tags: 

@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "Intune Documentation as Code",
+      "permalink": "/blog/intune-documentation-as-code",
+      "unlisted": false,
+      "date": "2026-02-01T00:00:00.000Z"
+    },
+    {
       "title": "Configuring Windows Autopilot in a Hyper-V Lab",
       "permalink": "/blog/configuring-windows-autopilot-in-a-hyperv-lab",
       "unlisted": false,
@@ -24,12 +30,6 @@
       "permalink": "/blog/tracking-chores-with-home-assistant",
       "unlisted": false,
       "date": "2025-11-11T00:00:00.000Z"
-    },
-    {
-      "title": "What Group Policy Settings aren't in Microsoft Intune?",
-      "permalink": "/blog/what-settings-are-in-intune",
-      "unlisted": false,
-      "date": "2025-10-11T00:00:00.000Z"
     }
   ]
 }
