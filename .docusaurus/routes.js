@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '12a'),
+    component: ComponentCreator('/blog', 'e8f'),
     exact: true
   },
   {
@@ -93,6 +93,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/intune-documentation-as-code',
+    component: ComponentCreator('/blog/intune-documentation-as-code', '74b'),
+    exact: true
+  },
+  {
     path: '/blog/intunelab-2025',
     component: ComponentCreator('/blog/intunelab-2025', 'f50'),
     exact: true
@@ -104,12 +109,12 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '075'),
+    component: ComponentCreator('/blog/page/2', '3a5'),
     exact: true
   },
   {
     path: '/blog/page/3',
-    component: ComponentCreator('/blog/page/3', 'f24'),
+    component: ComponentCreator('/blog/page/3', 'e73'),
     exact: true
   },
   {
@@ -144,7 +149,7 @@ export default [
   },
   {
     path: '/blog/tags/azure',
-    component: ComponentCreator('/blog/tags/azure', '666'),
+    component: ComponentCreator('/blog/tags/azure', '563'),
     exact: true
   },
   {
@@ -155,6 +160,11 @@ export default [
   {
     path: '/blog/tags/entra',
     component: ComponentCreator('/blog/tags/entra', 'b28'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/git-hub',
+    component: ComponentCreator('/blog/tags/git-hub', '3b9'),
     exact: true
   },
   {
@@ -184,12 +194,12 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', 'c2e'),
+    component: ComponentCreator('/blog/tags/intune', '574'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', 'b82'),
+    component: ComponentCreator('/blog/tags/intune/page/2', 'cf2'),
     exact: true
   },
   {
@@ -200,6 +210,11 @@ export default [
   {
     path: '/blog/tags/other',
     component: ComponentCreator('/blog/tags/other', '7f5'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/power-shell',
+    component: ComponentCreator('/blog/tags/power-shell', 'f75'),
     exact: true
   },
   {

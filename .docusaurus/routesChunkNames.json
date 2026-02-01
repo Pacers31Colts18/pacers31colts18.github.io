@@ -6,13 +6,16 @@
     },
     "content": "356a0ac6"
   },
-  "/blog-12a": {
+  "/blog-e8f": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "7e1ebfb6"
+      },
       {
         "content": "44d2b4e6"
       },
@@ -39,9 +42,6 @@
       },
       {
         "content": "c9a41535"
-      },
-      {
-        "content": "6ab81c4a"
       }
     ],
     "__props": "97787cbd"
@@ -219,6 +219,17 @@
     "sidebar": "95b96bb9",
     "content": "64fde490"
   },
+  "/blog/intune-documentation-as-code-74b": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "49f06b57"
+      },
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "content": "9edc589b"
+  },
   "/blog/intunelab-2025-f50": {
     "__comp": "ccc49370",
     "__context": {
@@ -241,13 +252,16 @@
     "sidebar": "95b96bb9",
     "content": "d969f1a6"
   },
-  "/blog/page/2-075": {
+  "/blog/page/2-3a5": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "6ab81c4a"
+      },
       {
         "content": "fe117152"
       },
@@ -274,20 +288,20 @@
       },
       {
         "content": "747fbad8"
-      },
-      {
-        "content": "4e30a134"
       }
     ],
     "__props": "9c0d2c7f"
   },
-  "/blog/page/3-f24": {
+  "/blog/page/3-e73": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "4e30a134"
+      },
       {
         "content": "aa78b775"
       }
@@ -366,13 +380,16 @@
     ],
     "__props": "05d4c732"
   },
-  "/blog/tags/azure-666": {
+  "/blog/tags/azure-563": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "7e1ebfb6"
+      },
       {
         "content": "4e8f9346"
       },
@@ -416,6 +433,19 @@
       }
     ],
     "__props": "641ea29d"
+  },
+  "/blog/tags/git-hub-3b9": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "items": [
+      {
+        "content": "7e1ebfb6"
+      }
+    ],
+    "__props": "7abb3a14"
   },
   "/blog/tags/graph-api-497": {
     "__comp": "6875c492",
@@ -497,13 +527,16 @@
     ],
     "__props": "5411bade"
   },
-  "/blog/tags/intune-c2e": {
+  "/blog/tags/intune-574": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "7e1ebfb6"
+      },
       {
         "content": "44d2b4e6"
       },
@@ -530,20 +563,20 @@
       },
       {
         "content": "fbec9ce5"
-      },
-      {
-        "content": "e557a048"
       }
     ],
     "__props": "914c5a81"
   },
-  "/blog/tags/intune/page/2-b82": {
+  "/blog/tags/intune/page/2-cf2": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "e557a048"
+      },
       {
         "content": "4e8f9346"
       },
@@ -587,6 +620,19 @@
       }
     ],
     "__props": "793dd73b"
+  },
+  "/blog/tags/power-shell-f75": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "items": [
+      {
+        "content": "7e1ebfb6"
+      }
+    ],
+    "__props": "65e38541"
   },
   "/blog/tags/powershell-29f": {
     "__comp": "6875c492",
