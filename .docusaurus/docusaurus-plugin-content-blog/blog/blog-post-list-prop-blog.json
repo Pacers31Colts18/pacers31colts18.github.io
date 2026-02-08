@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "Exporting Intune Assignments for Groups in an Administrative Unit",
+      "permalink": "/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit",
+      "unlisted": false,
+      "date": "2026-02-08T00:00:00.000Z"
+    },
+    {
       "title": "Intune Documentation as Code",
       "permalink": "/blog/intune-documentation-as-code",
       "unlisted": false,
@@ -24,12 +30,6 @@
       "permalink": "/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more",
       "unlisted": false,
       "date": "2025-12-26T00:00:00.000Z"
-    },
-    {
-      "title": "Tracking Chores with Home Assistant",
-      "permalink": "/blog/tracking-chores-with-home-assistant",
-      "unlisted": false,
-      "date": "2025-11-11T00:00:00.000Z"
     }
   ]
 }

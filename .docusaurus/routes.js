@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'e8f'),
+    component: ComponentCreator('/blog', '3ec'),
     exact: true
   },
   {
@@ -73,6 +73,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit',
+    component: ComponentCreator('/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit', '8ae'),
+    exact: true
+  },
+  {
     path: '/blog/finding-enrollment-count-windows-hello',
     component: ComponentCreator('/blog/finding-enrollment-count-windows-hello', '87b'),
     exact: true
@@ -94,7 +99,7 @@ export default [
   },
   {
     path: '/blog/intune-documentation-as-code',
-    component: ComponentCreator('/blog/intune-documentation-as-code', '74b'),
+    component: ComponentCreator('/blog/intune-documentation-as-code', '231'),
     exact: true
   },
   {
@@ -109,12 +114,12 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '3a5'),
+    component: ComponentCreator('/blog/page/2', '267'),
     exact: true
   },
   {
     path: '/blog/page/3',
-    component: ComponentCreator('/blog/page/3', 'e73'),
+    component: ComponentCreator('/blog/page/3', 'b00'),
     exact: true
   },
   {
@@ -149,7 +154,7 @@ export default [
   },
   {
     path: '/blog/tags/azure',
-    component: ComponentCreator('/blog/tags/azure', '563'),
+    component: ComponentCreator('/blog/tags/azure', 'c0e'),
     exact: true
   },
   {
@@ -159,17 +164,17 @@ export default [
   },
   {
     path: '/blog/tags/entra',
-    component: ComponentCreator('/blog/tags/entra', 'b28'),
+    component: ComponentCreator('/blog/tags/entra', 'e7e'),
     exact: true
   },
   {
     path: '/blog/tags/git-hub',
-    component: ComponentCreator('/blog/tags/git-hub', '3b9'),
+    component: ComponentCreator('/blog/tags/git-hub', '2d6'),
     exact: true
   },
   {
     path: '/blog/tags/graph-api',
-    component: ComponentCreator('/blog/tags/graph-api', '497'),
+    component: ComponentCreator('/blog/tags/graph-api', '22a'),
     exact: true
   },
   {
@@ -194,12 +199,12 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', '574'),
+    component: ComponentCreator('/blog/tags/intune', '4ea'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', 'cf2'),
+    component: ComponentCreator('/blog/tags/intune/page/2', 'f63'),
     exact: true
   },
   {
@@ -214,7 +219,7 @@ export default [
   },
   {
     path: '/blog/tags/power-shell',
-    component: ComponentCreator('/blog/tags/power-shell', 'f75'),
+    component: ComponentCreator('/blog/tags/power-shell', 'e20'),
     exact: true
   },
   {
