@@ -3,7 +3,6 @@ title: "Intune Documentation as Code"
 description: Configure and export Intune documentation automatically, converting JSON files to Markdown. All made possible with PowerShell scripts, and GitHub Actions.
 slug: intune-documentation-as-code
 date: 2026-02-01
-thumbnail: /img/blog/cover1.png
 image: /img/blog/intune-documentation-as-code.png
 comments: true
 tags: 
@@ -15,7 +14,7 @@ tags:
 
 <!-- truncate -->
 
-![Configuring Windows Autopilot in a Hyper-V Lab](/img/blog/intune-documentation-as-code.png)
+![Intune Documentation as Code](/img/blog/intune-documentation-as-code.png)
 
 Greetings everyone! It's almost February, winter is still in full swing, and I'm getting cranky from the cold weather. I'm looking forward to spring, and possible new adventures, I'm wanting to ride my bike more and do some camping. I've been selling off old junk on Facebook Marketplace, and trying to de-clutter what I have (not the random box of cables of course, you never know when you will need the random power cables or bluetooth adapters). In the meantime, I've been working on a solution to document our Intune policies in an automated fashion using GitHub Actions on a daily (or weekly, not sure yet?) schedule. With that, I want to write about it, mainly because I am a little pumped about it and think it's going to be a pretty nice solution. There is a lot to it, so let's dive into it.
 

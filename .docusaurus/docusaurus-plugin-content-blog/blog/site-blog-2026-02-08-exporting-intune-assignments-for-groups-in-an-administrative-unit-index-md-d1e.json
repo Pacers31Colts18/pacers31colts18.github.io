@@ -1,0 +1,53 @@
+{
+  "permalink": "/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2026-02-08-exporting-intune-assignments-for-groups-in-an-administrative-unit/index.md",
+  "source": "@site/blog/2026-02-08-exporting-intune-assignments-for-groups-in-an-administrative-unit/index.md",
+  "title": "Exporting Intune Assignments for Groups in an Administrative Unit",
+  "description": "A new PowerShell function for exporting Intune assignments for groups in an administrative unit using Graph API with batching.",
+  "date": "2026-02-08T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune"
+    },
+    {
+      "inline": true,
+      "label": "Graph API",
+      "permalink": "/blog/tags/graph-api"
+    },
+    {
+      "inline": true,
+      "label": "Entra",
+      "permalink": "/blog/tags/entra"
+    },
+    {
+      "inline": true,
+      "label": "PowerShell",
+      "permalink": "/blog/tags/power-shell"
+    }
+  ],
+  "readingTime": 9.74,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Exporting Intune Assignments for Groups in an Administrative Unit",
+    "description": "A new PowerShell function for exporting Intune assignments for groups in an administrative unit using Graph API with batching.",
+    "slug": "exporting-intune-assignments-for-groups-in-an-administrative-unit",
+    "date": "2026-02-08T00:00:00.000Z",
+    "thumbnail": "/img/blog/cover1.png",
+    "image": "/img/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit.png",
+    "comments": true,
+    "tags": [
+      "Intune",
+      "Graph API",
+      "Entra",
+      "PowerShell"
+    ]
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Intune Documentation as Code",
+    "permalink": "/blog/intune-documentation-as-code"
+  }
+}
