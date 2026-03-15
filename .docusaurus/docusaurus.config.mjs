@@ -101,6 +101,11 @@ export default {
           "to": "/about",
           "label": "About",
           "position": "left"
+        },
+        {
+          "to": "https://endpointfeed.com",
+          "label": "EndpointFeed.com",
+          "position": "left"
         }
       ],
       "hideOnScroll": false
