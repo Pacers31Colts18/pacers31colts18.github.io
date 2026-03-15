@@ -3,7 +3,6 @@ title: "Exporting Intune Assignments for Groups in an Administrative Unit"
 description: A new PowerShell function for exporting Intune assignments for groups in an administrative unit using Graph API with batching.
 slug: exporting-intune-assignments-for-groups-in-an-administrative-unit
 date: 2026-02-08
-thumbnail: /img/blog/cover1.png
 image: /img/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit.png
 comments: true
 tags:
