@@ -46,6 +46,10 @@
     ]
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "Introducing EndpointFeed.com",
+    "permalink": "/blog/introducing-endpointfeed.com"
+  },
   "nextItem": {
     "title": "Intune Documentation as Code",
     "permalink": "/blog/intune-documentation-as-code"

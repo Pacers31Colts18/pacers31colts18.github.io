@@ -67,6 +67,7 @@ const config = {
         { to: "/blog", label: "Blog", position: "left" },
         { to: "/blog/tags", label: "Tags", position: "left" },
         { to: "/about", label: "About", position: "left" },
+        { to: "https://endpointfeed.com", label: "EndpointFeed.com", position: "left" },
       ],
     },
 

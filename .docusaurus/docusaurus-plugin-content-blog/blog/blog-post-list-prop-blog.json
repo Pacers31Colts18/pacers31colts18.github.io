@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "Introducing EndpointFeed.com",
+      "permalink": "/blog/introducing-endpointfeed.com",
+      "unlisted": false,
+      "date": "2026-03-15T00:00:00.000Z"
+    },
+    {
       "title": "Exporting Intune Assignments for Groups in an Administrative Unit",
       "permalink": "/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit",
       "unlisted": false,
@@ -24,12 +30,6 @@
       "permalink": "/blog/setting-my-goals-for-2026",
       "unlisted": false,
       "date": "2026-01-11T00:00:00.000Z"
-    },
-    {
-      "title": "Expanding my Home Lab with Cloudflare, Tailscale, and more",
-      "permalink": "/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more",
-      "unlisted": false,
-      "date": "2025-12-26T00:00:00.000Z"
     }
   ]
 }

@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '3ec'),
+    component: ComponentCreator('/blog', 'c89'),
     exact: true
   },
   {
@@ -93,6 +93,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/introducing-endpointfeed.com',
+    component: ComponentCreator('/blog/introducing-endpointfeed.com', 'e0a'),
+    exact: true
+  },
+  {
     path: '/blog/introduction-post',
     component: ComponentCreator('/blog/introduction-post', 'd6d'),
     exact: true
@@ -114,12 +119,12 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '267'),
+    component: ComponentCreator('/blog/page/2', '032'),
     exact: true
   },
   {
     path: '/blog/page/3',
-    component: ComponentCreator('/blog/page/3', 'b00'),
+    component: ComponentCreator('/blog/page/3', 'a23'),
     exact: true
   },
   {
@@ -163,6 +168,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/tags/endpoint',
+    component: ComponentCreator('/blog/tags/endpoint', '2df'),
+    exact: true
+  },
+  {
     path: '/blog/tags/entra',
     component: ComponentCreator('/blog/tags/entra', 'e7e'),
     exact: true
@@ -199,12 +209,17 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', '4ea'),
+    component: ComponentCreator('/blog/tags/intune', '8cd'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', 'f63'),
+    component: ComponentCreator('/blog/tags/intune/page/2', 'eb6'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/mecm',
+    component: ComponentCreator('/blog/tags/mecm', '52e'),
     exact: true
   },
   {

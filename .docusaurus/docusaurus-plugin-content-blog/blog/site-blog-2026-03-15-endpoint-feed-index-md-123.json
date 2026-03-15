@@ -1,0 +1,47 @@
+{
+  "permalink": "/blog/introducing-endpointfeed.com",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2026-03-15-endpoint-feed/index.md",
+  "source": "@site/blog/2026-03-15-endpoint-feed/index.md",
+  "title": "Introducing EndpointFeed.com",
+  "description": "A new website built with Claude Code to aggregate endpoint community RSS feeds.",
+  "date": "2026-03-15T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune"
+    },
+    {
+      "inline": true,
+      "label": "MECM",
+      "permalink": "/blog/tags/mecm"
+    },
+    {
+      "inline": true,
+      "label": "Endpoint",
+      "permalink": "/blog/tags/endpoint"
+    }
+  ],
+  "readingTime": 6.49,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Introducing EndpointFeed.com",
+    "description": "A new website built with Claude Code to aggregate endpoint community RSS feeds.",
+    "slug": "introducing-endpointfeed.com",
+    "date": "2026-03-15T00:00:00.000Z",
+    "thumbnail": "/img/blog/cover1.png",
+    "image": "/img/blog/introducing-endpointfeed.com.png",
+    "comments": true,
+    "tags": [
+      "Intune",
+      "MECM",
+      "Endpoint"
+    ]
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Exporting Intune Assignments for Groups in an Administrative Unit",
+    "permalink": "/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit"
+  }
+}
