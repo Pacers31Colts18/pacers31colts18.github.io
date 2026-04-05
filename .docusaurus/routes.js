@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'c89'),
+    component: ComponentCreator('/blog', 'd11'),
     exact: true
   },
   {
@@ -25,6 +25,11 @@ export default [
   {
     path: '/blog/authors/all-joe-loveless-articles',
     component: ComponentCreator('/blog/authors/all-joe-loveless-articles', '8e4'),
+    exact: true
+  },
+  {
+    path: '/blog/building-an-intune-settings-catalog-report',
+    component: ComponentCreator('/blog/building-an-intune-settings-catalog-report', '4dd'),
     exact: true
   },
   {
@@ -119,12 +124,12 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '032'),
+    component: ComponentCreator('/blog/page/2', '57d'),
     exact: true
   },
   {
     path: '/blog/page/3',
-    component: ComponentCreator('/blog/page/3', 'a23'),
+    component: ComponentCreator('/blog/page/3', '00c'),
     exact: true
   },
   {
@@ -184,7 +189,7 @@ export default [
   },
   {
     path: '/blog/tags/graph-api',
-    component: ComponentCreator('/blog/tags/graph-api', '22a'),
+    component: ComponentCreator('/blog/tags/graph-api', '2c2'),
     exact: true
   },
   {
@@ -209,12 +214,12 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', '8cd'),
+    component: ComponentCreator('/blog/tags/intune', 'f91'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', 'eb6'),
+    component: ComponentCreator('/blog/tags/intune/page/2', 'eb1'),
     exact: true
   },
   {
@@ -234,7 +239,7 @@ export default [
   },
   {
     path: '/blog/tags/power-shell',
-    component: ComponentCreator('/blog/tags/power-shell', 'e20'),
+    component: ComponentCreator('/blog/tags/power-shell', 'e0e'),
     exact: true
   },
   {
