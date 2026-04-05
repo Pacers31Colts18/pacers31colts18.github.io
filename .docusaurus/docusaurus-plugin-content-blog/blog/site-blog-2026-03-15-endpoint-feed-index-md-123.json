@@ -22,7 +22,7 @@
       "permalink": "/blog/tags/endpoint"
     }
   ],
-  "readingTime": 6.49,
+  "readingTime": 6.41,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -30,7 +30,6 @@
     "description": "A new website built with Claude Code to aggregate endpoint community RSS feeds.",
     "slug": "introducing-endpointfeed.com",
     "date": "2026-03-15T00:00:00.000Z",
-    "thumbnail": "/img/blog/cover1.png",
     "image": "/img/blog/introducing-endpointfeed.com.png",
     "comments": true,
     "tags": [
@@ -40,6 +39,10 @@
     ]
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "Building an Intune Settings Catalog Report",
+    "permalink": "/blog/building-an-intune-settings-catalog-report"
+  },
   "nextItem": {
     "title": "Exporting Intune Assignments for Groups in an Administrative Unit",
     "permalink": "/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit"

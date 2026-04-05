@@ -6,13 +6,16 @@
     },
     "content": "356a0ac6"
   },
-  "/blog-c89": {
+  "/blog-d11": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "e31320c6"
+      },
       {
         "content": "3b542a20"
       },
@@ -39,9 +42,6 @@
       },
       {
         "content": "df66fef5"
-      },
-      {
-        "content": "bd21df56"
       }
     ],
     "__props": "97787cbd"
@@ -75,6 +75,17 @@
     "items": [],
     "sidebar": "95b96bb9",
     "__props": "a67a7dff"
+  },
+  "/blog/building-an-intune-settings-catalog-report-4dd": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "49f06b57"
+      },
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "content": "bf4eb16f"
   },
   "/blog/cis-benchmarks-avd-multisession-1f8": {
     "__comp": "ccc49370",
@@ -274,13 +285,16 @@
     "sidebar": "95b96bb9",
     "content": "d969f1a6"
   },
-  "/blog/page/2-032": {
+  "/blog/page/2-57d": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "bd21df56"
+      },
       {
         "content": "07fc37a0"
       },
@@ -307,20 +321,20 @@
       },
       {
         "content": "e557a048"
-      },
-      {
-        "content": "4e8f9346"
       }
     ],
     "__props": "9c0d2c7f"
   },
-  "/blog/page/3-a23": {
+  "/blog/page/3-00c": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "4e8f9346"
+      },
       {
         "content": "289268a0"
       },
@@ -491,13 +505,16 @@
     ],
     "__props": "7abb3a14"
   },
-  "/blog/tags/graph-api-22a": {
+  "/blog/tags/graph-api-2c2": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "e31320c6"
+      },
       {
         "content": "827ddb82"
       },
@@ -574,13 +591,16 @@
     ],
     "__props": "5411bade"
   },
-  "/blog/tags/intune-8cd": {
+  "/blog/tags/intune-f91": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "e31320c6"
+      },
       {
         "content": "3b542a20"
       },
@@ -607,20 +627,20 @@
       },
       {
         "content": "6ab81c4a"
-      },
-      {
-        "content": "6df0dfb9"
       }
     ],
     "__props": "914c5a81"
   },
-  "/blog/tags/intune/page/2-eb6": {
+  "/blog/tags/intune/page/2-eb1": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "6df0dfb9"
+      },
       {
         "content": "82748ff6"
       },
@@ -687,13 +707,16 @@
     ],
     "__props": "793dd73b"
   },
-  "/blog/tags/power-shell-e20": {
+  "/blog/tags/power-shell-e0e": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "e31320c6"
+      },
       {
         "content": "827ddb82"
       },

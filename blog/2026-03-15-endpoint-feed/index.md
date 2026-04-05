@@ -3,7 +3,6 @@ title: "Introducing EndpointFeed.com"
 description: A new website built with Claude Code to aggregate endpoint community RSS feeds.
 slug: introducing-endpointfeed.com
 date: 2026-03-15
-thumbnail: /img/blog/cover1.png
 image: /img/blog/introducing-endpointfeed.com.png
 comments: true
 tags:

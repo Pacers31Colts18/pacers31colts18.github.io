@@ -1,0 +1,47 @@
+{
+  "permalink": "/blog/building-an-intune-settings-catalog-report",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2026-04-05-intune-settings-catalog-report/index.md",
+  "source": "@site/blog/2026-04-05-intune-settings-catalog-report/index.md",
+  "title": "Building an Intune Settings Catalog Report",
+  "description": "Building an Intune Settings Catalog Report to compare policies, find unsupported SKUs, and find conflicting/duplicating and unique values.",
+  "date": "2026-04-05T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "Intune",
+      "permalink": "/blog/tags/intune"
+    },
+    {
+      "inline": true,
+      "label": "Graph API",
+      "permalink": "/blog/tags/graph-api"
+    },
+    {
+      "inline": true,
+      "label": "PowerShell",
+      "permalink": "/blog/tags/power-shell"
+    }
+  ],
+  "readingTime": 13.04,
+  "hasTruncateMarker": true,
+  "authors": [],
+  "frontMatter": {
+    "title": "Building an Intune Settings Catalog Report",
+    "description": "Building an Intune Settings Catalog Report to compare policies, find unsupported SKUs, and find conflicting/duplicating and unique values.",
+    "slug": "building-an-intune-settings-catalog-report",
+    "date": "2026-04-05T00:00:00.000Z",
+    "thumbnail": "/img/blog/cover1.png",
+    "image": "/img/blog/building-an-intune-settings-catalog-report.png",
+    "comments": true,
+    "tags": [
+      "Intune",
+      "Graph API",
+      "PowerShell"
+    ]
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Introducing EndpointFeed.com",
+    "permalink": "/blog/introducing-endpointfeed.com"
+  }
+}

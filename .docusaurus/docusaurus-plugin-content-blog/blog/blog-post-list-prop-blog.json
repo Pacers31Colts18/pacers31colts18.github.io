@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "Building an Intune Settings Catalog Report",
+      "permalink": "/blog/building-an-intune-settings-catalog-report",
+      "unlisted": false,
+      "date": "2026-04-05T00:00:00.000Z"
+    },
+    {
       "title": "Introducing EndpointFeed.com",
       "permalink": "/blog/introducing-endpointfeed.com",
       "unlisted": false,
@@ -24,12 +30,6 @@
       "permalink": "/blog/configuring-windows-autopilot-in-a-hyperv-lab",
       "unlisted": false,
       "date": "2026-01-23T00:00:00.000Z"
-    },
-    {
-      "title": "Setting my goals for 2026",
-      "permalink": "/blog/setting-my-goals-for-2026",
-      "unlisted": false,
-      "date": "2026-01-11T00:00:00.000Z"
     }
   ]
 }
