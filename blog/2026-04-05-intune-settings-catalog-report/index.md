@@ -590,7 +590,10 @@ Currently, we're running the enterprise flavor of the CIS benchmark, but have be
 
 Here I am selecting multiple profiles (and then the Microsoft benchmark).
 
-I now have this beautiful report here:
+I now have this beautiful report here in both CSV or Markdown format:
+
+[Markdown](https://github.com/Pacers31Colts18/Intune/blob/main/output/Export-IntuneSettingsCatalogPolicyReport-20260405-1042.md)
+[CSV](https://github.com/Pacers31Colts18/Intune/blob/main/output/Export-IntuneSettingsCatalogPolicyReport-20260405-1042.csv)
 
 Looking at the report, I can now see the conflicts between what Microsoft recommends vs. CIS recommendation.
 
