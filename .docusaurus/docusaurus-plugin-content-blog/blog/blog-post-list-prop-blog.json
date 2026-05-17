@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "How to deal with Intune profile exceptions",
+      "permalink": "/blog/how-to-deal-with-intune-profile-exceptions",
+      "unlisted": false,
+      "date": "2026-05-17T00:00:00.000Z"
+    },
+    {
       "title": "Building an Intune Settings Catalog Report",
       "permalink": "/blog/building-an-intune-settings-catalog-report",
       "unlisted": false,
@@ -24,12 +30,6 @@
       "permalink": "/blog/intune-documentation-as-code",
       "unlisted": false,
       "date": "2026-02-01T00:00:00.000Z"
-    },
-    {
-      "title": "Configuring Windows Autopilot in a Hyper-V Lab",
-      "permalink": "/blog/configuring-windows-autopilot-in-a-hyperv-lab",
-      "unlisted": false,
-      "date": "2026-01-23T00:00:00.000Z"
     }
   ]
 }

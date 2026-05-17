@@ -3,7 +3,6 @@ title: "Building an Intune Settings Catalog Report"
 description: Building an Intune Settings Catalog Report to compare policies, find unsupported SKUs, and find conflicting/duplicating and unique values.
 slug: building-an-intune-settings-catalog-report
 date: 2026-04-05
-thumbnail: /img/blog/cover1.png
 image: /img/blog/building-an-intune-settings-catalog-report.png
 comments: true
 tags: 
