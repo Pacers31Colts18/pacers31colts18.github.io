@@ -6,13 +6,16 @@
     },
     "content": "356a0ac6"
   },
-  "/blog-d11": {
+  "/blog-c94": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "869dce6a"
+      },
       {
         "content": "e31320c6"
       },
@@ -39,9 +42,6 @@
       },
       {
         "content": "178245e5"
-      },
-      {
-        "content": "df66fef5"
       }
     ],
     "__props": "97787cbd"
@@ -230,6 +230,17 @@
     "sidebar": "95b96bb9",
     "content": "025fb53a"
   },
+  "/blog/how-to-deal-with-intune-profile-exceptions-14f": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "49f06b57"
+      },
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "content": "ca714f9e"
+  },
   "/blog/introducing-endpointfeed.com-e0a": {
     "__comp": "ccc49370",
     "__context": {
@@ -285,13 +296,16 @@
     "sidebar": "95b96bb9",
     "content": "d969f1a6"
   },
-  "/blog/page/2-57d": {
+  "/blog/page/2-bde": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "df66fef5"
+      },
       {
         "content": "bd21df56"
       },
@@ -318,20 +332,20 @@
       },
       {
         "content": "fbec9ce5"
-      },
-      {
-        "content": "e557a048"
       }
     ],
     "__props": "9c0d2c7f"
   },
-  "/blog/page/3-00c": {
+  "/blog/page/3-9b3": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "e557a048"
+      },
       {
         "content": "4e8f9346"
       },
@@ -591,13 +605,16 @@
     ],
     "__props": "5411bade"
   },
-  "/blog/tags/intune-f91": {
+  "/blog/tags/intune-99a": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "869dce6a"
+      },
       {
         "content": "e31320c6"
       },
@@ -624,20 +641,20 @@
       },
       {
         "content": "c9a41535"
-      },
-      {
-        "content": "6ab81c4a"
       }
     ],
     "__props": "914c5a81"
   },
-  "/blog/tags/intune/page/2-eb1": {
+  "/blog/tags/intune/page/2-88a": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "f1c506b7"
     },
     "sidebar": "95b96bb9",
     "items": [
+      {
+        "content": "6ab81c4a"
+      },
       {
         "content": "6df0dfb9"
       },
@@ -785,6 +802,19 @@
       }
     ],
     "__props": "1c6ae055"
+  },
+  "/blog/tags/settings-catalog-c60": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "items": [
+      {
+        "content": "869dce6a"
+      }
+    ],
+    "__props": "7028cf2b"
   },
   "/blog/tags/windows-11-daf": {
     "__comp": "6875c492",

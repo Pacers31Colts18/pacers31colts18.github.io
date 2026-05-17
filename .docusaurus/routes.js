@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'd11'),
+    component: ComponentCreator('/blog', 'c94'),
     exact: true
   },
   {
@@ -98,6 +98,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/how-to-deal-with-intune-profile-exceptions',
+    component: ComponentCreator('/blog/how-to-deal-with-intune-profile-exceptions', '14f'),
+    exact: true
+  },
+  {
     path: '/blog/introducing-endpointfeed.com',
     component: ComponentCreator('/blog/introducing-endpointfeed.com', 'e0a'),
     exact: true
@@ -124,12 +129,12 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '57d'),
+    component: ComponentCreator('/blog/page/2', 'bde'),
     exact: true
   },
   {
     path: '/blog/page/3',
-    component: ComponentCreator('/blog/page/3', '00c'),
+    component: ComponentCreator('/blog/page/3', '9b3'),
     exact: true
   },
   {
@@ -214,12 +219,12 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', 'f91'),
+    component: ComponentCreator('/blog/tags/intune', '99a'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', 'eb1'),
+    component: ComponentCreator('/blog/tags/intune/page/2', '88a'),
     exact: true
   },
   {
@@ -255,6 +260,11 @@ export default [
   {
     path: '/blog/tags/sccm',
     component: ComponentCreator('/blog/tags/sccm', 'f50'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/settings-catalog',
+    component: ComponentCreator('/blog/tags/settings-catalog', 'c60'),
     exact: true
   },
   {

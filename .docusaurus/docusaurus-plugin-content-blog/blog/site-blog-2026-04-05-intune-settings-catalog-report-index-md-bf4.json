@@ -22,7 +22,7 @@
       "permalink": "/blog/tags/power-shell"
     }
   ],
-  "readingTime": 13.04,
+  "readingTime": 13.2,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -30,7 +30,6 @@
     "description": "Building an Intune Settings Catalog Report to compare policies, find unsupported SKUs, and find conflicting/duplicating and unique values.",
     "slug": "building-an-intune-settings-catalog-report",
     "date": "2026-04-05T00:00:00.000Z",
-    "thumbnail": "/img/blog/cover1.png",
     "image": "/img/blog/building-an-intune-settings-catalog-report.png",
     "comments": true,
     "tags": [
@@ -40,6 +39,10 @@
     ]
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "How to deal with Intune profile exceptions",
+    "permalink": "/blog/how-to-deal-with-intune-profile-exceptions"
+  },
   "nextItem": {
     "title": "Introducing EndpointFeed.com",
     "permalink": "/blog/introducing-endpointfeed.com"
