@@ -5,7 +5,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "Joe Loveless",
   tagline: "Sr. Endpoint Configuration and Automation Engineer",
-  favicon: "/img/favicon.ico",
+  favicon: "/img/favicon.svg",
 
   future: {
     v4: true,

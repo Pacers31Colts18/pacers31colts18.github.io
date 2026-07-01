@@ -6,7 +6,7 @@
 export default {
   "title": "Joe Loveless",
   "tagline": "Sr. Endpoint Configuration and Automation Engineer",
-  "favicon": "/img/favicon.ico",
+  "favicon": "/img/favicon.svg",
   "future": {
     "v4": {
       "removeLegacyPostBuildHeadAttribute": true,
