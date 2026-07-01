@@ -3,7 +3,7 @@ title: "Examining CIS Microsoft Windows 11 Enterprise Benchmark in a Hybrid Envi
 description: Review of CIS Microsoft Windows 11 Enterprise Benchmark in a hybrid environment
 slug: cis-benchmarks-enterprise-win11
 date: 2025-06-12
-image: /img/blog/examining-cis-microsoft-windows11-enterprise-benchmark-in-a-hybrid-environment.png
+image: /img/og/2025-06-12-cis-benchmarks-enterprise-win11.png
 comments: true
 tags: 
   - intune
@@ -14,7 +14,7 @@ tags:
 
 <!-- truncate -->
 
-![Post Title](/img/blog/examining-cis-microsoft-windows11-enterprise-benchmark-in-a-hybrid-environment.png)
+
 
 It's been a few weeks now since I've made a post. The nice weather has kept me busy with yard work, taking my son camping, working on my garden, and trying to keep the weeds at bay. 
 

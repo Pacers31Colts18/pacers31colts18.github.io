@@ -13,7 +13,7 @@
       "description": "Other related posts."
     }
   ],
-  "readingTime": 0.55,
+  "readingTime": 0.53,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -21,7 +21,7 @@
     "description": "Welcome to my new blog!",
     "slug": "introduction-post",
     "date": "2024-11-16T00:00:00.000Z",
-    "image": "/img/blog/introduction.png",
+    "image": "/img/og/2024-11-16-Introduction.png",
     "comments": true,
     "tags": [
       "other"

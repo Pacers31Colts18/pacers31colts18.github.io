@@ -22,7 +22,7 @@
       "permalink": "/blog/tags/power-shell"
     }
   ],
-  "readingTime": 13.2,
+  "readingTime": 13.15,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -30,7 +30,7 @@
     "description": "Building an Intune Settings Catalog Report to compare policies, find unsupported SKUs, and find conflicting/duplicating and unique values.",
     "slug": "building-an-intune-settings-catalog-report",
     "date": "2026-04-05T00:00:00.000Z",
-    "image": "/img/blog/building-an-intune-settings-catalog-report.png",
+    "image": "/img/og/2026-04-05-intune-settings-catalog-report.png",
     "comments": true,
     "tags": [
       "Intune",

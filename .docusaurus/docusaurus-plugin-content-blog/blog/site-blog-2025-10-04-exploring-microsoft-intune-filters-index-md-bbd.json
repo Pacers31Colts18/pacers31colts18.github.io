@@ -13,7 +13,7 @@
       "description": "Intune related posts."
     }
   ],
-  "readingTime": 5.24,
+  "readingTime": 5.2,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -21,7 +21,7 @@
     "description": "A walk through on the options and setup of filters in Microsoft Intune.",
     "slug": "exploring-microsoft-intune-filters",
     "date": "2025-10-04T00:00:00.000Z",
-    "image": "exploring-microsoft-intune-filters.png",
+    "image": "/img/og/2025-10-04-exploring-microsoft-intune-filters.png",
     "comments": true,
     "tags": [
       "intune"

@@ -27,7 +27,7 @@
       "permalink": "/blog/tags/power-shell"
     }
   ],
-  "readingTime": 9.74,
+  "readingTime": 9.65,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -35,7 +35,7 @@
     "description": "A new PowerShell function for exporting Intune assignments for groups in an administrative unit using Graph API with batching.",
     "slug": "exporting-intune-assignments-for-groups-in-an-administrative-unit",
     "date": "2026-02-08T00:00:00.000Z",
-    "image": "/img/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit.png",
+    "image": "/img/og/2026-02-08-exporting-intune-assignments-for-groups-in-an-administrative-unit.png",
     "comments": true,
     "tags": [
       "Intune",

@@ -3,7 +3,7 @@ title: "Configuring Windows Autopilot in a Hyper-V Lab"
 description: A guide to configuring Windows Autopilot and setting up a VM in Hyper-V for Autopilot testing.
 slug: configuring-windows-autopilot-in-a-hyperv-lab
 date: 2026-01-23
-image: /img/blog/configuring-windows-autopilot-in-a-hyperv-lab.png
+image: /img/og/2026-01-23-configuring-autopilot-in-a-lab-environment.png
 comments: true
 tags: 
   - Intune
@@ -12,7 +12,7 @@ tags:
 
 <!-- truncate -->
 
-![Configuring Windows Autopilot in a Hyper-V Lab](/img/blog/configuring-windows-autopilot-in-a-hyperv-lab.png)
+
 
 
 Happy weekend everyone, I'm back with another post for the month. I'd like to say I've been busy and productive, but that's not really the case. I am trying to lay low and stay sane at the moment. To distract myself, I recently picked up a [TrimUI Brick](https://www.amazon.com/Handheld-3-2-inch-Trimui-Brick-Opensource-Protector/dp/B0DNQ5345P?th=1)....actually my mom got it for me for my birthday (yes my mom bought me a birthday present in my 40s). I've been burnt out recently on PS5 gaming, annoyed by the fact that there is not an end in sight to games anymore. There is always some expansion pack, open world, or micro transaction. As you can tell, I f'n love the 90's and early 2000's nostalgia from my childhood. It probably wasn't as great as I remember (hence my someone fragile mental state at times), but dammit, we had the best of both worlds. Life without the internet + life with the internet. Since I got the retro handheld, I've been playing a lot of Donkey Kong Country and NHL 94 to keep me distracted.

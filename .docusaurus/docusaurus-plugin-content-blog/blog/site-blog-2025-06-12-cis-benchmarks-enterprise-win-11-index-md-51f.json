@@ -31,7 +31,7 @@
       "description": "Hybrid related posts."
     }
   ],
-  "readingTime": 19.94,
+  "readingTime": 19.87,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -39,7 +39,7 @@
     "description": "Review of CIS Microsoft Windows 11 Enterprise Benchmark in a hybrid environment",
     "slug": "cis-benchmarks-enterprise-win11",
     "date": "2025-06-12T00:00:00.000Z",
-    "image": "/img/blog/examining-cis-microsoft-windows11-enterprise-benchmark-in-a-hybrid-environment.png",
+    "image": "/img/og/2025-06-12-cis-benchmarks-enterprise-win11.png",
     "comments": true,
     "tags": [
       "intune",

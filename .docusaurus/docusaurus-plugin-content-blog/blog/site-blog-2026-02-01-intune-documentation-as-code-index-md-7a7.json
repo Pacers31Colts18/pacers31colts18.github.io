@@ -27,7 +27,7 @@
       "permalink": "/blog/tags/power-shell"
     }
   ],
-  "readingTime": 10.75,
+  "readingTime": 10.7,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -35,7 +35,7 @@
     "description": "Configure and export Intune documentation automatically, converting JSON files to Markdown. All made possible with PowerShell scripts, and GitHub Actions.",
     "slug": "intune-documentation-as-code",
     "date": "2026-02-01T00:00:00.000Z",
-    "image": "/img/blog/intune-documentation-as-code.png",
+    "image": "/img/og/2026-02-01-intune-documentation-as-code.png",
     "comments": true,
     "tags": [
       "Intune",

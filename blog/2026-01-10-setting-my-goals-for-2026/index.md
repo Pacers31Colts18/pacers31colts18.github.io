@@ -3,7 +3,7 @@ title: "Setting my goals for 2026"
 description: What are my goals for the year? How will I accomplish them?
 slug: setting-my-goals-for-2026
 date: 2026-01-11
-image: /img/blog/setting-my-goals-for-2026.png
+image: /img/og/2026-01-10-setting-my-goals-for-2026.png
 comments: true
 tags: 
   - other
@@ -11,7 +11,7 @@ tags:
 
 <!-- truncate -->
 
-![Post Title](/img/blog/setting-my-goals-for-2026.png)
+
 
 
 We're now 10 days in to 2026. It's already been a little hectic in the world, and in Minnesota. My goal for this space is to not only have technical content, but share some personal things to a degree also. At work, we have to fill out goals for the following year, three actionable items we want to accomplish, and details on how we want to accomplish them. This is apart of our yearly review process. Items like self-evaluation, and setting goals are difficult things for me to do, especially when I know there is a limited training budget, limited time, and limited ways to accomplish those things. But, I try to think about where I want to go with my career, and put real thought into that. At the end of the year, I do something similar at home, writing down both personal and professional goals I want to achieve. A lot of times that page of paper gets lost, I forget about it, I don't do it, or I do other things instead. There is always a balance of professional and personal goals, and I certainly do not want the professional goals to outweigh the personal goals.

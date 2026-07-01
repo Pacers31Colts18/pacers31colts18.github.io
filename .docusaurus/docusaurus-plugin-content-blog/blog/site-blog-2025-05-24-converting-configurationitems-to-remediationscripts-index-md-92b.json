@@ -25,7 +25,7 @@
       "description": "PowerShell related posts."
     }
   ],
-  "readingTime": 9.92,
+  "readingTime": 9.85,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -33,7 +33,7 @@
     "description": "Script walkthrough on converting SCCM Configuration Items to Intune Remediation Scripts.",
     "slug": "configurationitems-to-remediationscripts",
     "date": "2025-05-24T00:00:00.000Z",
-    "image": "/img/blog/converting-registry-based-sccm-configuration-items-to-intune-remediation-scripts.png",
+    "image": "/img/og/2025-05-24-converting-configurationitems-to-remediationscripts.png",
     "comments": true,
     "tags": [
       "intune",

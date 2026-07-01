@@ -3,7 +3,7 @@ title: "Exploring Microsoft Intune Filters"
 description: A walk through on the options and setup of filters in Microsoft Intune.
 slug: exploring-microsoft-intune-filters
 date: 2025-10-04
-image: exploring-microsoft-intune-filters.png
+image: /img/og/2025-10-04-exploring-microsoft-intune-filters.png
 comments: true
 tags:
   - intune
@@ -12,7 +12,7 @@ tags:
 
 <!-- truncate -->
 
-![Post Title](/img/blog/exploring-microsoft-intune-filters.png)
+
 
 
 ## Intro

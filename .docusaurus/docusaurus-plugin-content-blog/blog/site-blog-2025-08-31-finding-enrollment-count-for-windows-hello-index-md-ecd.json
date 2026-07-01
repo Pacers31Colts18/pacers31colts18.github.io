@@ -25,7 +25,7 @@
       "description": "Intune related posts."
     }
   ],
-  "readingTime": 3.26,
+  "readingTime": 3.19,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -33,7 +33,7 @@
     "description": "A guide to finding how many users are enrolled in Windows Hello for Business on a device.",
     "slug": "finding-enrollment-count-windows-hello",
     "date": "2025-08-31T00:00:00.000Z",
-    "image": "/img/blog/finding-users-that-are-enrolled-in-windows-hello-for-business.png",
+    "image": "/img/og/2025-08-31-finding-enrollment-count-for-windows-hello.png",
     "comments": true,
     "tags": [
       "windows-hello",

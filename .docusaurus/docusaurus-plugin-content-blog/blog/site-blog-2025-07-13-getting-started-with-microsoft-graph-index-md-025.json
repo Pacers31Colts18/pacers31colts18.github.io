@@ -19,7 +19,7 @@
       "description": "Microsoft Graph API related posts."
     }
   ],
-  "readingTime": 14.08,
+  "readingTime": 14.03,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -27,7 +27,7 @@
     "description": "A guide to Microsoft Graph",
     "slug": "getting-started-with-microsoft-graph",
     "date": "2025-07-13T00:00:00.000Z",
-    "image": "/img/blog/getting-started-with-microsoft-graph.png",
+    "image": "/img/og/2025-07-13-getting-started-with-microsoft-graph.png",
     "comments": true,
     "tags": [
       "powershell",

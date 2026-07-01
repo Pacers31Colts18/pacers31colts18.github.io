@@ -3,7 +3,7 @@ title: "Getting Started with Microsoft Graph"
 description: A guide to Microsoft Graph
 slug: getting-started-with-microsoft-graph
 date: 2025-07-13
-image: /img/blog/getting-started-with-microsoft-graph.png
+image: /img/og/2025-07-13-getting-started-with-microsoft-graph.png
 comments: true
 tags: 
     - powershell
@@ -12,7 +12,7 @@ tags:
 
 <!-- truncate -->
 
-![Post Title](/img/blog/getting-started-with-microsoft-graph.png)
+
 
 
 
