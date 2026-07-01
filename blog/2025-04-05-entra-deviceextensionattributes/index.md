@@ -3,7 +3,7 @@ title: Automating Entra Device Extension Attributes with Intune Remediation Scri
 description: A walkthrough for automating the tagging of Entra Device Extension Attributes with Intune Remediation Scripts and Azure Automation Runbooks.
 slug: entra-deviceextensionattributes-automation
 date: 2025-04-05
-image: /img/blog/automating-entra-device-extension-attributes-with-intune-remediation-scripts-and-azure-automation.png
+image: /img/og/2025-04-05-entra-deviceextensionattributes.png
 comments: true
 tags: 
     - intune
@@ -12,7 +12,7 @@ tags:
 ---
 
 <!-- truncate -->
-![Post Title](/img/blog/automating-entra-device-extension-attributes-with-intune-remediation-scripts-and-azure-automation.png)
+
 
 
 I have viewed a few posts in the community about how to add extension attributes for Entra ID devices, but everything that I have ran across has been for manually adding extension attributes.

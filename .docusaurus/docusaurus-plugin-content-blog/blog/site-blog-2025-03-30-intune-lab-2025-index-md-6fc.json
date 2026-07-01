@@ -25,7 +25,7 @@
       "description": "Active Directory related posts."
     }
   ],
-  "readingTime": 18.2,
+  "readingTime": 18.12,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -33,7 +33,7 @@
     "description": "Details on my home lab configuration for Active Directory, ConfigMgr, and Intune.",
     "slug": "intunelab-2025",
     "date": "2025-03-30T00:00:00.000Z",
-    "image": "/img/blog/setting-up-an-active-directory-configMgr-intune-lab-in-2025.png",
+    "image": "/img/og/2025-03-30-intune-lab-2025.png",
     "comments": true,
     "tags": [
       "intune",

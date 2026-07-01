@@ -42,54 +42,28 @@ export default function BlogCard({ fm = {}, md = {} }) {
 
   return (
     <article className={styles.card}>
-      <div className={styles.topBar} />
+      <h2 className={styles.cardTitle}>
+        <Link to={permalink}>{title}</Link>
+      </h2>
 
-      {image && (
-        <Link to={permalink}>
-          <img
-            src={image}
-            alt={title}
-            className={styles.thumbnail}
-          />
-        </Link>
-      )}
-
-      <div className={styles.cardBody}>
-        <h2 className={styles.cardTitle}>
-          <Link to={permalink}>{title}</Link>
-        </h2>
-
-        {description && (
-          <p className={styles.cardDescription}>
-            {description}
-          </p>
-        )}
-
-        <div className={styles.meta}>
-          {date && (
-            <time dateTime={date}>
-              {formatDate(date)}
-            </time>
-          )}
-          {readingTime && (
-            <span> · {Math.ceil(readingTime)} min read</span>
-          )}
-        </div>
-
-        {tags.length > 0 && (
-          <div className={styles.tags}>
-            {tags.map((tag) => (
-              <Link
-                key={tag.permalink}
-                to={tag.permalink}
-                className={styles.tag}
-              >
-                {tag.label}
-              </Link>
-            ))}
-          </div>
+      <div className={styles.meta}>
+        {date && <time dateTime={date}>{formatDate(date)}</time>}
+        {readingTime && (
+          <><span className={styles.metaDot}>·</span><span>{Math.ceil(readingTime)} min read</span></>
         )}
       </div>
+
+      {description && <p className={styles.cardDescription}>{description}</p>}
+
+      {tags.length > 0 && (
+        <div className={styles.tags}>
+          {tags.map((tag) => (
+            <Link key={tag.permalink} to={tag.permalink} className={styles.tag}>
+              {tag.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </article>
   );
 }

@@ -1,41 +1,93 @@
-# Website
+# joeloveless.com
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Personal blog built with [Docusaurus 3.9](https://docusaurus.io/). Gruvbox dark theme, IBM Plex Mono font, blog-only (no docs).
 
-## Installation
+## Setup
 
 ```bash
-yarn
+npm install
 ```
 
 ## Local Development
 
 ```bash
-yarn start
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Starts the dev server at `http://localhost:3000`. Most changes hot-reload without a restart.
+
+## Writing a New Post
+
+1. Create a folder under `blog/` named `YYYY-MM-DD-post-slug/`
+2. Add an `index.md` inside it with frontmatter:
+
+```markdown
+---
+title: Your Post Title
+date: YYYY-MM-DD
+description: One-sentence summary shown on the card grid.
+tags:
+  - Intune
+  - PowerShell
+---
+
+Post content here...
+```
+
+3. Run the OG image generator (see below)
+4. Commit and push — GitHub Actions deploys to GitHub Pages automatically
+
+## OG / Social Card Images
+
+Images are auto-generated from post frontmatter using Satori. They appear as the social preview card when a post is shared on social media (Twitter, LinkedIn, Bluesky, etc.).
+
+**Generate images for new posts only:**
+
+```bash
+npm run og
+```
+
+**Regenerate all images** (e.g. after changing the design):
+
+```bash
+npm run og -- --force
+```
+
+Output goes to `static/img/og/{slug}.png`. The script also updates the `image:` frontmatter field in each post so Docusaurus picks it up automatically.
+
+The design: dark Gruvbox background, three horizontal color stripes (amber `#d79921`, aqua `#8ec07c`, red `#cc241d`) centered vertically, post title above the stripes, site name upper-left, date lower-right.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Generates the static site into the `build/` directory.
 
-## Deployment
+## Project Structure
 
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
+```
+blog/                  Blog posts (YYYY-MM-DD-slug/index.md)
+src/
+  components/
+    HomeBlogList.js    Homepage post grid with client-side pagination
+  css/
+    custom.css         Gruvbox theme variables and global styles
+  pages/
+    index.js           Homepage (profile card + blog grid)
+static/
+  img/
+    og/                Auto-generated OG images (gitignored or committed)
+scripts/
+  generate-og-images.mjs   OG image generator (Satori + resvg)
+docusaurus.config.js   Site config (title, navbar, footer, blog settings)
 ```
 
-Not using SSH:
+## Key Design Decisions
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- **6 posts per page** on both the homepage and `/blog` archive
+- **Right sidebar** on individual blog posts (recent posts list)
+- **Blog post headers** styled as a bordered card matching the profile card
+- **OG images** are for social sharing only — not embedded inline in posts
+- **IBM Plex Mono** loaded via Google Fonts (stylesheet) and `@fontsource` (OG image generation)

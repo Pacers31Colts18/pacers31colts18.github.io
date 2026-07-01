@@ -5,7 +5,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "Joe Loveless",
   tagline: "Sr. Endpoint Configuration and Automation Engineer",
-  favicon: "/img/favicon.ico",
+  favicon: "/img/favicon.svg",
 
   future: {
     v4: true,
@@ -26,6 +26,13 @@ const config = {
 
   plugins: ["./plugins/umami-plugin"],
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap',
+      type: 'text/css',
+    },
+  ],
+
   presets: [
     [
       "classic",
@@ -36,6 +43,8 @@ const config = {
           routeBasePath: "blog",
           path: "./blog",
           showReadingTime: true,
+          postsPerPage: 6,
+          blogSidebarCount: 8,
           feedOptions: {
             type: ["rss", "atom"],
             xslt: true,

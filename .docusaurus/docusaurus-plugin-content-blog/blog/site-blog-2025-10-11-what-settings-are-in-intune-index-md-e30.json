@@ -31,14 +31,14 @@
       "description": "Microsoft Graph API related posts."
     }
   ],
-  "readingTime": 7.72,
+  "readingTime": 7.66,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
     "title": "What Group Policy Settings aren't in Microsoft Intune?",
     "description": "Finding settings that are in Group Policy, but aren't in Intune.",
     "slug": "what-settings-are-in-intune",
-    "image": "what-group-policy-settings-arent-in-microsoft-intune.png",
+    "image": "/img/og/2025-10-11-what-settings-are-in-intune.png",
     "date": "2025-10-11T00:00:00.000Z",
     "comments": true,
     "tags": [

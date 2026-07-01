@@ -3,7 +3,7 @@ title: Creating Intune Randomized Rollouts with Entra Group Membership
 description: Creating Intune Randomized Rollouts with Entra Group Membership
 slug: entra-grouprandomization
 date: 2025-04-26
-image: /img/blog/creating-intune-randomized-rollouts-with-entra-group-membership.png
+image: /img/og/2025-04-26-entra-pilotgrouprandomization.png
 comments: true
 tags: 
     - intune
@@ -14,7 +14,7 @@ tags:
 
 <!-- truncate -->
 
-![Post Title](/img/blog/creating-intune-randomized-rollouts-with-entra-group-membership.png)
+
 
 
 It's been a couple weeks now since I made my last post, with the weather starting to get nicer, it means more yard work and more random projects around the house. Next week is MMSMOA 2025, and I will be attending that with many team members. I think this is my 5th MMS, with my first one being in 2018 (I think). I'm really looking forward to it again and to see what new concepts everyone comes up with. I leave every year very excited, but also very worn out from all the days in the conference rooms, and the events that take place afterwards.

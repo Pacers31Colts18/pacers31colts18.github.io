@@ -3,7 +3,7 @@ title: "Tech tools I use at home and at work"
 description: An overview of the random tech I use at home and at work.
 slug: tech-tools-I-use
 date: 2025-06-28
-image: /img/blog/tech-tools-i-use-at-home-and-work.png
+image: /img/og/2025-06-28-tech-tools-I-use-at-home-and-work.png
 comments: true
 tags:
   - other
@@ -11,7 +11,7 @@ tags:
 
 <!-- truncate -->
 
-![Post Title](/img/blog/tech-tools-i-use-at-home-and-work.png)
+
 
 
 I don't have a whole lot to write about this week, summer is in full swing, which means I'm pretty swamped with the kids and doing different activities. Right now I'm studying (again) for the AZ-104 test, blogging, and being slammed at work. My motivation hasn't fully been there since the RTO announcement, but the tech motivation is always there. Just a lot of anxiousness on what the future holds, which the HR department seems to change minute by minute while the agency has promoted telework as the future for the past five years.

@@ -3,7 +3,7 @@ title: "Building an Intune Settings Catalog Report"
 description: Building an Intune Settings Catalog Report to compare policies, find unsupported SKUs, and find conflicting/duplicating and unique values.
 slug: building-an-intune-settings-catalog-report
 date: 2026-04-05
-image: /img/blog/building-an-intune-settings-catalog-report.png
+image: /img/og/2026-04-05-intune-settings-catalog-report.png
 comments: true
 tags: 
   - Intune
@@ -12,7 +12,7 @@ tags:
 ---
 
 <!-- truncate -->
-![Post Title](/img/blog/building-an-intune-settings-catalog-report.png)
+
 
 Happy April to everyone! Hard to believe that it is already spring-ish here in Minnesota. By spring in Minnesota, that means 70 degrees one day, 35 and sleeting the next. But the grass is starting to green up, which means more time outside for cleaning up the yard from winter. With 3 dogs that's a lot of fun. With 5 acres and wind, that's a lot of sticks and branches to pick up.
 

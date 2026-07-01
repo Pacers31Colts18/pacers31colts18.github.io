@@ -3,7 +3,7 @@ title: "Exporting Intune Assignments for Groups in an Administrative Unit"
 description: A new PowerShell function for exporting Intune assignments for groups in an administrative unit using Graph API with batching.
 slug: exporting-intune-assignments-for-groups-in-an-administrative-unit
 date: 2026-02-08
-image: /img/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit.png
+image: /img/og/2026-02-08-exporting-intune-assignments-for-groups-in-an-administrative-unit.png
 comments: true
 tags:
   - Intune
@@ -14,7 +14,7 @@ tags:
 
 <!-- truncate -->
 
-![Exporting Intune Assignments for Groups in an Administrative Unit](/img/blog/exporting-intune-assignments-for-groups-in-an-administrative-unit.png)
+
 
 My motivation is high lately, and I am wanting to keep the momentum going. Life has been somewhat busy on the home front, 2nd semester is in full swing for the kids. My son is taking a 7th Grade Computer Science class using code.org, so I've been helping him the most with that. The interface seems to be Scratch based, which we've dabbled with in the past. He seems to be gaining interest in computers, using that and the Lego Studio app (which seems to be a really great introduction to CAD). My daughter has a pretty heavy load of science this semester with Physical Science and Astronomy classes. I'm currently decluttering the house, selling random items on Facebook Marketplace to gear up for a potential move. I feel like I've made a pretty good haul so far, but still have so many items I need to get rid of. It's amazing what you can gather, especially when you consider yourself to not have a ton of possessions anyways. Hopefully I have more at some point on a potential move, very excited about all the different possibilities. When not trying to sell off random items, I've been heavily playing retro games. I just beat Super Mario Bros for NES, thanks to being able to save games mainly. Not nearly as frustrating as on the original NES with only so many lives.
 

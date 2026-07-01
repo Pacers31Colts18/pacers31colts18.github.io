@@ -17,7 +17,7 @@
       "permalink": "/blog/tags/settings-catalog"
     }
   ],
-  "readingTime": 5.9,
+  "readingTime": 5.85,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -26,7 +26,7 @@
     "slug": "how-to-deal-with-intune-profile-exceptions",
     "date": "2026-05-17T00:00:00.000Z",
     "thumbnail": "/img/blog/cover1.png",
-    "image": "/img/blog/how-to-deal-with-intune-profile-exceptions.png",
+    "image": "/img/og/2026-05-17-how-to-deal-with-intune-profile-exceptions.png",
     "comments": true,
     "tags": [
       "Intune",

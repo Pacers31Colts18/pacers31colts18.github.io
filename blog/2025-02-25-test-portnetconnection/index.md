@@ -3,7 +3,7 @@ title: Testing network connections with a PowerShell function.
 description: A quick function for testing network connections with PowerShell.
 slug: test-portnetconnections-post
 date: 2025-02-25
-image: /img/blog/testing-network-connections-with-a-powershell-function.png
+image: /img/og/2025-02-25-test-portnetconnection.png
 comments: true
 tags:
     - powershell
@@ -11,7 +11,7 @@ tags:
 ---
 
 <!-- truncate -->
-![Post Title](/img/blog/testing-network-connections-with-a-powershell-function.png)
+
 
 I made an introductory post back in November, but work and life, and not knowing what to do or write about has gotten in the way. This is my attempt at actually starting this blog, and seeing where it takes me. I'm trying to put myself out there more, but can honestly say it's scary and nerve wracking to put my thoughts and code out in the world. But here goes...
 

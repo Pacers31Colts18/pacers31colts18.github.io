@@ -3,7 +3,7 @@ title: "Introducing EndpointFeed.com"
 description: A new website built with Claude Code to aggregate endpoint community RSS feeds.
 slug: introducing-endpointfeed.com
 date: 2026-03-15
-image: /img/blog/introducing-endpointfeed.com.png
+image: /img/og/2026-03-15-endpoint-feed.png
 comments: true
 tags:
   - Intune
@@ -13,7 +13,7 @@ tags:
 
 <!-- truncate -->
 
-![Introducing EndpointFeed.com](/img/blog/introducing-endpointfeed.com.png)
+
 
 Happy March everyone! I don't have a ton of updates as far as life events goes. It's the middle of March, and where I am at, all the snow had melted away....and then we got dumped on overnight with a good amount of snow. Mother Nature has a fun way of torturing us in Minnesota, every time you think you are in the clear weatherwise, there are other plans in store. Last night the mrs. and I went out for a St. Patrick's Day event at a local bar we go to. A fun time was had, but the next day really hits me. I'm still on the hunt for something overseas, fingers still crossed! If anyone has any leads, reach out!
 

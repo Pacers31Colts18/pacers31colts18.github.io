@@ -22,7 +22,7 @@
       "permalink": "/blog/tags/endpoint"
     }
   ],
-  "readingTime": 6.41,
+  "readingTime": 6.38,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -30,7 +30,7 @@
     "description": "A new website built with Claude Code to aggregate endpoint community RSS feeds.",
     "slug": "introducing-endpointfeed.com",
     "date": "2026-03-15T00:00:00.000Z",
-    "image": "/img/blog/introducing-endpointfeed.com.png",
+    "image": "/img/og/2026-03-15-endpoint-feed.png",
     "comments": true,
     "tags": [
       "Intune",

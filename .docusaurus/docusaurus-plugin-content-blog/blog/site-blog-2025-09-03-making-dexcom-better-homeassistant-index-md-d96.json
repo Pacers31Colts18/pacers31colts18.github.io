@@ -13,7 +13,7 @@
       "description": "Home Assistant related posts."
     }
   ],
-  "readingTime": 7.01,
+  "readingTime": 6.96,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -21,7 +21,7 @@
     "description": "Integrating Dexcom with Home Assistant Voice.",
     "slug": "making-dexcom-better-wtih-homeassistant",
     "date": "2025-09-03T00:00:00.000Z",
-    "image": "/img/blog/making-dexcom-better-with-home-assistant-voice.png",
+    "image": "/img/og/2025-09-03-making-dexcom-better-homeassistant.png",
     "comments": true,
     "tags": [
       "home-assistant"

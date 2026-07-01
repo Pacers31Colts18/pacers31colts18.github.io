@@ -3,7 +3,7 @@ title: "Making Dexcom better with Home Assistant Voice"
 description: Integrating Dexcom with Home Assistant Voice.
 slug: making-dexcom-better-wtih-homeassistant
 date: 2025-09-03
-image: /img/blog/making-dexcom-better-with-home-assistant-voice.png
+image: /img/og/2025-09-03-making-dexcom-better-homeassistant.png
 comments: true
 tags: 
   - home-assistant
@@ -14,7 +14,7 @@ import ReactPlayer from 'react-player'
 
 <!-- truncate -->
 
-![Post Title](/img/blog/making-dexcom-better-with-home-assistant-voice.png)
+
 
 
 Hi everyone. I recently ordered a couple of the somewhat recently released [Home Assistant Voice Preview Edition's](https://www.home-assistant.io/voice-pe/), for a very specific need for my Type 1 Diabetic wife. She currently uses Dexcom G6, and while helpful, does have a laundry list of complaints with the product.

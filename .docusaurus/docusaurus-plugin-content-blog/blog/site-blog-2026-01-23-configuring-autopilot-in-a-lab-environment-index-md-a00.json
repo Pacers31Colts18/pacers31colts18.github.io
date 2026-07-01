@@ -17,7 +17,7 @@
       "permalink": "/blog/tags/autopilot"
     }
   ],
-  "readingTime": 5.54,
+  "readingTime": 5.45,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -25,7 +25,7 @@
     "description": "A guide to configuring Windows Autopilot and setting up a VM in Hyper-V for Autopilot testing.",
     "slug": "configuring-windows-autopilot-in-a-hyperv-lab",
     "date": "2026-01-23T00:00:00.000Z",
-    "image": "/img/blog/configuring-windows-autopilot-in-a-hyperv-lab.png",
+    "image": "/img/og/2026-01-23-configuring-autopilot-in-a-lab-environment.png",
     "comments": true,
     "tags": [
       "Intune",

@@ -13,7 +13,7 @@
       "description": "Other related posts."
     }
   ],
-  "readingTime": 7.83,
+  "readingTime": 7.78,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -21,7 +21,7 @@
     "description": "What are my goals for the year? How will I accomplish them?",
     "slug": "setting-my-goals-for-2026",
     "date": "2026-01-11T00:00:00.000Z",
-    "image": "/img/blog/setting-my-goals-for-2026.png",
+    "image": "/img/og/2026-01-10-setting-my-goals-for-2026.png",
     "comments": true,
     "tags": [
       "other"
