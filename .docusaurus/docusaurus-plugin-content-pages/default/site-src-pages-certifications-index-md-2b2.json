@@ -1,0 +1,12 @@
+{
+  "type": "mdx",
+  "permalink": "/certifications/",
+  "source": "@site/src/pages/certifications/index.md",
+  "title": "Certifications",
+  "description": "Certifications page for Joe Loveless",
+  "frontMatter": {
+    "title": "Certifications",
+    "description": "Certifications page for Joe Loveless"
+  },
+  "unlisted": false
+}

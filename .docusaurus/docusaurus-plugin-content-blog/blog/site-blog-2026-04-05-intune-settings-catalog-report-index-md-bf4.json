@@ -7,19 +7,22 @@
   "date": "2026-04-05T00:00:00.000Z",
   "tags": [
     {
-      "inline": true,
+      "inline": false,
       "label": "Intune",
-      "permalink": "/blog/tags/intune"
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "Graph API",
-      "permalink": "/blog/tags/graph-api"
+      "permalink": "/blog/tags/graph-api",
+      "description": "Microsoft Graph API related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "PowerShell",
-      "permalink": "/blog/tags/power-shell"
+      "permalink": "/blog/tags/powershell",
+      "description": "PowerShell related posts."
     }
   ],
   "readingTime": 13.15,
@@ -33,9 +36,9 @@
     "image": "/img/og/2026-04-05-intune-settings-catalog-report.png",
     "comments": true,
     "tags": [
-      "Intune",
-      "Graph API",
-      "PowerShell"
+      "intune",
+      "graph-api",
+      "powershell"
     ]
   },
   "unlisted": false,

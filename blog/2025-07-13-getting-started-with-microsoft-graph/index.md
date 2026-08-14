@@ -10,7 +10,7 @@ tags:
     - graph-api
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

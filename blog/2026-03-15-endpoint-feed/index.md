@@ -6,12 +6,12 @@ date: 2026-03-15
 image: /img/og/2026-03-15-endpoint-feed.png
 comments: true
 tags:
-  - Intune
-  - MECM
-  - Endpoint
+  - intune
+  - mecm
+  - endpoint
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

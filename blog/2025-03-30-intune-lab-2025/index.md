@@ -11,7 +11,7 @@ tags:
     - active-directory
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

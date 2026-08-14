@@ -11,7 +11,7 @@ tags:
     - avd
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

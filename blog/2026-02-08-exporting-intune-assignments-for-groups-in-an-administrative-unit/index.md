@@ -6,13 +6,13 @@ date: 2026-02-08
 image: /img/og/2026-02-08-exporting-intune-assignments-for-groups-in-an-administrative-unit.png
 comments: true
 tags:
-  - Intune
-  - Graph API
-  - Entra
-  - PowerShell
+  - intune
+  - graph-api
+  - entra
+  - powershell
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

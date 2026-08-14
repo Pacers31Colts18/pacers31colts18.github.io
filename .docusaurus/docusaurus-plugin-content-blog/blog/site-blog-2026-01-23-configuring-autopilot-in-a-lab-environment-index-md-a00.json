@@ -7,14 +7,16 @@
   "date": "2026-01-23T00:00:00.000Z",
   "tags": [
     {
-      "inline": true,
+      "inline": false,
       "label": "Intune",
-      "permalink": "/blog/tags/intune"
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "Autopilot",
-      "permalink": "/blog/tags/autopilot"
+      "permalink": "/blog/tags/autopilot",
+      "description": "Windows Autopilot related posts."
     }
   ],
   "readingTime": 5.45,
@@ -28,8 +30,8 @@
     "image": "/img/og/2026-01-23-configuring-autopilot-in-a-lab-environment.png",
     "comments": true,
     "tags": [
-      "Intune",
-      "Autopilot"
+      "intune",
+      "autopilot"
     ]
   },
   "unlisted": false,

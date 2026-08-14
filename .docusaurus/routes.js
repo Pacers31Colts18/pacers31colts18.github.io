@@ -3,41 +3,6 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '5ff'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '5ba'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', 'a2b'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', 'c3c'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '156'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', '88c'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '000'),
-    exact: true
-  },
-  {
     path: '/about',
     component: ComponentCreator('/about', '954'),
     exact: true
@@ -233,8 +198,8 @@ export default [
     exact: true
   },
   {
-    path: '/blog/tags/git-hub',
-    component: ComponentCreator('/blog/tags/git-hub', '2d6'),
+    path: '/blog/tags/github',
+    component: ComponentCreator('/blog/tags/github', 'd67'),
     exact: true
   },
   {
@@ -293,13 +258,13 @@ export default [
     exact: true
   },
   {
-    path: '/blog/tags/power-shell',
-    component: ComponentCreator('/blog/tags/power-shell', 'e0e'),
+    path: '/blog/tags/powershell',
+    component: ComponentCreator('/blog/tags/powershell', 'b78'),
     exact: true
   },
   {
-    path: '/blog/tags/powershell',
-    component: ComponentCreator('/blog/tags/powershell', '29f'),
+    path: '/blog/tags/powershell/page/2',
+    component: ComponentCreator('/blog/tags/powershell/page/2', '240'),
     exact: true
   },
   {
@@ -345,6 +310,11 @@ export default [
   {
     path: '/blog/what-settings-are-in-intune',
     component: ComponentCreator('/blog/what-settings-are-in-intune', '098'),
+    exact: true
+  },
+  {
+    path: '/certifications/',
+    component: ComponentCreator('/certifications/', 'd33'),
     exact: true
   },
   {

@@ -11,7 +11,7 @@ tags:
     - powershell
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

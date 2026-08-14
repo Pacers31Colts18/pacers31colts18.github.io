@@ -13,7 +13,7 @@ tags:
   - intune
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

@@ -7,11 +7,11 @@ thumbnail: /img/blog/cover1.png
 image: /img/og/2026-05-17-how-to-deal-with-intune-profile-exceptions.png
 comments: true
 tags: 
-  - Intune
-  - Settings Catalog
+  - intune
+  - settings-catalog
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 Good day everyone. It's now been over a week since MMS MOA 2026, my brain is still drowning from all the information that was given (and fun that was had). It was great to catch up with co-workers, meet some new co-workers, and meet new people from around the world at MMS. I came away with all sorts of ideas on how we can improve our setup. It's interesting to see the Microsoft stance on things (cloud only, Intune only, blah blah blah), and then see what is actually happening out in the real world. I always have this feeling we are really behind, but then I see so many other people still running Configuration Manager and still have devices bound to Active Directory. I know MMS MOA has a little bit of bias, being historically a Configuration Manager conference, but I consider the people speaking and going to this event to be the best of the best when it comes to device management. To see people struggle with the same issues that we deal with daily....I guess that's refreshing?? It would be nice to see said issues get addressed at some point by Microsoft.

@@ -6,12 +6,12 @@ date: 2026-04-05
 image: /img/og/2026-04-05-intune-settings-catalog-report.png
 comments: true
 tags: 
-  - Intune
-  - Graph API
-  - PowerShell
+  - intune
+  - graph-api
+  - powershell
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 Happy April to everyone! Hard to believe that it is already spring-ish here in Minnesota. By spring in Minnesota, that means 70 degrees one day, 35 and sleeting the next. But the grass is starting to green up, which means more time outside for cleaning up the yard from winter. With 3 dogs that's a lot of fun. With 5 acres and wind, that's a lot of sticks and branches to pick up.

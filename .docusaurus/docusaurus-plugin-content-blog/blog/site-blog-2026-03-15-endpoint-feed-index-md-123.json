@@ -7,19 +7,22 @@
   "date": "2026-03-15T00:00:00.000Z",
   "tags": [
     {
-      "inline": true,
+      "inline": false,
       "label": "Intune",
-      "permalink": "/blog/tags/intune"
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "MECM",
-      "permalink": "/blog/tags/mecm"
+      "permalink": "/blog/tags/mecm",
+      "description": "Microsoft Endpoint Configuration Manager related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "Endpoint",
-      "permalink": "/blog/tags/endpoint"
+      "permalink": "/blog/tags/endpoint",
+      "description": "Endpoint management related posts."
     }
   ],
   "readingTime": 6.38,
@@ -33,9 +36,9 @@
     "image": "/img/og/2026-03-15-endpoint-feed.png",
     "comments": true,
     "tags": [
-      "Intune",
-      "MECM",
-      "Endpoint"
+      "intune",
+      "mecm",
+      "endpoint"
     ]
   },
   "unlisted": false,

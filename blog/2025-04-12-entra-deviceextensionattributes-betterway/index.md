@@ -11,7 +11,7 @@ tags:
     - azure
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

@@ -88,5 +88,29 @@ sccm:
   permalink: /sccm
   description: System Center Configuration Manager related posts.
 
+mecm:
+  label: MECM
+  permalink: /mecm
+  description: Microsoft Endpoint Configuration Manager related posts.
+
+autopilot:
+  label: Autopilot
+  permalink: /autopilot
+  description: Windows Autopilot related posts.
+
+github:
+  label: GitHub
+  permalink: /github
+  description: GitHub related posts.
+
+endpoint:
+  label: Endpoint
+  permalink: /endpoint
+  description: Endpoint management related posts.
+
+settings-catalog:
+  label: Settings Catalog
+  permalink: /settings-catalog
+  description: Intune Settings Catalog related posts.
 
 

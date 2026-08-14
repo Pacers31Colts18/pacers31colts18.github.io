@@ -10,7 +10,7 @@ tags:
 ---
 
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

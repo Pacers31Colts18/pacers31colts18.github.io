@@ -9,7 +9,7 @@ tags:
   - home-assistant
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 
