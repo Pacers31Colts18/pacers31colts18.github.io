@@ -6,11 +6,11 @@ date: 2026-01-23
 image: /img/og/2026-01-23-configuring-autopilot-in-a-lab-environment.png
 comments: true
 tags: 
-  - Intune
-  - Autopilot
+  - intune
+  - autopilot
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

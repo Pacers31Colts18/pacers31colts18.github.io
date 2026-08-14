@@ -6,13 +6,13 @@ date: 2026-02-01
 image: /img/og/2026-02-01-intune-documentation-as-code.png
 comments: true
 tags: 
-  - Intune
-  - GitHub
-  - Azure
-  - PowerShell
+  - intune
+  - github
+  - azure
+  - powershell
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

@@ -10,23 +10,24 @@ export default {
   "future": {
     "v4": {
       "removeLegacyPostBuildHeadAttribute": true,
-      "useCssCascadeLayers": true
+      "useCssCascadeLayers": true,
+      "siteStorageNamespacing": true,
+      "fasterByDefault": true,
+      "mdx1CompatDisabledByDefault": true
     },
-    "experimental_faster": {
-      "swcJsLoader": false,
-      "swcJsMinimizer": false,
-      "swcHtmlMinimizer": false,
-      "lightningCssMinimizer": false,
-      "mdxCrossCompilerCache": false,
-      "rspackBundler": false,
-      "rspackPersistentCache": false,
-      "ssgWorkerThreads": false
-    },
-    "experimental_storage": {
-      "type": "localStorage",
-      "namespace": false
-    },
-    "experimental_router": "browser"
+    "experimental_vcs": {},
+    "experimental_router": "browser",
+    "faster": {
+      "swcJsLoader": true,
+      "swcJsMinimizer": true,
+      "swcHtmlMinimizer": true,
+      "lightningCssMinimizer": true,
+      "mdxCrossCompilerCache": true,
+      "rspackBundler": true,
+      "rspackPersistentCache": true,
+      "ssgWorkerThreads": true,
+      "gitEagerVcs": true
+    }
   },
   "url": "https://joeloveless.com",
   "baseUrl": "/",
@@ -108,6 +109,11 @@ export default {
         {
           "to": "/about",
           "label": "About",
+          "position": "left"
+        },
+        {
+          "to": "/certifications",
+          "label": "Certifications",
           "position": "left"
         },
         {
@@ -293,6 +299,10 @@ export default {
     }
   },
   "baseUrlIssueBanner": true,
+  "storage": {
+    "type": "localStorage",
+    "namespace": true
+  },
   "onDuplicateRoutes": "warn",
   "staticDirectories": [
     "static"
@@ -309,9 +319,9 @@ export default {
     "mermaid": false,
     "emoji": true,
     "mdx1Compat": {
-      "comments": true,
-      "admonitions": true,
-      "headingIds": true
+      "comments": false,
+      "admonitions": false,
+      "headingIds": false
     },
     "anchors": {
       "maintainCase": false

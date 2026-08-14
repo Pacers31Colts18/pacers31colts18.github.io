@@ -12,7 +12,7 @@ tags:
   - hybrid
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 

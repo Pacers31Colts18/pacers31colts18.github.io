@@ -7,24 +7,28 @@
   "date": "2026-02-01T00:00:00.000Z",
   "tags": [
     {
-      "inline": true,
+      "inline": false,
       "label": "Intune",
-      "permalink": "/blog/tags/intune"
+      "permalink": "/blog/tags/intune",
+      "description": "Intune related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "GitHub",
-      "permalink": "/blog/tags/git-hub"
+      "permalink": "/blog/tags/github",
+      "description": "GitHub related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "Azure",
-      "permalink": "/blog/tags/azure"
+      "permalink": "/blog/tags/azure",
+      "description": "Azure related posts."
     },
     {
-      "inline": true,
+      "inline": false,
       "label": "PowerShell",
-      "permalink": "/blog/tags/power-shell"
+      "permalink": "/blog/tags/powershell",
+      "description": "PowerShell related posts."
     }
   ],
   "readingTime": 10.7,
@@ -38,10 +42,10 @@
     "image": "/img/og/2026-02-01-intune-documentation-as-code.png",
     "comments": true,
     "tags": [
-      "Intune",
-      "GitHub",
-      "Azure",
-      "PowerShell"
+      "intune",
+      "github",
+      "azure",
+      "powershell"
     ]
   },
   "unlisted": false,

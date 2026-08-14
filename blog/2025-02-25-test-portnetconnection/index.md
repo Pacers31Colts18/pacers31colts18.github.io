@@ -10,7 +10,7 @@ tags:
     - active-directory
 ---
 
-<!-- truncate -->
+{/* truncate */}
 
 
 I made an introductory post back in November, but work and life, and not knowing what to do or write about has gotten in the way. This is my attempt at actually starting this blog, and seeing where it takes me. I'm trying to put myself out there more, but can honestly say it's scary and nerve wracking to put my thoughts and code out in the world. But here goes...

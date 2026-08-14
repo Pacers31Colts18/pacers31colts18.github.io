@@ -10,7 +10,7 @@ tags:
   - remediation-scripts
   - intune
 ---
-<!-- truncate -->
+{/* truncate */}
 
 
 
