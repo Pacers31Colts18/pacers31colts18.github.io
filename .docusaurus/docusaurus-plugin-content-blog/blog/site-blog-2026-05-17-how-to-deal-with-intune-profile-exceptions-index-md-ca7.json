@@ -36,6 +36,10 @@
     ]
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "What Windows 11 26H2 settings are available in the Settings Catalog?",
+    "permalink": "/blog/intune-settings-catalog-settings-26h2"
+  },
   "nextItem": {
     "title": "Building an Intune Settings Catalog Report",
     "permalink": "/blog/building-an-intune-settings-catalog-report"
