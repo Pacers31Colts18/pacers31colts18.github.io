@@ -262,7 +262,7 @@
     "sidebar": "95b96bb9",
     "content": "7a79046a"
   },
-  "/blog/intune-settings-catalog-settings-26h2-f38": {
+  "/blog/intune-settings-catalog-settings-win11-26h2-80b": {
     "__comp": "ccc49370",
     "__context": {
       "data": {
@@ -427,19 +427,6 @@
     },
     "sidebar": "95b96bb9",
     "__props": "53bb6089"
-  },
-  "/blog/tags/26-h-2-19e": {
-    "__comp": "6875c492",
-    "__context": {
-      "plugin": "f1c506b7"
-    },
-    "sidebar": "95b96bb9",
-    "items": [
-      {
-        "content": "65bab08b"
-      }
-    ],
-    "__props": "94a6417e"
   },
   "/blog/tags/active-directory-333": {
     "__comp": "6875c492",
@@ -901,6 +888,19 @@
       }
     ],
     "__props": "78b18a8c"
+  },
+  "/blog/tags/windows-11-26h2-fd5": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "f1c506b7"
+    },
+    "sidebar": "95b96bb9",
+    "items": [
+      {
+        "content": "65bab08b"
+      }
+    ],
+    "__props": "e87e3903"
   },
   "/blog/tags/windows-hello-755": {
     "__comp": "6875c492",

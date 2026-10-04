@@ -1,5 +1,5 @@
 {
-  "permalink": "/blog/intune-settings-catalog-settings-26h2",
+  "permalink": "/blog/intune-settings-catalog-settings-win11-26h2",
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2026-10-04-intune-settings-catalog-settings-win11-26h2/index.md",
   "source": "@site/blog/2026-10-04-intune-settings-catalog-settings-win11-26h2/index.md",
   "title": "What Windows 11 26H2 settings are available in the Settings Catalog?",
@@ -19,9 +19,10 @@
       "description": "Intune Settings Catalog related posts."
     },
     {
-      "inline": true,
-      "label": "26h2",
-      "permalink": "/blog/tags/26-h-2"
+      "inline": false,
+      "label": "Windows 11 26H2",
+      "permalink": "/blog/tags/windows-11-26h2",
+      "description": "Windows 11 26H2 related posts."
     }
   ],
   "readingTime": 10.38,
@@ -30,7 +31,7 @@
   "frontMatter": {
     "title": "What Windows 11 26H2 settings are available in the Settings Catalog?",
     "description": "Microsoft was way too vague about what settings were added to the Settings Catalog to support 26H2, let's see what is available.",
-    "slug": "intune-settings-catalog-settings-26h2",
+    "slug": "intune-settings-catalog-settings-win11-26h2",
     "date": "2026-10-04T00:00:00.000Z",
     "thumbnail": "/img/blog/cover1.png",
     "image": "/img/og/2026-10-04-intune-settings-catalog-settings-win11-26h2.png",
@@ -38,7 +39,7 @@
     "tags": [
       "intune",
       "settings-catalog",
-      "26h2"
+      "windows-11-26h2"
     ]
   },
   "unlisted": false,

@@ -4,12 +4,12 @@ description: Microsoft was way too vague about what settings were added to the S
 slug: intune-settings-catalog-settings-win11-26h2
 date: 2026-10-04
 thumbnail: /img/blog/cover1.png
-image: /img/og/2026-10-04-slug: intune-settings-catalog-settings-win11-26h2.png
+image: /img/og/2026-10-04-intune-settings-catalog-settings-win11-26h2.png
 comments: true
 tags: 
   - intune
   - settings-catalog
-  - Windows 11 26H2
+  - windows-11-26h2
 ---
 
 {/* truncate */}

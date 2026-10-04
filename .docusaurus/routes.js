@@ -118,8 +118,8 @@ export default [
     exact: true
   },
   {
-    path: '/blog/intune-settings-catalog-settings-26h2',
-    component: ComponentCreator('/blog/intune-settings-catalog-settings-26h2', 'f38'),
+    path: '/blog/intune-settings-catalog-settings-win11-26h2',
+    component: ComponentCreator('/blog/intune-settings-catalog-settings-win11-26h2', '80b'),
     exact: true
   },
   {
@@ -165,11 +165,6 @@ export default [
   {
     path: '/blog/tags',
     component: ComponentCreator('/blog/tags', 'efb'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/26-h-2',
-    component: ComponentCreator('/blog/tags/26-h-2', '19e'),
     exact: true
   },
   {
@@ -300,6 +295,11 @@ export default [
   {
     path: '/blog/tags/windows-11',
     component: ComponentCreator('/blog/tags/windows-11', 'daf'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/windows-11-26h2',
+    component: ComponentCreator('/blog/tags/windows-11-26h2', 'fd5'),
     exact: true
   },
   {
