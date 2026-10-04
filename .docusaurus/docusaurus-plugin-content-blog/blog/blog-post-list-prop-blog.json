@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "What Windows 11 26H2 settings are available in the Settings Catalog?",
+      "permalink": "/blog/intune-settings-catalog-settings-26h2",
+      "unlisted": false,
+      "date": "2026-10-04T00:00:00.000Z"
+    },
+    {
       "title": "How to deal with Intune profile exceptions",
       "permalink": "/blog/how-to-deal-with-intune-profile-exceptions",
       "unlisted": false,
@@ -42,12 +48,6 @@
       "permalink": "/blog/setting-my-goals-for-2026",
       "unlisted": false,
       "date": "2026-01-11T00:00:00.000Z"
-    },
-    {
-      "title": "Expanding my Home Lab with Cloudflare, Tailscale, and more",
-      "permalink": "/blog/expanding-my-homelab-with-cloudflare-tailscale-and-more",
-      "unlisted": false,
-      "date": "2025-12-26T00:00:00.000Z"
     }
   ]
 }

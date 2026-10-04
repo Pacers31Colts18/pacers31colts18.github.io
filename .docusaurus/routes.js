@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '31e'),
+    component: ComponentCreator('/blog', '31d'),
     exact: true
   },
   {
@@ -118,6 +118,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/intune-settings-catalog-settings-26h2',
+    component: ComponentCreator('/blog/intune-settings-catalog-settings-26h2', 'f38'),
+    exact: true
+  },
+  {
     path: '/blog/intunelab-2025',
     component: ComponentCreator('/blog/intunelab-2025', 'f50'),
     exact: true
@@ -129,22 +134,22 @@ export default [
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '390'),
+    component: ComponentCreator('/blog/page/2', '808'),
     exact: true
   },
   {
     path: '/blog/page/3',
-    component: ComponentCreator('/blog/page/3', '6c4'),
+    component: ComponentCreator('/blog/page/3', 'd22'),
     exact: true
   },
   {
     path: '/blog/page/4',
-    component: ComponentCreator('/blog/page/4', 'c4b'),
+    component: ComponentCreator('/blog/page/4', '4b4'),
     exact: true
   },
   {
     path: '/blog/page/5',
-    component: ComponentCreator('/blog/page/5', '410'),
+    component: ComponentCreator('/blog/page/5', '405'),
     exact: true
   },
   {
@@ -160,6 +165,11 @@ export default [
   {
     path: '/blog/tags',
     component: ComponentCreator('/blog/tags', 'efb'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/26-h-2',
+    component: ComponentCreator('/blog/tags/26-h-2', '19e'),
     exact: true
   },
   {
@@ -229,17 +239,22 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', 'd3e'),
+    component: ComponentCreator('/blog/tags/intune', '275'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', '31c'),
+    component: ComponentCreator('/blog/tags/intune/page/2', '67e'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/3',
-    component: ComponentCreator('/blog/tags/intune/page/3', '850'),
+    component: ComponentCreator('/blog/tags/intune/page/3', '007'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/intune/page/4',
+    component: ComponentCreator('/blog/tags/intune/page/4', 'a6b'),
     exact: true
   },
   {
@@ -279,7 +294,7 @@ export default [
   },
   {
     path: '/blog/tags/settings-catalog',
-    component: ComponentCreator('/blog/tags/settings-catalog', 'c60'),
+    component: ComponentCreator('/blog/tags/settings-catalog', '1db'),
     exact: true
   },
   {

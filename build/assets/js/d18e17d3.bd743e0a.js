@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpacers_31_colts_18_github_io=self.webpackChunkpacers_31_colts_18_github_io||[]).push([["8869"],{9764(e){e.exports=JSON.parse('{"metadata":{"permalink":"/blog/page/4","page":4,"postsPerPage":6,"totalPages":5,"totalCount":26,"previousPage":"/blog/page/3","nextPage":"/blog/page/5","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

@@ -113,4 +113,9 @@ settings-catalog:
   permalink: /settings-catalog
   description: Intune Settings Catalog related posts.
 
+windows-11-26h2:
+  label: Windows 11 26H2
+  permalink: /windows-11-26h2
+  description: Windows 11 26H2 related posts.
+
 
