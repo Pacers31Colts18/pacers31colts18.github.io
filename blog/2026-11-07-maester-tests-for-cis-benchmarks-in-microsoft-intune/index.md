@@ -4,7 +4,7 @@ description: Details on Maester tests for CIS Benchmarks. Built using PowerShell
 slug: maester-tests-for-cis-benchmarks-in-microsoft-intune
 date: 2026-11-07
 thumbnail: /img/blog/cover1.png
-image: /img/og/2026-11-07-maester-tests-for-cis-benchmarks-in-microsoft-intune.png
+image: /img/og/2026-11-07-maester-tests-for-cis-benchmarks-in-microsoft-intune.png?v=2
 comments: true
 tags: 
   - intune
