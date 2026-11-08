@@ -2,6 +2,12 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "Maester Tests for CIS Benchmarks in Microsoft Intune",
+      "permalink": "/blog/maester-tests-for-cis-benchmarks-in-microsoft-intune",
+      "unlisted": false,
+      "date": "2026-11-07T00:00:00.000Z"
+    },
+    {
       "title": "What Windows 11 26H2 settings are available in the Settings Catalog?",
       "permalink": "/blog/intune-settings-catalog-settings-win11-26h2",
       "unlisted": false,
@@ -42,12 +48,6 @@
       "permalink": "/blog/configuring-windows-autopilot-in-a-hyperv-lab",
       "unlisted": false,
       "date": "2026-01-23T00:00:00.000Z"
-    },
-    {
-      "title": "Setting my goals for 2026",
-      "permalink": "/blog/setting-my-goals-for-2026",
-      "unlisted": false,
-      "date": "2026-01-11T00:00:00.000Z"
     }
   ]
 }

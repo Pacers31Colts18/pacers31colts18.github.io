@@ -43,6 +43,10 @@
     ]
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "Maester Tests for CIS Benchmarks in Microsoft Intune",
+    "permalink": "/blog/maester-tests-for-cis-benchmarks-in-microsoft-intune"
+  },
   "nextItem": {
     "title": "How to deal with Intune profile exceptions",
     "permalink": "/blog/how-to-deal-with-intune-profile-exceptions"
