@@ -3,7 +3,7 @@ name: Test deployment
 on:
   pull_request:
     branches:
-      - master
+      - main
 
   # Allows manual triggering from the GitHub Actions UI
   workflow_dispatch:
