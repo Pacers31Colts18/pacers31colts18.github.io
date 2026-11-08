@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '31d'),
+    component: ComponentCreator('/blog', '7e4'),
     exact: true
   },
   {
@@ -128,28 +128,33 @@ export default [
     exact: true
   },
   {
+    path: '/blog/maester-tests-for-cis-benchmarks-in-microsoft-intune',
+    component: ComponentCreator('/blog/maester-tests-for-cis-benchmarks-in-microsoft-intune', '711'),
+    exact: true
+  },
+  {
     path: '/blog/making-dexcom-better-wtih-homeassistant',
     component: ComponentCreator('/blog/making-dexcom-better-wtih-homeassistant', '228'),
     exact: true
   },
   {
     path: '/blog/page/2',
-    component: ComponentCreator('/blog/page/2', '808'),
+    component: ComponentCreator('/blog/page/2', 'ff1'),
     exact: true
   },
   {
     path: '/blog/page/3',
-    component: ComponentCreator('/blog/page/3', 'd22'),
+    component: ComponentCreator('/blog/page/3', '8c7'),
     exact: true
   },
   {
     path: '/blog/page/4',
-    component: ComponentCreator('/blog/page/4', '4b4'),
+    component: ComponentCreator('/blog/page/4', 'b37'),
     exact: true
   },
   {
     path: '/blog/page/5',
-    component: ComponentCreator('/blog/page/5', '405'),
+    component: ComponentCreator('/blog/page/5', '322'),
     exact: true
   },
   {
@@ -189,7 +194,7 @@ export default [
   },
   {
     path: '/blog/tags/cis',
-    component: ComponentCreator('/blog/tags/cis', '766'),
+    component: ComponentCreator('/blog/tags/cis', 'd1c'),
     exact: true
   },
   {
@@ -234,22 +239,27 @@ export default [
   },
   {
     path: '/blog/tags/intune',
-    component: ComponentCreator('/blog/tags/intune', '275'),
+    component: ComponentCreator('/blog/tags/intune', 'fbd'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/2',
-    component: ComponentCreator('/blog/tags/intune/page/2', '67e'),
+    component: ComponentCreator('/blog/tags/intune/page/2', '844'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/3',
-    component: ComponentCreator('/blog/tags/intune/page/3', '007'),
+    component: ComponentCreator('/blog/tags/intune/page/3', '23e'),
     exact: true
   },
   {
     path: '/blog/tags/intune/page/4',
-    component: ComponentCreator('/blog/tags/intune/page/4', 'a6b'),
+    component: ComponentCreator('/blog/tags/intune/page/4', '084'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/maester',
+    component: ComponentCreator('/blog/tags/maester', '029'),
     exact: true
   },
   {
